@@ -6,31 +6,55 @@ import type { Options } from "tsup";
 // and just have esbuild keep the directives so that components with
 // the directive stays a client component and the rest is server...
 const client = [
-  "./src/avatar.tsx",
-  "./src/calendar.tsx",
-  "./src/checkbox.tsx",
-  "./src/command.tsx",
-  "./src/data-table.tsx",
-  "./src/dialog.tsx",
-  "./src/dropdown-menu.tsx",
-  "./src/form.tsx",
-  "./src/input.tsx",
-  "./src/label.tsx",
-  "./src/popover.tsx",
-  "./src/scroll-area.tsx",
-  "./src/select.tsx",
-  "./src/sheet.tsx",
-  "./src/tabs.tsx",
-  "./src/toaster.tsx",
-  "./src/use-toast.tsx",
+  "./src/components/ui/accordion.tsx",
+  "./src/components/ui/alert-dialog.tsx",
+  "./src/components/ui/alert.tsx",
+  "./src/components/ui/aspect-ratio.tsx",
+  "./src/components/ui/avatar.tsx",
+  "./src/components/ui/badge.tsx",
+  "./src/components/ui/button.tsx",
+  "./src/components/ui/calendar.tsx",
+  "./src/components/ui/card.tsx",
+  "./src/components/ui/checkbox.tsx",
+  "./src/components/ui/collapsible.tsx",
+  "./src/components/ui/command.tsx",
+  "./src/components/ui/context-menu.tsx",
+  "./src/components/ui/dialog.tsx",
+  "./src/components/ui/dropdown-menu.tsx",
+  "./src/components/ui/form.tsx",
+  "./src/components/ui/hover-card.tsx",
+  "./src/components/ui/icons.tsx",
+  "./src/components/ui/input.tsx",
+  "./src/components/ui/label.tsx",
+  "./src/components/ui/menubar.tsx",
+  "./src/components/ui/navigation-menu.tsx",
+  "./src/components/ui/popover.tsx",
+  "./src/components/ui/progress.tsx",
+  "./src/components/ui/radio-group.tsx",
+  "./src/components/ui/scroll-area.tsx",
+  "./src/components/ui/select.tsx",
+  "./src/components/ui/separator.tsx",
+  "./src/components/ui/sheet.tsx",
+  "./src/components/ui/skeleton.tsx",
+  "./src/components/ui/slider.tsx",
+  "./src/components/ui/switch.tsx",
+  "./src/components/ui/table.tsx",
+  "./src/components/ui/tabs.tsx",
+  "./src/components/ui/textarea.tsx",
+  "./src/components/ui/toast.tsx",
+  "./src/components/ui/toaster.tsx",
+  "./src/components/ui/toggle.tsx",
+  "./src/components/ui/tooltip.tsx",
+  "./src/components/ui/use-toast.ts",
+  // "./src/components/ui/data-table.tsx",
 ];
 
 const server = [
-  "./src/button.tsx",
-  "./src/icons.tsx",
-  "./src/card.tsx",
-  "./src/table.tsx",
-  "./src/toast.tsx",
+  "./src/components/ui/button.tsx",
+  "./src/components/ui/icons.tsx",
+  "./src/components/ui/card.tsx",
+  "./src/components/ui/table.tsx",
+  "./src/components/ui/toast.tsx",
 ];
 
 export default defineConfig((opts) => {
@@ -72,7 +96,9 @@ export default defineConfig((opts) => {
         [...client, ...server]
           .filter((e) => e.endsWith(".tsx"))
           .forEach((entry) => {
-            const file = entry.replace("./src/", "").replace(".tsx", "");
+            const file = entry
+              .replace("./src/components/ui/", "")
+              .replace(".tsx", "");
             pkgJson.exports["./" + file] = {
               import: "./dist/" + file + ".mjs",
               types: "./dist/" + file + ".d.ts",
@@ -86,7 +112,7 @@ export default defineConfig((opts) => {
   ];
 });
 
-type PackageJson = {
+interface PackageJson {
   name: string;
   exports: Record<string, { import: string; types: string } | string>;
   typesVersions: Record<"*", Record<string, string[]>>;
@@ -95,4 +121,4 @@ type PackageJson = {
   pnpm: {
     overrides: Record<string, string>;
   };
-};
+}
