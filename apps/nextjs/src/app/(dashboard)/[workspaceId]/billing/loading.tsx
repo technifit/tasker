@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@acme/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@technifit/ui/card";
 
 import { DashboardShell } from "../../_components/dashboard-shell";
 

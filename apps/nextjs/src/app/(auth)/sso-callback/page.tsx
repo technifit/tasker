@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useClerk } from "@clerk/nextjs";
 import type { HandleOAuthCallbackParams } from "@clerk/types";
 
-import * as Icons from "@acme/ui/icons";
+import * as Icons from "@technifit/ui/icons";
 
 export const runtime = "edge";
 

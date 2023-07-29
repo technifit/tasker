@@ -5,17 +5,17 @@ import { useRouter } from "next/navigation";
 import { useAuth } from "@clerk/nextjs";
 import { formatRelative } from "date-fns";
 
-import type { RouterOutputs } from "@acme/api";
-import { MEMBERSHIP } from "@acme/api/validators";
-import { Avatar, AvatarFallback, AvatarImage } from "@acme/ui/avatar";
-import { Button } from "@acme/ui/button";
+import type { RouterOutputs } from "@technifit/api";
+import { MEMBERSHIP } from "@technifit/api/validators";
+import { Avatar, AvatarFallback, AvatarImage } from "@technifit/ui/avatar";
+import { Button } from "@technifit/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@acme/ui/dropdown-menu";
-import * as Icons from "@acme/ui/icons";
+} from "@technifit/ui/dropdown-menu";
+import * as Icons from "@technifit/ui/icons";
 import {
   Table,
   TableBody,
@@ -23,8 +23,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@acme/ui/table";
-import { useToast } from "@acme/ui/use-toast";
+} from "@technifit/ui/table";
+import { useToast } from "@technifit/ui/use-toast";
 
 import { api } from "~/trpc/client";
 

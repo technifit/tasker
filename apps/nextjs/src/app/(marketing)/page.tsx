@@ -1,15 +1,15 @@
 import { Balancer } from "react-wrap-balancer";
 
-import { cn } from "@acme/ui";
-import { buttonVariants } from "@acme/ui/button";
+import { cn } from "@technifit/ui";
+import { buttonVariants } from "@technifit/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@acme/ui/card";
-import * as Icons from "@acme/ui/icons";
+} from "@technifit/ui/card";
+import * as Icons from "@technifit/ui/icons";
 
 import { marketingFeatures, siteConfig } from "~/app/config";
 

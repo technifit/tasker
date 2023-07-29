@@ -2,14 +2,14 @@
 
 import { useParams, useRouter } from "next/navigation";
 
-import { Button } from "@acme/ui/button";
+import { Button } from "@technifit/ui/button";
 import {
   Card,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@acme/ui/card";
+} from "@technifit/ui/card";
 import {
   Dialog,
   DialogClose,
@@ -19,9 +19,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@acme/ui/dialog";
-import * as Icons from "@acme/ui/icons";
-import { useToast } from "@acme/ui/use-toast";
+} from "@technifit/ui/dialog";
+import * as Icons from "@technifit/ui/icons";
+import { useToast } from "@technifit/ui/use-toast";
 
 import { api } from "~/trpc/client";
 

@@ -3,8 +3,8 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { auth } from "@clerk/nextjs";
 
-import { buttonVariants } from "@acme/ui/button";
-import * as Icons from "@acme/ui/icons";
+import { buttonVariants } from "@technifit/ui/button";
+import * as Icons from "@technifit/ui/icons";
 
 import { SiteFooter } from "~/components/footer";
 import { MobileDropdown } from "~/components/mobile-nav";

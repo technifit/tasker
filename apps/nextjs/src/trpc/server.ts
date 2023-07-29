@@ -1,11 +1,10 @@
 "use server";
 
 import { headers } from "next/headers";
+import type { AppRouter } from "@technifit/api";
 import { loggerLink } from "@trpc/client";
 import { experimental_createTRPCNextAppDirServer } from "@trpc/next/app-dir/server";
 import superjson from "superjson";
-
-import type { AppRouter } from "@acme/api";
 
 import { endingLink } from "./shared";
 
@@ -27,4 +26,4 @@ export const api = experimental_createTRPCNextAppDirServer<AppRouter>({
   },
 });
 
-export { type RouterInputs, type RouterOutputs } from "@acme/api";
+export { type RouterInputs, type RouterOutputs } from "@technifit/api";

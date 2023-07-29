@@ -7,7 +7,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@acme/ui/card";
+} from "@technifit/ui/card";
 
 import type { RouterOutputs } from "~/trpc/server";
 import { api } from "~/trpc/server";

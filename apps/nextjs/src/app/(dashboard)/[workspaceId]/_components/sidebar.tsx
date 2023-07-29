@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
 
-import { cn } from "@acme/ui";
-import * as Icons from "@acme/ui/icons";
+import { cn } from "@technifit/ui";
+import * as Icons from "@technifit/ui/icons";
 
 const workspaceItems = [
   {

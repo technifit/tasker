@@ -2,9 +2,9 @@
 const config = {
   root: true,
   extends: [
-    "@acme/eslint-config/base",
-    "@acme/eslint-config/nextjs",
-    "@acme/eslint-config/react",
+    "@technifit/eslint-config/base",
+    "@technifit/eslint-config/nextjs",
+    "@technifit/eslint-config/react",
   ],
 };
 

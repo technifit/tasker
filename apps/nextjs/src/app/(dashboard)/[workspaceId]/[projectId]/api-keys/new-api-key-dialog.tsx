@@ -5,10 +5,10 @@ import { useRouter } from "next/navigation";
 import { add, format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 
-import type { CreateApiKey } from "@acme/api/validators";
-import { createApiKeySchema } from "@acme/api/validators";
-import { Button } from "@acme/ui/button";
-import { Calendar } from "@acme/ui/calendar";
+import type { CreateApiKey } from "@technifit/api/validators";
+import { createApiKeySchema } from "@technifit/api/validators";
+import { Button } from "@technifit/ui/button";
+import { Calendar } from "@technifit/ui/calendar";
 import {
   Dialog,
   DialogContent,
@@ -16,7 +16,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@acme/ui/dialog";
+} from "@technifit/ui/dialog";
 import {
   Form,
   FormControl,
@@ -25,10 +25,10 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@acme/ui/form";
-import { Input } from "@acme/ui/input";
-import { Popover, PopoverContent, PopoverTrigger } from "@acme/ui/popover";
-import { useToast } from "@acme/ui/use-toast";
+} from "@technifit/ui/form";
+import { Input } from "@technifit/ui/input";
+import { Popover, PopoverContent, PopoverTrigger } from "@technifit/ui/popover";
+import { useToast } from "@technifit/ui/use-toast";
 
 import { useZodForm } from "~/lib/zod-form";
 import { api } from "~/trpc/client";

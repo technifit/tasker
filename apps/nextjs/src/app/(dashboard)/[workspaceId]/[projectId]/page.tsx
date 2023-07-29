@@ -3,8 +3,8 @@ import Link from "next/link";
 import { formatRelative } from "date-fns";
 import { Activity, CreditCard, DollarSign, Users } from "lucide-react";
 
-import { cn } from "@acme/ui";
-import { Button } from "@acme/ui/button";
+import { cn } from "@technifit/ui";
+import { Button } from "@technifit/ui/button";
 import {
   Card,
   CardContent,
@@ -12,9 +12,9 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@acme/ui/card";
-import * as Icons from "@acme/ui/icons";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@acme/ui/tabs";
+} from "@technifit/ui/card";
+import * as Icons from "@technifit/ui/icons";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@technifit/ui/tabs";
 
 import { Overview } from "~/app/(dashboard)/[workspaceId]/[projectId]/_components/overview";
 import { userCanAccess } from "~/lib/project-guard";

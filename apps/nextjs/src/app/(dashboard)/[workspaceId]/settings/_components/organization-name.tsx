@@ -3,7 +3,7 @@
 import * as React from "react";
 import { useOrganization } from "@clerk/nextjs";
 
-import { Button } from "@acme/ui/button";
+import { Button } from "@technifit/ui/button";
 import {
   Card,
   CardContent,
@@ -11,10 +11,10 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@acme/ui/card";
-import { Input } from "@acme/ui/input";
-import { Label } from "@acme/ui/label";
-import { useToast } from "@acme/ui/use-toast";
+} from "@technifit/ui/card";
+import { Input } from "@technifit/ui/input";
+import { Label } from "@technifit/ui/label";
+import { useToast } from "@technifit/ui/use-toast";
 
 export function OrganizationName(props: { name: string; orgId: string }) {
   const { organization } = useOrganization();

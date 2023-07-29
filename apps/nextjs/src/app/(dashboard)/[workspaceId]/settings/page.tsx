@@ -2,9 +2,9 @@ import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { auth, clerkClient, UserProfile } from "@clerk/nextjs";
 
-import { Button } from "@acme/ui/button";
-import { Dialog, DialogContent, DialogTrigger } from "@acme/ui/dialog";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@acme/ui/tabs";
+import { Button } from "@technifit/ui/button";
+import { Dialog, DialogContent, DialogTrigger } from "@technifit/ui/dialog";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@technifit/ui/tabs";
 
 import { api } from "~/trpc/server";
 import { DashboardShell } from "../../_components/dashboard-shell";

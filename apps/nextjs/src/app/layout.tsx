@@ -6,8 +6,8 @@ import LocalFont from "next/font/local";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Analytics } from "@vercel/analytics/react";
 
-import { cn } from "@acme/ui";
-import { Toaster } from "@acme/ui/toaster";
+import { cn } from "@technifit/ui";
+import { Toaster } from "@technifit/ui/toaster";
 
 import { TailwindIndicator } from "~/components/tailwind-indicator";
 import { ThemeProvider } from "~/components/theme-provider";

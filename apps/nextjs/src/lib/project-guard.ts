@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
-
-import { db } from "@acme/db";
+import { db } from "@technifit/db";
 
 export async function userCanAccess(projectId: string) {
   if (!projectId.startsWith("project_")) {

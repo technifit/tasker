@@ -6,8 +6,8 @@ import { useOrganization } from "@clerk/nextjs";
 import type { Crop, PixelCrop } from "react-image-crop";
 import ReactCrop from "react-image-crop";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@acme/ui/avatar";
-import { Button } from "@acme/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@technifit/ui/avatar";
+import { Button } from "@technifit/ui/button";
 import {
   Card,
   CardContent,
@@ -15,7 +15,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@acme/ui/card";
+} from "@technifit/ui/card";
 import {
   Dialog,
   DialogContent,
@@ -23,9 +23,9 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@acme/ui/dialog";
-import { Input } from "@acme/ui/input";
-import { useToast } from "@acme/ui/use-toast";
+} from "@technifit/ui/dialog";
+import { Input } from "@technifit/ui/input";
+import { useToast } from "@technifit/ui/use-toast";
 
 export function OrganizationImage(props: {
   name: string;

@@ -12,7 +12,7 @@
     "db:generate": "turbo db:generate",
     "db:push": "turbo db:push db:generate",
     "dev": "FORCE_COLOR=1 turbo dev --parallel",
-    "dev:web": "turbo dev --parallel --filter !@acme/expo --filter !@acme/db",
+    "dev:web": "turbo dev --parallel --filter !@technifit/expo --filter !@technifit/db",
     "format": "prettier --write \"**/*.{js,cjs,mjs,ts,tsx,md,json}\" --ignore-path .gitignore",
     "lint": "turbo lint && manypkg check",
     "lint:fix": "turbo lint:fix && manypkg fix",

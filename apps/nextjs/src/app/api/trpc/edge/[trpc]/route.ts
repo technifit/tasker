@@ -1,8 +1,7 @@
 import type { NextRequest } from "next/server";
+import { createTRPCContext } from "@technifit/api";
+import { edgeRouter } from "@technifit/api/src/edge";
 import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
-
-import { createTRPCContext } from "@acme/api";
-import { edgeRouter } from "@acme/api/src/edge";
 
 export const runtime = "edge";
 

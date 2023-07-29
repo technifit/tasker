@@ -1,5 +1,5 @@
 {
-  "name": "@acme/expo",
+  "name": "@technifit/expo",
   "version": "0.1.0",
   "main": "index.tsx",
   "scripts": {
@@ -33,9 +33,9 @@
     "superjson": "1.12.4"
   },
   "devDependencies": {
-    "@acme/api": "0.1.0",
-    "@acme/eslint-config": "0.2.0",
-    "@acme/tailwind-config": "0.1.0",
+    "@technifit/api": "0.1.0",
+    "@technifit/eslint-config": "0.2.0",
+    "@technifit/tailwind-config": "0.1.0",
     "@babel/core": "^7.22.1",
     "@babel/preset-env": "^7.22.4",
     "@babel/runtime": "^7.22.3",

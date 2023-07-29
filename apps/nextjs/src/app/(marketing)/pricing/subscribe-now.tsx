@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useSession } from "@clerk/nextjs";
 
-import { Button } from "@acme/ui/button";
+import { Button } from "@technifit/ui/button";
 
 import { api } from "~/trpc/client";
 

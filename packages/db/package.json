@@ -1,5 +1,5 @@
 {
-  "name": "@acme/db",
+  "name": "@technifit/db",
   "version": "0.1.0",
   "exports": {
     ".": "./index.ts",

@@ -1,8 +1,7 @@
 import { clerkClient } from "@clerk/nextjs";
+import { genId } from "@technifit/db";
 import { TRPCError } from "@trpc/server";
 import { z } from "zod";
-
-import { genId } from "@acme/db";
 
 import {
   createApiKeySchema,

@@ -11,18 +11,18 @@ import {
 import { format, formatRelative } from "date-fns";
 import { Eye, EyeOff } from "lucide-react";
 
-import type { RouterOutputs } from "@acme/api";
-import { cn } from "@acme/ui";
-import { Button } from "@acme/ui/button";
-import { Checkbox } from "@acme/ui/checkbox";
+import type { RouterOutputs } from "@technifit/api";
+import { cn } from "@technifit/ui";
+import { Button } from "@technifit/ui/button";
+import { Checkbox } from "@technifit/ui/checkbox";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@acme/ui/dropdown-menu";
-import * as Icons from "@acme/ui/icons";
-import { Label } from "@acme/ui/label";
+} from "@technifit/ui/dropdown-menu";
+import * as Icons from "@technifit/ui/icons";
+import { Label } from "@technifit/ui/label";
 import {
   Table,
   TableBody,
@@ -30,8 +30,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@acme/ui/table";
-import { useToast } from "@acme/ui/use-toast";
+} from "@technifit/ui/table";
+import { useToast } from "@technifit/ui/use-toast";
 
 import { api } from "~/trpc/client";
 
@@ -279,8 +279,8 @@ export function DataTable(props: { data: ApiKeyColumn[] }) {
   const filteredRows = showRevoked
     ? table.getRowModel().rows
     : table
-        .getRowModel()
-        ?.rows.filter((row) => row.original.revokedAt === null);
+      .getRowModel()
+      ?.rows.filter((row) => row.original.revokedAt === null);
 
   return (
     <div>
@@ -303,9 +303,9 @@ export function DataTable(props: { data: ApiKeyColumn[] }) {
                       {header.isPlaceholder
                         ? null
                         : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext(),
-                          )}
+                          header.column.columnDef.header,
+                          header.getContext(),
+                        )}
                     </TableHead>
                   );
                 })}

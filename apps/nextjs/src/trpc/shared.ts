@@ -1,7 +1,6 @@
+import type { AppRouter } from "@technifit/api";
 import type { HttpBatchLinkOptions, HTTPHeaders, TRPCLink } from "@trpc/client";
 import { httpBatchLink } from "@trpc/client";
-
-import type { AppRouter } from "@acme/api";
 
 const getBaseUrl = () => {
   if (typeof window !== "undefined") return "";

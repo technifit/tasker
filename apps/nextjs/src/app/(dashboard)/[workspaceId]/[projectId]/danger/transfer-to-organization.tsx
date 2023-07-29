@@ -3,16 +3,16 @@
 import { use } from "react";
 import { useParams, useRouter } from "next/navigation";
 
-import type { TransferToOrg } from "@acme/api/validators";
-import { transferToOrgSchema } from "@acme/api/validators";
-import { Button } from "@acme/ui/button";
+import type { TransferToOrg } from "@technifit/api/validators";
+import { transferToOrgSchema } from "@technifit/api/validators";
+import { Button } from "@technifit/ui/button";
 import {
   Card,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@acme/ui/card";
+} from "@technifit/ui/card";
 import {
   Dialog,
   DialogClose,
@@ -22,7 +22,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@acme/ui/dialog";
+} from "@technifit/ui/dialog";
 import {
   Form,
   FormControl,
@@ -30,15 +30,15 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@acme/ui/form";
+} from "@technifit/ui/form";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@acme/ui/select";
-import { useToast } from "@acme/ui/use-toast";
+} from "@technifit/ui/select";
+import { useToast } from "@technifit/ui/use-toast";
 
 import { useZodForm } from "~/lib/zod-form";
 import type { RouterOutputs } from "~/trpc/client";

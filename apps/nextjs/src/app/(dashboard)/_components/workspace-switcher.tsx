@@ -6,11 +6,11 @@ import { useRouter } from "next/navigation";
 import { useOrganization, useOrganizationList, useUser } from "@clerk/nextjs";
 import { Check, ChevronsUpDown, PlusCircle } from "lucide-react";
 
-import type { PurchaseOrg } from "@acme/api/validators";
-import { purchaseOrgSchema } from "@acme/api/validators";
-import { cn } from "@acme/ui";
-import { Avatar, AvatarFallback, AvatarImage } from "@acme/ui/avatar";
-import { Button } from "@acme/ui/button";
+import type { PurchaseOrg } from "@technifit/api/validators";
+import { purchaseOrgSchema } from "@technifit/api/validators";
+import { cn } from "@technifit/ui";
+import { Avatar, AvatarFallback, AvatarImage } from "@technifit/ui/avatar";
+import { Button } from "@technifit/ui/button";
 import {
   Command,
   CommandGroup,
@@ -18,7 +18,7 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-} from "@acme/ui/command";
+} from "@technifit/ui/command";
 import {
   Dialog,
   DialogContent,
@@ -27,7 +27,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@acme/ui/dialog";
+} from "@technifit/ui/dialog";
 import {
   Form,
   FormControl,
@@ -35,17 +35,17 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@acme/ui/form";
-import { Input } from "@acme/ui/input";
-import { Popover, PopoverContent, PopoverTrigger } from "@acme/ui/popover";
+} from "@technifit/ui/form";
+import { Input } from "@technifit/ui/input";
+import { Popover, PopoverContent, PopoverTrigger } from "@technifit/ui/popover";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@acme/ui/select";
-import { useToast } from "@acme/ui/use-toast";
+} from "@technifit/ui/select";
+import { useToast } from "@technifit/ui/use-toast";
 
 import { useZodForm } from "~/lib/zod-form";
 import { api } from "~/trpc/client";

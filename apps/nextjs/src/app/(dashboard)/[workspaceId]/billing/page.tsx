@@ -4,7 +4,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@acme/ui/card";
+} from "@technifit/ui/card";
 
 import { api } from "~/trpc/server";
 import { DashboardShell } from "../../_components/dashboard-shell";

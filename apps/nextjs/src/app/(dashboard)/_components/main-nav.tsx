@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { cn } from "@acme/ui";
+import { cn } from "@technifit/ui";
 
 import { navItems } from "~/app/config";
 

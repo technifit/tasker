@@ -90,15 +90,6 @@ importers:
         specifier: 1.12.4
         version: 1.12.4
     devDependencies:
-      '@acme/api':
-        specifier: 0.1.0
-        version: link:../../packages/api
-      '@acme/eslint-config':
-        specifier: 0.2.0
-        version: link:../../packages/config/eslint
-      '@acme/tailwind-config':
-        specifier: 0.1.0
-        version: link:../../packages/config/tailwind
       '@babel/core':
         specifier: ^7.22.1
         version: 7.22.1
@@ -111,6 +102,15 @@ importers:
       '@expo/config-plugins':
         specifier: ^6.0.2
         version: 6.0.2
+      '@technifit/api':
+        specifier: 0.1.0
+        version: link:../../packages/api
+      '@technifit/eslint-config':
+        specifier: 0.2.0
+        version: link:../../packages/config/eslint
+      '@technifit/tailwind-config':
+        specifier: 0.1.0
+        version: link:../../packages/config/tailwind
       '@types/babel__core':
         specifier: 7.20.0
         version: 7.20.0
@@ -138,18 +138,6 @@ importers:
 
   apps/nextjs:
     dependencies:
-      '@acme/api':
-        specifier: ^0.1.0
-        version: link:../../packages/api
-      '@acme/db':
-        specifier: ^0.1.0
-        version: link:../../packages/db
-      '@acme/tailwind-config':
-        specifier: ^0.1.0
-        version: link:../../packages/config/tailwind
-      '@acme/ui':
-        specifier: ^0.1.0
-        version: link:../../packages/ui
       '@clerk/nextjs':
         specifier: ^4.21.13
         version: 4.21.13(next@13.4.8)(react-dom@18.2.0)(react@18.2.0)
@@ -168,6 +156,18 @@ importers:
       '@tanstack/react-table':
         specifier: ^8.9.3
         version: 8.9.3(react-dom@18.2.0)(react@18.2.0)
+      '@technifit/api':
+        specifier: ^0.1.0
+        version: link:../../packages/api
+      '@technifit/db':
+        specifier: ^0.1.0
+        version: link:../../packages/db
+      '@technifit/tailwind-config':
+        specifier: ^0.1.0
+        version: link:../../packages/config/tailwind
+      '@technifit/ui':
+        specifier: ^0.1.0
+        version: link:../../packages/ui
       '@trpc/client':
         specifier: ^10.33.1
         version: 10.33.1(@trpc/server@10.33.1)
@@ -223,7 +223,7 @@ importers:
         specifier: ^3.21.4
         version: 3.21.4
     devDependencies:
-      '@acme/eslint-config':
+      '@technifit/eslint-config':
         specifier: 0.2.0
         version: link:../../packages/config/eslint
       '@types/mdx':
@@ -262,15 +262,15 @@ importers:
 
   packages/api:
     dependencies:
-      '@acme/db':
-        specifier: ^0.1.0
-        version: link:../db
       '@clerk/nextjs':
         specifier: ^4.21.13
         version: 4.21.13(next@13.4.8)(react-dom@18.2.0)(react@18.2.0)
       '@t3-oss/env-nextjs':
         specifier: ^0.6.0
         version: 0.6.0(typescript@5.1.6)(zod@3.21.4)
+      '@technifit/db':
+        specifier: ^0.1.0
+        version: link:../db
       '@trpc/client':
         specifier: ^10.33.1
         version: 10.33.1(@trpc/server@10.33.1)
@@ -290,7 +290,7 @@ importers:
         specifier: ^2.0.1
         version: 2.0.1(zod@3.21.4)
     devDependencies:
-      '@acme/eslint-config':
+      '@technifit/eslint-config':
         specifier: 0.2.0
         version: link:../config/eslint
       eslint:
@@ -437,15 +437,15 @@ importers:
         specifier: ^3.21.4
         version: 3.21.4
     devDependencies:
-      '@acme/eslint-config':
-        specifier: 0.2.0
-        version: link:../config/eslint
-      '@acme/tailwind-config':
-        specifier: 0.1.0
-        version: link:../config/tailwind
       '@tanstack/react-table':
         specifier: ^8.9.3
         version: 8.9.3(react-dom@18.2.0)(react@18.2.0)
+      '@technifit/eslint-config':
+        specifier: 0.2.0
+        version: link:../config/eslint
+      '@technifit/tailwind-config':
+        specifier: 0.1.0
+        version: link:../config/tailwind
       '@types/react':
         specifier: ^18.2.14
         version: 18.2.14

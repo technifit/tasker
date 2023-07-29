@@ -13,11 +13,10 @@ import type {
   SignedOutAuthObject,
 } from "@clerk/nextjs/api";
 import { getAuth } from "@clerk/nextjs/server";
+import { db } from "@technifit/db";
 import { initTRPC, TRPCError } from "@trpc/server";
 import superjson from "superjson";
 import { ZodError } from "zod";
-
-import { db } from "@acme/db";
 
 /**
  * 1. CONTEXT

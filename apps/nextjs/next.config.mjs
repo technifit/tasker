@@ -1,5 +1,5 @@
 import "./src/env.mjs";
-import "@acme/api/src/env.mjs";
+import "@technifit/api/src/env.mjs";
 
 import withMDX from "@next/mdx";
 
@@ -7,7 +7,7 @@ import withMDX from "@next/mdx";
 const config = {
   reactStrictMode: true,
   /** Enables hot reloading for local packages without a build step */
-  transpilePackages: ["@acme/api", "@acme/db"],
+  transpilePackages: ["@technifit/api", "@technifit/db"],
   pageExtensions: ["ts", "tsx", "mdx"],
   experimental: {
     mdxRs: true,

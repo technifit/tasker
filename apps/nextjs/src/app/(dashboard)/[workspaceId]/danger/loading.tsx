@@ -1,11 +1,11 @@
-import { Button } from "@acme/ui/button";
+import { Button } from "@technifit/ui/button";
 import {
   Card,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@acme/ui/card";
+} from "@technifit/ui/card";
 
 import { DashboardShell } from "../../_components/dashboard-shell";
 

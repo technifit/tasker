@@ -1,9 +1,9 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 
-import { cn } from "@acme/ui";
-import { Button } from "@acme/ui/button";
-import * as Icons from "@acme/ui/icons";
+import { cn } from "@technifit/ui";
+import { Button } from "@technifit/ui/button";
+import * as Icons from "@technifit/ui/icons";
 
 import { siteConfig } from "~/app/config";
 

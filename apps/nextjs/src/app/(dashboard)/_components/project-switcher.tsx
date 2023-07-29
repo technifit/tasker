@@ -4,9 +4,9 @@ import * as React from "react";
 import { useParams, useRouter } from "next/navigation";
 import { Check, ChevronsUpDown, LayoutGrid } from "lucide-react";
 
-import type { RouterOutputs } from "@acme/api";
-import { cn } from "@acme/ui";
-import { Button } from "@acme/ui/button";
+import type { RouterOutputs } from "@technifit/api";
+import { cn } from "@technifit/ui";
+import { Button } from "@technifit/ui/button";
 import {
   Command,
   CommandGroup,
@@ -14,8 +14,8 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-} from "@acme/ui/command";
-import { Popover, PopoverContent, PopoverTrigger } from "@acme/ui/popover";
+} from "@technifit/ui/command";
+import { Popover, PopoverContent, PopoverTrigger } from "@technifit/ui/popover";
 
 import { getRandomPatternStyle } from "~/lib/generate-pattern";
 

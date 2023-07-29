@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-import { ProjectTier } from "@acme/db/enums";
-import { cn } from "@acme/ui";
-import { Button } from "@acme/ui/button";
-import { Card, CardDescription, CardHeader, CardTitle } from "@acme/ui/card";
+import { ProjectTier } from "@technifit/db/enums";
+import { cn } from "@technifit/ui";
+import { Button } from "@technifit/ui/button";
+import { Card, CardDescription, CardHeader, CardTitle } from "@technifit/ui/card";
 import {
   Dialog,
   DialogContent,
@@ -11,8 +11,8 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@acme/ui/dialog";
-import * as Icons from "@acme/ui/icons";
+} from "@technifit/ui/dialog";
+import * as Icons from "@technifit/ui/icons";
 
 import { getRandomPatternStyle } from "~/lib/generate-pattern";
 import type { RouterOutputs } from "~/trpc/server";

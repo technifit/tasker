@@ -1,8 +1,8 @@
 "use client";
 
-import type { InviteOrgMember } from "@acme/api/validators";
-import { inviteOrgMemberSchema, MEMBERSHIP } from "@acme/api/validators";
-import { Button } from "@acme/ui/button";
+import type { InviteOrgMember } from "@technifit/api/validators";
+import { inviteOrgMemberSchema, MEMBERSHIP } from "@technifit/api/validators";
+import { Button } from "@technifit/ui/button";
 import {
   Form,
   FormControl,
@@ -11,16 +11,16 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@acme/ui/form";
-import { Input } from "@acme/ui/input";
+} from "@technifit/ui/form";
+import { Input } from "@technifit/ui/input";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@acme/ui/select";
-import { useToast } from "@acme/ui/use-toast";
+} from "@technifit/ui/select";
+import { useToast } from "@technifit/ui/use-toast";
 
 import { useZodForm } from "~/lib/zod-form";
 import { api } from "~/trpc/client";

@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { SignOutButton } from "@clerk/nextjs";
 
-import { Button } from "@acme/ui/button";
+import { Button } from "@technifit/ui/button";
 
 export const runtime = "edge";
 

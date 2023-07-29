@@ -1,9 +1,8 @@
 import clerkClient from "@clerk/clerk-sdk-node";
+import { genId } from "@technifit/db";
 import { TRPCError } from "@trpc/server";
 import type Stripe from "stripe";
 import * as z from "zod";
-
-import { genId } from "@acme/db";
 
 import { createTRPCRouter, publicProcedure } from "../../trpc";
 import { stripe, stripePriceToSubscriptionPlan } from "./shared";

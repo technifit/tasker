@@ -3,14 +3,14 @@
 import * as React from "react";
 import { useTheme } from "next-themes";
 
-import { Button } from "@acme/ui/button";
+import { Button } from "@technifit/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@acme/ui/dropdown-menu";
-import * as Icons from "@acme/ui/icons";
+} from "@technifit/ui/dropdown-menu";
+import * as Icons from "@technifit/ui/icons";
 
 export default function ThemeToggle(props: {
   align?: "center" | "start" | "end";

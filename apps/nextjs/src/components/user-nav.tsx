@@ -9,8 +9,8 @@ import {
   User,
 } from "lucide-react";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@acme/ui/avatar";
-import { Button } from "@acme/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@technifit/ui/avatar";
+import { Button } from "@technifit/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -20,7 +20,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
-} from "@acme/ui/dropdown-menu";
+} from "@technifit/ui/dropdown-menu";
 
 export async function UserNav() {
   const user = await currentUser();

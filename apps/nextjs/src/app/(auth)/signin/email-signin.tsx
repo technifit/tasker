@@ -4,10 +4,10 @@ import * as React from "react";
 import { useRouter } from "next/navigation";
 import { useSignIn, useSignUp } from "@clerk/nextjs";
 
-import { Button } from "@acme/ui/button";
-import * as Icons from "@acme/ui/icons";
-import { Input } from "@acme/ui/input";
-import { useToast } from "@acme/ui/use-toast";
+import { Button } from "@technifit/ui/button";
+import * as Icons from "@technifit/ui/icons";
+import { Input } from "@technifit/ui/input";
+import { useToast } from "@technifit/ui/use-toast";
 
 export function EmailSignIn() {
   const [isLoading, setIsLoading] = React.useState(false);

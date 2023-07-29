@@ -1,9 +1,8 @@
 import type { NextRequest } from "next/server";
+import { createTRPCContext } from "@technifit/api";
+import { lambdaRouter, stripe } from "@technifit/api/src/lambda";
 import { TRPCError } from "@trpc/server";
 import { getHTTPStatusCodeFromError } from "@trpc/server/http";
-
-import { createTRPCContext } from "@acme/api";
-import { lambdaRouter, stripe } from "@acme/api/src/lambda";
 
 import { env } from "~/env.mjs";
 

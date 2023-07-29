@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import * as Icons from "@acme/ui/icons";
+import * as Icons from "@technifit/ui/icons";
 
 import { SiteFooter } from "~/components/footer";
 import { siteConfig } from "~/app/config";

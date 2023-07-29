@@ -7,7 +7,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@acme/ui/table";
+} from "@technifit/ui/table";
 
 import { DashboardShell } from "~/app/(dashboard)/_components/dashboard-shell";
 import { userCanAccess } from "~/lib/project-guard";

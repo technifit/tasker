@@ -1,4 +1,4 @@
-import { Input } from "@acme/ui/input";
+import { Input } from "@technifit/ui/input";
 
 export function Search() {
   return (

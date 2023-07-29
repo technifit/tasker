@@ -1,7 +1,7 @@
 import type { Route } from "next";
 import { Component, CreditCard, Globe } from "lucide-react";
 
-import * as Icons from "@acme/ui/icons";
+import * as Icons from "@technifit/ui/icons";
 
 export const siteConfig = {
   name: "Acme Corp",

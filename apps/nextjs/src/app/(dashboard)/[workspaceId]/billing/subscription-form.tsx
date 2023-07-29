@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@acme/ui/button";
+import { Button } from "@technifit/ui/button";
 
 import { api } from "~/trpc/client";
 

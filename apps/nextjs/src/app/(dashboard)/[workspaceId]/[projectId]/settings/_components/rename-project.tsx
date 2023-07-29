@@ -2,9 +2,9 @@
 
 import * as React from "react";
 
-import type { RenameProject } from "@acme/api/validators";
-import { renameProjectSchema } from "@acme/api/validators";
-import { Button } from "@acme/ui/button";
+import type { RenameProject } from "@technifit/api/validators";
+import { renameProjectSchema } from "@technifit/api/validators";
+import { Button } from "@technifit/ui/button";
 import {
   Card,
   CardContent,
@@ -12,7 +12,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@acme/ui/card";
+} from "@technifit/ui/card";
 import {
   Form,
   FormControl,
@@ -20,9 +20,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@acme/ui/form";
-import { Input } from "@acme/ui/input";
-import { useToast } from "@acme/ui/use-toast";
+} from "@technifit/ui/form";
+import { Input } from "@technifit/ui/input";
+import { useToast } from "@technifit/ui/use-toast";
 
 import { useZodForm } from "~/lib/zod-form";
 import { api } from "~/trpc/client";
