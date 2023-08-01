@@ -1,9 +1,0 @@
-{
-  "extends": ["//"],
-  "pipeline": {
-    "build": {
-      "dependsOn": ["^build", "^db:generate"],
-      "outputs": [".expo/**"]
-    }
-  }
-}
