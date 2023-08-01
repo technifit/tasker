@@ -24,7 +24,7 @@ export default function Index() {
   const { computeRegion, date, proxyRegion } = useLoaderData<typeof loader>();
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix</h1>
+      <h1 className='text-3xl font-bold underline'>Welcome to Remix</h1>
       <ul>
         <li>
           <span>{date}</span>
