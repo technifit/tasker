@@ -1,4 +1,17 @@
-import type { V2_MetaFunction } from "@vercel/remix";
+import { Await, useLoaderData } from '@remix-run/react';
+import { defer, type LoaderArgs, type V2_MetaFunction } from "@vercel/remix";
+import { Suspense } from 'react';
+
+export const config = { runtime: 'edge' };
+
+export const loader = ({ context, params, request }: LoaderArgs) => {
+
+  return defer({
+    proxyRegion: new Promise<string>((resolve) => setTimeout(() => resolve("EU"), 2500)),
+    computeRegion: new Promise<string>((resolve) => setTimeout(() => resolve("IE"), 3500)),
+    date: new Date().toISOString(),
+  });
+}
 
 export const meta: V2_MetaFunction = () => {
   return [
@@ -8,32 +21,27 @@ export const meta: V2_MetaFunction = () => {
 };
 
 export default function Index() {
+  const { computeRegion, date, proxyRegion } = useLoaderData<typeof loader>();
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
       <h1>Welcome to Remix</h1>
       <ul>
         <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
+          <span>{date}</span>
         </li>
         <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
+          <Suspense fallback={<strong>Loading...</strong>}>
+            <Await resolve={proxyRegion}>
+              {(proxyRegion) => <p>{proxyRegion}</p>}
+            </Await>
+          </Suspense>
         </li>
         <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
+          <Suspense fallback={<strong>Loading...</strong>}>
+            <Await resolve={computeRegion}>
+              {(computeRegion) => <p>{computeRegion}</p>}
+            </Await>
+          </Suspense>
         </li>
       </ul>
     </div>
