@@ -35,15 +35,15 @@ importers:
       '@remix-run/css-bundle':
         specifier: 1.19.1
         version: 1.19.1
-      '@remix-run/node':
-        specifier: 1.19.1
-        version: 1.19.1
       '@remix-run/react':
         specifier: 1.19.1
         version: 1.19.1(react-dom@18.2.0)(react@18.2.0)
       '@remix-run/serve':
         specifier: 1.19.1
         version: 1.19.1
+      '@vercel/remix':
+        specifier: 1.19.1
+        version: 1.19.1(react-dom@18.2.0)(react@18.2.0)
       isbot:
         specifier: 3.6.13
         version: 3.6.13
@@ -5199,6 +5199,20 @@ packages:
   /@vanilla-extract/private@1.0.3:
     resolution: {integrity: sha512-17kVyLq3ePTKOkveHxXuIJZtGYs+cSoev7BlP+Lf4916qfDhk/HBjvlYDe8egrea7LNPHKwSZJK/bzZC+Q6AwQ==}
     dev: true
+
+  /@vercel/remix@1.19.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-lIiLbXq5y8g2vQmDkxBsYEWvr38LCqU45ThZ+v1as8P6U6PEBtVFtdWq9YRsG1IaOP15sgJyXglB43gpIJol4Q==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: '*'
+      react-dom: '*'
+    dependencies:
+      '@remix-run/node': 1.19.1
+      '@remix-run/server-runtime': 1.19.1
+      isbot: 3.6.13
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
 
   /@web3-storage/multipart-parser@1.0.0:
     resolution: {integrity: sha512-BEO6al7BYqcnfX15W2cnGR+Q566ACXAT9UQykORCWW80lmkpWsnEob6zJS1ZVBKsSJC8+7vJkHwlp+lXG1UCdw==}
