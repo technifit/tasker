@@ -59,7 +59,7 @@
     "@tanstack/react-table": "8.9.3",
     "@technifit/eslint-config": "0.2.0",
     "@technifit/tailwind-config": "0.1.0",
-    "@types/react": "18.2.17",
+    "@types/react": "18.2.20",
     "@types/react-dom": "18.2.7",
     "date-fns": "2.30.0",
     "eslint": "8.46.0",
