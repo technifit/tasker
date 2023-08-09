@@ -38,6 +38,9 @@ importers:
       '@remix-run/serve':
         specifier: 1.19.1
         version: 1.19.1
+      '@technifit/ui':
+        specifier: 0.1.0
+        version: link:../../packages/ui
       '@vercel/remix':
         specifier: 1.19.1
         version: 1.19.1(react-dom@18.2.0)(react@18.2.0)
