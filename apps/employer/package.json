@@ -13,8 +13,8 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@remix-run/react": "1.19.2",
-    "@remix-run/serve": "1.19.2",
+    "@remix-run/react": "1.19.3",
+    "@remix-run/serve": "1.19.3",
     "@technifit/ui": "0.1.0",
     "@vercel/remix": "1.19.2",
     "isbot": "3.6.13",
@@ -22,8 +22,8 @@
     "react": "18.2.0"
   },
   "devDependencies": {
-    "@remix-run/dev": "1.19.2",
-    "@remix-run/eslint-config": "1.19.2",
+    "@remix-run/dev": "1.19.3",
+    "@remix-run/eslint-config": "1.19.3",
     "@technifit/eslint-config": "0.2.0",
     "@technifit/tailwind-config": "0.1.0",
     "@types/react-dom": "18.2.7",
