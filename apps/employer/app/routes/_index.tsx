@@ -1,4 +1,5 @@
 import { Await, useLoaderData } from '@remix-run/react';
+import { Badge } from '@technifit/ui';
 import { defer, type LoaderArgs, type V2_MetaFunction } from "@vercel/remix";
 import { Suspense } from 'react';
 
@@ -32,14 +33,14 @@ export default function Index() {
         <li>
           <Suspense fallback={<strong>Loading...</strong>}>
             <Await resolve={proxyRegion}>
-              {(proxyRegion) => <p>{proxyRegion}</p>}
+              {(proxyRegion) => <Badge variant={'secondary'}>{proxyRegion}</Badge>}
             </Await>
           </Suspense>
         </li>
         <li>
           <Suspense fallback={<strong>Loading...</strong>}>
             <Await resolve={computeRegion}>
-              {(computeRegion) => <p>{computeRegion}</p>}
+              {(computeRegion) => <Badge variant={'default'}>{computeRegion}</Badge>}
             </Await>
           </Suspense>
         </li>
