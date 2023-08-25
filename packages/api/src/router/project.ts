@@ -1,19 +1,20 @@
-import { clerkClient } from "@clerk/nextjs";
-import { genId } from "@technifit/db";
-import { TRPCError } from "@trpc/server";
-import { z } from "zod";
+import { clerkClient } from '@clerk/nextjs';
+import { TRPCError } from '@trpc/server';
+import { z } from 'zod';
+
+import { genId } from '@technifit/db';
 
 import {
   createApiKeySchema,
   createProjectSchema,
   renameProjectSchema,
   transferToOrgSchema,
-} from "../../validators";
+} from '../../validators';
 import {
   createTRPCRouter,
   protectedAdminProcedure,
   protectedProcedure,
-} from "../trpc";
+} from '../trpc';
 
 const PROJECT_LIMITS = {
   FREE: 1,
@@ -29,24 +30,24 @@ export const projectRouter = createTRPCRouter({
 
       // Check if limit is reached
       let query = opts.ctx.db
-        .selectFrom("Project")
-        .select(({ fn }) => [fn.count<number>("id").as("projects")]);
+        .selectFrom('Project')
+        .select(({ fn }) => [fn.count<number>('id').as('projects')]);
       if (orgId) {
-        query = query.where("organizationId", "=", orgId);
+        query = query.where('organizationId', '=', orgId);
       } else {
-        query = query.where("userId", "=", userId);
+        query = query.where('userId', '=', userId);
       }
       const projects = (await query.executeTakeFirst())?.projects ?? 0;
 
       // FIXME: Don't hardcode the limit to PRO
       if (projects >= PROJECT_LIMITS.PRO) {
-        throw new TRPCError({ code: "BAD_REQUEST", message: "Limit reached" });
+        throw new TRPCError({ code: 'BAD_REQUEST', message: 'Limit reached' });
       }
 
-      const projectId = "project_" + genId();
+      const projectId = 'project_' + genId();
 
       await opts.ctx.db
-        .insertInto("Project")
+        .insertInto('Project')
         .values({
           id: projectId,
           name,
@@ -66,11 +67,11 @@ export const projectRouter = createTRPCRouter({
       // TODO: Validate permissions, should anyone with access to the project be able to change the name?
 
       await opts.ctx.db
-        .updateTable("Project")
+        .updateTable('Project')
         .set({
           name,
         })
-        .where("id", "=", projectId)
+        .where('id', '=', projectId)
         .execute();
     }),
 
@@ -80,50 +81,50 @@ export const projectRouter = createTRPCRouter({
       const { userId, orgId } = opts.ctx.auth;
 
       const deleteQuery = opts.ctx.db
-        .deleteFrom("Project")
-        .where("id", "=", opts.input.id);
+        .deleteFrom('Project')
+        .where('id', '=', opts.input.id);
 
       // TODO: Check billing etc
 
       if (orgId) {
         // TODO: Check permissions
 
-        return await deleteQuery.where("organizationId", "=", orgId).execute();
+        return await deleteQuery.where('organizationId', '=', orgId).execute();
       }
 
-      return await deleteQuery.where("userId", "=", userId).execute();
+      return await deleteQuery.where('userId', '=', userId).execute();
     }),
 
   transferToPersonal: protectedAdminProcedure
     .input(z.object({ id: z.string() }))
     .mutation(async (opts) => {
       const project = await opts.ctx.db
-        .selectFrom("Project")
-        .select(["id", "userId", "organizationId"])
-        .where("id", "=", opts.input.id)
+        .selectFrom('Project')
+        .select(['id', 'userId', 'organizationId'])
+        .where('id', '=', opts.input.id)
         .executeTakeFirst();
 
       if (!project) {
         throw new TRPCError({
-          code: "NOT_FOUND",
-          message: "Project not found",
+          code: 'NOT_FOUND',
+          message: 'Project not found',
         });
       }
 
       if (!project.organizationId) {
         throw new TRPCError({
-          code: "BAD_REQUEST",
-          message: "Project is already personal",
+          code: 'BAD_REQUEST',
+          message: 'Project is already personal',
         });
       }
 
       await opts.ctx.db
-        .updateTable("Project")
+        .updateTable('Project')
         .set({
           userId: opts.ctx.auth.userId,
           organizationId: null,
         })
-        .where("id", "=", project.id)
+        .where('id', '=', project.id)
         .execute();
     }),
 
@@ -140,20 +141,20 @@ export const projectRouter = createTRPCRouter({
 
       if (!org) {
         throw new TRPCError({
-          code: "UNAUTHORIZED",
+          code: 'UNAUTHORIZED',
           message: "You're not a member of the target organization",
         });
       }
 
       const project = await opts.ctx.db
-        .selectFrom("Project")
-        .select(["id", "userId", "organizationId"])
+        .selectFrom('Project')
+        .select(['id', 'userId', 'organizationId'])
         .where(({ cmpr, and, or }) =>
           and([
-            cmpr("id", "=", opts.input.projectId),
+            cmpr('id', '=', opts.input.projectId),
             or([
-              cmpr("userId", "=", userId),
-              cmpr("organizationId", "=", userOrgId ?? ""),
+              cmpr('userId', '=', userId),
+              cmpr('organizationId', '=', userOrgId ?? ''),
             ]),
           ]),
         )
@@ -161,36 +162,36 @@ export const projectRouter = createTRPCRouter({
 
       if (!project) {
         throw new TRPCError({
-          code: "NOT_FOUND",
-          message: "Project not found",
+          code: 'NOT_FOUND',
+          message: 'Project not found',
         });
       }
 
       if (project.organizationId === targetOrgId) {
         throw new TRPCError({
-          code: "BAD_REQUEST",
-          message: "Project is already in the target organization",
+          code: 'BAD_REQUEST',
+          message: 'Project is already in the target organization',
         });
       }
 
       if (
         project.organizationId &&
         project.organizationId !== userOrgId &&
-        orgRole !== "admin"
+        orgRole !== 'admin'
       ) {
         throw new TRPCError({
-          code: "UNAUTHORIZED",
-          message: "You must be an admin to transfer this project",
+          code: 'UNAUTHORIZED',
+          message: 'You must be an admin to transfer this project',
         });
       }
 
       await opts.ctx.db
-        .updateTable("Project")
+        .updateTable('Project')
         .set({
           userId: null,
           organizationId: targetOrgId,
         })
-        .where("id", "=", project.id)
+        .where('id', '=', project.id)
         .execute();
     }),
 
@@ -198,12 +199,12 @@ export const projectRouter = createTRPCRouter({
     const { userId, orgId } = opts.ctx.auth;
 
     let query = opts.ctx.db
-      .selectFrom("Project")
-      .select(["id", "name", "url", "tier"]);
+      .selectFrom('Project')
+      .select(['id', 'name', 'url', 'tier']);
     if (orgId) {
-      query = query.where("organizationId", "=", orgId);
+      query = query.where('organizationId', '=', orgId);
     } else {
-      query = query.where("userId", "=", userId);
+      query = query.where('userId', '=', userId);
     }
 
     const projects = await query.execute();
@@ -229,25 +230,25 @@ export const projectRouter = createTRPCRouter({
 
       // Verify the user has access to the project
       const query = opts.ctx.db
-        .selectFrom("Project")
-        .select(["id", "name", "url", "tier", "organizationId"])
+        .selectFrom('Project')
+        .select(['id', 'name', 'url', 'tier', 'organizationId'])
         .where(({ cmpr, and, or }) =>
           and([
-            cmpr("id", "=", id),
+            cmpr('id', '=', id),
             orgIds.length > 0
               ? or([
-                  cmpr("userId", "=", userId),
-                  cmpr("organizationId", "in", orgIds),
+                  cmpr('userId', '=', userId),
+                  cmpr('organizationId', 'in', orgIds),
                 ])
-              : cmpr("userId", "=", userId),
+              : cmpr('userId', '=', userId),
           ]),
         );
 
       const project = await query.executeTakeFirst();
       if (!project) {
         throw new TRPCError({
-          code: "NOT_FOUND",
-          message: "Project not found",
+          code: 'NOT_FOUND',
+          message: 'Project not found',
         });
       }
 
@@ -265,35 +266,35 @@ export const projectRouter = createTRPCRouter({
       const { projectId } = opts.input;
 
       const apiKeys = await opts.ctx.db
-        .selectFrom("ApiKey")
+        .selectFrom('ApiKey')
         .select([
-          "id",
-          "name",
-          "key",
-          "createdAt",
-          "lastUsed",
-          "expiresAt",
-          "revokedAt",
+          'id',
+          'name',
+          'key',
+          'createdAt',
+          'lastUsed',
+          'expiresAt',
+          'revokedAt',
         ])
-        .where("projectId", "=", projectId)
-        .where("clerkUserId", "=", userId)
+        .where('projectId', '=', projectId)
+        .where('clerkUserId', '=', userId)
         // first active, then expired, then revoked
         .orderBy((eb) =>
           eb
             .case()
-            .when("revokedAt", "is not", null)
+            .when('revokedAt', 'is not', null)
             .then(3)
             .when(
               eb.and([
-                eb.cmpr("expiresAt", "is not", null),
-                eb.cmpr("expiresAt", "<", new Date()),
+                eb.cmpr('expiresAt', 'is not', null),
+                eb.cmpr('expiresAt', '<', new Date()),
               ]),
             )
             .then(2)
             .else(1)
             .end(),
         )
-        .orderBy("createdAt", "desc")
+        .orderBy('createdAt', 'desc')
         .execute();
 
       // TODO: Project admins should maybe be able to see all keys for the project?
@@ -309,21 +310,21 @@ export const projectRouter = createTRPCRouter({
 
       // Verify the user has access to the project
       const project = await opts.ctx.db
-        .selectFrom("Project")
-        .select(["id", "name", "userId", "organizationId"])
-        .where("id", "=", projectId)
+        .selectFrom('Project')
+        .select(['id', 'name', 'userId', 'organizationId'])
+        .where('id', '=', projectId)
         .executeTakeFirst();
 
       if (!project) {
         throw new TRPCError({
-          code: "NOT_FOUND",
-          message: "Project not found",
+          code: 'NOT_FOUND',
+          message: 'Project not found',
         });
       }
 
       if (project.userId && project.userId !== userId) {
         throw new TRPCError({
-          code: "FORBIDDEN",
+          code: 'FORBIDDEN',
           message: "You don't have access to this project",
         });
       }
@@ -338,17 +339,17 @@ export const projectRouter = createTRPCRouter({
 
         if (!isMemberInProjectOrg) {
           throw new TRPCError({
-            code: "FORBIDDEN",
+            code: 'FORBIDDEN',
             message: "You don't have access to this project",
           });
         }
       }
 
       // Generate the key
-      const apiKey = "sk_live_" + genId();
-      const apiKeyId = "api_key_" + genId();
+      const apiKey = 'sk_live_' + genId();
+      const apiKeyId = 'api_key_' + genId();
       await opts.ctx.db
-        .insertInto("ApiKey")
+        .insertInto('ApiKey')
         .values({
           id: apiKeyId,
           name: opts.input.name,
@@ -368,17 +369,17 @@ export const projectRouter = createTRPCRouter({
       const { userId } = opts.ctx.auth;
 
       const result = await opts.ctx.db
-        .updateTable("ApiKey")
+        .updateTable('ApiKey')
         .set({ revokedAt: new Date() })
-        .where("id", "in", opts.input.ids)
-        .where("clerkUserId", "=", String(userId))
-        .where("revokedAt", "is", null)
+        .where('id', 'in', opts.input.ids)
+        .where('clerkUserId', '=', String(userId))
+        .where('revokedAt', 'is', null)
         .executeTakeFirst();
 
       if (result.numUpdatedRows === BigInt(0)) {
         throw new TRPCError({
-          code: "NOT_FOUND",
-          message: "API key not found",
+          code: 'NOT_FOUND',
+          message: 'API key not found',
         });
       }
 
@@ -389,24 +390,24 @@ export const projectRouter = createTRPCRouter({
     .input(z.object({ id: z.string() }))
     .mutation(async (opts) => {
       const apiKey = await opts.ctx.db
-        .selectFrom("ApiKey")
-        .select(["id"])
-        .where("id", "=", opts.input.id)
-        .where("clerkUserId", "=", opts.ctx.auth.userId)
+        .selectFrom('ApiKey')
+        .select(['id'])
+        .where('id', '=', opts.input.id)
+        .where('clerkUserId', '=', opts.ctx.auth.userId)
         .executeTakeFirst();
 
       if (!apiKey) {
         throw new TRPCError({
-          code: "NOT_FOUND",
-          message: "API key not found",
+          code: 'NOT_FOUND',
+          message: 'API key not found',
         });
       }
 
-      const newKey = "sk_live_" + genId();
+      const newKey = 'sk_live_' + genId();
       await opts.ctx.db
-        .updateTable("ApiKey")
+        .updateTable('ApiKey')
         .set({ key: newKey })
-        .where("id", "=", opts.input.id)
+        .where('id', '=', opts.input.id)
         .execute();
 
       return newKey;

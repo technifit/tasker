@@ -1,11 +1,12 @@
-import clerkClient from "@clerk/clerk-sdk-node";
-import { genId } from "@technifit/db";
-import { TRPCError } from "@trpc/server";
-import type Stripe from "stripe";
-import * as z from "zod";
+import clerkClient from '@clerk/clerk-sdk-node';
+import { TRPCError } from '@trpc/server';
+import type Stripe from 'stripe';
+import * as z from 'zod';
 
-import { createTRPCRouter, publicProcedure } from "../../trpc";
-import { stripe, stripePriceToSubscriptionPlan } from "./shared";
+import { genId } from '@technifit/db';
+
+import { createTRPCRouter, publicProcedure } from '../../trpc';
+import { stripe, stripePriceToSubscriptionPlan } from './shared';
 
 const webhookProcedure = publicProcedure.input(
   z.object({
@@ -25,10 +26,10 @@ const webhookProcedure = publicProcedure.input(
 export const webhookRouter = createTRPCRouter({
   sessionCompleted: webhookProcedure.mutation(async (opts) => {
     const session = opts.input.event.data.object as Stripe.Checkout.Session;
-    if (typeof session.subscription !== "string") {
+    if (typeof session.subscription !== 'string') {
       throw new TRPCError({
-        code: "BAD_REQUEST",
-        message: "Missing or invalid subscription id",
+        code: 'BAD_REQUEST',
+        message: 'Missing or invalid subscription id',
       });
     }
     const subscription = await stripe.subscriptions.retrieve(
@@ -36,15 +37,15 @@ export const webhookRouter = createTRPCRouter({
     );
 
     const customerId =
-      typeof subscription.customer === "string"
+      typeof subscription.customer === 'string'
         ? subscription.customer
         : subscription.customer.id;
     const { userId, organizationName } = subscription.metadata;
 
     const customer = await opts.ctx.db
-      .selectFrom("Customer")
-      .select("id")
-      .where("stripeId", "=", customerId)
+      .selectFrom('Customer')
+      .select('id')
+      .where('stripeId', '=', customerId)
       .executeTakeFirst();
 
     const subscriptionPlan = stripePriceToSubscriptionPlan(
@@ -56,8 +57,8 @@ export const webhookRouter = createTRPCRouter({
      */
     if (customer) {
       return await opts.ctx.db
-        .updateTable("Customer")
-        .where("id", "=", customer.id)
+        .updateTable('Customer')
+        .where('id', '=', customer.id)
         .set({
           stripeId: customerId,
           subscriptionId: subscription.id,
@@ -76,10 +77,10 @@ export const webhookRouter = createTRPCRouter({
     });
 
     await opts.ctx.db
-      .insertInto("Customer")
+      .insertInto('Customer')
       .values({
         id: genId(),
-        clerkUserId: userId ?? "wh",
+        clerkUserId: userId ?? 'wh',
         clerkOrganizationId: organization.id,
         stripeId: customerId,
         subscriptionId: subscription.id,
@@ -92,10 +93,10 @@ export const webhookRouter = createTRPCRouter({
 
   invoicePaymentSucceeded: webhookProcedure.mutation(async (opts) => {
     const invoice = opts.input.event.data.object as Stripe.Invoice;
-    if (typeof invoice.subscription !== "string") {
+    if (typeof invoice.subscription !== 'string') {
       throw new TRPCError({
-        code: "BAD_REQUEST",
-        message: "Missing or invalid subscription id",
+        code: 'BAD_REQUEST',
+        message: 'Missing or invalid subscription id',
       });
     }
     const subscription = await stripe.subscriptions.retrieve(
@@ -107,8 +108,8 @@ export const webhookRouter = createTRPCRouter({
     );
 
     await opts.ctx.db
-      .updateTable("Customer")
-      .where("subscriptionId", "=", subscription.id)
+      .updateTable('Customer')
+      .where('subscriptionId', '=', subscription.id)
       .set({
         plan: subscriptionPlan,
         paidUntil: new Date(subscription.current_period_end * 1000),
@@ -119,16 +120,16 @@ export const webhookRouter = createTRPCRouter({
   customerSubscriptionDeleted: webhookProcedure.mutation(async (opts) => {
     const subscription = opts.input.event.data.object as Stripe.Subscription;
     const customerId =
-      typeof subscription.customer === "string"
+      typeof subscription.customer === 'string'
         ? subscription.customer
         : subscription.customer.id;
 
     await opts.ctx.db
-      .updateTable("Customer")
-      .where("stripeId", "=", customerId)
+      .updateTable('Customer')
+      .where('stripeId', '=', customerId)
       .set({
         subscriptionId: null,
-        plan: "FREE",
+        plan: 'FREE',
         paidUntil: null,
       })
       .execute();
@@ -137,7 +138,7 @@ export const webhookRouter = createTRPCRouter({
   customerSubscriptionUpdated: webhookProcedure.mutation(async (opts) => {
     const subscription = opts.input.event.data.object as Stripe.Subscription;
     const customerId =
-      typeof subscription.customer === "string"
+      typeof subscription.customer === 'string'
         ? subscription.customer
         : subscription.customer.id;
 
@@ -146,8 +147,8 @@ export const webhookRouter = createTRPCRouter({
     );
 
     await opts.ctx.db
-      .updateTable("Customer")
-      .where("stripeId", "=", customerId)
+      .updateTable('Customer')
+      .where('stripeId', '=', customerId)
       .set({
         plan: subscriptionPlan,
         paidUntil: new Date(subscription.current_period_end * 1000),

@@ -7,16 +7,17 @@
  * The pieces you will need to use are documented accordingly near the end
  */
 
-import type { NextRequest } from "next/server";
+import type { NextRequest } from 'next/server';
 import type {
   SignedInAuthObject,
   SignedOutAuthObject,
-} from "@clerk/nextjs/api";
-import { getAuth } from "@clerk/nextjs/server";
-import { db } from "@technifit/db";
-import { initTRPC, TRPCError } from "@trpc/server";
-import superjson from "superjson";
-import { ZodError } from "zod";
+} from '@clerk/nextjs/api';
+import { getAuth } from '@clerk/nextjs/server';
+import { initTRPC, TRPCError } from '@trpc/server';
+import superjson from 'superjson';
+import { ZodError } from 'zod';
+
+import { db } from '@technifit/db';
 
 /**
  * 1. CONTEXT
@@ -56,7 +57,7 @@ export const createInnerTRPCContext = (opts: CreateContextOptions) => {
  */
 export const createTRPCContext = (opts: { req: NextRequest }) => {
   const auth = getAuth(opts.req);
-  const apiKey = opts.req.headers.get("x-acme-api-key");
+  const apiKey = opts.req.headers.get('x-acme-api-key');
 
   return createInnerTRPCContext({
     auth,
@@ -114,7 +115,7 @@ export const publicProcedure = t.procedure;
  */
 const enforceUserIsAuthed = t.middleware(({ ctx, next }) => {
   if (!ctx.auth?.userId) {
-    throw new TRPCError({ code: "UNAUTHORIZED" });
+    throw new TRPCError({ code: 'UNAUTHORIZED' });
   }
   return next({
     ctx: {
@@ -130,8 +131,8 @@ const enforceUserInOrg = enforceUserIsAuthed.unstable_pipe(
   async ({ ctx, next }) => {
     if (!ctx.auth.orgId) {
       throw new TRPCError({
-        code: "UNAUTHORIZED",
-        message: "You must be in an organization to perform this action",
+        code: 'UNAUTHORIZED',
+        message: 'You must be in an organization to perform this action',
       });
     }
 
@@ -148,10 +149,10 @@ const enforceUserInOrg = enforceUserIsAuthed.unstable_pipe(
 
 const enforceUserIsAdmin = enforceUserInOrg.unstable_pipe(
   async ({ ctx, next }) => {
-    if (ctx.auth.orgRole !== "admin") {
+    if (ctx.auth.orgRole !== 'admin') {
       throw new TRPCError({
-        code: "UNAUTHORIZED",
-        message: "You must be an admin to perform this action",
+        code: 'UNAUTHORIZED',
+        message: 'You must be an admin to perform this action',
       });
     }
 
@@ -171,25 +172,25 @@ const enforceUserIsAdmin = enforceUserInOrg.unstable_pipe(
  */
 const enforceApiKey = t.middleware(async ({ ctx, next }) => {
   if (!ctx.apiKey) {
-    throw new TRPCError({ code: "UNAUTHORIZED" });
+    throw new TRPCError({ code: 'UNAUTHORIZED' });
   }
 
   // Check db for API key
   const apiKey = await ctx.db
-    .selectFrom("ApiKey")
-    .select(["id", "key", "projectId"])
-    .where("ApiKey.key", "=", ctx.apiKey)
-    .where("revokedAt", "is", null)
+    .selectFrom('ApiKey')
+    .select(['id', 'key', 'projectId'])
+    .where('ApiKey.key', '=', ctx.apiKey)
+    .where('revokedAt', 'is', null)
     .executeTakeFirst();
 
   if (!apiKey) {
-    throw new TRPCError({ code: "UNAUTHORIZED" });
+    throw new TRPCError({ code: 'UNAUTHORIZED' });
   }
 
   void ctx.db
-    .updateTable("ApiKey")
+    .updateTable('ApiKey')
     .set({ lastUsed: new Date() })
-    .where("id", "=", apiKey.id)
+    .where('id', '=', apiKey.id)
     .execute();
 
   return next({
@@ -204,7 +205,7 @@ const enforceApiKey = t.middleware(async ({ ctx, next }) => {
  */
 export const formdataMiddleware = t.middleware(async (opts) => {
   const formData = await opts.ctx.req?.formData?.();
-  if (!formData) throw new TRPCError({ code: "BAD_REQUEST" });
+  if (!formData) throw new TRPCError({ code: 'BAD_REQUEST' });
 
   return opts.next({
     rawInput: formData,

@@ -1,5 +1,6 @@
 import { RemixServer } from '@remix-run/react';
 import { handleRequest, type EntryContext } from '@vercel/remix';
+
 // import { isPrefetch } from 'remix-utils';
 
 export default function (

@@ -1,15 +1,15 @@
-import { currentUser } from "@clerk/nextjs";
-import * as z from "zod";
+import { currentUser } from '@clerk/nextjs';
+import * as z from 'zod';
 
-import { purchaseOrgSchema } from "../../../validators";
-import { env } from "../../env.mjs";
+import { purchaseOrgSchema } from '../../../validators';
+import { env } from '../../env.mjs';
 import {
   createTRPCRouter,
   protectedProcedure,
   publicProcedure,
-} from "../../trpc";
-import { stripe } from "./shared";
-import { webhookRouter } from "./webhooks";
+} from '../../trpc';
+import { stripe } from './shared';
+import { webhookRouter } from './webhooks';
 
 export const stripeRouter = createTRPCRouter({
   webhooks: webhookRouter,
@@ -20,14 +20,14 @@ export const stripeRouter = createTRPCRouter({
       const { userId } = opts.ctx.auth;
 
       const customer = await opts.ctx.db
-        .selectFrom("Customer")
-        .select(["id", "plan", "stripeId"])
-        .where("clerkUserId", "=", userId)
+        .selectFrom('Customer')
+        .select(['id', 'plan', 'stripeId'])
+        .where('clerkUserId', '=', userId)
         .executeTakeFirst();
 
-      const returnUrl = env.NEXTJS_URL + "/dashboard";
+      const returnUrl = env.NEXTJS_URL + '/dashboard';
 
-      if (customer && customer.plan !== "FREE") {
+      if (customer && customer.plan !== 'FREE') {
         /**
          * User is subscribed, create a billing portal session
          */
@@ -48,8 +48,8 @@ export const stripeRouter = createTRPCRouter({
       )?.emailAddress;
 
       const session = await stripe.checkout.sessions.create({
-        mode: "subscription",
-        payment_method_types: ["card"],
+        mode: 'subscription',
+        payment_method_types: ['card'],
         customer_email: email,
         client_reference_id: userId,
         subscription_data: { metadata: { userId } },
@@ -75,20 +75,20 @@ export const stripeRouter = createTRPCRouter({
     return [
       {
         id: stdPrice.id,
-        name: "Standard",
-        description: "For individuals",
+        name: 'Standard',
+        description: 'For individuals',
         amount: stdPrice.unit_amount!,
         currency: stdPrice.currency,
-        features: ["Invite up to 1 team member", "Lorem ipsum dolor sit amet"],
+        features: ['Invite up to 1 team member', 'Lorem ipsum dolor sit amet'],
       },
       {
         id: proPrice.id,
-        name: "Pro",
-        description: "For teams",
+        name: 'Pro',
+        description: 'For teams',
         amount: proPrice.unit_amount!,
         currency: proPrice.currency,
-        preFeatures: "Everything in standard, plus",
-        features: ["Invite up to 5 team members", "Unlimited projects"],
+        preFeatures: 'Everything in standard, plus',
+        features: ['Invite up to 5 team members', 'Unlimited projects'],
       },
     ];
   }),
@@ -100,8 +100,8 @@ export const stripeRouter = createTRPCRouter({
       const { orgName, planId } = opts.input;
 
       const session = await stripe.checkout.sessions.create({
-        mode: "subscription",
-        payment_method_types: ["card"],
+        mode: 'subscription',
+        payment_method_types: ['card'],
         client_reference_id: userId,
         subscription_data: {
           metadata: { userId, organizationName: orgName },
