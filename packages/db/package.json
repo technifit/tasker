@@ -14,7 +14,7 @@
     "with-env": "dotenv -e ../../.env.local --"
   },
   "dependencies": {
-    "@planetscale/database": "1.10.0",
+    "@planetscale/database": "1.11.0",
     "kysely": "0.26.2",
     "kysely-planetscale": "1.4.0",
     "nanoid": "4.0.2"
