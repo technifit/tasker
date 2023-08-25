@@ -1,7 +1,8 @@
 import { Await, useLoaderData } from '@remix-run/react';
-import { Badge } from '@technifit/ui';
+import { Badge, Button } from '@technifit/ui';
 import { defer, type LoaderArgs, type V2_MetaFunction } from "@vercel/remix";
 import { Suspense } from 'react';
+import { Theme, useTheme } from 'remix-themes';
 
 export const config = { runtime: 'edge' };
 
@@ -23,9 +24,15 @@ export const meta: V2_MetaFunction = () => {
 
 export default function Index() {
   const { computeRegion, date, proxyRegion } = useLoaderData<typeof loader>();
+  const [, setTheme] = useTheme()
+
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
       <h1 className='text-3xl font-bold underline'>Welcome to Remix</h1>
+      <Button onClick={(e) => {
+        e.preventDefault()
+        setTheme(prev => (prev === Theme.DARK ? Theme.LIGHT : Theme.DARK))
+      }}>Switch Theme</Button>
       <ul>
         <li>
           <span>{date}</span>
