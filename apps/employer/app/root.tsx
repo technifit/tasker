@@ -13,6 +13,7 @@ import { ClientHintCheck } from './utils/client-hints';
 import { useNonce } from './utils/nonce-provider';
 import { ThemeProvider, useTheme, PreventFlashOnWrongTheme } from 'remix-themes'
 import { THEME_ROUTE_PATH } from './routes/resources+/theme/_index';
+import { Analytics } from '@vercel/analytics/react';
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
@@ -53,6 +54,7 @@ function App() {
         />
         <ScrollRestoration nonce={nonce} />
         <Scripts nonce={nonce} />
+        <Analytics />
         <LiveReload nonce={nonce} />
       </body>
     </html>
