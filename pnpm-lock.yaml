@@ -204,11 +204,11 @@ importers:
         specifier: 1.11.0
         version: 1.11.0
       kysely:
-        specifier: 0.26.2
-        version: 0.26.2
+        specifier: 0.26.3
+        version: 0.26.3
       kysely-planetscale:
         specifier: 1.4.0
-        version: 1.4.0(@planetscale/database@1.11.0)(kysely@0.26.2)
+        version: 1.4.0(@planetscale/database@1.11.0)(kysely@0.26.3)
       nanoid:
         specifier: 4.0.2
         version: 4.0.2
@@ -8594,7 +8594,7 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /kysely-planetscale@1.4.0(@planetscale/database@1.11.0)(kysely@0.26.2):
+  /kysely-planetscale@1.4.0(@planetscale/database@1.11.0)(kysely@0.26.3):
     resolution: {integrity: sha512-dM2xgOM50+IiOIrSCEn/6lgXcE7J752oNpV6NcIYNgG/AfYGMtWm2ZK7PyeIPy5JG1jZvQvqwTFbGK4HGH/hJw==}
     peerDependencies:
       '@planetscale/database': '*'
@@ -8602,11 +8602,11 @@ packages:
     dependencies:
       '@planetscale/database': 1.11.0
       date-fns: 2.30.0
-      kysely: 0.26.2
+      kysely: 0.26.3
     dev: false
 
-  /kysely@0.26.2:
-    resolution: {integrity: sha512-ew6xjKm99ik154goi03L6KKH1MWGFnZF3WpA76rgWxtkzx2SlMSIiVxdfp0GW4WoU43BTyxP6/6bfoQwmg9YYQ==}
+  /kysely@0.26.3:
+    resolution: {integrity: sha512-yWSgGi9bY13b/W06DD2OCDDHQmq1kwTGYlQ4wpZkMOJqMGCstVCFIvxCCVG4KfY1/3G0MhDAcZsip/Lw8/vJWw==}
     engines: {node: '>=14.0.0'}
     dev: false
 
