@@ -220,8 +220,8 @@ importers:
         specifier: 5.2.0
         version: 5.2.0
       prisma-kysely:
-        specifier: 1.6.0
-        version: 1.6.0
+        specifier: 1.7.0
+        version: 1.7.0
       tsx:
         specifier: 3.12.7
         version: 3.12.7
@@ -8223,12 +8223,6 @@ packages:
     resolution: {integrity: sha512-1BC0BVFhS/p0qtw6enp8e+8OD0UrK0oFLztSjNzhcKA3WDuJxxAPXzPuPtKkjEY9UUoEWlX/8fgKeu2S8i9JTA==}
     engines: {node: '>= 0.4'}
 
-  /is-core-module@2.11.0:
-    resolution: {integrity: sha512-RRjxlvLDkD1YJwDbroBHMb+cukurkDWNyHx7D3oNB5x9rb5ogcksMC5wHCadcXoo67gVr/+3GFySh3134zi6rw==}
-    dependencies:
-      has: 1.0.3
-    dev: true
-
   /is-core-module@2.13.0:
     resolution: {integrity: sha512-Z7dk6Qo8pOCp3l4tsX2C5ZVas4V+UxwQodwZhLopL91TX8UyyHEXafPcyoeeWuLrwzHcr3igO78wNLwHJHsMCQ==}
     dependencies:
@@ -9999,7 +9993,7 @@ packages:
       postcss: 8.4.27
       postcss-value-parser: 4.2.0
       read-cache: 1.0.0
-      resolve: 1.22.2
+      resolve: 1.22.4
     dev: true
 
   /postcss-js@4.0.1(postcss@8.4.27):
@@ -10244,8 +10238,8 @@ packages:
       parse-ms: 2.1.0
     dev: true
 
-  /prisma-kysely@1.6.0:
-    resolution: {integrity: sha512-ft4mEmEyM3qrJXwryXzYhWIPgZvWgezEiTwCEoDkKFfKzuZ/GyUxDz5P2Uor8vYx9EK5enYk3zsc0BgW6vrZ+w==}
+  /prisma-kysely@1.7.0:
+    resolution: {integrity: sha512-uWvnoYPybg6YIswyDDPfMwPNeL/dcNOWvcLOeGwaVi2DiYaL6gSsFYALeaKyX8CetAV7SSSNFXPJ4aOKhrkOQg==}
     hasBin: true
     dependencies:
       '@mrleebo/prisma-ast': 0.6.0
@@ -10853,7 +10847,7 @@ packages:
     resolution: {integrity: sha512-Sb+mjNHOULsBv818T40qSPeRiuWLyaGMa5ewydRLFimneixmVy2zdivRl+AF6jaYPC8ERxGDmFSiqui6SfPd+g==}
     hasBin: true
     dependencies:
-      is-core-module: 2.11.0
+      is-core-module: 2.13.0
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
     dev: true
