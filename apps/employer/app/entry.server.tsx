@@ -1,5 +1,8 @@
 import { RemixServer } from '@remix-run/react';
 import { handleRequest, type EntryContext } from '@vercel/remix';
+import { NonceProvider } from './utils/nonce-provider';
+import crypto from 'crypto';
+
 
 // import { isPrefetch } from 'remix-utils';
 
@@ -9,7 +12,11 @@ export default function (
   responseHeaders: Headers,
   remixContext: EntryContext,
 ) {
-  const remixServer = <RemixServer context={remixContext} url={request.url} />;
+  const nonce = crypto.randomBytes(16).toString("hex");
+
+  const remixServer = <NonceProvider value={nonce}>
+    <RemixServer context={remixContext} url={request.url} />
+  </NonceProvider>;
 
   // Set a short cache for prefetch requests to avoid double data requests
   // if (isPrefetch(request)) {
