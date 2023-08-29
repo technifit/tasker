@@ -1,7 +1,7 @@
 import { RemixServer } from '@remix-run/react';
 import { handleRequest, type EntryContext } from '@vercel/remix';
 import { NonceProvider } from './utils/nonce-provider';
-import { webcrypto } from 'crypto'
+import { nanoid } from 'nanoid';
 
 
 // import { isPrefetch } from 'remix-utils';
@@ -12,7 +12,8 @@ export default function (
   responseHeaders: Headers,
   remixContext: EntryContext,
 ) {
-  const nonce = webcrypto.randomUUID();
+  const nonce = nanoid();
+
 
   const remixServer = <NonceProvider value={nonce}>
     <RemixServer context={remixContext} url={request.url} />

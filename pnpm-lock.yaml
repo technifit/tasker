@@ -42,7 +42,7 @@ importers:
         specifier: 0.1.0
         version: link:../../packages/ui
       '@vercel/analytics':
-        specifier: ^1.0.2
+        specifier: 1.0.2
         version: 1.0.2
       '@vercel/remix':
         specifier: 1.19.3
@@ -50,6 +50,9 @@ importers:
       isbot:
         specifier: 3.6.13
         version: 3.6.13
+      nanoid:
+        specifier: 4.0.2
+        version: 4.0.2
       react:
         specifier: 18.2.0
         version: 18.2.0
