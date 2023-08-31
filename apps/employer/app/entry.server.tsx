@@ -1,8 +1,8 @@
 import { RemixServer } from '@remix-run/react';
 import { handleRequest, type EntryContext } from '@vercel/remix';
-import { NonceProvider } from './utils/nonce-provider';
 import { nanoid } from 'nanoid';
 
+import { NonceProvider } from './utils/nonce-provider';
 
 // import { isPrefetch } from 'remix-utils';
 
@@ -14,10 +14,11 @@ export default function (
 ) {
   const nonce = nanoid();
 
-
-  const remixServer = <NonceProvider value={nonce}>
-    <RemixServer context={remixContext} url={request.url} />
-  </NonceProvider>;
+  const remixServer = (
+    <NonceProvider value={nonce}>
+      <RemixServer context={remixContext} url={request.url} />
+    </NonceProvider>
+  );
 
   // Set a short cache for prefetch requests to avoid double data requests
   // if (isPrefetch(request)) {

@@ -15,14 +15,14 @@
   },
   "dependencies": {
     "@planetscale/database": "1.11.0",
-    "kysely": "0.26.2",
+    "kysely": "0.26.3",
     "kysely-planetscale": "1.4.0",
     "nanoid": "4.0.2"
   },
   "devDependencies": {
     "dotenv-cli": "7.3.0",
     "prisma": "5.2.0",
-    "prisma-kysely": "1.6.0",
+    "prisma-kysely": "1.7.0",
     "tsx": "3.12.7",
     "typescript": "5.2.2"
   }
