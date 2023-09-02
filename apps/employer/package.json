@@ -19,7 +19,7 @@
     "@vercel/analytics": "1.0.2",
     "@vercel/remix": "1.19.3",
     "isbot": "3.6.13",
-    "nanoid": "3.3.5",
+    "nanoid": "3.3.6",
     "react-dom": "18.2.0",
     "react": "18.2.0",
     "remix-themes": "1.2.1",
