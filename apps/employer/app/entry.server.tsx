@@ -12,7 +12,7 @@ export default function (
   responseHeaders: Headers,
   remixContext: EntryContext,
 ) {
-  //? NOTE: shelved pending: https://github.com/ai/nanoid/discussions/443
+  //? NOTE: shelved secure generation pending: https://github.com/ai/nanoid/discussions/443
   const nonce = nanoid();
 
   const remixServer = (
