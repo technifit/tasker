@@ -1,6 +1,5 @@
 import { RemixServer } from '@remix-run/react';
 import { handleRequest, type EntryContext } from '@vercel/remix';
-import { nanoid } from 'nanoid';
 
 import { NonceProvider } from './utils/nonce-provider';
 
@@ -12,7 +11,7 @@ export default function (
   responseHeaders: Headers,
   remixContext: EntryContext,
 ) {
-  const nonce = nanoid();
+  const nonce = "12345";
 
   const remixServer = (
     <NonceProvider value={nonce}>
