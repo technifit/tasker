@@ -17,7 +17,7 @@ module.exports = {
     v2_normalizeFormMethod: true,
     v2_routeConvention: true,
   },
-  serverDependenciesToBundle: ['nanoid'],
+  serverDependenciesToBundle: ['nanoid/non-secure'],
   routes: async (defineRoutes) => {
     return flatRoutes('routes', defineRoutes, {
       ignoredRouteFiles: [

@@ -16,6 +16,7 @@ import {
 } from 'remix-themes';
 
 import stylesheet from '~/styles/global.css';
+import type { loader } from './_root.server';
 import { THEME_ROUTE_PATH } from './routes/resources+/theme/_index';
 import { ClientHintCheck } from './utils/client-hints';
 import { useNonce } from './utils/nonce-provider';
@@ -31,7 +32,7 @@ export default function AppWithProviders() {
     requestInfo: {
       userPrefs: { theme },
     },
-  } = useLoaderData();
+  } = useLoaderData<typeof loader>();
   return (
     <ThemeProvider specifiedTheme={theme} themeAction={THEME_ROUTE_PATH}>
       <App />
@@ -40,8 +41,12 @@ export default function AppWithProviders() {
 }
 
 function App() {
+  let nonce = useNonce();
   const [theme] = useTheme();
-  const nonce = useNonce();
+
+  if (typeof document !== 'undefined') {
+    nonce = '';
+  }
 
   return (
     <html lang='en' className={`${theme} h-full overflow-x-hidden`}>
@@ -57,9 +62,9 @@ function App() {
         <Outlet />
         <script
           nonce={nonce}
-          // dangerouslySetInnerHTML={{
-          // 	__html: `window.ENV = ${JSON.stringify(env)}`,
-          // }}
+        // dangerouslySetInnerHTML={{
+        // 	__html: `window.ENV = ${JSON.stringify(env)}`,
+        // }}
         />
         <ScrollRestoration nonce={nonce} />
         <Scripts nonce={nonce} />

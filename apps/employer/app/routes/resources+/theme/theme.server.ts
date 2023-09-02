@@ -23,7 +23,7 @@ export async function getTheme(request: Request) {
   const { getTheme } = await themeSessionResolver(request);
   const { theme } = getHints(request);
 
-  return getTheme() || theme === 'light' ? Theme.LIGHT : Theme.DARK;
+  return getTheme() ? getTheme() : theme === 'light' ? Theme.LIGHT : Theme.DARK;
 }
 
 export function setTheme(theme?: Theme) {
