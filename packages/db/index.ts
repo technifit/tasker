@@ -3,7 +3,7 @@
 import { Kysely } from 'kysely';
 import type { ColumnType } from 'kysely';
 import { PlanetScaleDialect } from 'kysely-planetscale';
-import { customAlphabet } from 'nanoid';
+import { customAlphabet } from 'nanoid/non-secure';
 
 import type { ProjectTier, SubscriptionPlan } from './enums';
 

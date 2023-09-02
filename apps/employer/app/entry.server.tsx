@@ -2,7 +2,7 @@ import { RemixServer } from '@remix-run/react';
 import { handleRequest, type EntryContext } from '@vercel/remix';
 
 import { NonceProvider } from './utils/nonce-provider';
-import { nanoid } from 'nanoid';
+import { nanoid } from 'nanoid/non-secure';
 
 // import { isPrefetch } from 'remix-utils';
 
@@ -12,6 +12,7 @@ export default function (
   responseHeaders: Headers,
   remixContext: EntryContext,
 ) {
+  //? NOTE: shelved pending: https://github.com/ai/nanoid/discussions/443
   const nonce = nanoid();
 
   const remixServer = (

@@ -16,7 +16,7 @@ const outputFile = path.join(process.cwd(), 'index.ts');
 
 import { Kysely } from "kysely";
 import { PlanetScaleDialect } from "kysely-planetscale";
-import { customAlphabet } from "nanoid";
+import { customAlphabet } from "nanoid/non-secure";
 
 ${dbTypes}
 
