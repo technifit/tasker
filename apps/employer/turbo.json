@@ -5,7 +5,7 @@
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["build/**"],
-      "env": ["SESSION_SECRET", "SENTRY_DSN"]
+      "env": ["SESSION_SECRET", "SENTRY_DSN", "VERCEL_ENV"]
     }
   }
 }

@@ -8,13 +8,16 @@ const environmentSchema = z.object({
     .enum(['development', 'production', 'test'])
     .default('development'),
   SESSION_SECRET: z.string().uuid(),
+  VERCEL_ENV: z
+    .enum(['production', 'preview', 'development'])
+    .default('development'),
 });
 
 const environment = () => environmentSchema.parse(process.env);
 
 const getPublicKeys = () => {
   return {
-    publicKeys: pick(environment(), ['NODE_ENV', 'SENTRY_DSN']),
+    publicKeys: pick(environment(), ['NODE_ENV', 'SENTRY_DSN', 'VERCEL_ENV']),
   };
 };
 

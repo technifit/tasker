@@ -1,37 +1,28 @@
 import { Suspense } from 'react';
 import { Await, useLoaderData } from '@remix-run/react';
-import { defer, type LoaderArgs, type V2_MetaFunction } from '@vercel/remix';
+import { type V2_MetaFunction } from '@vercel/remix';
 import { Theme, useTheme } from 'remix-themes';
 
 import { Badge, Button, Typography } from '@technifit/ui';
+import type { loader } from './_index.server'
 
 // export const config = { runtime: 'edge' };
 
-export const loader = ({ context, params, request }: LoaderArgs) => {
-  return defer({
-    proxyRegion: new Promise<string>((resolve) =>
-      setTimeout(() => resolve('EU'), 2500),
-    ),
-    computeRegion: new Promise<string>((resolve) =>
-      setTimeout(() => resolve('IE'), 3500),
-    ),
-    date: new Date().toISOString(),
-  });
-};
+export { loader } from './_index.server';
 
 export const meta: V2_MetaFunction = () => {
   return [
-    { title: 'New Remix App' },
-    { name: 'description', content: 'Welcome to Remix!' },
+    { title: 'Tasker' },
+    { name: 'description', content: 'Large scale job processing done right' },
   ];
 };
 
-export default function Index() {
+export const Index = () => {
   const { computeRegion, date, proxyRegion } = useLoaderData<typeof loader>();
   const [, setTheme] = useTheme();
 
   return (
-    <div>
+    <div className='container'>
       <Typography variant={'h1'}>Welcome to Remix</Typography>
       <Button
         onClick={(e) => {
@@ -67,3 +58,5 @@ export default function Index() {
     </div>
   );
 }
+
+export default Index

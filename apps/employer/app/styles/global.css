@@ -167,6 +167,6 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground selection:bg-primary/95 selection:text-primary-foreground;
   }
 }

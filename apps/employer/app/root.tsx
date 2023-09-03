@@ -23,6 +23,8 @@ import { ClientHintCheck } from './utils/client-hints';
 import { useNonce } from './utils/nonce-provider';
 import { PublicEnv } from './ui/public-env';
 import { captureRemixErrorBoundaryError, withSentry } from '@sentry/remix';
+import { cn } from '@technifit/ui';
+import { TailwindIndicator } from './ui/tailwind-indicator';
 
 export const links: LinksFunction = () => [
   {
@@ -144,9 +146,14 @@ const App = () => {
         <PreventFlashOnWrongTheme ssrTheme={Boolean(theme)} />
         <Links />
       </head>
-      <body className='min-h-screen bg-background font-sans text-foreground antialiased'>
+      <body className={cn('min-h-screen bg-background font-sans text-foreground antialiased')}>
         <PublicEnv nonce={nonce} publicEnvs={publicKeys} />
-        <Outlet />
+        <div className="relative flex min-h-screen flex-col">
+          <div className='flex-1 flex'>
+            <Outlet />
+          </div>
+        </div>
+        <TailwindIndicator />
         <ScrollRestoration nonce={nonce} />
         <Scripts nonce={nonce} />
         <Analytics />
