@@ -31,8 +31,8 @@ export default function Index() {
   const [, setTheme] = useTheme();
 
   return (
-    <div style={{ fontFamily: 'system-ui, sans-serif', lineHeight: '1.8' }}>
-      <h1 className='text-3xl font-bold underline'>Welcome to Remix</h1>
+    <div>
+      <h1 className='text-3xl font-bold underline font-cal'>Welcome to Remix</h1>
       <Button
         onClick={(e) => {
           e.preventDefault();

@@ -24,8 +24,8 @@
     "isbot": "3.6.13",
     "lodash": "4.17.21",
     "nanoid": "4.0.2",
-    "react-dom": "18.2.0",
     "react": "18.2.0",
+    "react-dom": "18.2.0",
     "remix-themes": "1.2.1",
     "remix-utils": "6.6.0",
     "zod": "3.22.2"

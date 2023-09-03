@@ -25,6 +25,86 @@ import { PublicEnv } from './ui/public-env';
 import { captureRemixErrorBoundaryError, withSentry } from '@sentry/remix';
 
 export const links: LinksFunction = () => [
+  {
+    rel: 'preload',
+    href: '/fonts/cal-sans/CalSans-SemiBold.woff',
+  },
+  {
+    rel: 'preload',
+    href: '/fonts/cal-sans/CalSans-SemiBold.woff2',
+  },
+  {
+    rel: 'preload',
+    href: '/fonts/inter/inter-latin-ext-100-normal.woff',
+  },
+  {
+    rel: 'preload',
+    href: '/fonts/inter/inter-latin-ext-100-normal.woff2',
+  },
+  {
+    rel: 'preload',
+    href: '/fonts/inter/inter-latin-ext-200-normal.woff',
+  },
+  {
+    rel: 'preload',
+    href: '/fonts/inter/inter-latin-ext-200-normal.woff2',
+  },
+  {
+    rel: 'preload',
+    href: '/fonts/inter/inter-latin-ext-300-normal.woff',
+  },
+  {
+    rel: 'preload',
+    href: '/fonts/inter/inter-latin-ext-300-normal.woff2',
+  },
+  {
+    rel: 'preload',
+    href: '/fonts/inter/inter-latin-ext-400-normal.woff',
+  },
+  {
+    rel: 'preload',
+    href: '/fonts/inter/inter-latin-ext-400-normal.woff2',
+  },
+  {
+    rel: 'preload',
+    href: '/fonts/inter/inter-latin-ext-500-normal.woff',
+  },
+  {
+    rel: 'preload',
+    href: '/fonts/inter/inter-latin-ext-500-normal.woff2',
+  },
+  {
+    rel: 'preload',
+    href: '/fonts/inter/inter-latin-ext-600-normal.woff',
+  },
+  {
+    rel: 'preload',
+    href: '/fonts/inter/inter-latin-ext-600-normal.woff2',
+  },
+  {
+    rel: 'preload',
+    href: '/fonts/inter/inter-latin-ext-700-normal.woff',
+  },
+  {
+    rel: 'preload',
+    href: '/fonts/inter/inter-latin-ext-700-normal.woff2',
+  },
+  {
+    rel: 'preload',
+    href: '/fonts/inter/inter-latin-ext-800-normal.woff',
+  },
+  {
+    rel: 'preload',
+    href: '/fonts/inter/inter-latin-ext-800-normal.woff2',
+  },
+  {
+    rel: 'preload',
+    href: '/fonts/inter/inter-latin-ext-900-normal.woff',
+  },
+  {
+    rel: 'preload',
+    href: '/fonts/inter/inter-latin-ext-900-normal.woff2',
+  },
   { rel: 'stylesheet', href: stylesheet },
 ];
 
