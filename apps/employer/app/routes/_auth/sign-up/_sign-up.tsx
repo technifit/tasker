@@ -1,6 +1,14 @@
 import { Link } from '@remix-run/react';
 import { SignUpForm } from './forms/sign-up-form';
 import { Typography } from '@technifit/ui';
+import type { V2_MetaFunction } from '@vercel/remix';
+
+export const meta: V2_MetaFunction = () => {
+    return [
+        { title: 'Tasker | Sign Up' },
+        { name: 'description', content: 'Sign up' },
+    ];
+};
 
 export const Login = () => {
     return (
