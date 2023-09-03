@@ -3,7 +3,7 @@ import { Await, useLoaderData } from '@remix-run/react';
 import { defer, type LoaderArgs, type V2_MetaFunction } from '@vercel/remix';
 import { Theme, useTheme } from 'remix-themes';
 
-import { Badge, Button } from '@technifit/ui';
+import { Badge, Button, Typography } from '@technifit/ui';
 
 // export const config = { runtime: 'edge' };
 
@@ -32,7 +32,7 @@ export default function Index() {
 
   return (
     <div>
-      <h1 className='text-3xl font-bold underline font-cal'>Welcome to Remix</h1>
+      <Typography variant={'h1'}>Welcome to Remix</Typography>
       <Button
         onClick={(e) => {
           e.preventDefault();
@@ -41,7 +41,7 @@ export default function Index() {
       >
         Switch Theme
       </Button>
-      <ul>
+      <Typography variant={'ul'}>
         <li>
           <span>{date}</span>
         </li>
@@ -63,7 +63,7 @@ export default function Index() {
             </Await>
           </Suspense>
         </li>
-      </ul>
+      </Typography>
     </div>
   );
 }

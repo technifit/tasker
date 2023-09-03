@@ -1,25 +1,28 @@
 import * as React from 'react';
 import { Label } from '@/components/ui/label';
 import { cn } from '@/lib/utils';
-import * as LabelPrimitive from '@radix-ui/react-label';
+import type * as LabelPrimitive from '@radix-ui/react-label';
 import { Slot } from '@radix-ui/react-slot';
-import {
-  Controller,
+import type {
   ControllerProps,
   FieldPath,
-  FieldValues,
+  FieldValues
+} from 'react-hook-form';
+import {
+  Controller,
   FormProvider,
   useFormContext,
 } from 'react-hook-form';
+import { Typography } from '../typography';
 
 const Form = FormProvider;
 
-type FormFieldContextValue<
+interface FormFieldContextValue<
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
-> = {
+> {
   name: TName;
-};
+}
 
 const FormFieldContext = React.createContext<FormFieldContextValue>(
   {} as FormFieldContextValue,
@@ -61,9 +64,9 @@ const useFormField = () => {
   };
 };
 
-type FormItemContextValue = {
+interface FormItemContextValue {
   id: string;
-};
+}
 
 const FormItemContext = React.createContext<FormItemContextValue>(
   {} as FormItemContextValue,
@@ -130,7 +133,8 @@ const FormDescription = React.forwardRef<
   const { formDescriptionId } = useFormField();
 
   return (
-    <p
+    <Typography
+      variant={'p'}
       ref={ref}
       id={formDescriptionId}
       className={cn('text-sm text-muted-foreground', className)}
@@ -152,14 +156,15 @@ const FormMessage = React.forwardRef<
   }
 
   return (
-    <p
+    <Typography
+      variant={'p'}
       ref={ref}
       id={formMessageId}
       className={cn('text-sm font-medium text-destructive', className)}
       {...props}
     >
       {body}
-    </p>
+    </Typography>
   );
 });
 FormMessage.displayName = 'FormMessage';
