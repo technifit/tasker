@@ -65,14 +65,8 @@ const App = () => {
         <Links />
       </head>
       <body className='min-h-screen bg-background font-sans text-foreground antialiased'>
-        <PublicEnv {...publicKeys} />
+        <PublicEnv nonce={nonce} publicEnvs={publicKeys} />
         <Outlet />
-        <script
-          nonce={nonce}
-        // dangerouslySetInnerHTML={{
-        // 	__html: `window.ENV = ${JSON.stringify(env)}`,
-        // }}
-        />
         <ScrollRestoration nonce={nonce} />
         <Scripts nonce={nonce} />
         <Analytics />
@@ -104,7 +98,7 @@ const ErrorBoundary = () => {
         <Links />
       </head>
       <body className='min-h-screen bg-background font-sans text-foreground antialiased'>
-        <PublicEnv {...publicKeys} />
+        <PublicEnv nonce={nonce} publicEnvs={publicKeys} />
         <h1>Booom Error!</h1>
         <p>Make me pretty</p>
         <script

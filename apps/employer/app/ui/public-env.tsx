@@ -1,24 +1,27 @@
 import type { getPublicKeys } from '~/server/environment.server'
 import { environment } from '~/server/environment.server'
 
-type Props = ReturnType<typeof getPublicKeys>['publicKeys']
+type PublicEnvs = ReturnType<typeof getPublicKeys>['publicKeys']
 
 declare global {
     interface Window {
-        ENV: Props
+        ENV: PublicEnvs
     }
 }
-function PublicEnv(props: Props) {
+function PublicEnv({ nonce, publicEnvs }: {
+    nonce: string,
+    publicEnvs: PublicEnvs
+}) {
     return (
         <script
             dangerouslySetInnerHTML={{
-                __html: `window.ENV = ${JSON.stringify(props)}`,
+                __html: `window.ENV = ${JSON.stringify(publicEnvs)}`,
             }}
         />
     )
 }
 
-function getPublicEnv<T extends keyof Props>(key: T): Props[T] {
+function getPublicEnv<T extends keyof PublicEnvs>(key: T): PublicEnvs[T] {
     if (typeof window !== 'undefined' && !window.ENV) {
         throw new Error(
             `Missing the <PublicEnv /> component at the root of your app.`,
