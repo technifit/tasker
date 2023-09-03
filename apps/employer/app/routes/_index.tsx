@@ -5,7 +5,7 @@ import { Theme, useTheme } from 'remix-themes';
 
 import { Badge, Button } from '@technifit/ui';
 
-export const config = { runtime: 'edge' };
+// export const config = { runtime: 'edge' };
 
 export const loader = ({ context, params, request }: LoaderArgs) => {
   return defer({

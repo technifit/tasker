@@ -1,4 +1,7 @@
 const { flatRoutes } = require('remix-flat-routes');
+process.env.NODE_ENV === 'development' &&
+    require('dotenv').config({ path: '../../.env' });
+    
 
 /** @type {import('@remix-run/dev').AppConfig} */
 module.exports = {

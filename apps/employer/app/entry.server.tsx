@@ -1,10 +1,32 @@
 import { RemixServer } from '@remix-run/react';
-import { handleRequest, type EntryContext } from '@vercel/remix';
+import { handleRequest } from '@vercel/remix';
+import type { DataFunctionArgs, EntryContext } from '@vercel/remix';
 
 import { NonceProvider } from './utils/nonce-provider';
 import { nanoid } from 'nanoid/non-secure';
 
 // import { isPrefetch } from 'remix-utils';
+
+import * as Sentry from "@sentry/remix";
+import { CaptureConsole } from '@sentry/integrations';
+import { ProfilingIntegration } from '@sentry/profiling-node';
+import { environment } from './server/environment.server';
+import isbot from 'isbot';
+
+if (!isbot) {
+  Sentry.init({
+    dsn: environment().SENTRY_DSN,
+    // Performance Monitoring
+    tracesSampleRate: environment().NODE_ENV === 'production' ? 0.1 : 1.0,
+    profilesSampleRate: 1,
+    integrations: [
+      new ProfilingIntegration(),
+      new CaptureConsole({
+        levels: ['error'],
+      }),
+    ],
+  });
+}
 
 export default function (
   request: Request,
@@ -30,6 +52,8 @@ export default function (
   responseHeaders.set('Vary', 'Cookie');
   // Set a noindex header to avoid indexing of the site
   responseHeaders.set('X-Robots-Tag', 'noindex');
+  // Set a document policy header to enable js profiling on the browser
+  responseHeaders.set("Document-Policy", "js-profiling");
 
   return handleRequest(
     request,
@@ -37,4 +61,16 @@ export default function (
     responseHeaders,
     remixServer,
   );
+}
+
+export function handleError(
+  error: unknown,
+  { request }: DataFunctionArgs
+): void {
+  if (error instanceof Error) {
+    Sentry.captureRemixServerException(error, "remix.server", request);
+  } else {
+    // Optionally capture non-Error objects
+    Sentry.captureException(error);
+  }
 }

@@ -6,6 +6,7 @@ import {
   Scripts,
   ScrollRestoration,
   useLoaderData,
+  useRouteError,
 } from '@remix-run/react';
 import { Analytics } from '@vercel/analytics/react';
 import { type LinksFunction } from '@vercel/remix';
@@ -20,6 +21,8 @@ import type { loader } from './_root.server';
 import { THEME_ROUTE_PATH } from './routes/resources+/theme/_index';
 import { ClientHintCheck } from './utils/client-hints';
 import { useNonce } from './utils/nonce-provider';
+import { PublicEnv } from './ui/public-env';
+import { captureRemixErrorBoundaryError, withSentry } from '@sentry/remix';
 
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: stylesheet },
@@ -27,7 +30,7 @@ export const links: LinksFunction = () => [
 
 export { loader } from './_root.server';
 
-export default function AppWithProviders() {
+const AppWithProviders = () => {
   const {
     requestInfo: {
       userPrefs: { theme },
@@ -40,7 +43,10 @@ export default function AppWithProviders() {
   );
 }
 
-function App() {
+const App = () => {
+  const {
+    publicKeys,
+  } = useLoaderData<typeof loader>();
   let nonce = useNonce();
   const [theme] = useTheme();
 
@@ -59,6 +65,7 @@ function App() {
         <Links />
       </head>
       <body className='min-h-screen bg-background font-sans text-foreground antialiased'>
+        <PublicEnv {...publicKeys} />
         <Outlet />
         <script
           nonce={nonce}
@@ -74,3 +81,49 @@ function App() {
     </html>
   );
 }
+
+const ErrorBoundary = () => {
+  const {
+    publicKeys,
+  } = useLoaderData<typeof loader>();
+
+  const error = useRouteError();
+  const nonce = useNonce();
+  const theme = useTheme()
+
+  captureRemixErrorBoundaryError(error);
+
+  return (
+    <html lang='en' className={`${theme} h-full overflow-x-hidden`}>
+      <head>
+        <ClientHintCheck nonce={nonce} />
+        <meta charSet='utf-8' />
+        <meta name='viewport' content='width=device-width,initial-scale=1' />
+        <Meta />
+        <PreventFlashOnWrongTheme ssrTheme={Boolean(theme)} />
+        <Links />
+      </head>
+      <body className='min-h-screen bg-background font-sans text-foreground antialiased'>
+        <PublicEnv {...publicKeys} />
+        <h1>Booom Error!</h1>
+        <p>Make me pretty</p>
+        <script
+          nonce={nonce}
+        // dangerouslySetInnerHTML={{
+        // 	__html: `window.ENV = ${JSON.stringify(env)}`,
+        // }}
+        />
+        <ScrollRestoration nonce={nonce} />
+        <Scripts nonce={nonce} />
+        <Analytics />
+        <LiveReload nonce={nonce} />
+      </body>
+    </html>
+  );
+};
+
+export default withSentry(AppWithProviders, {
+  errorBoundaryOptions: {
+    fallback: ErrorBoundary,
+  },
+});
