@@ -2,6 +2,7 @@ import { Link } from '@remix-run/react';
 import { LoginForm } from './forms/log-in-form';
 import { Typography } from '@technifit/ui';
 import type { V2_MetaFunction } from '@vercel/remix';
+import { SignIn } from '@clerk/remix';
 
 export const meta: V2_MetaFunction = () => {
     return [
@@ -21,7 +22,8 @@ export const SignUp = () => {
                     Enter your email below to access your account
                 </Typography>
             </div>
-            <LoginForm />
+            {/* <LoginForm /> */}
+            <SignIn />
             <Typography variant={'p'} className="px-8 text-center text-sm text-muted-foreground">
                 Dont have an account?{" "}
                 <Link

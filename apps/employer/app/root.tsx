@@ -1,3 +1,4 @@
+import { ClerkApp, V2_ClerkErrorBoundary } from '@clerk/remix';
 import {
   Links,
   LiveReload,
@@ -8,6 +9,7 @@ import {
   useLoaderData,
   useRouteError,
 } from '@remix-run/react';
+import { captureRemixErrorBoundaryError, withSentry } from '@sentry/remix';
 import { Analytics } from '@vercel/analytics/react';
 import { type LinksFunction } from '@vercel/remix';
 import {
@@ -16,15 +18,15 @@ import {
   useTheme,
 } from 'remix-themes';
 
+import { cn } from '@technifit/ui';
+
 import stylesheet from '~/styles/global.css';
 import type { loader } from './_root.server';
 import { THEME_ROUTE_PATH } from './routes/resources+/theme/_index';
+import { PublicEnv } from './ui/public-env';
+import { TailwindIndicator } from './ui/tailwind-indicator';
 import { ClientHintCheck } from './utils/client-hints';
 import { useNonce } from './utils/nonce-provider';
-import { PublicEnv } from './ui/public-env';
-import { captureRemixErrorBoundaryError, withSentry } from '@sentry/remix';
-import { cn } from '@technifit/ui';
-import { TailwindIndicator } from './ui/tailwind-indicator';
 
 export const links: LinksFunction = () => [
   {
@@ -123,12 +125,10 @@ const AppWithProviders = () => {
       <App />
     </ThemeProvider>
   );
-}
+};
 
 const App = () => {
-  const {
-    publicKeys,
-  } = useLoaderData<typeof loader>();
+  const { publicKeys } = useLoaderData<typeof loader>();
   let nonce = useNonce();
   const [theme] = useTheme();
 
@@ -146,10 +146,14 @@ const App = () => {
         <PreventFlashOnWrongTheme ssrTheme={Boolean(theme)} />
         <Links />
       </head>
-      <body className={cn('min-h-screen bg-background font-sans text-foreground antialiased')}>
+      <body
+        className={cn(
+          'min-h-screen bg-background font-sans text-foreground antialiased',
+        )}
+      >
         <PublicEnv nonce={nonce} publicEnvs={publicKeys} />
-        <div className="relative flex min-h-screen flex-col">
-          <div className='flex-1 flex'>
+        <div className='relative flex min-h-screen flex-col'>
+          <div className='flex flex-1'>
             <Outlet />
           </div>
         </div>
@@ -161,16 +165,14 @@ const App = () => {
       </body>
     </html>
   );
-}
+};
 
-const ErrorBoundary = () => {
-  const {
-    publicKeys,
-  } = useLoaderData<typeof loader>();
+const BaseErrorBoundary = () => {
+  const { publicKeys } = useLoaderData<typeof loader>();
 
   const error = useRouteError();
   const nonce = useNonce();
-  const theme = useTheme()
+  const theme = useTheme();
 
   captureRemixErrorBoundaryError(error);
 
@@ -203,7 +205,9 @@ const ErrorBoundary = () => {
   );
 };
 
-export default withSentry(AppWithProviders, {
+const ErrorBoundary = V2_ClerkErrorBoundary(BaseErrorBoundary);
+
+export default withSentry(ClerkApp(AppWithProviders), {
   errorBoundaryOptions: {
     fallback: ErrorBoundary,
   },

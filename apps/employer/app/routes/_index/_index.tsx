@@ -5,6 +5,7 @@ import { Theme, useTheme } from 'remix-themes';
 
 import { Badge, Button, Typography } from '@technifit/ui';
 import type { loader } from './_index.server'
+import { useUser } from '@clerk/remix';
 
 // export const config = { runtime: 'edge' };
 
@@ -19,11 +20,13 @@ export const meta: V2_MetaFunction = () => {
 
 export const Index = () => {
   const { computeRegion, date, proxyRegion } = useLoaderData<typeof loader>();
+  const { isSignedIn } = useUser();
   const [, setTheme] = useTheme();
 
   return (
     <div className='container'>
       <Typography variant={'h1'}>Welcome to Remix</Typography>
+      {isSignedIn ? <Badge variant={'secondary'}>Logged in</Badge> : null}
       <Button
         onClick={(e) => {
           e.preventDefault();
