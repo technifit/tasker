@@ -168,47 +168,30 @@ const App = () => {
 };
 
 const BaseErrorBoundary = () => {
-  const { publicKeys } = useLoaderData<typeof loader>();
-
   const error = useRouteError();
-  const nonce = useNonce();
-  const theme = useTheme();
 
   captureRemixErrorBoundaryError(error);
 
   return (
-    <html lang='en' className={`${theme} h-full overflow-x-hidden`}>
+    <html lang='en' className={`h-full overflow-x-hidden`}>
       <head>
-        <ClientHintCheck nonce={nonce} />
         <meta charSet='utf-8' />
         <meta name='viewport' content='width=device-width,initial-scale=1' />
         <Meta />
-        <PreventFlashOnWrongTheme ssrTheme={Boolean(theme)} />
         <Links />
       </head>
       <body className='min-h-screen bg-background font-sans text-foreground antialiased'>
-        <PublicEnv nonce={nonce} publicEnvs={publicKeys} />
         <h1>Booom Error!</h1>
         <p>Make me pretty</p>
-        <script
-          nonce={nonce}
-        // dangerouslySetInnerHTML={{
-        // 	__html: `window.ENV = ${JSON.stringify(env)}`,
-        // }}
-        />
-        <ScrollRestoration nonce={nonce} />
-        <Scripts nonce={nonce} />
-        <Analytics />
-        <LiveReload nonce={nonce} />
       </body>
     </html>
   );
 };
 
-const ErrorBoundary = V2_ClerkErrorBoundary(BaseErrorBoundary);
+export const ErrorBoundary = V2_ClerkErrorBoundary(BaseErrorBoundary);
 
 export default withSentry(ClerkApp(AppWithProviders), {
   errorBoundaryOptions: {
-    fallback: ErrorBoundary,
+    fallback: <ErrorBoundary />,
   },
 });
