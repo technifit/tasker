@@ -1,7 +1,11 @@
 import type { LoaderArgs } from '@vercel/remix';
 import { defer } from '@vercel/remix';
 
-export const loader = ({ context, params, request }: LoaderArgs) => {
+import { requireAuthenticatedUser } from '~/lib/guards/auth-guard.server';
+
+export const loader = async (args: LoaderArgs) => {
+  await requireAuthenticatedUser(args);
+
   return defer({
     proxyRegion: new Promise<string>((resolve) =>
       setTimeout(() => resolve('EU'), 2500),

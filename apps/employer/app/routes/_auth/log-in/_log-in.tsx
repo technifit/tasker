@@ -13,18 +13,18 @@ export const meta: V2_MetaFunction = () => {
 
 export const SignUp = () => {
     return (
-        <>
+        <div className='flex flex-col gap-4 justify-center align-middle'>
             <div className="flex flex-col space-y-2 text-center">
                 <Typography variant={'h1'} className="lg:text-2xl">
                     Sign in
                 </Typography>
-                <Typography variant={'p'} className="text-sm text-muted-foreground">
+                <Typography variant={'mutedText'}>
                     Enter your email below to access your account
                 </Typography>
             </div>
             {/* <LoginForm /> */}
             <SignIn />
-            <Typography variant={'p'} className="px-8 text-center text-sm text-muted-foreground">
+            <Typography variant={'mutedText'} className="text-center">
                 Dont have an account?{" "}
                 <Link
                     prefetch='intent'
@@ -35,7 +35,7 @@ export const SignUp = () => {
                 </Link>
                 .
             </Typography>
-        </>
+        </div>
     )
 }
 

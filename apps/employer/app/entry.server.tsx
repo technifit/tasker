@@ -10,7 +10,7 @@ import { nanoid } from 'nanoid/non-secure';
 import * as Sentry from "@sentry/remix";
 import { CaptureConsole } from '@sentry/integrations';
 import { ProfilingIntegration } from '@sentry/profiling-node';
-import { environment } from './server/environment.server';
+import { environment } from './lib/environment/environment.server';
 import isbot from 'isbot';
 
 if (!isbot) {

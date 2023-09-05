@@ -1,5 +1,4 @@
 // app/environment.server.ts
-import pick from 'lodash/pick';
 import * as z from 'zod';
 
 const environmentSchema = z.object({
@@ -15,17 +14,20 @@ const environmentSchema = z.object({
     .default('development'),
 });
 
+type Environment = z.infer<typeof environmentSchema>;
+
 const environment = () => environmentSchema.parse(process.env);
 
-const getPublicKeys = () => {
-  return {
-    publicKeys: pick(environment(), [
-      'CLERK_PUBLISHABLE_KEY',
-      'NODE_ENV',
-      'SENTRY_DSN',
-      'VERCEL_ENV',
-    ]),
-  };
-};
+const publicEnvironmentSchema = environmentSchema.pick({
+  CLERK_PUBLISHABLE_KEY: true,
+  NODE_ENV: true,
+  SENTRY_DSN: true,
+  VERCEL_ENV: true,
+});
+
+type PublicEnvironment = z.infer<typeof publicEnvironmentSchema>;
+
+const getPublicKeys = () => publicEnvironmentSchema.parse(process.env);
 
 export { environment, getPublicKeys };
+export type { Environment, PublicEnvironment };

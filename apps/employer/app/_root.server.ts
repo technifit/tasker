@@ -2,8 +2,8 @@ import { rootAuthLoader } from '@clerk/remix/ssr.server';
 import type { DataFunctionArgs } from '@vercel/remix';
 import { json } from '@vercel/remix';
 
+import { getPublicKeys } from './lib/environment/environment.server';
 import { getTheme } from './routes/resources+/theme/theme.server';
-import { getPublicKeys } from './server/environment.server';
 import { getHints } from './utils/client-hints';
 
 export const loader = async (args: DataFunctionArgs) => {
@@ -18,7 +18,9 @@ export const loader = async (args: DataFunctionArgs) => {
           theme: await getTheme(request),
         },
       },
-      ...getPublicKeys(),
+      publicKeys: {
+        ...getPublicKeys(),
+      },
     });
   });
 };

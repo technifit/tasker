@@ -13,37 +13,50 @@ export const meta: V2_MetaFunction = () => {
 
 export const Login = () => {
     return (
-        <>
-            <div className="flex flex-col space-y-2 text-center">
+        <div className='flex flex-col gap-4 justify-center align-middle'>
+            <div className="flexflex-col space-y-2 text-center">
                 <Typography variant={'h1'} className="lg:text-2xl">
                     Create an account
                 </Typography>
-                <Typography variant={'p'} className="text-sm text-muted-foreground">
+                <Typography variant={'mutedText'}>
                     Enter your email below to create your account
                 </Typography>
             </div>
             {/* <SignUpForm /> */}
             <SignUp />
-            <Typography variant={'p'} className="px-8 text-center text-sm text-muted-foreground">
-                By clicking continue, you agree to our{" "}
-                <Link
-                    prefetch='intent'
-                    to="/terms"
-                    className="underline underline-offset-4 hover:text-primary"
-                >
-                    Terms of Service
-                </Link>{" "}
-                and{" "}
-                <Link
-                    prefetch='intent'
-                    to="/privacy"
-                    className="underline underline-offset-4 hover:text-primary"
-                >
-                    Privacy Policy
-                </Link>
-                .
-            </Typography>
-        </>
+            <div className='flex flex-col gap-2 text-center'>
+                <Typography variant={'mutedText'}>
+                    Already have an account?{" "}
+                    <Link
+                        prefetch='intent'
+                        to="/log-in"
+                        className="underline underline-offset-4 hover:text-primary"
+                    >
+                        Sign In
+                    </Link>
+                    .
+                </Typography>
+                <Typography variant={'mutedText'}>
+                    By clicking continue, you agree to our{" "}
+                    <Link
+                        prefetch='intent'
+                        to="/terms"
+                        className="underline underline-offset-4 hover:text-primary"
+                    >
+                        Terms of Service
+                    </Link>{" "}
+                    and{" "}
+                    <Link
+                        prefetch='intent'
+                        to="/privacy"
+                        className="underline underline-offset-4 hover:text-primary"
+                    >
+                        Privacy Policy
+                    </Link>
+                    .
+                </Typography>
+            </div>
+        </div>
     )
 }
 
