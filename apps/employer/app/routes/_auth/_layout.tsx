@@ -1,12 +1,13 @@
 import { Link, Outlet } from '@remix-run/react';
 import { LogIn, Typography, buttonVariants, cn } from '@technifit/ui';
+import { $path } from 'remix-routes';
 
 const Layout = () => {
 
     return <div className='container py-4 grid grid-cols-1 lg:grid-cols-2'>
         <div className='hidden lg:flex lg:flex-col lg:justify-between lg:gap-2'>
             <div className='flex justify-start'>
-                <Link prefetch='intent' to='/' className='inline-flex gap-1 items-center'>
+                <Link prefetch='intent' to={$path('/')} className='inline-flex gap-1 items-center'>
                     Tasker
                 </Link>
             </div>
@@ -23,7 +24,7 @@ const Layout = () => {
             <div className='flex justify-end'>
                 <Link
                     prefetch='intent'
-                    to="/log-in"
+                    to={$path('/log-in')}
                     className={cn(
                         buttonVariants({ variant: "outline" }),
                         'inline-flex gap-1 items-center'

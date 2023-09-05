@@ -4,11 +4,15 @@
   "private": true,
   "sideEffects": false,
   "scripts": {
+    "build": "run-s build:*",
+    "build:routes": "remix-routes -o ./types",
+    "build:remix": "remix build --sourcemap",
+    "dev": "run-p dev:*",
+    "dev:routes": "remix-routes -w ./types",
+    "dev:remix": "remix dev",
     "clean": "rm -rf .turbo node_modules .cache build",
     "lint": "SKIP_ENV_VALIDATION=1  eslint .",
     "lint:fix": "pnpm lint --fix",
-    "build": "remix build --sourcemap",
-    "dev": "remix dev",
     "start": "remix-serve build",
     "typecheck": "tsc"
   },
@@ -27,6 +31,8 @@
     "nanoid": "4.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "remix-params-helper": "^0.4.10",
+    "remix-routes": "^1.4.4",
     "remix-themes": "1.2.1",
     "remix-utils": "6.6.0",
     "zod": "3.22.2"
@@ -42,10 +48,12 @@
     "@types/react-dom": "18.2.7",
     "cookie": "0.5.0",
     "eslint": "8.48.0",
+    "npm-run-all": "4.1.5",
     "remix-flat-routes": "0.5.10",
     "tailwindcss": "3.3.3",
     "tailwindcss-animate": "1.0.7",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "typescript-remix-routes-plugin": "^1.0.1"
   },
   "engines": {
     "node": ">=v18.17.0"

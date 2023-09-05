@@ -3,6 +3,7 @@ import { LoginForm } from './forms/log-in-form';
 import { Typography } from '@technifit/ui';
 import type { V2_MetaFunction } from '@vercel/remix';
 import { SignIn } from '@clerk/remix';
+import { $path } from 'remix-routes';
 
 export const meta: V2_MetaFunction = () => {
     return [
@@ -28,7 +29,7 @@ export const SignUp = () => {
                 Dont have an account?{" "}
                 <Link
                     prefetch='intent'
-                    to="/sign-up"
+                    to={$path('/sign-up')}
                     className="underline underline-offset-4 hover:text-primary"
                 >
                     Sign Up
