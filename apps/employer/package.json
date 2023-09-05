@@ -10,7 +10,7 @@
     "dev": "run-p dev:*",
     "dev:routes": "remix-routes -w ./types",
     "dev:remix": "remix dev",
-    "clean": "rm -rf .turbo node_modules .cache build",
+    "clean": "rm -rf .turbo node_modules .cache build types/remix-routes.d.ts",
     "lint": "SKIP_ENV_VALIDATION=1  eslint .",
     "lint:fix": "pnpm lint --fix",
     "start": "remix-serve build",
