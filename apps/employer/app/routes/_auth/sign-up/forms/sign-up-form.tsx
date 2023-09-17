@@ -63,15 +63,22 @@ export const SignUpForm = () => {
                     emailAddress: email,
                 });
 
-                if (signInResponse.status === 'complete') {
-                    setActive({ session: signInResponse.createdSessionId });
+                switch (signInResponse.status) {
+                    case 'complete':
+                        setActive({ session: signInResponse.createdSessionId });
 
-                    navigate($path('/'));
-                } else if (signInResponse.status === 'missing_requirements' && signInResponse.unverifiedFields.some(x => x === 'email_address')) {
-                    // TODO: Refactor this to use a switch to handle the unverified fields
-                    // TODO: redirect to a enter email code page
-                    // TODO: create an email link verification page
-                    await signUp.prepareEmailAddressVerification({ strategy: "email_code" });
+                        navigate($path('/'));
+                        break;
+                    case 'missing_requirements':
+                        if (signInResponse.unverifiedFields.some(x => x === 'email_address')) {
+                            // TODO: Refactor this to use a switch to handle the unverified fields
+                            // TODO: redirect to a enter email code page (check can we retrieve a sign in)
+                            // TODO: create an email link verification page
+                            await signUp.prepareEmailAddressVerification({ strategy: "email_code" });
+                        }
+                        break;
+                    default:
+                        break;
                 }
             } catch (error) {
                 if (isClerkAPIResponseError(error)) {
