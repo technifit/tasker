@@ -66,8 +66,8 @@ importers:
         specifier: 4.17.21
         version: 4.17.21
       nanoid:
-        specifier: 4.0.2
-        version: 4.0.2
+        specifier: 5.0.1
+        version: 5.0.1
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -249,8 +249,8 @@ importers:
         specifier: 1.4.0
         version: 1.4.0(@planetscale/database@1.11.0)(kysely@0.26.3)
       nanoid:
-        specifier: 4.0.2
-        version: 4.0.2
+        specifier: 5.0.1
+        version: 5.0.1
     devDependencies:
       dotenv-cli:
         specifier: 7.3.0
@@ -10055,9 +10055,9 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  /nanoid@4.0.2:
-    resolution: {integrity: sha512-7ZtY5KTCNheRGfEFxnedV5zFiORN1+Y1N6zvPTnHQd8ENUvfaDBeuJDZb2bN/oXwXxu3qkTXDzy57W5vAmDTBw==}
-    engines: {node: ^14 || ^16 || >=18}
+  /nanoid@5.0.1:
+    resolution: {integrity: sha512-vWeVtV5Cw68aML/QaZvqN/3QQXc6fBfIieAlu05m7FZW2Dgb+3f0xc0TTxuJW+7u30t7iSDTV/j3kVI0oJqIfQ==}
+    engines: {node: ^18 || >=20}
     hasBin: true
     dev: false
 
