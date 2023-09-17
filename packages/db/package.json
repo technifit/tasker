@@ -21,9 +21,9 @@
   },
   "devDependencies": {
     "dotenv-cli": "7.3.0",
-    "prisma": "5.2.0",
+    "prisma": "5.3.1",
     "prisma-kysely": "1.7.0",
-    "tsx": "3.12.8",
+    "tsx": "3.12.10",
     "typescript": "5.2.2"
   }
 }
