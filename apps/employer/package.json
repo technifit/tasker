@@ -31,6 +31,7 @@
     "nanoid": "4.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "remix-hook-form": "1.2.2",
     "remix-params-helper": "^0.4.10",
     "remix-routes": "^1.4.4",
     "remix-themes": "1.2.1",

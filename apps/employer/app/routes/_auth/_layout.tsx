@@ -34,7 +34,7 @@ const Layout = () => {
                     Login
                 </Link>
             </div>
-            <div className='grow flex flex-col justify-center align-middle'>
+            <div className='grow flex flex-col justify-center items-center'>
                 <Outlet />
             </div>
         </div>

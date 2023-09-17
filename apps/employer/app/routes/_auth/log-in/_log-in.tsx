@@ -2,7 +2,6 @@ import { Link } from '@remix-run/react';
 import { LoginForm } from './forms/log-in-form';
 import { Typography } from '@technifit/ui';
 import type { V2_MetaFunction } from '@vercel/remix';
-import { SignIn } from '@clerk/remix';
 import { $path } from 'remix-routes';
 
 export const meta: V2_MetaFunction = () => {
@@ -14,7 +13,7 @@ export const meta: V2_MetaFunction = () => {
 
 export const SignUp = () => {
     return (
-        <div className='flex flex-col gap-4 justify-center align-middle'>
+        <div className='w-full flex flex-col gap-4 justify-center items-center max-w-md'>
             <div className="flex flex-col space-y-2 text-center">
                 <Typography variant={'h1'} className="lg:text-2xl">
                     Sign in
@@ -23,8 +22,7 @@ export const SignUp = () => {
                     Enter your email below to access your account
                 </Typography>
             </div>
-            {/* <LoginForm /> */}
-            <SignIn />
+            <LoginForm />
             <Typography variant={'mutedText'} className="text-center">
                 Dont have an account?{" "}
                 <Link

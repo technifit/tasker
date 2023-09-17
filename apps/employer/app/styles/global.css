@@ -130,7 +130,7 @@
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
     --ring: 346.8 77.2% 49.8%;
-    --radius: 1rem;
+    --radius: 0.5rem;
 
     --font-sans: 'Inter';
     --font-cal: 'CalSans';
@@ -156,6 +156,7 @@
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 346.8 77.2% 49.8%;
+    --radius: 0.5rem;
 
     --font-sans: 'Inter';
     --font-cal: 'CalSans';
