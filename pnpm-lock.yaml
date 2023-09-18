@@ -81,8 +81,8 @@ importers:
         specifier: 0.4.10
         version: 0.4.10(zod@3.22.2)
       remix-routes:
-        specifier: 1.4.4
-        version: 1.4.4
+        specifier: 1.4.5
+        version: 1.4.5
       remix-themes:
         specifier: 1.2.1
         version: 1.2.1(@remix-run/react@1.19.3)(@remix-run/server-runtime@1.19.3)
@@ -8739,12 +8739,6 @@ packages:
     resolution: {integrity: sha512-1BC0BVFhS/p0qtw6enp8e+8OD0UrK0oFLztSjNzhcKA3WDuJxxAPXzPuPtKkjEY9UUoEWlX/8fgKeu2S8i9JTA==}
     engines: {node: '>= 0.4'}
 
-  /is-core-module@2.11.0:
-    resolution: {integrity: sha512-RRjxlvLDkD1YJwDbroBHMb+cukurkDWNyHx7D3oNB5x9rb5ogcksMC5wHCadcXoo67gVr/+3GFySh3134zi6rw==}
-    dependencies:
-      has: 1.0.3
-    dev: true
-
   /is-core-module@2.13.0:
     resolution: {integrity: sha512-Z7dk6Qo8pOCp3l4tsX2C5ZVas4V+UxwQodwZhLopL91TX8UyyHEXafPcyoeeWuLrwzHcr3igO78wNLwHJHsMCQ==}
     dependencies:
@@ -10762,7 +10756,7 @@ packages:
       postcss: 8.4.27
       postcss-value-parser: 4.2.0
       read-cache: 1.0.0
-      resolve: 1.22.2
+      resolve: 1.22.4
     dev: true
 
   /postcss-js@4.0.1(postcss@8.4.27):
@@ -11604,8 +11598,8 @@ packages:
       zod: 3.22.2
     dev: false
 
-  /remix-routes@1.4.4:
-    resolution: {integrity: sha512-4L6Q85BiYHdei8n3Z98W1HyqDKdJXQG68698dNHtoog6KL6U9TBHS+i6lFkLl1az9twEuJOQgzxq7GEIGtPACg==}
+  /remix-routes@1.4.5:
+    resolution: {integrity: sha512-PLuD1QXhwloq5exTvJUzQ4jT04hZf6qnx54s9bFCFEQ8wxL1Q1PVisgNaf0Tet5LPqjGzpmEgXG5AJF321kpNQ==}
     hasBin: true
     dependencies:
       chokidar: 3.5.3
@@ -11700,7 +11694,7 @@ packages:
     resolution: {integrity: sha512-Sb+mjNHOULsBv818T40qSPeRiuWLyaGMa5ewydRLFimneixmVy2zdivRl+AF6jaYPC8ERxGDmFSiqui6SfPd+g==}
     hasBin: true
     dependencies:
-      is-core-module: 2.11.0
+      is-core-module: 2.13.0
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
     dev: true
