@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { getSegmentCssWidth, CodeInput as Rsi } from 'rci';
