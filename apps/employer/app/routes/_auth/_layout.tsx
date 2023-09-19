@@ -2,8 +2,9 @@ import { Link, Outlet } from '@remix-run/react';
 import { LogIn, Typography, buttonVariants, cn } from '@technifit/ui';
 import { $path } from 'remix-routes';
 
-const Layout = () => {
+export { loader } from './_layout.server';
 
+const Layout = () => {
     return <div className='container py-4 grid grid-cols-1 lg:grid-cols-2'>
         <div className='hidden lg:flex lg:flex-col lg:justify-between lg:gap-2'>
             <div className='flex justify-start'>

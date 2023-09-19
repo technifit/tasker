@@ -9,3 +9,11 @@ export const requireAuthenticatedUser = async (args: DataFunctionArgs) => {
     throw redirect('/log-in');
   }
 };
+
+export const requireUnauthenticatedUser = async (args: DataFunctionArgs) => {
+  const { userId } = await getAuth(args);
+
+  if (userId) {
+    throw redirect('/');
+  }
+};

@@ -1,4 +1,4 @@
-import { isClerkAPIResponseError, useSignIn } from '@clerk/remix';
+import { isClerkAPIResponseError, useSignUp } from '@clerk/remix';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Form, useNavigate } from '@remix-run/react';
 import { RemixFormProvider, useRemixForm } from 'remix-hook-form';
@@ -16,27 +16,24 @@ import {
 } from '@technifit/ui';
 
 const schema = z.object({
-    email: z
-        .string({ required_error: 'Please enter your email' })
-        .email()
-        .nonempty(),
-    password: z.string({ required_error: 'Please enter your password' }).min(8),
+    otp: z
+        .string({ required_error: 'Please enter your one time password' })
+        .min(6, { message: 'Code shold be 6 characters' })
+        .max(6, { message: 'Code shold be 6 characters' }),
 });
 
 type FormData = z.infer<typeof schema>;
 
 const resolver = zodResolver(schema);
 
-export const LoginForm = () => {
-    const { isLoaded, signIn, setActive } = useSignIn();
+export const OtpForm = () => {
+    const { isLoaded, signUp, setActive } = useSignUp();
     const navigate = useNavigate();
 
     const form = useRemixForm<FormData>({
         mode: 'onSubmit',
         resolver,
     });
-
-    //const { getValues } = useRemixFormContext<FormData>();
 
     const handleFormSubmit = async (
         e: React.FormEvent<HTMLFormElement> | undefined,
@@ -49,22 +46,31 @@ export const LoginForm = () => {
 
         if (isLoaded) {
             e?.preventDefault();
-            const { email, password } = form.getValues();
+            const { otp } = form.getValues();
 
             try {
-                const signInResponse = await signIn.create({
-                    identifier: email,
-                    password,
-                });
+                const signInResponse = await signUp.attemptEmailAddressVerification({
+                    code: otp
+                })
 
-                if (signInResponse.status === 'complete') {
-                    setActive({ session: signInResponse.createdSessionId });
+                switch (signInResponse.status) {
+                    case 'complete':
+                        setActive({ session: signInResponse.createdSessionId });
 
-                    setTimeout(() => {
-                        navigate($path('/'));
-                    }, 500);
-                } else if (signInResponse.status === 'needs_new_password') {
-                    console.log('invalid password!');
+                        setTimeout(() => {
+                            navigate($path('/'));
+                        }, 500);
+                        break;
+                    case 'missing_requirements':
+                        if (signInResponse.unverifiedFields.some(x => x === 'email_address')) {
+                            // TODO: Refactor this to use a switch to handle the unverified fields
+                            // TODO: redirect to a enter email code page (check can we retrieve a sign in)
+                            // TODO: create an email link verification page
+                            await signUp.prepareEmailAddressVerification({ strategy: "email_code" });
+                        }
+                        break;
+                    default:
+                        break;
                 }
             } catch (error) {
                 if (isClerkAPIResponseError(error)) {
@@ -82,30 +88,17 @@ export const LoginForm = () => {
                 <div className='w-full flex flex-col gap-2'>
                     <FormField
                         control={form.control}
-                        name='email'
+                        name='otp'
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Email</FormLabel>
+                                <FormLabel>Code</FormLabel>
                                 <FormControl>
                                     <Input
-                                        autoComplete='email'
-                                        type='email'
-                                        placeholder='joe.blogs@org.com'
+                                        autoComplete='one-time-code'
+                                        type='numeric'
+                                        placeholder='12345'
                                         {...field}
                                     />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
-                    <FormField
-                        control={form.control}
-                        name='password'
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormLabel>Password</FormLabel>
-                                <FormControl>
-                                    <Input autoComplete='email' type='password' {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -116,7 +109,7 @@ export const LoginForm = () => {
                     disabled={!isLoaded || form.formState.isSubmitting}
                     className='w-full'
                 >
-                    {form.formState.isSubmitting ? 'Signing In...' : 'Sign In'}
+                    {form.formState.isSubmitting ? 'Signing Up...' : 'Sign Up'}
                 </Button>
             </Form>
         </RemixFormProvider>
