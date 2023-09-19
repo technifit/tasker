@@ -50,8 +50,8 @@ export const OtpForm = () => {
 
             try {
                 const signInResponse = await signUp.attemptEmailAddressVerification({
-                    code: otp
-                })
+                    code: otp,
+                });
 
                 switch (signInResponse.status) {
                     case 'complete':
@@ -62,11 +62,15 @@ export const OtpForm = () => {
                         }, 500);
                         break;
                     case 'missing_requirements':
-                        if (signInResponse.unverifiedFields.some(x => x === 'email_address')) {
+                        if (
+                            signInResponse.unverifiedFields.some((x) => x === 'email_address')
+                        ) {
                             // TODO: Refactor this to use a switch to handle the unverified fields
                             // TODO: redirect to a enter email code page (check can we retrieve a sign in)
                             // TODO: create an email link verification page
-                            await signUp.prepareEmailAddressVerification({ strategy: "email_code" });
+                            await signUp.prepareEmailAddressVerification({
+                                strategy: 'email_code',
+                            });
                         }
                         break;
                     default:
@@ -85,7 +89,7 @@ export const OtpForm = () => {
     return (
         <RemixFormProvider {...form}>
             <Form onSubmit={handleFormSubmit} className='flex w-full flex-col gap-4'>
-                <div className='w-full flex flex-col gap-2'>
+                <div className='flex w-full flex-col gap-2'>
                     <FormField
                         control={form.control}
                         name='otp'

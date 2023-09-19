@@ -5,7 +5,7 @@
 /** @type { PrettierConfig | SortImportsConfig | TailwindConfig } */
 const config = {
   arrowParens: 'always',
-  printWidth: 80,
+  printWidth: 120,
   singleQuote: true,
   jsxSingleQuote: true,
   semi: true,
@@ -15,7 +15,7 @@ const config = {
     '@ianvs/prettier-plugin-sort-imports',
     'prettier-plugin-tailwindcss',
   ],
-  tailwindConfig: './packages/config/tailwind',
+  tailwindConfig: './packages/config/tailwind/index.ts',
   importOrderTypeScriptVersion: '4.4.0',
   importOrder: [
     '^(react/(.*)$)|^(react$)|^(react-native(.*)$)',
