@@ -21,7 +21,7 @@ const typographyVariants = cva('text-foreground', {
             lead: 'text-xl text-muted-foreground',
             largeText: 'text-lg font-semibold',
             smallText: 'text-sm font-medium leading-none',
-            mutedText: 'text-sm text-muted-foreground',
+            mutedText: 'text-base text-muted-foreground',
         },
     },
     defaultVariants: {
