@@ -17,7 +17,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@clerk/remix": "2.10.2",
+    "@clerk/remix": "2.10.3",
     "@remix-run/react": "1.19.3",
     "@remix-run/serve": "1.19.3",
     "@sentry/integrations": "7.69.0",
