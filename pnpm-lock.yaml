@@ -33,8 +33,8 @@ importers:
   apps/employer:
     dependencies:
       '@clerk/remix':
-        specifier: 2.10.2
-        version: 2.10.2(@remix-run/react@1.19.3)(@remix-run/server-runtime@1.19.3)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 2.10.3
+        version: 2.10.3(@remix-run/react@1.19.3)(@remix-run/server-runtime@1.19.3)(react-dom@18.2.0)(react@18.2.0)
       '@remix-run/react':
         specifier: 1.19.3
         version: 1.19.3(react-dom@18.2.0)(react@18.2.0)
@@ -42,14 +42,14 @@ importers:
         specifier: 1.19.3
         version: 1.19.3
       '@sentry/integrations':
-        specifier: 7.69.0
-        version: 7.69.0
+        specifier: 7.70.0
+        version: 7.70.0
       '@sentry/profiling-node':
         specifier: 1.2.1
         version: 1.2.1
       '@sentry/remix':
-        specifier: 7.69.0
-        version: 7.69.0(@remix-run/node@1.19.3)(@remix-run/react@1.19.3)(react@18.2.0)
+        specifier: 7.70.0
+        version: 7.70.0(@remix-run/node@1.19.3)(@remix-run/react@1.19.3)(react@18.2.0)
       '@technifit/ui':
         specifier: 0.1.0
         version: link:../../packages/ui
@@ -76,7 +76,7 @@ importers:
         version: 18.2.0(react@18.2.0)
       remix-hook-form:
         specifier: 2.0.1
-        version: 2.0.1(@remix-run/react@1.19.3)(react-dom@18.2.0)(react-hook-form@7.46.1)(react@18.2.0)
+        version: 2.0.1(@remix-run/react@1.19.3)(react-dom@18.2.0)(react-hook-form@7.46.2)(react@18.2.0)
       remix-params-helper:
         specifier: 0.4.10
         version: 0.4.10(zod@3.22.2)
@@ -145,8 +145,8 @@ importers:
   packages/api:
     dependencies:
       '@clerk/nextjs':
-        specifier: 4.23.5
-        version: 4.23.5(next@13.4.8)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 4.24.0
+        version: 4.24.0(next@13.4.8)(react-dom@18.2.0)(react@18.2.0)
       '@t3-oss/env-nextjs':
         specifier: 0.6.1
         version: 0.6.1(typescript@5.2.2)(zod@3.22.2)
@@ -154,11 +154,11 @@ importers:
         specifier: ^0.1.0
         version: link:../db
       '@trpc/client':
-        specifier: 10.38.3
-        version: 10.38.3(@trpc/server@10.38.3)
+        specifier: 10.38.4
+        version: 10.38.4(@trpc/server@10.38.4)
       '@trpc/server':
-        specifier: 10.38.3
-        version: 10.38.3
+        specifier: 10.38.4
+        version: 10.38.4
       stripe:
         specifier: 13.6.0
         version: 13.6.0
@@ -185,8 +185,8 @@ importers:
   packages/config/eslint:
     dependencies:
       '@next/eslint-plugin-next':
-        specifier: 13.5.1
-        version: 13.5.1
+        specifier: 13.5.2
+        version: 13.5.2
       '@remix-run/eslint-config':
         specifier: 1.19.3
         version: 1.19.3(eslint@8.49.0)(react@18.2.0)(typescript@5.2.2)
@@ -228,8 +228,8 @@ importers:
   packages/config/tailwind:
     devDependencies:
       autoprefixer:
-        specifier: 10.4.15
-        version: 10.4.15(postcss@8.4.30)
+        specifier: 10.4.16
+        version: 10.4.16(postcss@8.4.30)
       postcss:
         specifier: 8.4.30
         version: 8.4.30
@@ -272,7 +272,7 @@ importers:
     dependencies:
       '@hookform/resolvers':
         specifier: 3.3.1
-        version: 3.3.1(react-hook-form@7.46.1)
+        version: 3.3.1(react-hook-form@7.46.2)
       '@radix-ui/react-accordion':
         specifier: 1.1.2
         version: 1.1.2(@types/react-dom@18.2.7)(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0)
@@ -374,8 +374,8 @@ importers:
         version: 3.22.2
     devDependencies:
       '@tanstack/react-table':
-        specifier: 8.10.0
-        version: 8.10.0(react-dom@18.2.0)(react@18.2.0)
+        specifier: 8.10.1
+        version: 8.10.1(react-dom@18.2.0)(react@18.2.0)
       '@technifit/eslint-config':
         specifier: 0.2.0
         version: link:../config/eslint
@@ -407,8 +407,8 @@ importers:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
       react-hook-form:
-        specifier: 7.46.1
-        version: 7.46.1(react@18.2.0)
+        specifier: 7.46.2
+        version: 7.46.2(react@18.2.0)
       tailwindcss:
         specifier: 3.3.3
         version: 3.3.3
@@ -1734,11 +1734,11 @@ packages:
     resolution: {integrity: sha512-hBzuU5+JjB2cqNZyszkDHZgOSrUUT8V3dhgRl8Q9Gp6dAj/H5+KILGjbhDpc3Iy9qmqlm/akuOI2ut9VUtzJxQ==}
     dev: true
 
-  /@clerk/backend@0.29.0:
-    resolution: {integrity: sha512-2miuqyzmlzboTcLQOtafGw4+InnkFALMWjM9l9gu75KBWg1pUdFYLEDcJV+MHt0ZtY+pZO7aGnPE0Mf7QnG+bA==}
+  /@clerk/backend@0.29.1:
+    resolution: {integrity: sha512-PNlnIrNacY88bg2/rD6RvOmMrzHFhIbBHBsDn4OWdzRvb+DzBfgorJR0/tq2Mgf1X3Zor3fux9057JSYT46rFw==}
     engines: {node: '>=14'}
     dependencies:
-      '@clerk/types': 3.51.0
+      '@clerk/types': 3.52.0
       '@peculiar/webcrypto': 1.4.1
       '@types/node': 16.18.6
       cookie: 0.5.0
@@ -1748,24 +1748,24 @@ packages:
       tslib: 2.4.1
     dev: false
 
-  /@clerk/clerk-react@4.24.2(react@18.2.0):
-    resolution: {integrity: sha512-nMxhtByDMJ4kXoUu2j75tS9NyEI5S0KI3Zj67WhGxVMAUGbOYPI6gmTv6exORb5kVALF0QmS4FGyOGQ2WZJd3A==}
+  /@clerk/clerk-react@4.25.0(react@18.2.0):
+    resolution: {integrity: sha512-7djb97xjNKk5v4TaITgs5RYIrdtKRoY8uEI2SRR9ZFi1JuKbHvJOIosIksF1FRTDoe601FXBgN0LdwIVu1Fwqw==}
     engines: {node: '>=14'}
     peerDependencies:
       react: '>=16'
     dependencies:
-      '@clerk/shared': 0.22.0(react@18.2.0)
-      '@clerk/types': 3.51.0
+      '@clerk/shared': 0.22.1(react@18.2.0)
+      '@clerk/types': 3.52.0
       react: 18.2.0
       tslib: 2.4.1
     dev: false
 
-  /@clerk/clerk-sdk-node@4.12.5:
-    resolution: {integrity: sha512-GW0eXhG2P7GCFKnc2j7zOAR2qK0fOQwoZAFvfovXJNyZhlcbg7NKtjsbW6Q8X7qrtaD2UX6SuOvuxQZP633H7w==}
+  /@clerk/clerk-sdk-node@4.12.6:
+    resolution: {integrity: sha512-fdlAjKVgOHGsfGLNyIImTTgosHNOqCGJTytq2G0+YDjF46RzQ+eCyPDnvnR0wuVuNSM68qIutHn5DUiNTo+Wdw==}
     engines: {node: '>=14'}
     dependencies:
-      '@clerk/backend': 0.29.0
-      '@clerk/types': 3.51.0
+      '@clerk/backend': 0.29.1
+      '@clerk/types': 3.52.0
       '@types/cookies': 0.7.7
       '@types/express': 4.17.14
       '@types/node-fetch': 2.6.2
@@ -1774,18 +1774,18 @@ packages:
       tslib: 2.4.1
     dev: false
 
-  /@clerk/nextjs@4.23.5(next@13.4.8)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-SG8ooFEC5P6lLa1G+239zUu4ciLwmoPei8CnhPzKQ9u90J9ly/j9wVVBm1AX3rY4G+1xMVyR42PUC7wjfvxhoA==}
+  /@clerk/nextjs@4.24.0(next@13.4.8)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-cohOx/92Lq+bOXOCiZNVy4qPHrHJkIkOCNL/swnhigTrRFzFI3b3ZgiTnhALKHiuduM2UKUhPIgmPqRv3ogz4Q==}
     engines: {node: '>=14'}
     peerDependencies:
       next: '>=10'
       react: ^17.0.2 || ^18.0.0-0
       react-dom: ^17.0.2 || ^18.0.0-0
     dependencies:
-      '@clerk/backend': 0.29.0
-      '@clerk/clerk-react': 4.24.2(react@18.2.0)
-      '@clerk/clerk-sdk-node': 4.12.5
-      '@clerk/types': 3.51.0
+      '@clerk/backend': 0.29.1
+      '@clerk/clerk-react': 4.25.0(react@18.2.0)
+      '@clerk/clerk-sdk-node': 4.12.6
+      '@clerk/types': 3.52.0
       next: 13.4.8(@babel/core@7.22.6)(react-dom@18.2.0)(react@18.2.0)
       path-to-regexp: 6.2.1
       react: 18.2.0
@@ -1793,8 +1793,8 @@ packages:
       tslib: 2.4.1
     dev: false
 
-  /@clerk/remix@2.10.2(@remix-run/react@1.19.3)(@remix-run/server-runtime@1.19.3)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-78YtRatW/feY6f0P1p+nVechS/nBBvH6io6BEPqwdwMiHDLYpII5HKqjSkfNQbxEZQdBFVMvie/RlzCXNXOzmQ==}
+  /@clerk/remix@2.10.3(@remix-run/react@1.19.3)(@remix-run/server-runtime@1.19.3)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-8+SOWpTgKMTZExlBfz0w/iDTevrDzBnJZA6QRCz8vZeTOwoZ6uFGSXKrrA8CwTSX/LbYfZeD1K4u2Dvo2fPXqw==}
     engines: {node: '>=14'}
     peerDependencies:
       '@remix-run/react': ^1.7.6
@@ -1802,10 +1802,10 @@ packages:
       react: '>=16.8'
       react-dom: '>=16.8'
     dependencies:
-      '@clerk/backend': 0.29.0
-      '@clerk/clerk-react': 4.24.2(react@18.2.0)
-      '@clerk/shared': 0.22.0(react@18.2.0)
-      '@clerk/types': 3.51.0
+      '@clerk/backend': 0.29.1
+      '@clerk/clerk-react': 4.25.0(react@18.2.0)
+      '@clerk/shared': 0.22.1(react@18.2.0)
+      '@clerk/types': 3.52.0
       '@remix-run/react': 1.19.3(react-dom@18.2.0)(react@18.2.0)
       '@remix-run/server-runtime': 1.19.3
       cookie: 0.5.0
@@ -1814,8 +1814,8 @@ packages:
       tslib: 2.4.1
     dev: false
 
-  /@clerk/shared@0.22.0(react@18.2.0):
-    resolution: {integrity: sha512-AHPypu9gZ3v44PRqiMA56c+YNLc2IzLaPUyiYFYU+xeH/R+wqzGp7OxZoZr/kmzgA8taiVl/bjixWgpuZwzI3A==}
+  /@clerk/shared@0.22.1(react@18.2.0):
+    resolution: {integrity: sha512-nVWJ6GXcxR2wT4uaiwJNIriE/Ov4vhUwYt4DI+M38s95TjaKt/GR4wRvv5DxeOvqRxY8Xc7n1CxyqrFfkYcWEg==}
     peerDependencies:
       react: '>=16'
     dependencies:
@@ -1825,8 +1825,8 @@ packages:
       swr: 2.2.0(react@18.2.0)
     dev: false
 
-  /@clerk/types@3.51.0:
-    resolution: {integrity: sha512-JCSG2W1nI+zEIyDTGKfQJkvl2Ve5vpR3AxDsyXQMf/aZyXhBT351W1dPUfUW4K9MpLmZ2sB/1gj3UJFaBw9e7g==}
+  /@clerk/types@3.52.0:
+    resolution: {integrity: sha512-AzPFyTcVdmMAEmP0Of2DzQ7M/XyBIYL5cNNKYaEZ+0f0T2xxFC4HIDIQqY1GjwDs6MBiHl2nPf2C06pQpOVWbQ==}
     engines: {node: '>=14'}
     dependencies:
       csstype: 3.1.1
@@ -2509,12 +2509,12 @@ packages:
     resolution: {integrity: sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==}
     dev: true
 
-  /@hookform/resolvers@3.3.1(react-hook-form@7.46.1):
+  /@hookform/resolvers@3.3.1(react-hook-form@7.46.2):
     resolution: {integrity: sha512-K7KCKRKjymxIB90nHDQ7b9nli474ru99ZbqxiqDAWYsYhOsU3/4qLxW91y+1n04ic13ajjZ66L3aXbNef8PELQ==}
     peerDependencies:
       react-hook-form: ^7.0.0
     dependencies:
-      react-hook-form: 7.46.1(react@18.2.0)
+      react-hook-form: 7.46.2(react@18.2.0)
     dev: false
 
   /@humanwhocodes/config-array@0.11.11:
@@ -2656,8 +2656,8 @@ packages:
     resolution: {integrity: sha512-twuSf1klb3k9wXI7IZhbZGtFCWvGD4wXTY2rmvzIgVhXhs7ISThrbNyutBx3jWIL8Y/Hk9+woytFz5QsgtcRKQ==}
     dev: false
 
-  /@next/eslint-plugin-next@13.5.1:
-    resolution: {integrity: sha512-LBlI3iQvlzRE7Y6AfIyHKuM4T6REGmFgweN2tBqEUVEfgxERBLOutV2xckXEp3Y3VbfJBBXKZNfDzs20gHimSg==}
+  /@next/eslint-plugin-next@13.5.2:
+    resolution: {integrity: sha512-Ew8DOUerJYGRo8pI84SVwn9wxxx8sH92AanCXSkkLJM2W0RJEWy+BqWSCfrlA/3ZIczEl4l4o4lOeTGBPYfBJg==}
     dependencies:
       glob: 7.1.7
     dev: false
@@ -4522,7 +4522,7 @@ packages:
       eslint: 8.49.0
       eslint-import-resolver-node: 0.3.7
       eslint-import-resolver-typescript: 3.5.5(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-node@0.3.7)(eslint-plugin-import@2.28.1)(eslint@8.49.0)
-      eslint-plugin-import: 2.28.1(@typescript-eslint/parser@5.62.0)(eslint@8.49.0)
+      eslint-plugin-import: 2.28.1(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-typescript@3.5.5)(eslint@8.49.0)
       eslint-plugin-jest: 26.9.0(@typescript-eslint/eslint-plugin@5.62.0)(eslint@8.49.0)(typescript@5.2.2)
       eslint-plugin-jest-dom: 4.0.3(eslint@8.49.0)
       eslint-plugin-jsx-a11y: 6.7.1(eslint@8.49.0)
@@ -4665,25 +4665,25 @@ packages:
       tslib: 2.6.1
     dev: false
 
-  /@sentry-internal/tracing@7.69.0:
-    resolution: {integrity: sha512-4BgeWZUj9MO6IgfO93C9ocP3+AdngqujF/+zB2rFdUe+y9S6koDyUC7jr9Knds/0Ta72N/0D6PwhgSCpHK8s0Q==}
+  /@sentry-internal/tracing@7.70.0:
+    resolution: {integrity: sha512-SpbE6wZhs6QwG2ORWCt8r28o1T949qkWx/KeRTCdK4Ub95PQ3Y3DgnqD8Wz//3q50Wt6EZDEibmz4t067g6PPg==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry/core': 7.69.0
-      '@sentry/types': 7.69.0
-      '@sentry/utils': 7.69.0
+      '@sentry/core': 7.70.0
+      '@sentry/types': 7.70.0
+      '@sentry/utils': 7.70.0
       tslib: 2.6.1
     dev: false
 
-  /@sentry/browser@7.69.0:
-    resolution: {integrity: sha512-5ls+zu2PrMhHCIIhclKQsWX5u6WH0Ez5/GgrCMZTtZ1d70ukGSRUvpZG9qGf5Cw1ezS1LY+1HCc3whf8x8lyPw==}
+  /@sentry/browser@7.70.0:
+    resolution: {integrity: sha512-PB+IP49/TLcnDHCj9eJ5tcHE0pzXg23wBakmF3KGMSd5nxEbUvmOsaFPZcgUUlL9JlU3v1Y40We7HdPStrY6oA==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry-internal/tracing': 7.69.0
-      '@sentry/core': 7.69.0
-      '@sentry/replay': 7.69.0
-      '@sentry/types': 7.69.0
-      '@sentry/utils': 7.69.0
+      '@sentry-internal/tracing': 7.70.0
+      '@sentry/core': 7.70.0
+      '@sentry/replay': 7.70.0
+      '@sentry/types': 7.70.0
+      '@sentry/utils': 7.70.0
       tslib: 2.6.1
     dev: false
 
@@ -4712,12 +4712,12 @@ packages:
       tslib: 2.6.1
     dev: false
 
-  /@sentry/core@7.69.0:
-    resolution: {integrity: sha512-V6jvK2lS8bhqZDMFUtvwe2XvNstFQf5A+2LMKCNBOV/NN6eSAAd6THwEpginabjet9dHsNRmMk7WNKvrUfQhZw==}
+  /@sentry/core@7.70.0:
+    resolution: {integrity: sha512-voUsGVM+jwRp99AQYFnRvr7sVd2tUhIMj1L6F42LtD3vp7t5ZnKp3NpXagtFW2vWzXESfyJUBhM0qI/bFvn7ZA==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry/types': 7.69.0
-      '@sentry/utils': 7.69.0
+      '@sentry/types': 7.70.0
+      '@sentry/utils': 7.70.0
       tslib: 2.6.1
     dev: false
 
@@ -4731,12 +4731,12 @@ packages:
       tslib: 2.6.1
     dev: false
 
-  /@sentry/integrations@7.69.0:
-    resolution: {integrity: sha512-FEFtFqXuCo9+L7bENZxFpEAlIODwHl6FyW/DwLfniy9jOXHU7BhP/oICLrFE5J7rh1gNY7N/8VlaiQr3hCnS/g==}
+  /@sentry/integrations@7.70.0:
+    resolution: {integrity: sha512-ffIEuiElROzl4IpYX0O7vtPaadXVycPtyjq86YTHjd2TUFcYuQTPBm5UjEVE0/sSNNCdfWYxNThU/fVyq93l1g==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry/types': 7.69.0
-      '@sentry/utils': 7.69.0
+      '@sentry/types': 7.70.0
+      '@sentry/utils': 7.70.0
       localforage: 1.10.0
       tslib: 2.6.1
     dev: false
@@ -4757,15 +4757,15 @@ packages:
       - supports-color
     dev: false
 
-  /@sentry/node@7.69.0:
-    resolution: {integrity: sha512-T0NgPcmDQvEuz5hy6aEhXghTHHTWsiP3IWoeEAakDBHAXmtpT6lYFQZgb5AiEOt9F5KO/G/1yH3YYdpDAnKhPw==}
+  /@sentry/node@7.70.0:
+    resolution: {integrity: sha512-GeGlnu3QnJX0GN2FvZ3E31e48ZhRzEpREyC0Wa4BRvYHnyiGvsQjo/0RKeq6vvlggRhVnuoMg/jESyUmdntrAA==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry-internal/tracing': 7.69.0
-      '@sentry/core': 7.69.0
-      '@sentry/types': 7.69.0
-      '@sentry/utils': 7.69.0
-      cookie: 0.4.2
+      '@sentry-internal/tracing': 7.70.0
+      '@sentry/core': 7.70.0
+      '@sentry/types': 7.70.0
+      '@sentry/utils': 7.70.0
+      cookie: 0.5.0
       https-proxy-agent: 5.0.1
       lru_map: 0.3.3
       tslib: 2.6.1
@@ -4791,37 +4791,37 @@ packages:
       - supports-color
     dev: false
 
-  /@sentry/react@7.69.0(react@18.2.0):
-    resolution: {integrity: sha512-J+DciRRVuruf1nMmBOi2VeJkOLGeCb4vTOFmHzWTvRJNByZ0flyo8E/fyROL7+23kBq1YbcVY6IloUlH73hneQ==}
+  /@sentry/react@7.70.0(react@18.2.0):
+    resolution: {integrity: sha512-oFd1NEG6S3nczZY8ZFQdEY9ZOfgOvJT1KRoXaSaBIC1KjL0+ngX9TKg+eiYxvI0euxnY5jCwozbA0NsDXqwN7A==}
     engines: {node: '>=8'}
     peerDependencies:
       react: 15.x || 16.x || 17.x || 18.x
     dependencies:
-      '@sentry/browser': 7.69.0
-      '@sentry/types': 7.69.0
-      '@sentry/utils': 7.69.0
+      '@sentry/browser': 7.70.0
+      '@sentry/types': 7.70.0
+      '@sentry/utils': 7.70.0
       hoist-non-react-statics: 3.3.2
       react: 18.2.0
       tslib: 2.6.1
     dev: false
 
-  /@sentry/remix@7.69.0(@remix-run/node@1.19.3)(@remix-run/react@1.19.3)(react@18.2.0):
-    resolution: {integrity: sha512-kq0nQpirZyT5RqhOpDkRLsyW9u1TfSIP7mjVsYshkRbkezrrk6zrZn8zJkBwW9SC+Hny76RcK4Z28jUEd2Ah9w==}
+  /@sentry/remix@7.70.0(@remix-run/node@1.19.3)(@remix-run/react@1.19.3)(react@18.2.0):
+    resolution: {integrity: sha512-GONO3789xWGgDTirWkHS+hWhnA3k+DRHIW+GJ7uCPdhssUyGdso1/FAZUQvsvwuQ6lDFFmllO+8eE9qsgg3sUA==}
     engines: {node: '>=14'}
     hasBin: true
     peerDependencies:
-      '@remix-run/node': 1.x
-      '@remix-run/react': 1.x
+      '@remix-run/node': 1.x || 2.x
+      '@remix-run/react': 1.x || 2.x
       react: 16.x || 17.x || 18.x
     dependencies:
       '@remix-run/node': 1.19.3
       '@remix-run/react': 1.19.3(react-dom@18.2.0)(react@18.2.0)
       '@sentry/cli': 2.20.5
-      '@sentry/core': 7.69.0
-      '@sentry/node': 7.69.0
-      '@sentry/react': 7.69.0(react@18.2.0)
-      '@sentry/types': 7.69.0
-      '@sentry/utils': 7.69.0
+      '@sentry/core': 7.70.0
+      '@sentry/node': 7.70.0
+      '@sentry/react': 7.70.0(react@18.2.0)
+      '@sentry/types': 7.70.0
+      '@sentry/utils': 7.70.0
       glob: 10.3.4
       react: 18.2.0
       tslib: 2.6.1
@@ -4831,13 +4831,13 @@ packages:
       - supports-color
     dev: false
 
-  /@sentry/replay@7.69.0:
-    resolution: {integrity: sha512-oUqWyBPFUgShdVvgJtV65EQH9pVDmoYVQMOu59JI6FHVeL3ald7R5Mvz6GaNLXsirvvhp0yAkcAd2hc5Xi6hDw==}
+  /@sentry/replay@7.70.0:
+    resolution: {integrity: sha512-XjnyE6ORREz9kBWWHdXaIjS9P2Wo7uEw+y23vfLQwzV0Nx3xJ+FG4dwf8onyIoeCZDKbz7cqQIbugU1gkgUtZw==}
     engines: {node: '>=12'}
     dependencies:
-      '@sentry/core': 7.69.0
-      '@sentry/types': 7.69.0
-      '@sentry/utils': 7.69.0
+      '@sentry/core': 7.70.0
+      '@sentry/types': 7.70.0
+      '@sentry/utils': 7.70.0
     dev: false
 
   /@sentry/types@7.66.0:
@@ -4845,8 +4845,8 @@ packages:
     engines: {node: '>=8'}
     dev: false
 
-  /@sentry/types@7.69.0:
-    resolution: {integrity: sha512-zPyCox0mzitzU6SIa1KIbNoJAInYDdUpdiA+PoUmMn2hFMH1llGU/cS7f4w/mAsssTlbtlBi72RMnWUCy578bw==}
+  /@sentry/types@7.70.0:
+    resolution: {integrity: sha512-rY4DqpiDBtXSk4MDNBH3dwWqfPbNBI/9GA7Y5WJSIcObBtfBKp0fzYliHJZD0pgM7d4DPFrDn42K9Iiumgymkw==}
     engines: {node: '>=8'}
     dev: false
 
@@ -4858,11 +4858,11 @@ packages:
       tslib: 2.6.1
     dev: false
 
-  /@sentry/utils@7.69.0:
-    resolution: {integrity: sha512-4eBixe5Y+0EGVU95R4NxH3jkkjtkE4/CmSZD4In8SCkWGSauogePtq6hyiLsZuP1QHdpPb9Kt0+zYiBb2LouBA==}
+  /@sentry/utils@7.70.0:
+    resolution: {integrity: sha512-0cChMH0lsGp+5I3D4wOHWwjFN19HVrGUs7iWTLTO5St3EaVbdeLbI1vFXHxMxvopbwgpeZafbreHw/loIdZKpw==}
     engines: {node: '>=8'}
     dependencies:
-      '@sentry/types': 7.69.0
+      '@sentry/types': 7.70.0
       tslib: 2.6.1
     dev: false
 
@@ -4917,20 +4917,20 @@ packages:
       zod: 3.22.2
     dev: false
 
-  /@tanstack/react-table@8.10.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-FNhKE3525hryvuWw90xRbP16qNiq7OLJkDZopOKcwyktErLi1ibJzAN9DFwA/gR1br9SK4StXZh9JPvp9izrrQ==}
+  /@tanstack/react-table@8.10.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-pD58vH5ahZv1qzAK9Xl87A5dydBnKiDGdyEsd5VK2bG2wGRbfbpBfH915KdUv+8XqabDQgUo8nU8qHBEQv1qvg==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=16'
       react-dom: '>=16'
     dependencies:
-      '@tanstack/table-core': 8.10.0
+      '@tanstack/table-core': 8.10.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: true
 
-  /@tanstack/table-core@8.10.0:
-    resolution: {integrity: sha512-e701yAJ18aGDP6mzVworlFAmQ+gi3Wtqx5mGZUe2BUv4W4D80dJxUfkHdtEGJ6GryAnlCCNTej7eaJiYmPhyYg==}
+  /@tanstack/table-core@8.10.1:
+    resolution: {integrity: sha512-dvO7wz+WjnT+7KI6ZZ+GAe9tljIFResDaV/TfOhfpeTB0ud9pILsavuM22HAXG2NsVaIG2Zax2OaVIsNt0z7Og==}
     engines: {node: '>=12'}
     dev: true
 
@@ -4955,16 +4955,16 @@ packages:
     resolution: {integrity: sha512-C5Mc6rdnsaJDjO3UpGW/CQTHtCKaYlScZTly4JIu97Jxo/odCiH0ITnDXSJPTOrEKk/ycSZ0AOgTmkDtkOsvIA==}
     dev: true
 
-  /@trpc/client@10.38.3(@trpc/server@10.38.3):
-    resolution: {integrity: sha512-hHPsElTL4sB+UGzuAZ4iwRVHjELrk/Nsl2owsYw9ITJz3EY7VWRsQ6vK48kJvlHPYPhP+efID5UOgyZMs4bFXA==}
+  /@trpc/client@10.38.4(@trpc/server@10.38.4):
+    resolution: {integrity: sha512-svpZ9Iq9cnn+XfXQZF8PMt1YxAtNYeGiKZ/pGpcume7RqJrra/kWwU41gbax8d/cAg3YKUgNft9dZFKMYtXuYw==}
     peerDependencies:
-      '@trpc/server': 10.38.3
+      '@trpc/server': 10.38.4
     dependencies:
-      '@trpc/server': 10.38.3
+      '@trpc/server': 10.38.4
     dev: false
 
-  /@trpc/server@10.38.3:
-    resolution: {integrity: sha512-9s8/kwo2IDB5hwB2SKZZrfevRhdb1f9fdXtIYd3lbQuf2jQaC/LyQuHaIQjDQoUx9updBfsHXcFFPiCP1DL6pg==}
+  /@trpc/server@10.38.4:
+    resolution: {integrity: sha512-xSMTwnKA/Unxu5fbAkQ7cApHeWj1rTEA3XgrGDcPHn03fmeIidIKxronM46N46ZF4CCexey4JWzu89XxA16uIA==}
     dev: false
 
   /@types/acorn@4.0.6:
@@ -5852,16 +5852,16 @@ packages:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
     dev: false
 
-  /autoprefixer@10.4.15(postcss@8.4.30):
-    resolution: {integrity: sha512-KCuPB8ZCIqFdA4HwKXsvz7j6gvSDNhDP7WnUjBleRkKjPdvCmHFuQ77ocavI8FT6NdvlBnE2UFr2H4Mycn8Vew==}
+  /autoprefixer@10.4.16(postcss@8.4.30):
+    resolution: {integrity: sha512-7vd3UC6xKp0HLfua5IjZlcXvGAGy7cBAXTg2lyQ/8WpNhd6SiZ8Be+xm3FyBSYJx5GKcpRCzBh7RH4/0dnY+uQ==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.21.10
-      caniuse-lite: 1.0.30001523
-      fraction.js: 4.2.0
+      caniuse-lite: 1.0.30001538
+      fraction.js: 4.3.6
       normalize-range: 0.1.2
       picocolors: 1.0.0
       postcss: 8.4.30
@@ -6020,7 +6020,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001523
+      caniuse-lite: 1.0.30001538
       electron-to-chromium: 1.4.503
       node-releases: 2.0.13
       update-browserslist-db: 1.0.11(browserslist@4.21.10)
@@ -6198,6 +6198,11 @@ packages:
 
   /caniuse-lite@1.0.30001523:
     resolution: {integrity: sha512-I5q5cisATTPZ1mc588Z//pj/Ox80ERYDfR71YnvY7raS/NOk8xXlZcB0sF7JdqaV//kOaa6aus7lRfpdnt1eBA==}
+    dev: false
+
+  /caniuse-lite@1.0.30001538:
+    resolution: {integrity: sha512-HWJnhnID+0YMtGlzcp3T9drmBJUVDchPJ08tpUGFLs9CYlwWPH2uLgpHn8fND5pCgXVtnGS3H4QR9XLMHVNkHw==}
+    dev: true
 
   /chalk@2.4.2:
     resolution: {integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==}
@@ -7243,7 +7248,7 @@ packages:
       enhanced-resolve: 5.15.0
       eslint: 8.49.0
       eslint-module-utils: 2.8.0(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-node@0.3.7)(eslint-import-resolver-typescript@3.5.5)(eslint@8.49.0)
-      eslint-plugin-import: 2.28.1(@typescript-eslint/parser@5.62.0)(eslint@8.49.0)
+      eslint-plugin-import: 2.28.1(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-typescript@3.5.5)(eslint@8.49.0)
       get-tsconfig: 4.6.2
       globby: 13.2.2
       is-core-module: 2.13.0
@@ -7281,34 +7286,6 @@ packages:
       eslint: 8.49.0
       eslint-import-resolver-node: 0.3.7
       eslint-import-resolver-typescript: 3.5.5(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-node@0.3.7)(eslint-plugin-import@2.28.1)(eslint@8.49.0)
-    transitivePeerDependencies:
-      - supports-color
-
-  /eslint-module-utils@2.8.0(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-node@0.3.7)(eslint@8.49.0):
-    resolution: {integrity: sha512-aWajIYfsqCKRDgUfjEXNN/JlrzauMuSEy5sbd7WXbtW3EH6A6MpwEh42c7qD+MqQo9QMJ6fWLAeIJynx0g6OAw==}
-    engines: {node: '>=4'}
-    peerDependencies:
-      '@typescript-eslint/parser': '*'
-      eslint: '*'
-      eslint-import-resolver-node: '*'
-      eslint-import-resolver-typescript: '*'
-      eslint-import-resolver-webpack: '*'
-    peerDependenciesMeta:
-      '@typescript-eslint/parser':
-        optional: true
-      eslint:
-        optional: true
-      eslint-import-resolver-node:
-        optional: true
-      eslint-import-resolver-typescript:
-        optional: true
-      eslint-import-resolver-webpack:
-        optional: true
-    dependencies:
-      '@typescript-eslint/parser': 5.62.0(eslint@8.49.0)(typescript@5.2.2)
-      debug: 3.2.7
-      eslint: 8.49.0
-      eslint-import-resolver-node: 0.3.7
     transitivePeerDependencies:
       - supports-color
 
@@ -7351,7 +7328,7 @@ packages:
       eslint-utils: 2.1.0
       regexpp: 3.2.0
 
-  /eslint-plugin-import@2.28.1(@typescript-eslint/parser@5.62.0)(eslint@8.49.0):
+  /eslint-plugin-import@2.28.1(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-typescript@3.5.5)(eslint@8.49.0):
     resolution: {integrity: sha512-9I9hFlITvOV55alzoKBI+K9q74kv0iKMeY6av5+umsNwayt59fz692daGyjR+oStBQgx6nwR9rXldDev3Clw+A==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -7370,7 +7347,7 @@ packages:
       doctrine: 2.1.0
       eslint: 8.49.0
       eslint-import-resolver-node: 0.3.7
-      eslint-module-utils: 2.8.0(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-node@0.3.7)(eslint@8.49.0)
+      eslint-module-utils: 2.8.0(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-node@0.3.7)(eslint-import-resolver-typescript@3.5.5)(eslint@8.49.0)
       has: 1.0.3
       is-core-module: 2.13.0
       is-glob: 4.0.3
@@ -7977,8 +7954,8 @@ packages:
     resolution: {integrity: sha512-0eu5ULPS2c/jsa1lGFneEFFEdTbembJv8e4QKXeVJ3lm/5hyve06dlKZrpxmMwJt6rYen7sxmHHK2CLaXvWuWQ==}
     dev: true
 
-  /fraction.js@4.2.0:
-    resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
+  /fraction.js@4.3.6:
+    resolution: {integrity: sha512-n2aZ9tNfYDwaHhvFTkhFErqOMIb8uyzSQ+vGJBjZyanAKZVbGUQ1sngfk9FdkBw7G26O7AgNjLcecLffD1c7eg==}
     dev: true
 
   /fresh@0.5.2:
@@ -11248,8 +11225,8 @@ packages:
       react: 18.2.0
       scheduler: 0.23.0
 
-  /react-hook-form@7.46.1(react@18.2.0):
-    resolution: {integrity: sha512-0GfI31LRTBd5tqbXMGXT1Rdsv3rnvy0FjEk8Gn9/4tp6+s77T7DPZuGEpBRXOauL+NhyGT5iaXzdIM2R6F/E+w==}
+  /react-hook-form@7.46.2(react@18.2.0):
+    resolution: {integrity: sha512-x1DWmHQchV7x2Rq9l99M/cQHC8JGchAnw9Z0uTz5KrPa0bTl/Inm1NR7ceOARfIrkNuQNAhuSuZPYa6k7QYn3Q==}
     engines: {node: '>=12.22.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18
@@ -11596,7 +11573,7 @@ packages:
       minimatch: 5.1.6
     dev: true
 
-  /remix-hook-form@2.0.1(@remix-run/react@1.19.3)(react-dom@18.2.0)(react-hook-form@7.46.1)(react@18.2.0):
+  /remix-hook-form@2.0.1(@remix-run/react@1.19.3)(react-dom@18.2.0)(react-hook-form@7.46.2)(react@18.2.0):
     resolution: {integrity: sha512-suvbKF3xFxpwoKXgSXyeuSabymVWVAI9Jqjwh8uLYco7iha+qG5rMp7EmqgUIehRmnhdlDqnnJI6mx4mFu+rBA==}
     peerDependencies:
       '@remix-run/react': ^2.0.0
@@ -11607,7 +11584,7 @@ packages:
       '@remix-run/react': 1.19.3(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      react-hook-form: 7.46.1(react@18.2.0)
+      react-hook-form: 7.46.2(react@18.2.0)
     dev: false
 
   /remix-params-helper@0.4.10(zod@3.22.2):

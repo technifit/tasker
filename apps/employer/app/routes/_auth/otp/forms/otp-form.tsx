@@ -5,39 +5,19 @@ import { RemixFormProvider, useRemixForm } from 'remix-hook-form';
 import { $path } from 'remix-routes';
 import { z } from 'zod';
 
-import {
-    Button,
-    FormControl,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
-    Input,
-} from '@technifit/ui';
+import { Button, FormControl, FormField, FormItem, FormLabel, FormMessage, Input } from '@technifit/ui';
 
-const schema = z.object({
-    otp: z
-        .string({ required_error: 'Please enter your one time password' })
-        .min(6, { message: 'Code shold be 6 characters' })
-        .max(6, { message: 'Code shold be 6 characters' }),
-});
-
-type FormData = z.infer<typeof schema>;
-
-const resolver = zodResolver(schema);
+import { OtpFormData, otpFormResolver as resolver } from '../schema/otp-form-schema';
 
 export const OtpForm = () => {
     const { isLoaded, signUp, setActive } = useSignUp();
     const navigate = useNavigate();
 
-    const form = useRemixForm<FormData>({
-        mode: 'onSubmit',
+    const form = useRemixForm<OtpFormData>({
         resolver,
     });
 
-    const handleFormSubmit = async (
-        e: React.FormEvent<HTMLFormElement> | undefined,
-    ) => {
+    const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement> | undefined) => {
         const isValid = await form.trigger();
 
         if (!isValid) {
@@ -62,9 +42,7 @@ export const OtpForm = () => {
                         }, 500);
                         break;
                     case 'missing_requirements':
-                        if (
-                            signInResponse.unverifiedFields.some((x) => x === 'email_address')
-                        ) {
+                        if (signInResponse.unverifiedFields.some((x) => x === 'email_address')) {
                             // TODO: Refactor this to use a switch to handle the unverified fields
                             // TODO: redirect to a enter email code page (check can we retrieve a sign in)
                             // TODO: create an email link verification page
@@ -97,22 +75,14 @@ export const OtpForm = () => {
                             <FormItem>
                                 <FormLabel>Code</FormLabel>
                                 <FormControl>
-                                    <Input
-                                        autoComplete='one-time-code'
-                                        type='numeric'
-                                        placeholder='12345'
-                                        {...field}
-                                    />
+                                    <Input autoComplete='one-time-code' type='numeric' placeholder='12345' {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
                         )}
                     />
                 </div>
-                <Button
-                    disabled={!isLoaded || form.formState.isSubmitting}
-                    className='w-full'
-                >
+                <Button disabled={!isLoaded || form.formState.isSubmitting} className='w-full'>
                     {form.formState.isSubmitting ? 'Signing Up...' : 'Sign Up'}
                 </Button>
             </Form>

@@ -1,17 +1,18 @@
 import { isClerkAPIResponseError, useSignIn } from '@clerk/remix';
-import { Form, Link, useNavigate } from '@remix-run/react';
+import { Form, useNavigate } from '@remix-run/react';
 import { RemixFormProvider, useRemixForm } from 'remix-hook-form';
 import { $path } from 'remix-routes';
 
-import { Button, FormControl, FormField, FormItem, FormLabel, FormMessage, Input } from '@technifit/ui';
+import { Button, FormControl, FormField, FormItem, FormLabel, FormMessage, Input, useToast } from '@technifit/ui';
 
-import { LogInFormData, logInFormResolver as resolver } from '../schema/log-in-form-schema';
+import { ResetPasswordFormData, resetPasswordResolver as resolver } from '../schema/reset-password-form-schema';
 
-export const LoginForm = () => {
+export const ResetPasswordForm = () => {
     const { isLoaded, signIn, setActive } = useSignIn();
     const navigate = useNavigate();
+    const { toast } = useToast();
 
-    const form = useRemixForm<LogInFormData>({
+    const form = useRemixForm<ResetPasswordFormData>({
         resolver,
     });
 
@@ -24,19 +25,25 @@ export const LoginForm = () => {
 
         if (isLoaded) {
             e?.preventDefault();
-            const { email, password } = form.getValues();
+            const { code, password } = form.getValues();
 
             try {
-                const signInResponse = await signIn.create({
-                    identifier: email,
+                const signInResponse = await signIn.attemptFirstFactor({
+                    strategy: 'reset_password_email_code',
+                    code,
                     password,
                 });
 
                 if (signInResponse.status === 'complete') {
                     setActive({ session: signInResponse.createdSessionId });
 
+                    toast({
+                        title: 'Password Updated',
+                        description: 'You will be redirected to the dashboard',
+                    });
+
                     setTimeout(() => {
-                        navigate($path('/'));
+                        navigate($path('/log-in'));
                     }, 500);
                 } else if (signInResponse.status === 'needs_new_password') {
                     console.log('invalid password!');
@@ -57,42 +64,33 @@ export const LoginForm = () => {
                 <div className='flex w-full flex-col gap-2'>
                     <FormField
                         control={form.control}
-                        name='email'
+                        name='code'
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Email</FormLabel>
+                                <FormLabel>Code</FormLabel>
                                 <FormControl>
-                                    <Input autoComplete='email' type='email' placeholder='joe.blogs@org.com' {...field} />
+                                    <Input autoComplete='one-time-code' type='numeric' placeholder='123456' {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
                         )}
                     />
-                    <div className='flex flex-col gap-1'>
-                        <FormField
-                            control={form.control}
-                            name='password'
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Password</FormLabel>
-                                    <FormControl>
-                                        <Input autoComplete='password' type='password' {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                        <Link
-                            prefetch='intent'
-                            to={$path('/forgot-password')}
-                            className='text-sm underline underline-offset-4 hover:text-primary'
-                        >
-                            Forgot Password?
-                        </Link>
-                    </div>
+                    <FormField
+                        control={form.control}
+                        name='password'
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>New Password</FormLabel>
+                                <FormControl>
+                                    <Input autoComplete='password' type='password' {...field} />
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
                 </div>
                 <Button disabled={!isLoaded || form.formState.isSubmitting} className='w-full'>
-                    {form.formState.isSubmitting ? 'Signing In...' : 'Sign In'}
+                    {form.formState.isSubmitting ? 'Resetting Password...' : 'Reset Password'}
                 </Button>
             </Form>
         </RemixFormProvider>
