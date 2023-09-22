@@ -4,14 +4,10 @@ import * as z from 'zod';
 const environmentSchema = z.object({
   CLERK_PUBLISHABLE_KEY: z.string(),
   CLERK_SECRET_KEY: z.string(),
-  NODE_ENV: z
-    .enum(['development', 'production', 'test'])
-    .default('development'),
+  NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
   SENTRY_DSN: z.string().url(),
   SESSION_SECRET: z.string().uuid(),
-  VERCEL_ENV: z
-    .enum(['production', 'preview', 'development'])
-    .default('development'),
+  VERCEL_ENV: z.enum(['production', 'preview', 'development']).default('development'),
 });
 
 type Environment = z.infer<typeof environmentSchema>;

@@ -8,10 +8,7 @@
  */
 
 import type { NextRequest } from 'next/server';
-import type {
-  SignedInAuthObject,
-  SignedOutAuthObject,
-} from '@clerk/nextjs/api';
+import type { SignedInAuthObject, SignedOutAuthObject } from '@clerk/nextjs/api';
 import { getAuth } from '@clerk/nextjs/server';
 import { initTRPC, TRPCError } from '@trpc/server';
 import superjson from 'superjson';
@@ -79,8 +76,7 @@ export const t = initTRPC.context<typeof createTRPCContext>().create({
       ...shape,
       data: {
         ...shape.data,
-        zodError:
-          error.cause instanceof ZodError ? error.cause.flatten() : null,
+        zodError: error.cause instanceof ZodError ? error.cause.flatten() : null,
       },
     };
   },
@@ -127,45 +123,41 @@ const enforceUserIsAuthed = t.middleware(({ ctx, next }) => {
   });
 });
 
-const enforceUserInOrg = enforceUserIsAuthed.unstable_pipe(
-  async ({ ctx, next }) => {
-    if (!ctx.auth.orgId) {
-      throw new TRPCError({
-        code: 'UNAUTHORIZED',
-        message: 'You must be in an organization to perform this action',
-      });
-    }
-
-    return next({
-      ctx: {
-        auth: {
-          ...ctx.auth,
-          orgId: ctx.auth.orgId,
-        },
-      },
+const enforceUserInOrg = enforceUserIsAuthed.unstable_pipe(async ({ ctx, next }) => {
+  if (!ctx.auth.orgId) {
+    throw new TRPCError({
+      code: 'UNAUTHORIZED',
+      message: 'You must be in an organization to perform this action',
     });
-  },
-);
+  }
 
-const enforceUserIsAdmin = enforceUserInOrg.unstable_pipe(
-  async ({ ctx, next }) => {
-    if (ctx.auth.orgRole !== 'admin') {
-      throw new TRPCError({
-        code: 'UNAUTHORIZED',
-        message: 'You must be an admin to perform this action',
-      });
-    }
-
-    return next({
-      ctx: {
-        auth: {
-          ...ctx.auth,
-          orgRole: ctx.auth.orgRole,
-        },
+  return next({
+    ctx: {
+      auth: {
+        ...ctx.auth,
+        orgId: ctx.auth.orgId,
       },
+    },
+  });
+});
+
+const enforceUserIsAdmin = enforceUserInOrg.unstable_pipe(async ({ ctx, next }) => {
+  if (ctx.auth.orgRole !== 'admin') {
+    throw new TRPCError({
+      code: 'UNAUTHORIZED',
+      message: 'You must be an admin to perform this action',
     });
-  },
-);
+  }
+
+  return next({
+    ctx: {
+      auth: {
+        ...ctx.auth,
+        orgRole: ctx.auth.orgRole,
+      },
+    },
+  });
+});
 
 /**
  * Middleware to authenticate API requests with an API key
@@ -187,11 +179,7 @@ const enforceApiKey = t.middleware(async ({ ctx, next }) => {
     throw new TRPCError({ code: 'UNAUTHORIZED' });
   }
 
-  void ctx.db
-    .updateTable('ApiKey')
-    .set({ lastUsed: new Date() })
-    .where('id', '=', apiKey.id)
-    .execute();
+  void ctx.db.updateTable('ApiKey').set({ lastUsed: new Date() }).where('id', '=', apiKey.id).execute();
 
   return next({
     ctx: {
@@ -225,6 +213,4 @@ export const protectedOrgProcedure = t.procedure.use(enforceUserInOrg);
 export const protectedAdminProcedure = t.procedure.use(enforceUserIsAdmin);
 
 export const protectedApiProcedure = t.procedure.use(enforceApiKey);
-export const protectedApiFormDataProcedure = t.procedure
-  .use(formdataMiddleware)
-  .use(enforceApiKey);
+export const protectedApiFormDataProcedure = t.procedure.use(formdataMiddleware).use(enforceApiKey);

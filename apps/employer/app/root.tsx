@@ -12,11 +12,7 @@ import {
 import { captureRemixErrorBoundaryError, withSentry } from '@sentry/remix';
 import { Analytics } from '@vercel/analytics/react';
 import { type LinksFunction } from '@vercel/remix';
-import {
-  PreventFlashOnWrongTheme,
-  ThemeProvider,
-  useTheme,
-} from 'remix-themes';
+import { PreventFlashOnWrongTheme, ThemeProvider, useTheme } from 'remix-themes';
 
 import { cn } from '@technifit/ui';
 
@@ -146,11 +142,7 @@ const App = () => {
         <PreventFlashOnWrongTheme ssrTheme={Boolean(theme)} />
         <Links />
       </head>
-      <body
-        className={cn(
-          'min-h-screen bg-background font-sans text-foreground antialiased',
-        )}
-      >
+      <body className={cn('min-h-screen bg-background font-sans text-foreground antialiased')}>
         <PublicEnv nonce={nonce} publicEnvs={publicKeys} />
         <div className='relative flex min-h-screen flex-col'>
           <div className='flex flex-1'>

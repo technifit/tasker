@@ -6,8 +6,10 @@
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf .turbo node_modules",
-    "lint": "SKIP_ENV_VALIDATION=1  eslint .",
+    "format:fix": "prettier . --write --cache --cache-location='node_modules/.cache/.prettiercache' --loglevel=warn",
+    "format": "prettier . --check --cache --cache-location='node_modules/.cache/.prettiercache'",
     "lint:fix": "pnpm lint --fix",
+    "lint": "SKIP_ENV_VALIDATION=1  eslint .",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {

@@ -50,16 +50,14 @@ export function getHints(request?: Request) {
     typeof document !== 'undefined'
       ? document.cookie
       : typeof request !== 'undefined'
-        ? request.headers.get('Cookie') ?? ''
-        : '';
+      ? request.headers.get('Cookie') ?? ''
+      : '';
 
   return Object.entries(clientHints).reduce(
     (acc, [name, hint]) => {
       const hintName = name as ClientHintNames;
       if ('transform' in hint) {
-        acc[hintName] = hint.transform(
-          getCookieValue(cookieString, hintName) ?? hint.fallback,
-        );
+        acc[hintName] = hint.transform(getCookieValue(cookieString, hintName) ?? hint.fallback);
       } else {
         // @ts-expect-error - this is fine (PRs welcome though)
         acc[hintName] = getCookieValue(cookieString, hintName) ?? hint.fallback;
@@ -70,8 +68,8 @@ export function getHints(request?: Request) {
       [name in ClientHintNames]: (typeof clientHints)[name] extends {
         transform: (value: any) => infer ReturnValue;
       }
-      ? ReturnValue
-      : (typeof clientHints)[name]['fallback'];
+        ? ReturnValue
+        : (typeof clientHints)[name]['fallback'];
     },
   );
 }
@@ -94,8 +92,7 @@ export function ClientHintCheck({ nonce }: { nonce: string }) {
   React.useEffect(() => {
     const themeQuery = window.matchMedia('(prefers-color-scheme: dark)');
     function handleThemeChange() {
-      document.cookie = `${clientHints.theme.cookieName}=${themeQuery.matches ? 'dark' : 'light'
-        }`;
+      document.cookie = `${clientHints.theme.cookieName}=${themeQuery.matches ? 'dark' : 'light'}`;
       revalidate();
     }
     themeQuery.addEventListener('change', handleThemeChange);
@@ -117,11 +114,11 @@ const cookies = document.cookie.split(';').map(c => c.trim()).reduce((acc, cur) 
 let cookieChanged = false;
 const hints = [
 ${Object.values(clientHints)
-            .map((hint) => {
-              const cookieName = JSON.stringify(hint.cookieName);
-              return `{ name: ${cookieName}, actual: String(${hint.getValueCode}), cookie: cookies[${cookieName}] }`;
-            })
-            .join(',\n')}
+  .map((hint) => {
+    const cookieName = JSON.stringify(hint.cookieName);
+    return `{ name: ${cookieName}, actual: String(${hint.getValueCode}), cookie: cookies[${cookieName}] }`;
+  })
+  .join(',\n')}
 ];
 for (const hint of hints) {
 	if (decodeURIComponent(hint.cookie) !== hint.actual) {

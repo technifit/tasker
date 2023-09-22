@@ -8,5 +8,4 @@ export const SubscriptionPlan = {
   STANDARD: 'STANDARD',
   PRO: 'PRO',
 } as const;
-export type SubscriptionPlan =
-  (typeof SubscriptionPlan)[keyof typeof SubscriptionPlan];
+export type SubscriptionPlan = (typeof SubscriptionPlan)[keyof typeof SubscriptionPlan];

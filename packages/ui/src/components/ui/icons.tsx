@@ -43,13 +43,7 @@ export const System = (props: LucideProps) => (
 );
 
 export const Mdx = (props: LucideProps) => (
-  <svg
-    xmlns='http://www.w3.org/2000/svg'
-    width='57.97'
-    height='24'
-    viewBox='0 0 512 212'
-    {...props}
-  >
+  <svg xmlns='http://www.w3.org/2000/svg' width='57.97' height='24' viewBox='0 0 512 212' {...props}>
     <path
       fill='currentColor'
       d='m272.696 40.203l-.002 84.896l31.185-31.178l15.74 15.741l-57.642 57.638l-58.369-58.369l15.741-15.741l31.085 31.085l.001-84.072zM72.162 162.979V97.232l40.255 40.257l40.56-40.557v65.383h22.261V43.192l-62.82 62.816l-62.517-62.521v119.492z'
@@ -62,22 +56,12 @@ export const Mdx = (props: LucideProps) => (
 );
 
 export const ClerkWide = (props: LucideProps) => (
-  <svg
-    width='77'
-    height='24'
-    viewBox='0 0 77 24'
-    fill='none'
-    xmlns='http://www.w3.org/2000/svg'
-    {...props}
-  >
+  <svg width='77' height='24' viewBox='0 0 77 24' fill='none' xmlns='http://www.w3.org/2000/svg' {...props}>
     <path
       d='M35.1481 16.7381C34.7521 17.1486 34.2765 17.4741 33.7505 17.6947C33.2245 17.9154 32.659 18.0265 32.0886 18.0213C31.6069 18.0359 31.1273 17.9517 30.6794 17.7739C30.2315 17.5961 29.8247 17.3285 29.4841 16.9875C28.8654 16.3421 28.5093 15.4206 28.5093 14.3221C28.5093 12.1231 29.941 10.619 32.0886 10.619C32.6646 10.6109 33.2353 10.7301 33.7599 10.968C34.2845 11.206 34.7501 11.5568 35.1234 11.9955L36.9816 10.3525C35.7707 8.8827 33.8059 8.12305 31.9401 8.12305C28.2885 8.12305 25.6992 10.64 25.6992 14.343C25.6992 16.1745 26.3427 17.7167 27.4279 18.8057C28.5131 19.8947 30.0591 20.5344 31.843 20.5344C34.16 20.5344 36.0087 19.5939 37.0463 18.4116L35.1481 16.7381Z'
       fill='currentColor'
     />
-    <path
-      d='M38.7266 3.42773H41.4929V20.3398H38.7266V3.42773Z'
-      fill='currentColor'
-    />
+    <path d='M38.7266 3.42773H41.4929V20.3398H38.7266V3.42773Z' fill='currentColor' />
     <path
       d='M54.8179 15.2828C54.8635 14.9145 54.8889 14.5439 54.894 14.1728C54.894 10.6659 52.5979 8.12611 49.0472 8.12611C48.2641 8.11071 47.4861 8.25581 46.7612 8.55246C46.0363 8.84911 45.3797 9.29104 44.832 9.85102C43.7944 10.94 43.1719 12.4822 43.1719 14.3213C43.1719 18.07 45.8144 20.5374 49.3176 20.5374C51.6688 20.5374 53.3614 19.5855 54.3762 18.2947L52.5637 16.6897L52.4742 16.6136C52.1146 17.0634 51.6561 17.4243 51.1344 17.6683C50.6127 17.9123 50.0419 18.0328 49.4661 18.0205C47.6879 18.0205 46.4046 16.9829 46.0391 15.2828H54.8179ZM46.0848 13.0628C46.2083 12.5269 46.4613 12.0295 46.8216 11.614C47.1214 11.2874 47.4883 11.0293 47.897 10.8574C48.3058 10.6856 48.7468 10.604 49.19 10.6183C50.7702 10.6183 51.7602 11.6064 52.101 13.0628H46.0848Z'
       fill='currentColor'
@@ -106,14 +90,7 @@ export const ClerkWide = (props: LucideProps) => (
 );
 
 export const TRPC = (props: LucideProps) => (
-  <svg
-    width='512'
-    height='512'
-    viewBox='0 0 512 512'
-    fill='none'
-    xmlns='http://www.w3.org/2000/svg'
-    {...props}
-  >
+  <svg width='512' height='512' viewBox='0 0 512 512' fill='none' xmlns='http://www.w3.org/2000/svg' {...props}>
     <rect width='512' height='512' rx='150' fill='currentColor' />
     <path
       fillRule='evenodd'
@@ -161,14 +138,7 @@ export const Prisma = (props: LucideProps) => (
 );
 
 export const Kysely = (props: LucideProps) => (
-  <svg
-    width='132'
-    height='132'
-    viewBox='0 0 132 132'
-    fill='none'
-    xmlns='http://www.w3.org/2000/svg'
-    {...props}
-  >
+  <svg width='132' height='132' viewBox='0 0 132 132' fill='none' xmlns='http://www.w3.org/2000/svg' {...props}>
     <g clipPath='url(#clip0_8_3)'>
       <rect x='2' y='2' width='128' height='128' rx='16' fill='white' />
       <path
@@ -176,15 +146,7 @@ export const Kysely = (props: LucideProps) => (
         fill='black'
       />
     </g>
-    <rect
-      x='2'
-      y='2'
-      width='128'
-      height='128'
-      rx='16'
-      stroke='#121212'
-      strokeWidth='4'
-    />
+    <rect x='2' y='2' width='128' height='128' rx='16' stroke='#121212' strokeWidth='4' />
     <defs>
       <clipPath id='clip0_8_3'>
         <rect x='2' y='2' width='128' height='128' rx='16' fill='white' />

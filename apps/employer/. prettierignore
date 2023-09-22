@@ -1,0 +1,13 @@
+node_modules
+
+.turbo
+.cache
+.env
+.vercel
+.output
+.DS_Store
+
+/build/
+/public/build
+/api/index.js
+/api/index.js.map

@@ -4,20 +4,13 @@
  * For more information, see https://remix.run/file-conventions/entry.client
  */
 
-import {
-  startTransition, StrictMode,
-  useEffect
-} from 'react';
-import {
-  RemixBrowser,
-  useLocation,
-  useMatches
-} from '@remix-run/react';
+import { startTransition, StrictMode, useEffect } from 'react';
+import { RemixBrowser, useLocation, useMatches } from '@remix-run/react';
+import * as Sentry from '@sentry/remix';
+import isbot from 'isbot';
 import { hydrateRoot } from 'react-dom/client';
 
-import * as Sentry from "@sentry/remix";
 import { getPublicEnv } from './ui/public-env';
-import isbot from 'isbot';
 
 if (!isbot) {
   Sentry.init({
@@ -27,12 +20,8 @@ if (!isbot) {
       new Sentry.BrowserProfilingIntegration(),
       new Sentry.BrowserTracing({
         // Set 'tracePropagationTargets' to control for which URLs distributed tracing should be enabled
-        tracePropagationTargets: ["localhost",],
-        routingInstrumentation: Sentry.remixRouterInstrumentation(
-          useEffect,
-          useLocation,
-          useMatches
-        ),
+        tracePropagationTargets: ['localhost'],
+        routingInstrumentation: Sentry.remixRouterInstrumentation(useEffect, useLocation, useMatches),
       }),
       new Sentry.Replay(),
     ],

@@ -17,6 +17,7 @@ const config = {
   ],
   tailwindConfig: './packages/config/tailwind/index.ts',
   importOrderTypeScriptVersion: '4.4.0',
+  importOrderParserPlugins: ['typescript', 'jsx', 'decorators-legacy'],
   importOrder: [
     '^(react/(.*)$)|^(react$)|^(react-native(.*)$)',
     '^(next/(.*)$)|^(next$)',

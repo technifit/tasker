@@ -23,11 +23,7 @@ export const purchaseOrgSchema = z.object({
   planId: z
     .string()
     .refine(
-      (str) =>
-        [
-          env.NEXT_PUBLIC_STRIPE_STD_MONTHLY_PRICE_ID,
-          env.NEXT_PUBLIC_STRIPE_PRO_MONTHLY_PRICE_ID,
-        ].includes(str),
+      (str) => [env.NEXT_PUBLIC_STRIPE_STD_MONTHLY_PRICE_ID, env.NEXT_PUBLIC_STRIPE_PRO_MONTHLY_PRICE_ID].includes(str),
       'Invalid planId',
     ),
 });

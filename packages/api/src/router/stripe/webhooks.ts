@@ -32,14 +32,9 @@ export const webhookRouter = createTRPCRouter({
         message: 'Missing or invalid subscription id',
       });
     }
-    const subscription = await stripe.subscriptions.retrieve(
-      session.subscription,
-    );
+    const subscription = await stripe.subscriptions.retrieve(session.subscription);
 
-    const customerId =
-      typeof subscription.customer === 'string'
-        ? subscription.customer
-        : subscription.customer.id;
+    const customerId = typeof subscription.customer === 'string' ? subscription.customer : subscription.customer.id;
     const { userId, organizationName } = subscription.metadata;
 
     const customer = await opts.ctx.db
@@ -48,9 +43,7 @@ export const webhookRouter = createTRPCRouter({
       .where('stripeId', '=', customerId)
       .executeTakeFirst();
 
-    const subscriptionPlan = stripePriceToSubscriptionPlan(
-      subscription.items.data[0]?.price.id,
-    );
+    const subscriptionPlan = stripePriceToSubscriptionPlan(subscription.items.data[0]?.price.id);
 
     /**
      * User is already subscribed, update their info
@@ -99,13 +92,9 @@ export const webhookRouter = createTRPCRouter({
         message: 'Missing or invalid subscription id',
       });
     }
-    const subscription = await stripe.subscriptions.retrieve(
-      invoice.subscription,
-    );
+    const subscription = await stripe.subscriptions.retrieve(invoice.subscription);
 
-    const subscriptionPlan = stripePriceToSubscriptionPlan(
-      subscription.items.data[0]?.price.id,
-    );
+    const subscriptionPlan = stripePriceToSubscriptionPlan(subscription.items.data[0]?.price.id);
 
     await opts.ctx.db
       .updateTable('Customer')
@@ -119,10 +108,7 @@ export const webhookRouter = createTRPCRouter({
 
   customerSubscriptionDeleted: webhookProcedure.mutation(async (opts) => {
     const subscription = opts.input.event.data.object as Stripe.Subscription;
-    const customerId =
-      typeof subscription.customer === 'string'
-        ? subscription.customer
-        : subscription.customer.id;
+    const customerId = typeof subscription.customer === 'string' ? subscription.customer : subscription.customer.id;
 
     await opts.ctx.db
       .updateTable('Customer')
@@ -137,14 +123,9 @@ export const webhookRouter = createTRPCRouter({
 
   customerSubscriptionUpdated: webhookProcedure.mutation(async (opts) => {
     const subscription = opts.input.event.data.object as Stripe.Subscription;
-    const customerId =
-      typeof subscription.customer === 'string'
-        ? subscription.customer
-        : subscription.customer.id;
+    const customerId = typeof subscription.customer === 'string' ? subscription.customer : subscription.customer.id;
 
-    const subscriptionPlan = stripePriceToSubscriptionPlan(
-      subscription.items.data[0]?.price.id,
-    );
+    const subscriptionPlan = stripePriceToSubscriptionPlan(subscription.items.data[0]?.price.id);
 
     await opts.ctx.db
       .updateTable('Customer')

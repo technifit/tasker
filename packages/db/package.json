@@ -11,6 +11,8 @@
     "db:generate": "pnpm with-env prisma generate && tsx prisma/postgenerate.ts",
     "db:push": "pnpm with-env prisma db push --skip-generate",
     "dev": "pnpm with-env prisma studio --port 5556",
+    "format:fix": "prettier . --write --cache --cache-location='node_modules/.cache/.prettiercache' --loglevel=warn",
+    "format": "prettier . --check --cache --cache-location='node_modules/.cache/.prettiercache'",
     "with-env": "dotenv -e ../../.env.local --"
   },
   "dependencies": {
