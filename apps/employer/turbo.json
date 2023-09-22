@@ -5,13 +5,7 @@
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["build/**"],
-      "env": [
-        "CLERK_PUBLISHABLE_KEY",
-        "CLERK_SECRET_KEY",
-        "SENTRY_DSN",
-        "SESSION_SECRET",
-        "VERCEL_ENV"
-      ]
+      "env": ["CLERK_PUBLISHABLE_KEY", "CLERK_SECRET_KEY", "SENTRY_DSN", "SESSION_SECRET", "VERCEL_ENV"]
     }
   }
 }
