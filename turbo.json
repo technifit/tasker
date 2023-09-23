@@ -43,14 +43,6 @@
       "outputs": ["node_modules/.cache/tsbuildinfo.json"],
       "outputMode": "errors-only"
     },
-    "db:generate": {
-      "inputs": ["prisma/schema.prisma"],
-      "cache": false
-    },
-    "db:push": {
-      "inputs": ["prisma/schema.prisma"],
-      "cache": false
-    },
     "dev": {
       "persistent": true,
       "cache": false
@@ -67,13 +59,6 @@
     "CI",
     "CLERK_PUBLISHABLE_KEY",
     "CLERK_SECRET_KEY",
-    "DATABASE_URL",
-    "EXPO_ROUTER_APP_ROOT",
-    "NEXT_PUBLIC_STRIPE_PRO_MONTHLY_PRICE_ID",
-    "NEXT_PUBLIC_STRIPE_PRO_PRODUCT_ID",
-    "NEXT_PUBLIC_STRIPE_STD_MONTHLY_PRICE_ID",
-    "NEXT_PUBLIC_STRIPE_STD_PRODUCT_ID",
-    "NEXTJS_URL",
     "NODE_ENV",
     "SENTRY_DSN",
     "SESSION_SECRET",

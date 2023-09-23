@@ -1,6 +1,4 @@
 packages:
   - apps/employer
-  - packages/api
-  - packages/db
   - packages/config/*
   - packages/ui

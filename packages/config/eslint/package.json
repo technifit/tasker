@@ -4,7 +4,6 @@
   "license": "MIT",
   "files": [
     "./base.js",
-    "./nextjs.js",
     "./react.js",
     "./remix.js"
   ],
@@ -14,7 +13,6 @@
     "format": "prettier . --check --cache --cache-location='node_modules/.cache/.prettiercache'"
   },
   "dependencies": {
-    "@next/eslint-plugin-next": "13.5.2",
     "@remix-run/eslint-config": "1.19.3",
     "@types/eslint": "8.44.2",
     "@typescript-eslint/eslint-plugin": "6.7.2",
