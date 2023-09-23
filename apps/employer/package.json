@@ -39,17 +39,18 @@
   "devDependencies": {
     "@remix-run/dev": "1.19.3",
     "@technifit/tailwind-config": "0.1.0",
+    "@technifit/tsconfig": "1.0.0",
     "@types/cookie": "0.5.2",
     "@types/lodash": "4.14.198",
-    "@types/react": "18.2.22",
     "@types/react-dom": "18.2.7",
+    "@types/react": "18.2.22",
     "cookie": "0.5.0",
     "npm-run-all": "4.1.5",
     "remix-flat-routes": "0.5.11",
-    "tailwindcss": "3.3.3",
     "tailwindcss-animate": "1.0.7",
-    "typescript": "5.2.2",
-    "typescript-remix-routes-plugin": "1.0.1"
+    "tailwindcss": "3.3.3",
+    "typescript-remix-routes-plugin": "1.0.1",
+    "typescript": "5.2.2"
   },
   "engines": {
     "node": ">=18.18.0"
