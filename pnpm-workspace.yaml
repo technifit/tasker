@@ -1,4 +1,4 @@
 packages:
-  - apps/employer
-  - packages/config/*
-  - packages/ui
+  - apps/*
+  - packages/*
+  - tooling/*
