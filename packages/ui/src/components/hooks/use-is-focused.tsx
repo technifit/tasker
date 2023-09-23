@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
+import type React from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export const useIsFocused = (inputRef: React.RefObject<HTMLInputElement>) => {
   const [isFocused, setIsFocused] = useState<boolean | undefined>(undefined);

@@ -5,7 +5,8 @@ import { $path } from 'remix-routes';
 
 import { Button, FormControl, FormField, FormItem, FormLabel, FormMessage, Input } from '@technifit/ui';
 
-import { LogInFormData, logInFormResolver as resolver } from '../schema/log-in-form-schema';
+import type { LogInFormData } from '../schema/log-in-form-schema';
+import { logInFormResolver as resolver } from '../schema/log-in-form-schema';
 
 export const LoginForm = () => {
   const { isLoaded, signIn, setActive } = useSignIn();

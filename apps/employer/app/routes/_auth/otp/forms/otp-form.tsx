@@ -1,13 +1,12 @@
 import { isClerkAPIResponseError, useSignUp } from '@clerk/remix';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { Form, useNavigate } from '@remix-run/react';
 import { RemixFormProvider, useRemixForm } from 'remix-hook-form';
 import { $path } from 'remix-routes';
-import { z } from 'zod';
 
 import { Button, FormControl, FormField, FormItem, FormLabel, FormMessage, Input } from '@technifit/ui';
 
-import { OtpFormData, otpFormResolver as resolver } from '../schema/otp-form-schema';
+import type { OtpFormData } from '../schema/otp-form-schema';
+import { otpFormResolver as resolver } from '../schema/otp-form-schema';
 
 export const OtpForm = () => {
   const { isLoaded, signUp, setActive } = useSignUp();

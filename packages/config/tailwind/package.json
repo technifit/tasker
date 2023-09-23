@@ -7,6 +7,11 @@
     "index.ts",
     "postcss.js"
   ],
+  "scripts": {
+    "clean": "git clean -xdf node_modules dist .turbo",
+    "format:fix": "prettier . --write --cache --cache-location='node_modules/.cache/.prettiercache' --loglevel=warn",
+    "format": "prettier . --check --cache --cache-location='node_modules/.cache/.prettiercache'"
+  },
   "devDependencies": {
     "autoprefixer": "10.4.16",
     "postcss": "8.4.30",

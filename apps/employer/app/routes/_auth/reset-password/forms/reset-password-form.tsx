@@ -5,7 +5,8 @@ import { $path } from 'remix-routes';
 
 import { Button, FormControl, FormField, FormItem, FormLabel, FormMessage, Input, useToast } from '@technifit/ui';
 
-import { ResetPasswordFormData, resetPasswordResolver as resolver } from '../schema/reset-password-form-schema';
+import type { ResetPasswordFormData } from '../schema/reset-password-form-schema';
+import { resetPasswordResolver as resolver } from '../schema/reset-password-form-schema';
 
 export const ResetPasswordForm = () => {
   const { isLoaded, signIn, setActive } = useSignIn();

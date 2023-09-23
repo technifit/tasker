@@ -5,7 +5,8 @@ import { $path } from 'remix-routes';
 
 import { Button, FormControl, FormField, FormItem, FormLabel, FormMessage, Input } from '@technifit/ui';
 
-import { signUpFormResolver as resolver, SignUpFormData } from '../schema/sign-up-form-schema';
+import type { SignUpFormData } from '../schema/sign-up-form-schema';
+import { signUpFormResolver as resolver } from '../schema/sign-up-form-schema';
 
 export const SignUpForm = () => {
   const { isLoaded, signUp, setActive } = useSignUp();

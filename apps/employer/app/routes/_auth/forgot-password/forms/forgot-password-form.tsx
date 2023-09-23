@@ -5,7 +5,8 @@ import { $path } from 'remix-routes';
 
 import { Button, FormControl, FormField, FormItem, FormLabel, FormMessage, Input } from '@technifit/ui';
 
-import { ForgotPasswordFormData, forgotPasswordFormResolver as resolver } from '../schema/forgot-password-form-schema';
+import type { ForgotPasswordFormData } from '../schema/forgot-password-form-schema';
+import { forgotPasswordFormResolver as resolver } from '../schema/forgot-password-form-schema';
 
 export const ForgotPasswordForm = () => {
   const { isLoaded, signIn } = useSignIn();

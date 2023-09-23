@@ -8,6 +8,11 @@
     "./react.js",
     "./remix.js"
   ],
+  "scripts": {
+    "clean": "git clean -xdf node_modules dist .turbo",
+    "format:fix": "prettier . --write --cache --cache-location='node_modules/.cache/.prettiercache' --loglevel=warn",
+    "format": "prettier . --check --cache --cache-location='node_modules/.cache/.prettiercache'"
+  },
   "dependencies": {
     "@next/eslint-plugin-next": "13.5.2",
     "@remix-run/eslint-config": "1.19.3",
