@@ -2,47 +2,6 @@
   "$schema": "https://turborepo.org/schema.json",
   "globalDependencies": ["**/.env"],
   "pipeline": {
-    "topo": {
-      "dependsOn": ["^topo"]
-    },
-    "//#format": {
-      "outputs": ["node_modules/.cache/.prettiercache"]
-    },
-    "format": {
-      "dependsOn": ["^topo"],
-      "outputs": ["node_modules/.cache/.prettiercache"]
-    },
-    "//#format:fix": {
-      "outputs": ["node_modules/.cache/.prettiercache"],
-      "cache": false
-    },
-    "format:fix": {
-      "dependsOn": ["^topo"],
-      "outputs": ["node_modules/.cache/.prettiercache"],
-      "cache": false
-    },
-    "//#lint": {
-      "outputs": ["node_modules/.cache/.eslintcache"]
-    },
-    "lint": {
-      "dependsOn": ["^topo"],
-      "outputs": ["node_modules/.cache/.eslintcache"]
-    },
-    "//#lint:fix": {
-      "dependsOn": ["^topo"],
-      "outputs": ["node_modules/.cache/.eslintcache"],
-      "cache": false
-    },
-    "lint:fix": {
-      "dependsOn": ["^topo"],
-      "outputs": ["node_modules/.cache/.eslintcache"],
-      "cache": false
-    },
-    "typecheck": {
-      "dependsOn": ["^topo", "build"],
-      "outputs": ["node_modules/.cache/tsbuildinfo.json"],
-      "outputMode": "errors-only"
-    },
     "dev": {
       "persistent": true,
       "cache": false
