@@ -5,6 +5,7 @@
     "declaration": true,
     "declarationMap": true,
     "esModuleInterop": true,
+    "incremental": true,
     "moduleDetection": "force",
     "noUncheckedIndexedAccess": true,
     "resolveJsonModule": true,
