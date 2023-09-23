@@ -36,7 +36,7 @@
     "remix-hook-form": "2.0.1",
     "remix-params-helper": "0.4.10",
     "remix-routes": "1.4.5",
-    "remix-themes": "1.2.1",
+    "remix-themes": "1.2.2",
     "remix-utils": "6.6.0",
     "zod": "3.22.2"
   },

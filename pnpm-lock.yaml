@@ -93,8 +93,8 @@ importers:
         specifier: 1.4.5
         version: 1.4.5
       remix-themes:
-        specifier: 1.2.1
-        version: 1.2.1(@remix-run/react@1.19.3)(@remix-run/server-runtime@1.19.3)
+        specifier: 1.2.2
+        version: 1.2.2(@remix-run/react@1.19.3)(@remix-run/server-runtime@1.19.3)
       remix-utils:
         specifier: 6.6.0
         version: 6.6.0(@remix-run/react@1.19.3)(@remix-run/server-runtime@1.19.3)(react@18.2.0)(typescript@5.2.2)(zod@3.22.2)
@@ -10370,11 +10370,11 @@ packages:
       typescript-remix-routes-plugin: 1.0.1
     dev: false
 
-  /remix-themes@1.2.1(@remix-run/react@1.19.3)(@remix-run/server-runtime@1.19.3):
-    resolution: {integrity: sha512-UFWyHOBCww2dqXGLg3VfBalBpYwXa/6M+JD88nr6UVrB0YGjVcUna6f9bhBo/92hrwdZWLGvKPeyFmg+m9ytZg==}
+  /remix-themes@1.2.2(@remix-run/react@1.19.3)(@remix-run/server-runtime@1.19.3):
+    resolution: {integrity: sha512-G+1e2I62PI8JUR9xkkhByHljw73CIO42dEQMXo2UI+d+ZZwO+v/xwLAW++FkHA3rVXWuo4vu+DiAy2nCZMk70g==}
     peerDependencies:
-      '@remix-run/react': ^1.12.0
-      '@remix-run/server-runtime': ^1.12.0
+      '@remix-run/react': '>= 1'
+      '@remix-run/server-runtime': '>= 1'
     dependencies:
       '@remix-run/react': 1.19.3(react-dom@18.2.0)(react@18.2.0)
       '@remix-run/server-runtime': 1.19.3
