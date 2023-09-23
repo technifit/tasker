@@ -12,7 +12,7 @@
     "dev:routes": "remix-routes -w ./types",
     "dev": "run-p dev:*",
     "start": "remix-serve build",
-    "typecheck": "tsc"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@clerk/remix": "2.10.3",
