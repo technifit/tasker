@@ -2,10 +2,10 @@
   "display": "Remix",
   "extends": "./base.json",
   "compilerOptions": {
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "allowJs": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "moduleResolution": "node",
-    "allowJs": true
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "moduleResolution": "node"
   }
 }
