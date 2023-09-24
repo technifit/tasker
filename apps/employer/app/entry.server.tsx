@@ -19,6 +19,8 @@ if (!isbot) {
     tracesSampleRate: environment().NODE_ENV === 'production' ? 0.1 : 1.0,
     profilesSampleRate: 1,
     integrations: [
+      // TODO: Remove when sentry fixes type issue - https://github.com/getsentry/profiling-node/issues/195
+      // @ts-ignore
       new ProfilingIntegration(),
       new CaptureConsole({
         levels: ['error'],
