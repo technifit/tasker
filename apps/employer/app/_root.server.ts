@@ -1,10 +1,10 @@
-import { rootAuthLoader } from '@clerk/remix/ssr.server';
-import type { DataFunctionArgs } from '@vercel/remix';
-import { json } from '@vercel/remix';
+import { rootAuthLoader } from "@clerk/remix/ssr.server"
+import type { DataFunctionArgs } from "@vercel/remix"
+import { json } from "@vercel/remix"
 
-import { getPublicKeys } from './lib/environment/environment.server';
-import { getTheme } from './routes/resources+/theme/theme.server';
-import { getHints } from './utils/client-hints';
+import { getPublicKeys } from "./lib/environment/environment.server"
+import { getTheme } from "./routes/resources+/theme/theme.server"
+import { getHints } from "./utils/client-hints"
 
 export const loader = async (args: DataFunctionArgs) => {
   return rootAuthLoader(args, async ({ request }) => {
@@ -21,6 +21,6 @@ export const loader = async (args: DataFunctionArgs) => {
       publicKeys: {
         ...getPublicKeys(),
       },
-    });
-  });
-};
+    })
+  })
+}

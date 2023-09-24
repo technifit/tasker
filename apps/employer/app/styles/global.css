@@ -3,100 +3,110 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'CalSans';
+  font-family: "CalSans";
   src:
-    url('/fonts/cal-sans/CalSans-SemiBold.woff2') format('woff2'),
-    /* Chrome 36+, Opera 23+, Firefox 39+ */ url('/fonts/cal-sans/CalSans-SemiBold.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url("/fonts/cal-sans/CalSans-SemiBold.woff2") format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+ */
+      url("/fonts/cal-sans/CalSans-SemiBold.woff") format("woff"); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 @font-face {
   /*font-display: swap;*/
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 100;
   src:
-    url('/fonts/inter/inter-latin-ext-100-normal.woff2') format('woff2'),
-    /* Chrome 36+, Opera 23+, Firefox 39+ */ url('/fonts/inter/inter-latin-ext-100-normal.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url("/fonts/inter/inter-latin-ext-100-normal.woff2") format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+ */
+      url("/fonts/inter/inter-latin-ext-100-normal.woff") format("woff"); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 @font-face {
   /*font-display: swap;*/
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 200;
   src:
-    url('/fonts/inter/inter-latin-ext-200-normal.woff2') format('woff2'),
-    /* Chrome 36+, Opera 23+, Firefox 39+ */ url('/fonts/inter/inter-latin-ext-200-normal.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url("/fonts/inter/inter-latin-ext-200-normal.woff2") format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+ */
+      url("/fonts/inter/inter-latin-ext-200-normal.woff") format("woff"); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 @font-face {
   /*font-display: swap;*/
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 300;
   src:
-    url('/fonts/inter/inter-latin-ext-300-normal.woff2') format('woff2'),
-    /* Chrome 36+, Opera 23+, Firefox 39+ */ url('/fonts/inter/inter-latin-ext-300-normal.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url("/fonts/inter/inter-latin-ext-300-normal.woff2") format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+ */
+      url("/fonts/inter/inter-latin-ext-300-normal.woff") format("woff"); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 @font-face {
   /*font-display: swap;*/
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   src:
-    url('/fonts/inter/inter-latin-ext-400-normal.woff2') format('woff2'),
-    /* Chrome 36+, Opera 23+, Firefox 39+ */ url('/fonts/inter/inter-latin-ext-400-normal.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url("/fonts/inter/inter-latin-ext-400-normal.woff2") format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+ */
+      url("/fonts/inter/inter-latin-ext-400-normal.woff") format("woff"); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 @font-face {
   /*font-display: swap;*/
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   src:
-    url('/fonts/inter/inter-latin-ext-500-normal.woff2') format('woff2'),
-    /* Chrome 36+, Opera 23+, Firefox 39+ */ url('/fonts/inter/inter-latin-ext-500-normal.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url("/fonts/inter/inter-latin-ext-500-normal.woff2") format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+ */
+      url("/fonts/inter/inter-latin-ext-500-normal.woff") format("woff"); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 @font-face {
   /*font-display: swap;*/
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 600;
   src:
-    url('/fonts/inter/inter-latin-ext-600-normal.woff2') format('woff2'),
-    /* Chrome 36+, Opera 23+, Firefox 39+ */ url('/fonts/inter/inter-latin-ext-600-normal.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url("/fonts/inter/inter-latin-ext-600-normal.woff2") format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+ */
+      url("/fonts/inter/inter-latin-ext-600-normal.woff") format("woff"); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 @font-face {
   /*font-display: swap;*/
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 700;
   src:
-    url('/fonts/inter/inter-latin-ext-700-normal.woff2') format('woff2'),
-    /* Chrome 36+, Opera 23+, Firefox 39+ */ url('/fonts/inter/inter-latin-ext-700-normal.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url("/fonts/inter/inter-latin-ext-700-normal.woff2") format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+ */
+      url("/fonts/inter/inter-latin-ext-700-normal.woff") format("woff"); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 @font-face {
   /*font-display: swap;*/
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 800;
   src:
-    url('/fonts/inter/inter-latin-ext-800-normal.woff2') format('woff2'),
-    /* Chrome 36+, Opera 23+, Firefox 39+ */ url('/fonts/inter/inter-latin-ext-800-normal.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url("/fonts/inter/inter-latin-ext-800-normal.woff2") format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+ */
+      url("/fonts/inter/inter-latin-ext-800-normal.woff") format("woff"); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 @font-face {
   /*font-display: swap;*/
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 900;
   src:
-    url('/fonts/inter/inter-latin-ext-900-normal.woff2') format('woff2'),
-    /* Chrome 36+, Opera 23+, Firefox 39+ */ url('/fonts/inter/inter-latin-ext-900-normal.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url("/fonts/inter/inter-latin-ext-900-normal.woff2") format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+ */
+      url("/fonts/inter/inter-latin-ext-900-normal.woff") format("woff"); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 @layer base {
@@ -122,8 +132,8 @@
     --ring: 346.8 77.2% 49.8%;
     --radius: 0.5rem;
 
-    --font-sans: 'Inter';
-    --font-cal: 'CalSans';
+    --font-sans: "Inter";
+    --font-cal: "CalSans";
   }
 
   .dark {
@@ -148,8 +158,8 @@
     --ring: 346.8 77.2% 49.8%;
     --radius: 0.5rem;
 
-    --font-sans: 'Inter';
-    --font-cal: 'CalSans';
+    --font-sans: "Inter";
+    --font-cal: "CalSans";
   }
 }
 

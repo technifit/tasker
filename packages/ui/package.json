@@ -7,6 +7,8 @@
     "build": "tsup",
     "clean": "git clean -xdf dist .turbo node_modules",
     "dev": "tsup --watch",
+    "format:fix": "prettier . --write --cache --cache-location='node_modules/.cache/.prettiercache' --log-level=warn",
+    "format": "prettier . --check --cache --cache-location='node_modules/.cache/.prettiercache'",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

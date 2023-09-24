@@ -1,17 +1,17 @@
-import { createCookieSessionStorage } from '@vercel/remix';
-import { createThemeSessionResolver } from 'remix-themes';
+import { createCookieSessionStorage } from "@vercel/remix"
+import { createThemeSessionResolver } from "remix-themes"
 
 // TODO: tighten domain & secure before release
 const sessionStorage = createCookieSessionStorage({
   cookie: {
-    name: '__theme',
+    name: "__theme",
     // domain: 'remix.run',
-    path: '/',
+    path: "/",
     httpOnly: true,
-    sameSite: 'lax',
-    secrets: ['s3cr3t'],
+    sameSite: "lax",
+    secrets: ["s3cr3t"],
     // secure: true,
   },
-});
+})
 
-export const themeSessionResolver = createThemeSessionResolver(sessionStorage);
+export const themeSessionResolver = createThemeSessionResolver(sessionStorage)

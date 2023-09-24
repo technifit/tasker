@@ -1,13 +1,20 @@
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
+import { zodResolver } from "@hookform/resolvers/zod"
+import { z } from "zod"
 
 export const signUpFormSchema = z.object({
-  firstName: z.string({ required_error: 'Please enter your first name' }).nonempty(),
-  lastName: z.string({ required_error: 'Please enter your last name' }).nonempty(),
-  email: z.string({ required_error: 'Please enter your email' }).email().nonempty(),
-  password: z.string({ required_error: 'Please enter your password' }).min(8),
-});
+  firstName: z
+    .string({ required_error: "Please enter your first name" })
+    .nonempty(),
+  lastName: z
+    .string({ required_error: "Please enter your last name" })
+    .nonempty(),
+  email: z
+    .string({ required_error: "Please enter your email" })
+    .email()
+    .nonempty(),
+  password: z.string({ required_error: "Please enter your password" }).min(8),
+})
 
-export type SignUpFormData = z.infer<typeof signUpFormSchema>;
+export type SignUpFormData = z.infer<typeof signUpFormSchema>
 
-export const signUpFormResolver = zodResolver(signUpFormSchema);
+export const signUpFormResolver = zodResolver(signUpFormSchema)

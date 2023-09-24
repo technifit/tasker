@@ -11,6 +11,8 @@
     "dev:remix": "remix dev",
     "dev:routes": "remix-routes -w ./types",
     "dev": "run-p dev:*",
+    "format:fix": "prettier . --write --cache --cache-location='node_modules/.cache/.prettiercache' --log-level=warn",
+    "format": "prettier . --check --cache --cache-location='node_modules/.cache/.prettiercache'",
     "start": "remix-serve build",
     "typecheck": "tsc --noEmit"
   },

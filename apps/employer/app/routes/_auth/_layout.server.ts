@@ -1,9 +1,9 @@
-import type { LoaderArgs } from '@vercel/remix';
+import type { LoaderArgs } from "@vercel/remix"
 
-import { requireUnauthenticatedUser } from '~/lib/guards/auth-guard.server';
+import { requireUnauthenticatedUser } from "~/lib/guards/auth-guard.server"
 
 export const loader = async (args: LoaderArgs) => {
-  await requireUnauthenticatedUser(args);
+  await requireUnauthenticatedUser(args)
 
-  return null;
-};
+  return null
+}
