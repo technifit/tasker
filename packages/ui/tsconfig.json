@@ -1,10 +1,12 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "@technifit/tsconfig/react-library.json",
   "compilerOptions": {
-    "incremental": false,
+    "outDir": "dist",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
   },
-  "include": ["src", "*.ts", "*.cjs"]
+  "include": ["src", "*.ts", "*.cjs"],
+  "exclude": ["node_modules", "dist"]
 }

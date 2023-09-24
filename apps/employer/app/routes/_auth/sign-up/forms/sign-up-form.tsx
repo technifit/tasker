@@ -43,7 +43,9 @@ export const SignUpForm = () => {
             break;
           case 'missing_requirements':
             if (signInResponse.unverifiedFields.some((x) => x === 'email_address')) {
-              await signUp.prepareEmailAddressVerification({ strategy: 'email_code' });
+              await signUp.prepareEmailAddressVerification({
+                strategy: 'email_code',
+              });
               navigate($path('/otp'));
             }
             break;
