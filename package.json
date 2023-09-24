@@ -12,8 +12,10 @@
     "clean:workspaces": "turbo clean",
     "clean": "git clean -xdf node_modules dist .next .turbo",
     "dev": "turbo dev --parallel",
-    "format:fix": "turbo format:fix --continue",
-    "format": "turbo format --continue",
+    "format:fix-workspaces": "turbo format:fix --continue",
+    "format:fix": "prettier . \"!apps/** !packages/** !tooling/**\" --write --cache --cache-location='node_modules/.cache/.prettiercache' --log-level=warn",
+    "format:workspaces": "turbo format --continue",
+    "format": "prettier . \"!apps/** !packages/** !tooling/**\" --check --cache --cache-location='node_modules/.cache/.prettiercache'",
     "typecheck": "turbo typecheck --continue"
   },
   "devDependencies": {
