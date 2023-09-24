@@ -2,42 +2,42 @@
  * This file contains utilities for using client hints for user preference which
  * are needed by the server, but are only known by the browser.
  */
-import * as React from "react"
-import { useRevalidator } from "@remix-run/react"
+import * as React from 'react';
+import { useRevalidator } from '@remix-run/react';
 
-import { useRequestInfo } from "./request-info"
+import { useRequestInfo } from './request-info';
 
 export const clientHints = {
   theme: {
-    cookieName: "CH-prefers-color-scheme" as const,
+    cookieName: 'CH-prefers-color-scheme' as const,
     getValueCode: `window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'`,
-    fallback: "light" as const,
+    fallback: 'light' as const,
     transform(value: string) {
-      return value === "dark" ? "dark" : "light"
+      return value === 'dark' ? 'dark' : 'light';
     },
   },
   timeZone: {
-    cookieName: "CH-time-zone" as const,
+    cookieName: 'CH-time-zone' as const,
     getValueCode: `Intl.DateTimeFormat().resolvedOptions().timeZone`,
-    fallback: "UTC",
+    fallback: 'UTC',
   },
   // add other hints here
-}
+};
 
-type ClientHintNames = keyof typeof clientHints
+type ClientHintNames = keyof typeof clientHints;
 
 function getCookieValue(cookieString: string, name: ClientHintNames) {
-  const hint = clientHints[name]
+  const hint = clientHints[name];
   if (!hint) {
-    throw new Error(`Unknown client hint: ${name}`)
+    throw new Error(`Unknown client hint: ${name}`);
   }
   const value = cookieString
-    .split(";")
+    .split(';')
     .map((c) => c.trim())
-    .find((c) => c.startsWith(hint.cookieName + "="))
-    ?.split("=")[1]
+    .find((c) => c.startsWith(hint.cookieName + '='))
+    ?.split('=')[1];
 
-  return value ? decodeURIComponent(value) : null
+  return value ? decodeURIComponent(value) : null;
 }
 
 /**
@@ -47,41 +47,39 @@ function getCookieValue(cookieString: string, name: ClientHintNames) {
  */
 export function getHints(request?: Request) {
   const cookieString =
-    typeof document !== "undefined"
+    typeof document !== 'undefined'
       ? document.cookie
-      : typeof request !== "undefined"
-      ? request.headers.get("Cookie") ?? ""
-      : ""
+      : typeof request !== 'undefined'
+      ? request.headers.get('Cookie') ?? ''
+      : '';
 
   return Object.entries(clientHints).reduce(
     (acc, [name, hint]) => {
-      const hintName = name as ClientHintNames
-      if ("transform" in hint) {
-        acc[hintName] = hint.transform(
-          getCookieValue(cookieString, hintName) ?? hint.fallback,
-        )
+      const hintName = name as ClientHintNames;
+      if ('transform' in hint) {
+        acc[hintName] = hint.transform(getCookieValue(cookieString, hintName) ?? hint.fallback);
       } else {
         // @ts-expect-error - this is fine (PRs welcome though)
-        acc[hintName] = getCookieValue(cookieString, hintName) ?? hint.fallback
+        acc[hintName] = getCookieValue(cookieString, hintName) ?? hint.fallback;
       }
-      return acc
+      return acc;
     },
     {} as {
       [name in ClientHintNames]: (typeof clientHints)[name] extends {
-        transform: (value: any) => infer ReturnValue
+        transform: (value: any) => infer ReturnValue;
       }
         ? ReturnValue
-        : (typeof clientHints)[name]["fallback"]
+        : (typeof clientHints)[name]['fallback'];
     },
-  )
+  );
 }
 
 /**
  * @returns an object with the client hints and their values
  */
 export function useHints() {
-  const requestInfo = useRequestInfo()
-  return requestInfo.hints
+  const requestInfo = useRequestInfo();
+  return requestInfo.hints;
 }
 
 /**
@@ -90,20 +88,18 @@ export function useHints() {
  * inaccurate value.
  */
 export function ClientHintCheck({ nonce }: { nonce: string }) {
-  const { revalidate } = useRevalidator()
+  const { revalidate } = useRevalidator();
   React.useEffect(() => {
-    const themeQuery = window.matchMedia("(prefers-color-scheme: dark)")
+    const themeQuery = window.matchMedia('(prefers-color-scheme: dark)');
     function handleThemeChange() {
-      document.cookie = `${clientHints.theme.cookieName}=${
-        themeQuery.matches ? "dark" : "light"
-      }`
-      revalidate()
+      document.cookie = `${clientHints.theme.cookieName}=${themeQuery.matches ? 'dark' : 'light'}`;
+      revalidate();
     }
-    themeQuery.addEventListener("change", handleThemeChange)
+    themeQuery.addEventListener('change', handleThemeChange);
     return () => {
-      themeQuery.removeEventListener("change", handleThemeChange)
-    }
-  }, [revalidate])
+      themeQuery.removeEventListener('change', handleThemeChange);
+    };
+  }, [revalidate]);
 
   return (
     <script
@@ -119,10 +115,10 @@ let cookieChanged = false;
 const hints = [
 ${Object.values(clientHints)
   .map((hint) => {
-    const cookieName = JSON.stringify(hint.cookieName)
-    return `{ name: ${cookieName}, actual: String(${hint.getValueCode}), cookie: cookies[${cookieName}] }`
+    const cookieName = JSON.stringify(hint.cookieName);
+    return `{ name: ${cookieName}, actual: String(${hint.getValueCode}), cookie: cookies[${cookieName}] }`;
   })
-  .join(",\n")}
+  .join(',\n')}
 ];
 for (const hint of hints) {
 	if (decodeURIComponent(hint.cookie) !== hint.actual) {
@@ -138,5 +134,5 @@ if (cookieChanged && navigator.cookieEnabled) {
 			`,
       }}
     />
-  )
+  );
 }

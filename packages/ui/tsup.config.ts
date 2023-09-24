@@ -1,19 +1,19 @@
 // import { readFile, writeFile } from "fs/promises";
-import { defineConfig } from "tsup"
+import { defineConfig } from 'tsup';
 
 // import type { Options } from "tsup";
 
 export default defineConfig({
   clean: true,
   dts: true,
-  format: ["esm", "cjs"],
-  entry: ["./src/index.ts"],
-  external: ["react"],
+  format: ['esm', 'cjs'],
+  entry: ['./src/index.ts'],
+  external: ['react'],
   minify: true,
-  outDir: "dist",
+  outDir: 'dist',
   sourcemap: true,
-  tsconfig: "tsconfig.json",
-})
+  tsconfig: 'tsconfig.json',
+});
 
 // TODO: Would be nice not having to split up the client and server
 // and just have esbuild keep the directives so that components with

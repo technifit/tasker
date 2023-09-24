@@ -4,36 +4,31 @@
  * For more information, see https://remix.run/file-conventions/entry.client
  */
 
-import { startTransition, StrictMode, useEffect } from "react"
-import { RemixBrowser, useLocation, useMatches } from "@remix-run/react"
-import * as Sentry from "@sentry/remix"
-import isbot from "isbot"
-import { hydrateRoot } from "react-dom/client"
+import { startTransition, StrictMode, useEffect } from 'react';
+import { RemixBrowser, useLocation, useMatches } from '@remix-run/react';
+import * as Sentry from '@sentry/remix';
+import isbot from 'isbot';
+import { hydrateRoot } from 'react-dom/client';
 
-import { getPublicEnv } from "./ui/public-env"
+import { getPublicEnv } from './ui/public-env';
 
 if (!isbot) {
   Sentry.init({
-    dsn: getPublicEnv("SENTRY_DSN"),
-    environment: getPublicEnv("NODE_ENV"),
+    dsn: getPublicEnv('SENTRY_DSN'),
+    environment: getPublicEnv('NODE_ENV'),
     integrations: [
       new Sentry.BrowserProfilingIntegration(),
       new Sentry.BrowserTracing({
         // Set 'tracePropagationTargets' to control for which URLs distributed tracing should be enabled
-        tracePropagationTargets: ["localhost"],
-        routingInstrumentation: Sentry.remixRouterInstrumentation(
-          useEffect,
-          useLocation,
-          useMatches,
-        ),
+        tracePropagationTargets: ['localhost'],
+        routingInstrumentation: Sentry.remixRouterInstrumentation(useEffect, useLocation, useMatches),
       }),
       new Sentry.Replay(),
     ],
     // Performance Monitoring
-    tracesSampleRate: getPublicEnv("NODE_ENV") === "production" ? 0.1 : 1.0, // Capture 100% of the transactions, reduce in production!
+    tracesSampleRate: getPublicEnv('NODE_ENV') === 'production' ? 0.1 : 1.0, // Capture 100% of the transactions, reduce in production!
     // Session Replay
-    replaysSessionSampleRate:
-      getPublicEnv("NODE_ENV") === "production" ? 0.1 : 1.0, // This sets the sample rate at 10% in production.
+    replaysSessionSampleRate: getPublicEnv('NODE_ENV') === 'production' ? 0.1 : 1.0, // This sets the sample rate at 10% in production.
     replaysOnErrorSampleRate: 1.0, // If you're not already sampling the entire session, change the sample rate to 100% when sampling sessions where errors occur.
     // Set profilesSampleRate to 1.0 to profile every transaction.
     // Since profilesSampleRate is relative to tracesSampleRate,
@@ -41,7 +36,7 @@ if (!isbot) {
     // For example, a tracesSampleRate of 0.5 and profilesSampleRate of 0.5 would
     // results in 25% of transactions being profiled (0.5*0.5=0.25)
     profilesSampleRate: 1.0,
-  })
+  });
 }
 
 startTransition(() => {
@@ -50,5 +45,5 @@ startTransition(() => {
     <StrictMode>
       <RemixBrowser />
     </StrictMode>,
-  )
-})
+  );
+});

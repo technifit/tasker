@@ -1,92 +1,76 @@
-import { isClerkAPIResponseError, useSignIn } from "@clerk/remix"
-import { Form, useNavigate } from "@remix-run/react"
-import { RemixFormProvider, useRemixForm } from "remix-hook-form"
-import { $path } from "remix-routes"
+import { isClerkAPIResponseError, useSignIn } from '@clerk/remix';
+import { Form, useNavigate } from '@remix-run/react';
+import { RemixFormProvider, useRemixForm } from 'remix-hook-form';
+import { $path } from 'remix-routes';
 
-import {
-  Button,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-  Input,
-  useToast,
-} from "@technifit/ui"
+import { Button, FormControl, FormField, FormItem, FormLabel, FormMessage, Input, useToast } from '@technifit/ui';
 
-import type { ResetPasswordFormData } from "../schema/reset-password-form-schema"
-import { resetPasswordResolver as resolver } from "../schema/reset-password-form-schema"
+import type { ResetPasswordFormData } from '../schema/reset-password-form-schema';
+import { resetPasswordResolver as resolver } from '../schema/reset-password-form-schema';
 
 export const ResetPasswordForm = () => {
-  const { isLoaded, signIn, setActive } = useSignIn()
-  const navigate = useNavigate()
-  const { toast } = useToast()
+  const { isLoaded, signIn, setActive } = useSignIn();
+  const navigate = useNavigate();
+  const { toast } = useToast();
 
   const form = useRemixForm<ResetPasswordFormData>({
     resolver,
-  })
+  });
 
-  const handleFormSubmit = async (
-    e: React.FormEvent<HTMLFormElement> | undefined,
-  ) => {
-    const isValid = await form.trigger()
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement> | undefined) => {
+    const isValid = await form.trigger();
 
     if (!isValid) {
-      return
+      return;
     }
 
     if (isLoaded) {
-      e?.preventDefault()
-      const { code, password } = form.getValues()
+      e?.preventDefault();
+      const { code, password } = form.getValues();
 
       try {
         const signInResponse = await signIn.attemptFirstFactor({
-          strategy: "reset_password_email_code",
+          strategy: 'reset_password_email_code',
           code,
           password,
-        })
+        });
 
-        if (signInResponse.status === "complete") {
-          setActive({ session: signInResponse.createdSessionId })
+        if (signInResponse.status === 'complete') {
+          setActive({ session: signInResponse.createdSessionId });
 
           toast({
-            title: "Password Updated",
-            description: "You will be redirected to the dashboard",
-          })
+            title: 'Password Updated',
+            description: 'You will be redirected to the dashboard',
+          });
 
           setTimeout(() => {
-            navigate($path("/log-in"))
-          }, 500)
-        } else if (signInResponse.status === "needs_new_password") {
-          console.log("invalid password!")
+            navigate($path('/log-in'));
+          }, 500);
+        } else if (signInResponse.status === 'needs_new_password') {
+          console.log('invalid password!');
         }
       } catch (error) {
         if (isClerkAPIResponseError(error)) {
-          console.error(error.message)
+          console.error(error.message);
         } else {
-          console.error("unknown error")
+          console.error('unknown error');
         }
       }
     }
-  }
+  };
 
   return (
     <RemixFormProvider {...form}>
-      <Form onSubmit={handleFormSubmit} className="flex w-full flex-col gap-4">
-        <div className="flex w-full flex-col gap-2">
+      <Form onSubmit={handleFormSubmit} className='flex w-full flex-col gap-4'>
+        <div className='flex w-full flex-col gap-2'>
           <FormField
             control={form.control}
-            name="code"
+            name='code'
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Code</FormLabel>
                 <FormControl>
-                  <Input
-                    autoComplete="one-time-code"
-                    type="numeric"
-                    placeholder="123456"
-                    {...field}
-                  />
+                  <Input autoComplete='one-time-code' type='numeric' placeholder='123456' {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -94,27 +78,22 @@ export const ResetPasswordForm = () => {
           />
           <FormField
             control={form.control}
-            name="password"
+            name='password'
             render={({ field }) => (
               <FormItem>
                 <FormLabel>New Password</FormLabel>
                 <FormControl>
-                  <Input autoComplete="password" type="password" {...field} />
+                  <Input autoComplete='password' type='password' {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
         </div>
-        <Button
-          disabled={!isLoaded || form.formState.isSubmitting}
-          className="w-full"
-        >
-          {form.formState.isSubmitting
-            ? "Resetting Password..."
-            : "Reset Password"}
+        <Button disabled={!isLoaded || form.formState.isSubmitting} className='w-full'>
+          {form.formState.isSubmitting ? 'Resetting Password...' : 'Reset Password'}
         </Button>
       </Form>
     </RemixFormProvider>
-  )
-}
+  );
+};

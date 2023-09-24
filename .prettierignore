@@ -1,7 +1,3 @@
-.github
-
 node_modules
 
-apps
-packages
-tooling
+pnpm-lock.yaml

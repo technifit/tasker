@@ -1,29 +1,28 @@
-import type React from "react"
-import { useEffect, useRef, useState } from "react"
+import type React from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export const useIsFocused = (inputRef: React.RefObject<HTMLInputElement>) => {
-  const [isFocused, setIsFocused] = useState<boolean | undefined>(undefined)
-  const isFocusedRef = useRef<boolean | undefined>(isFocused)
+  const [isFocused, setIsFocused] = useState<boolean | undefined>(undefined);
+  const isFocusedRef = useRef<boolean | undefined>(isFocused);
 
-  isFocusedRef.current = isFocused
+  isFocusedRef.current = isFocused;
 
   useEffect(() => {
-    const input = inputRef.current
-    if (!input) return
+    const input = inputRef.current;
+    if (!input) return;
 
-    const onFocus = () => setIsFocused(true)
-    const onBlur = () => setIsFocused(false)
-    input.addEventListener("focus", onFocus)
-    input.addEventListener("blur", onBlur)
+    const onFocus = () => setIsFocused(true);
+    const onBlur = () => setIsFocused(false);
+    input.addEventListener('focus', onFocus);
+    input.addEventListener('blur', onBlur);
 
-    if (isFocusedRef.current === undefined)
-      setIsFocused(document.activeElement === input)
+    if (isFocusedRef.current === undefined) setIsFocused(document.activeElement === input);
 
     return () => {
-      input.removeEventListener("focus", onFocus)
-      input.removeEventListener("blur", onBlur)
-    }
-  }, [inputRef, setIsFocused])
+      input.removeEventListener('focus', onFocus);
+      input.removeEventListener('blur', onBlur);
+    };
+  }, [inputRef, setIsFocused]);
 
-  return isFocused
-}
+  return isFocused;
+};
