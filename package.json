@@ -23,7 +23,7 @@
     "@technifit/tsconfig": "1.0.0",
     "@types/prettier": "3.0.0",
     "@typescript-eslint/eslint-plugin": "6.7.3",
-    "prettier-plugin-packagejson": "2.4.5",
+    "prettier-plugin-packagejson": "2.4.6",
     "prettier-plugin-tailwindcss": "0.5.4",
     "prettier": "3.0.3",
     "turbo": "1.10.14",
