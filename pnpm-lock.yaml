@@ -82,7 +82,7 @@ importers:
         version: 18.2.0(react@18.2.0)
       remix-hook-form:
         specifier: 2.0.3
-        version: 2.0.3(@remix-run/react@1.19.3)(react-dom@18.2.0)(react-hook-form@7.46.2)(react@18.2.0)
+        version: 2.0.3(@remix-run/react@1.19.3)(react-dom@18.2.0)(react-hook-form@7.47.0)(react@18.2.0)
       remix-params-helper:
         specifier: 0.4.10
         version: 0.4.10(zod@3.22.3)
@@ -146,7 +146,7 @@ importers:
     dependencies:
       '@hookform/resolvers':
         specifier: 3.3.1
-        version: 3.3.1(react-hook-form@7.46.2)
+        version: 3.3.1(react-hook-form@7.47.0)
       '@radix-ui/react-accordion':
         specifier: 1.1.2
         version: 1.1.2(@types/react-dom@18.2.8)(@types/react@18.2.23)(react-dom@18.2.0)(react@18.2.0)
@@ -278,8 +278,8 @@ importers:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
       react-hook-form:
-        specifier: 7.46.2
-        version: 7.46.2(react@18.2.0)
+        specifier: 7.47.0
+        version: 7.47.0(react@18.2.0)
       tailwindcss:
         specifier: 3.3.3
         version: 3.3.3
@@ -2082,12 +2082,12 @@ packages:
     resolution: {integrity: sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==}
     dev: true
 
-  /@hookform/resolvers@3.3.1(react-hook-form@7.46.2):
+  /@hookform/resolvers@3.3.1(react-hook-form@7.47.0):
     resolution: {integrity: sha512-K7KCKRKjymxIB90nHDQ7b9nli474ru99ZbqxiqDAWYsYhOsU3/4qLxW91y+1n04ic13ajjZ66L3aXbNef8PELQ==}
     peerDependencies:
       react-hook-form: ^7.0.0
     dependencies:
-      react-hook-form: 7.46.2(react@18.2.0)
+      react-hook-form: 7.47.0(react@18.2.0)
     dev: false
 
   /@humanwhocodes/config-array@0.11.11:
@@ -8952,8 +8952,8 @@ packages:
       react: 18.2.0
       scheduler: 0.23.0
 
-  /react-hook-form@7.46.2(react@18.2.0):
-    resolution: {integrity: sha512-x1DWmHQchV7x2Rq9l99M/cQHC8JGchAnw9Z0uTz5KrPa0bTl/Inm1NR7ceOARfIrkNuQNAhuSuZPYa6k7QYn3Q==}
+  /react-hook-form@7.47.0(react@18.2.0):
+    resolution: {integrity: sha512-F/TroLjTICipmHeFlMrLtNLceO2xr1jU3CyiNla5zdwsGUGu2UOxxR4UyJgLlhMwLW/Wzp4cpJ7CPfgJIeKdSg==}
     engines: {node: '>=12.22.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18
@@ -9244,7 +9244,7 @@ packages:
       minimatch: 5.1.6
     dev: true
 
-  /remix-hook-form@2.0.3(@remix-run/react@1.19.3)(react-dom@18.2.0)(react-hook-form@7.46.2)(react@18.2.0):
+  /remix-hook-form@2.0.3(@remix-run/react@1.19.3)(react-dom@18.2.0)(react-hook-form@7.47.0)(react@18.2.0):
     resolution: {integrity: sha512-3ScK/bChqD4onAYVMFMLH0Z3mALek1hxPGqZP+New8JcZjJZG+lV/TKKnVCdPLhCpLznTYBb2BzVs0giHOIiQw==}
     peerDependencies:
       '@remix-run/react': ^2.0.0
@@ -9255,7 +9255,7 @@ packages:
       '@remix-run/react': 1.19.3(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      react-hook-form: 7.46.2(react@18.2.0)
+      react-hook-form: 7.47.0(react@18.2.0)
     dev: false
 
   /remix-params-helper@0.4.10(zod@3.22.3):
