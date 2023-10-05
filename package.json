@@ -22,7 +22,7 @@
     "@ianvs/prettier-plugin-sort-imports": "4.1.0",
     "@technifit/tsconfig": "1.0.0",
     "@types/prettier": "3.0.0",
-    "@typescript-eslint/eslint-plugin": "6.7.3",
+    "@typescript-eslint/eslint-plugin": "6.7.4",
     "prettier-plugin-packagejson": "2.4.6",
     "prettier-plugin-tailwindcss": "0.5.4",
     "prettier": "3.0.3",
