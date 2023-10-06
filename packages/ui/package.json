@@ -45,7 +45,7 @@
     "cmdk": "0.2.0",
     "lucide-react": "0.284.0",
     "tailwind-merge": "1.14.0",
-    "zod": "3.22.3"
+    "zod": "3.22.4"
   },
   "peerDependencies": {
     "@tanstack/react-table": "8.10.4",

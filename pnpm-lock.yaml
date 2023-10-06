@@ -85,7 +85,7 @@ importers:
         version: 2.0.3(@remix-run/react@1.19.3)(react-dom@18.2.0)(react-hook-form@7.47.0)(react@18.2.0)
       remix-params-helper:
         specifier: 0.4.10
-        version: 0.4.10(zod@3.22.3)
+        version: 0.4.10(zod@3.22.4)
       remix-routes:
         specifier: 1.4.5
         version: 1.4.5
@@ -94,10 +94,10 @@ importers:
         version: 1.2.2(@remix-run/react@1.19.3)(@remix-run/server-runtime@1.19.3)
       remix-utils:
         specifier: 6.6.0
-        version: 6.6.0(@remix-run/react@1.19.3)(@remix-run/server-runtime@1.19.3)(react@18.2.0)(typescript@5.2.2)(zod@3.22.3)
+        version: 6.6.0(@remix-run/react@1.19.3)(@remix-run/server-runtime@1.19.3)(react@18.2.0)(typescript@5.2.2)(zod@3.22.4)
       zod:
-        specifier: 3.22.3
-        version: 3.22.3
+        specifier: 3.22.4
+        version: 3.22.4
     devDependencies:
       '@remix-run/dev':
         specifier: 1.19.3
@@ -244,8 +244,8 @@ importers:
         specifier: 1.14.0
         version: 1.14.0
       zod:
-        specifier: 3.22.3
-        version: 3.22.3
+        specifier: 3.22.4
+        version: 3.22.4
     devDependencies:
       '@tanstack/react-table':
         specifier: 8.10.4
@@ -9260,12 +9260,12 @@ packages:
       react-hook-form: 7.47.0(react@18.2.0)
     dev: false
 
-  /remix-params-helper@0.4.10(zod@3.22.3):
+  /remix-params-helper@0.4.10(zod@3.22.4):
     resolution: {integrity: sha512-1LZ1FjxCtPekg4a1R50aKA0uB2+668Wd2a0ld7LDrQ0bJ2TzijnCVr822cs8epziS6MG2bG8ZHMPDAR2t4PK+Q==}
     peerDependencies:
       zod: ^3.11.6
     dependencies:
-      zod: 3.22.3
+      zod: 3.22.4
     dev: false
 
   /remix-routes@1.4.5:
@@ -9290,7 +9290,7 @@ packages:
       '@remix-run/server-runtime': 1.19.3
     dev: false
 
-  /remix-utils@6.6.0(@remix-run/react@1.19.3)(@remix-run/server-runtime@1.19.3)(react@18.2.0)(typescript@5.2.2)(zod@3.22.3):
+  /remix-utils@6.6.0(@remix-run/react@1.19.3)(@remix-run/server-runtime@1.19.3)(react@18.2.0)(typescript@5.2.2)(zod@3.22.4):
     resolution: {integrity: sha512-4r4ifahU61Aa54m6Yu8B8GTzXyo+9RUzkFZdBNZOErpZ1LUMQ/ng4LeCJX2M6m4obdMjq0ot0pPlnAzeZOSttg==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -9307,7 +9307,7 @@ packages:
       schema-dts: 1.1.2(typescript@5.2.2)
       type-fest: 2.19.0
       uuid: 8.3.2
-      zod: 3.22.3
+      zod: 3.22.4
     transitivePeerDependencies:
       - typescript
     dev: false
@@ -10819,8 +10819,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /zod@3.22.3:
-    resolution: {integrity: sha512-EjIevzuJRiRPbVH4mGc8nApb/lVLKVpmUhAaR5R5doKGfAnGJ6Gr3CViAVjP+4FWSxCsybeWQdcgCtbX+7oZug==}
+  /zod@3.22.4:
+    resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
     dev: false
 
   /zwitch@2.0.4:
