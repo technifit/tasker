@@ -127,8 +127,8 @@ importers:
         specifier: 4.1.5
         version: 4.1.5
       remix-flat-routes:
-        specifier: 0.5.12
-        version: 0.5.12(@remix-run/dev@1.19.3)
+        specifier: 0.6.1
+        version: 0.6.1(@remix-run/dev@1.19.3)
       tailwindcss:
         specifier: 3.3.3
         version: 3.3.3
@@ -9235,8 +9235,8 @@ packages:
       unified: 10.1.2
     dev: true
 
-  /remix-flat-routes@0.5.12(@remix-run/dev@1.19.3):
-    resolution: {integrity: sha512-NsskCt0euxpTNvLsCVW2UzOFK7YIeldQI00a+rIglgavAMUoFVe7tiPTkq4LJ2AXGsfIDq7kPa63ftqOLst+Dg==}
+  /remix-flat-routes@0.6.1(@remix-run/dev@1.19.3):
+    resolution: {integrity: sha512-7QlTjezVCSD1JCONRaEjINVfrkvl29gb9CXzSe6mvUsVvNmVNZ+nJMNTQaUYdDyEtnH9UGUq7NhafK2CHg3RrQ==}
     hasBin: true
     peerDependencies:
       '@remix-run/dev': ^1.15.0 || ^2
