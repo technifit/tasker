@@ -19,14 +19,14 @@
     "typecheck": "turbo typecheck --continue"
   },
   "devDependencies": {
-    "@ianvs/prettier-plugin-sort-imports": "4.1.0",
+    "@ianvs/prettier-plugin-sort-imports": "4.1.1",
     "@technifit/tsconfig": "1.0.0",
     "@types/prettier": "3.0.0",
-    "@typescript-eslint/eslint-plugin": "6.7.4",
+    "@typescript-eslint/eslint-plugin": "6.9.1",
     "prettier-plugin-packagejson": "2.4.6",
-    "prettier-plugin-tailwindcss": "0.5.5",
+    "prettier-plugin-tailwindcss": "0.5.6",
     "prettier": "3.0.3",
-    "turbo": "1.10.15",
+    "turbo": "1.10.16",
     "typescript": "5.2.2"
   }
 }
