@@ -25,7 +25,7 @@
     "@sentry/remix": "7.77.0",
     "@technifit/ui": "1.0.0",
     "@vercel/analytics": "1.1.1",
-    "@vercel/remix": "1.19.3",
+    "@vercel/remix": "2.2.0",
     "isbot": "3.7.0",
     "lodash": "4.17.21",
     "nanoid": "5.0.3",
