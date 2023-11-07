@@ -109,8 +109,8 @@ importers:
         specifier: 1.0.0
         version: link:../../tooling/typescript-config
       '@types/cookie':
-        specifier: 0.5.3
-        version: 0.5.3
+        specifier: 0.5.4
+        version: 0.5.4
       '@types/lodash':
         specifier: 4.14.200
         version: 4.14.200
@@ -121,8 +121,8 @@ importers:
         specifier: 18.2.14
         version: 18.2.14
       cookie:
-        specifier: 0.5.0
-        version: 0.5.0
+        specifier: 0.6.0
+        version: 0.6.0
       npm-run-all:
         specifier: 4.1.5
         version: 4.1.5
@@ -4068,8 +4068,8 @@ packages:
   /@types/cookie@0.4.1:
     resolution: {integrity: sha512-XW/Aa8APYr6jSVVA1y/DEIZX0/GMKLEVekNG727R8cs56ahETkRAy/3DR7+fJyh7oUgGwNQaRfXCun0+KbWY7Q==}
 
-  /@types/cookie@0.5.3:
-    resolution: {integrity: sha512-SLg07AS9z1Ab2LU+QxzU8RCmzsja80ywjf/t5oqw+4NSH20gIGlhLOrBDm1L3PBWzPa4+wkgFQVZAjE6Ioj2ug==}
+  /@types/cookie@0.5.4:
+    resolution: {integrity: sha512-7z/eR6O859gyWIAjuvBWFzNURmf2oPBmJlfVWkwehU5nzIyjwBsTh7WMmEEV4JFnHuQ3ex4oyTvfKzcyJVDBNA==}
     dev: true
 
   /@types/debug@4.1.7:
@@ -5196,6 +5196,11 @@ packages:
   /cookie@0.5.0:
     resolution: {integrity: sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==}
     engines: {node: '>= 0.6'}
+
+  /cookie@0.6.0:
+    resolution: {integrity: sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==}
+    engines: {node: '>= 0.6'}
+    dev: true
 
   /core-js-compat@3.32.0:
     resolution: {integrity: sha512-7a9a3D1k4UCVKnLhrgALyFcP7YCsLOQIxPd0dKjf/6GuPcgyiGP70ewWdCGrSK7evyhymi0qO4EqCmSJofDeYw==}
