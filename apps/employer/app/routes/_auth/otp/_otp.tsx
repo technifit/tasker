@@ -1,13 +1,13 @@
 import { useSignUp } from '@clerk/remix';
 import { Link } from '@remix-run/react';
-import type { V2_MetaFunction } from '@vercel/remix';
+import type { MetaFunction } from '@vercel/remix';
 import { $path } from 'remix-routes';
 
 import { Typography } from '@technifit/ui';
 
 import { OtpForm } from './forms/otp-form';
 
-export const meta: V2_MetaFunction = () => {
+export const meta: MetaFunction = () => {
   return [{ title: 'Tasker | One Time Password' }, { name: 'description', content: 'One Time Password' }];
 };
 

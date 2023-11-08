@@ -1,4 +1,4 @@
-import { ClerkApp, V2_ClerkErrorBoundary } from '@clerk/remix';
+import { ClerkApp, ClerkErrorBoundary } from '@clerk/remix';
 import {
   Links,
   LiveReload,
@@ -180,7 +180,7 @@ const BaseErrorBoundary = () => {
   );
 };
 
-export const ErrorBoundary = V2_ClerkErrorBoundary(BaseErrorBoundary);
+export const ErrorBoundary = ClerkErrorBoundary(BaseErrorBoundary);
 
 export default withSentry(ClerkApp(AppWithProviders), {
   errorBoundaryOptions: {

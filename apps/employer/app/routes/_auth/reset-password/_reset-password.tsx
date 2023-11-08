@@ -1,12 +1,12 @@
 import { Link } from '@remix-run/react';
-import type { V2_MetaFunction } from '@vercel/remix';
+import type { MetaFunction } from '@vercel/remix';
 import { $path } from 'remix-routes';
 
 import { Typography } from '@technifit/ui';
 
 import { ResetPasswordForm } from './forms/reset-password-form';
 
-export const meta: V2_MetaFunction = () => {
+export const meta: MetaFunction = () => {
   return [{ title: 'Tasker | Log In' }, { name: 'description', content: 'Log in' }];
 };
 

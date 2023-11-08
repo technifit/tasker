@@ -1,5 +1,5 @@
 import { Outlet } from '@remix-run/react';
-import { type V2_MetaFunction } from '@vercel/remix';
+import { type MetaFunction } from '@vercel/remix';
 
 import { UserNav } from './components/user-nav';
 
@@ -7,7 +7,7 @@ import { UserNav } from './components/user-nav';
 
 export { loader } from './_layout.server';
 
-export const meta: V2_MetaFunction = () => {
+export const meta: MetaFunction = () => {
   return [{ title: 'Tasker' }, { name: 'description', content: 'Large scale job processing done right' }];
 };
 
