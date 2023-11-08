@@ -1,13 +1,13 @@
 import { RemixServer } from '@remix-run/react';
 import { CaptureConsole } from '@sentry/integrations';
 import { ProfilingIntegration } from '@sentry/profiling-node';
-// import { isPrefetch } from 'remix-utils';
-
 import * as Sentry from '@sentry/remix';
 import { handleRequest } from '@vercel/remix';
 import type { DataFunctionArgs, EntryContext } from '@vercel/remix';
 import isbot from 'isbot';
 import { nanoid } from 'nanoid/non-secure';
+import { cacheHeader } from 'pretty-cache-header';
+import { isPrefetch } from 'remix-utils';
 
 import { environment } from './lib/environment/environment.server';
 import { NonceProvider } from './utils/nonce-provider';
@@ -19,8 +19,6 @@ if (!isbot) {
     tracesSampleRate: environment().NODE_ENV === 'production' ? 0.1 : 1.0,
     profilesSampleRate: 1,
     integrations: [
-      // TODO: Remove when sentry fixes type issue - https://github.com/getsentry/profiling-node/issues/195
-      // @ts-ignore
       new ProfilingIntegration(),
       new CaptureConsole({
         levels: ['error'],
@@ -45,9 +43,16 @@ export default function (
   );
 
   // Set a short cache for prefetch requests to avoid double data requests
-  // if (isPrefetch(request)) {
-  //   responseHeaders.set('Cache-Control', 'private, max-age=5, smax-age=0');
-  // }
+  if (isPrefetch(request)) {
+    responseHeaders.set(
+      'Cache-Control',
+      cacheHeader({
+        private: true,
+        maxAge: '5s',
+        sMaxage: '0s',
+      }),
+    );
+  }
 
   // Set a vary header to avoid caching issues with cookies
   responseHeaders.set('Vary', 'Cookie');
