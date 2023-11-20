@@ -1,15 +1,29 @@
+import { useState } from 'react';
 import { isClerkAPIResponseError, useSignIn } from '@clerk/remix';
 import { Form, Link, useNavigate } from '@remix-run/react';
+import { AlertCircle } from 'lucide-react';
 import { RemixFormProvider, useRemixForm } from 'remix-hook-form';
 import { $path } from 'remix-routes';
 
-import { Button, FormControl, FormField, FormItem, FormLabel, FormMessage, Input } from '@technifit/ui';
+import {
+  Alert,
+  AlertDescription,
+  AlertTitle,
+  Button,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+  Input,
+} from '@technifit/ui';
 
 import type { LogInFormData } from '../schema/log-in-form-schema';
 import { logInFormResolver as resolver } from '../schema/log-in-form-schema';
 
 export const LoginForm = () => {
   const { isLoaded, signIn, setActive } = useSignIn();
+  const [error, setError] = useState<{ heading: string; description: string } | null>(null);
   const navigate = useNavigate();
 
   const form = useRemixForm<LogInFormData>({
@@ -33,18 +47,57 @@ export const LoginForm = () => {
           password,
         });
 
-        if (signInResponse.status === 'complete') {
-          setActive({ session: signInResponse.createdSessionId });
-
-          setTimeout(() => {
-            navigate($path('/'));
-          }, 500);
-        } else if (signInResponse.status === 'needs_new_password') {
-          console.log('invalid password!');
+        switch (signInResponse.status) {
+          case 'complete':
+            setActive({ session: signInResponse.createdSessionId });
+            setTimeout(() => {
+              navigate($path('/'));
+            }, 500);
+            break;
+          case 'needs_new_password':
+            setError({
+              heading: 'Password Reset Required',
+              description: 'Your password has expired. Please reset your password to continue.',
+            });
+            break;
+          case 'needs_first_factor':
+            setError({
+              heading: 'First Factor Authentication Required',
+              description: 'First factor verification for the provided identifier needs to be prepared and verified.',
+            });
+            break;
+          case 'needs_second_factor':
+            setError({
+              heading: 'Second Factor Authentication Required',
+              description:
+                'Second factor verification (2FA) for the provided identifier needs to be prepared and verified.',
+            });
+            break;
+          case 'needs_identifier':
+            setError({
+              heading: 'Invalid configuration',
+              description: `The authentication identifier hasn't been provided.`,
+            });
+            break;
+          default:
+            setError({
+              heading: 'Unknown Error',
+              description: 'An unknown error occurred. Please try again.',
+            });
+            break;
         }
       } catch (error) {
         if (isClerkAPIResponseError(error)) {
-          console.error(error.message);
+          error.errors.forEach((error) => {
+            if (error.code === 'form_password_incorrect') {
+              setError({
+                heading: 'Invalid email or password',
+                description: 'Please check your email and password and try again.',
+              });
+            } else {
+              console.error(error);
+            }
+          });
         } else {
           console.error('unknown error');
         }
@@ -92,6 +145,13 @@ export const LoginForm = () => {
             </Link>
           </div>
         </div>
+        {error ? (
+          <Alert className='animate-in fade-in' variant='destructive'>
+            <AlertCircle className='h-4 w-4' />
+            <AlertTitle>{error.heading}</AlertTitle>
+            <AlertDescription>{error.description}</AlertDescription>
+          </Alert>
+        ) : null}
         <Button disabled={!isLoaded || form.formState.isSubmitting} className='w-full'>
           {form.formState.isSubmitting ? 'Signing In...' : 'Sign In'}
         </Button>

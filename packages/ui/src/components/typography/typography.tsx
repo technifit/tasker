@@ -4,7 +4,7 @@ import { Slot } from '@radix-ui/react-slot';
 import type { VariantProps } from 'class-variance-authority';
 import { cva } from 'class-variance-authority';
 
-const typographyVariants = cva('text-foreground', {
+const typographyVariants = cva('', {
   variants: {
     variant: {
       h1: 'font-cal scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl',
