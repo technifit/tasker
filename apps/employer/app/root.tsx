@@ -24,87 +24,14 @@ import { TailwindIndicator } from './ui/tailwind-indicator';
 import { ClientHintCheck } from './utils/client-hints';
 import { useNonce } from './utils/nonce-provider';
 
+const calSans = ['cal-sans/CalSans-SemiBold.woff', 'cal-sans/CalSans-SemiBold.woff2'];
+const interWoff = Array.from({ length: 9 }, (_, i) => `inter/inter-latin-ext-${i * 100 + 100}-normal.woff`);
+const interWoff2 = Array.from({ length: 9 }, (_, i) => `inter/inter-latin-ext-${i * 100 + 100}-normal.woff2`);
+
+const fonts = [...calSans, ...interWoff, ...interWoff2];
+
 export const links: LinksFunction = () => [
-  {
-    rel: 'preload',
-    href: '/fonts/cal-sans/CalSans-SemiBold.woff',
-  },
-  {
-    rel: 'preload',
-    href: '/fonts/cal-sans/CalSans-SemiBold.woff2',
-  },
-  {
-    rel: 'preload',
-    href: '/fonts/inter/inter-latin-ext-100-normal.woff',
-  },
-  {
-    rel: 'preload',
-    href: '/fonts/inter/inter-latin-ext-100-normal.woff2',
-  },
-  {
-    rel: 'preload',
-    href: '/fonts/inter/inter-latin-ext-200-normal.woff',
-  },
-  {
-    rel: 'preload',
-    href: '/fonts/inter/inter-latin-ext-200-normal.woff2',
-  },
-  {
-    rel: 'preload',
-    href: '/fonts/inter/inter-latin-ext-300-normal.woff',
-  },
-  {
-    rel: 'preload',
-    href: '/fonts/inter/inter-latin-ext-300-normal.woff2',
-  },
-  {
-    rel: 'preload',
-    href: '/fonts/inter/inter-latin-ext-400-normal.woff',
-  },
-  {
-    rel: 'preload',
-    href: '/fonts/inter/inter-latin-ext-400-normal.woff2',
-  },
-  {
-    rel: 'preload',
-    href: '/fonts/inter/inter-latin-ext-500-normal.woff',
-  },
-  {
-    rel: 'preload',
-    href: '/fonts/inter/inter-latin-ext-500-normal.woff2',
-  },
-  {
-    rel: 'preload',
-    href: '/fonts/inter/inter-latin-ext-600-normal.woff',
-  },
-  {
-    rel: 'preload',
-    href: '/fonts/inter/inter-latin-ext-600-normal.woff2',
-  },
-  {
-    rel: 'preload',
-    href: '/fonts/inter/inter-latin-ext-700-normal.woff',
-  },
-  {
-    rel: 'preload',
-    href: '/fonts/inter/inter-latin-ext-700-normal.woff2',
-  },
-  {
-    rel: 'preload',
-    href: '/fonts/inter/inter-latin-ext-800-normal.woff',
-  },
-  {
-    rel: 'preload',
-    href: '/fonts/inter/inter-latin-ext-800-normal.woff2',
-  },
-  {
-    rel: 'preload',
-    href: '/fonts/inter/inter-latin-ext-900-normal.woff',
-  },
-  {
-    rel: 'preload',
-    href: '/fonts/inter/inter-latin-ext-900-normal.woff2',
-  },
+  ...fonts.map((font) => ({ rel: 'preload', href: `/fonts/${font}` })),
   { rel: 'stylesheet', href: stylesheet },
 ];
 

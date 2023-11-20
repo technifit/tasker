@@ -7,7 +7,7 @@ import type { DataFunctionArgs, EntryContext } from '@vercel/remix';
 import isbot from 'isbot';
 import { nanoid } from 'nanoid/non-secure';
 import { cacheHeader } from 'pretty-cache-header';
-import { isPrefetch } from 'remix-utils';
+import { isPrefetch } from 'remix-utils/is-prefetch';
 
 import { environment } from './lib/environment/environment.server';
 import { NonceProvider } from './utils/nonce-provider';
