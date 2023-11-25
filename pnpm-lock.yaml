@@ -99,8 +99,8 @@ importers:
         specifier: 1.2.2
         version: 1.2.2(@remix-run/react@2.2.0)(@remix-run/server-runtime@2.2.0)
       remix-utils:
-        specifier: 7.1.0
-        version: 7.1.0(@remix-run/node@2.2.0)(@remix-run/react@2.2.0)(react@18.2.0)(zod@3.22.4)
+        specifier: 7.3.0
+        version: 7.3.0(@remix-run/node@2.2.0)(@remix-run/react@2.2.0)(react@18.2.0)(zod@3.22.4)
       zod:
         specifier: 3.22.4
         version: 3.22.4
@@ -8330,8 +8330,8 @@ packages:
       '@remix-run/server-runtime': 2.2.0(typescript@5.3.2)
     dev: false
 
-  /remix-utils@7.1.0(@remix-run/node@2.2.0)(@remix-run/react@2.2.0)(react@18.2.0)(zod@3.22.4):
-    resolution: {integrity: sha512-cceintceWvmNvgLLFeAUkWRcdWuOHGDLaWh0aeL0bLGWnMPBilIyT74Rira1az/ImS9owfh8tjLL4w/22AXJiA==}
+  /remix-utils@7.3.0(@remix-run/node@2.2.0)(@remix-run/react@2.2.0)(react@18.2.0)(zod@3.22.4):
+    resolution: {integrity: sha512-Ea5eNL04Ke4YYKI79ZR5doWtULe3ABkYkqhaP7mKiYcNVYAg6pA0PMuFYR2uyJYCGW43+/WlTfr3D4X5A0PsUA==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       '@remix-run/cloudflare': ^2.0.0
