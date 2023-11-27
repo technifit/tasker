@@ -15,10 +15,13 @@ import { NonceProvider } from './utils/nonce-provider';
 if (!isbot) {
   Sentry.init({
     dsn: environment().SENTRY_DSN,
-    // Performance Monitoring
     tracesSampleRate: environment().NODE_ENV === 'production' ? 0.1 : 1.0,
+    environment: environment().NODE_ENV,
     profilesSampleRate: 1,
     integrations: [
+      new Sentry.Integrations.Console(),
+      new Sentry.Integrations.Http({ tracing: true, breadcrumbs: true }),
+      // @ts-ignore
       new ProfilingIntegration(),
       new CaptureConsole({
         levels: ['error'],
