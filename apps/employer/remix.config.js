@@ -8,6 +8,7 @@ module.exports = {
   serverModuleFormat: 'cjs',
   future: {
     v3_fetcherPersist: true,
+    v3_relativeSplatPaths: true,
   },
   serverDependenciesToBundle: ['nanoid/non-secure', /^remix-utils.*/],
   routes: async (defineRoutes) => {
