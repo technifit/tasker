@@ -62,7 +62,7 @@
     "@technifit/tsconfig": "1.0.0",
     "@types/react-dom": "18.2.18",
     "@types/react": "18.2.45",
-    "date-fns": "3.0.4",
+    "date-fns": "3.0.5",
     "postcss": "8.4.32",
     "react-day-picker": "8.9.1",
     "react-dom": "18.2.0",
