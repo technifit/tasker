@@ -37,7 +37,7 @@
     "remix-params-helper": "0.5.1",
     "remix-routes": "1.5.1",
     "remix-themes": "1.2.2",
-    "remix-utils": "7.4.0",
+    "remix-utils": "7.5.0",
     "zod": "3.22.4"
   },
   "devDependencies": {
