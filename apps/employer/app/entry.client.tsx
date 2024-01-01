@@ -7,7 +7,7 @@
 import { startTransition, StrictMode, useEffect } from 'react';
 import { RemixBrowser, useLocation, useMatches } from '@remix-run/react';
 import * as Sentry from '@sentry/remix';
-import isbot from 'isbot';
+import { isbot } from 'isbot';
 import { hydrateRoot } from 'react-dom/client';
 
 import { getPublicEnv } from './ui/public-env';

@@ -4,7 +4,7 @@ import { ProfilingIntegration } from '@sentry/profiling-node';
 import * as Sentry from '@sentry/remix';
 import { handleRequest } from '@vercel/remix';
 import type { DataFunctionArgs, EntryContext } from '@vercel/remix';
-import isbot from 'isbot';
+import { isbot } from 'isbot';
 import { nanoid } from 'nanoid/non-secure';
 import { cacheHeader } from 'pretty-cache-header';
 import { isPrefetch } from 'remix-utils/is-prefetch';
