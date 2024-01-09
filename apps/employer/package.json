@@ -35,7 +35,7 @@
     "react": "18.2.0",
     "remix-hook-form": "3.2.3",
     "remix-params-helper": "0.5.1",
-    "remix-routes": "1.5.1",
+    "remix-routes": "1.6.1",
     "remix-themes": "1.2.2",
     "remix-utils": "7.5.0",
     "zod": "3.22.4"
