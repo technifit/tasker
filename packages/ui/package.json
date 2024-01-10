@@ -12,7 +12,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@hookform/resolvers": "3.3.3",
+    "@hookform/resolvers": "3.3.4",
     "@radix-ui/react-accordion": "1.1.2",
     "@radix-ui/react-alert-dialog": "1.0.5",
     "@radix-ui/react-aspect-ratio": "1.0.3",
@@ -43,7 +43,7 @@
     "class-variance-authority": "0.7.0",
     "clsx": "2.1.0",
     "cmdk": "0.2.0",
-    "lucide-react": "0.303.0",
+    "lucide-react": "0.309.0",
     "tailwind-merge": "2.2.0",
     "zod": "3.22.4"
   },
@@ -61,7 +61,7 @@
     "@technifit/tailwind-config": "0.1.0",
     "@technifit/tsconfig": "1.0.0",
     "@types/react-dom": "18.2.18",
-    "@types/react": "18.2.46",
+    "@types/react": "18.2.47",
     "date-fns": "3.2.0",
     "postcss": "8.4.33",
     "react-day-picker": "8.10.0",
