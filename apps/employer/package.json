@@ -28,7 +28,7 @@
     "@vercel/remix": "2.4.1",
     "isbot": "4.1.0",
     "lodash": "4.17.21",
-    "lucide-react": "0.303.0",
+    "lucide-react": "0.309.0",
     "nanoid": "5.0.4",
     "pretty-cache-header": "1.0.0",
     "react-dom": "18.2.0",
