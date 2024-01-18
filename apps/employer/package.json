@@ -18,8 +18,8 @@
   },
   "dependencies": {
     "@clerk/remix": "3.1.13",
-    "@remix-run/react": "2.4.1",
-    "@remix-run/serve": "2.4.1",
+    "@remix-run/react": "2.5.1",
+    "@remix-run/serve": "2.5.1",
     "@sentry/integrations": "7.93.0",
     "@sentry/profiling-node": "1.3.2",
     "@sentry/remix": "7.93.0",
@@ -41,7 +41,7 @@
     "zod": "3.22.4"
   },
   "devDependencies": {
-    "@remix-run/dev": "2.4.1",
+    "@remix-run/dev": "2.5.1",
     "@technifit/tailwind-config": "0.1.0",
     "@technifit/tsconfig": "1.0.0",
     "@types/cookie": "0.6.0",
