@@ -12,6 +12,7 @@ import {
 import { captureRemixErrorBoundaryError, withSentry } from '@sentry/remix';
 import { Analytics } from '@vercel/analytics/react';
 import { type LinksFunction } from '@vercel/remix';
+import { SpeedInsights } from '@vercel/speed-insights/remix';
 import { PreventFlashOnWrongTheme, ThemeProvider, useTheme } from 'remix-themes';
 
 import { cn } from '@technifit/ui';
@@ -79,8 +80,9 @@ const App = () => {
         <TailwindIndicator />
         <ScrollRestoration nonce={nonce} />
         <Scripts nonce={nonce} />
-        <Analytics />
         <LiveReload nonce={nonce} />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
