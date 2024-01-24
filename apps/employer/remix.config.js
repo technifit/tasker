@@ -16,5 +16,5 @@ module.exports = {
       ignoredRouteFiles: ['.*', '**/*.css', '**/*.test.{js,jsx,ts,tsx}', '**/__*.*'],
     });
   },
-  watchPaths: ['../../packages/ui/src/**/*']
+  watchPaths: ['../../packages/ui/src/**/*'],
 };
