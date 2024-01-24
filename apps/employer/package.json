@@ -34,7 +34,7 @@
     "pretty-cache-header": "1.0.0",
     "react-dom": "18.2.0",
     "react": "18.2.0",
-    "remix-hook-form": "4.0.0",
+    "remix-hook-form": "4.0.1",
     "remix-params-helper": "0.5.1",
     "remix-routes": "1.6.1",
     "remix-themes": "1.2.2",
