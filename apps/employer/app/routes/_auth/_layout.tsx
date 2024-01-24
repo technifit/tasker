@@ -23,16 +23,6 @@ const Layout = () => {
         </Typography>
       </div>
       <div className='flex flex-col gap-2'>
-        <div className='flex justify-end'>
-          <Link
-            prefetch='intent'
-            to={$path('/log-in')}
-            className={cn(buttonVariants({ variant: 'outline' }), 'inline-flex items-center gap-1')}
-          >
-            <LogIn className='h-4 w-4' />
-            Login
-          </Link>
-        </div>
         <div className='flex grow flex-col items-center justify-center'>
           <Outlet />
         </div>

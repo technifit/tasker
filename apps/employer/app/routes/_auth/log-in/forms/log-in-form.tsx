@@ -1,29 +1,18 @@
 import { useState } from 'react';
 import { isClerkAPIResponseError, useSignIn } from '@clerk/remix';
 import { Form, Link, useNavigate } from '@remix-run/react';
-import { AlertCircle } from 'lucide-react';
 import { RemixFormProvider, useRemixForm } from 'remix-hook-form';
 import { $path } from 'remix-routes';
 
-import {
-  Alert,
-  AlertDescription,
-  AlertTitle,
-  Button,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-  Input,
-} from '@technifit/ui';
+import { Button, FormControl, FormField, FormItem, FormLabel, FormMessage, Input } from '@technifit/ui';
 
+import { ErrorAlert, type ErrorAlertProps } from '~/ui/error-alert';
 import type { LogInFormData } from '../schema/log-in-form-schema';
 import { logInFormResolver as resolver } from '../schema/log-in-form-schema';
 
 export const LoginForm = () => {
   const { isLoaded, signIn, setActive } = useSignIn();
-  const [error, setError] = useState<{ heading: string; description: string } | null>(null);
+  const [error, setError] = useState<ErrorAlertProps | null>(null);
   const navigate = useNavigate();
 
   const form = useRemixForm<LogInFormData>({
@@ -89,17 +78,16 @@ export const LoginForm = () => {
       } catch (error) {
         if (isClerkAPIResponseError(error)) {
           error.errors.forEach((error) => {
-            if (error.code === 'form_password_incorrect') {
-              setError({
-                heading: 'Invalid email or password',
-                description: 'Please check your email and password and try again.',
-              });
-            } else {
-              console.error(error);
-            }
+            setError({
+              heading: 'Invalid email or password',
+              description: error.message,
+            });
           });
         } else {
-          console.error('unknown error');
+          setError({
+            heading: 'Something went wrong',
+            description: 'Please try again later.',
+          });
         }
       }
     }
@@ -122,7 +110,7 @@ export const LoginForm = () => {
               </FormItem>
             )}
           />
-          <div className='flex flex-col gap-1'>
+          <div className='flex flex-col gap-2'>
             <FormField
               control={form.control}
               name='password'
@@ -145,13 +133,7 @@ export const LoginForm = () => {
             </Link>
           </div>
         </div>
-        {error ? (
-          <Alert className='animate-in fade-in' variant='destructive'>
-            <AlertCircle className='h-4 w-4' />
-            <AlertTitle>{error.heading}</AlertTitle>
-            <AlertDescription>{error.description}</AlertDescription>
-          </Alert>
-        ) : null}
+        {error ? <ErrorAlert heading={error.heading} description={error.description} /> : null}
         <Button disabled={!isLoaded || form.formState.isSubmitting} className='w-full'>
           {form.formState.isSubmitting ? 'Signing In...' : 'Sign In'}
         </Button>

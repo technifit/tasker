@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { isClerkAPIResponseError, useSignUp } from '@clerk/remix';
 import { Form, useNavigate } from '@remix-run/react';
 import { RemixFormProvider, useRemixForm } from 'remix-hook-form';
@@ -5,11 +6,13 @@ import { $path } from 'remix-routes';
 
 import { Button, FormControl, FormField, FormItem, FormLabel, FormMessage, Input } from '@technifit/ui';
 
+import { ErrorAlert, type ErrorAlertProps } from '~/ui/error-alert';
 import type { SignUpFormData } from '../schema/sign-up-form-schema';
 import { signUpFormResolver as resolver } from '../schema/sign-up-form-schema';
 
 export const SignUpForm = () => {
   const { isLoaded, signUp, setActive } = useSignUp();
+  const [error, setError] = useState<ErrorAlertProps | null>(null);
   const navigate = useNavigate();
 
   const form = useRemixForm<SignUpFormData>({
@@ -54,9 +57,17 @@ export const SignUpForm = () => {
         }
       } catch (error) {
         if (isClerkAPIResponseError(error)) {
-          console.error(error.message);
+          error.errors.forEach((error) => {
+            setError({
+              heading: 'Something went wrong',
+              description: error.message,
+            });
+          });
         } else {
-          console.error('unknown error');
+          setError({
+            heading: 'Something went wrong',
+            description: 'Please try again later.',
+          });
         }
       }
     }
@@ -121,6 +132,7 @@ export const SignUpForm = () => {
             )}
           />
         </div>
+        {error ? <ErrorAlert heading={error.heading} description={error.description} /> : null}
         <Button disabled={!isLoaded || form.formState.isSubmitting} className='w-full'>
           {form.formState.isSubmitting ? 'Signing Up...' : 'Sign Up'}
         </Button>

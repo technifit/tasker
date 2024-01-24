@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { isClerkAPIResponseError, useSignIn } from '@clerk/remix';
 import { Form, useNavigate } from '@remix-run/react';
 import { RemixFormProvider, useRemixForm } from 'remix-hook-form';
@@ -5,11 +6,13 @@ import { $path } from 'remix-routes';
 
 import { Button, FormControl, FormField, FormItem, FormLabel, FormMessage, Input, useToast } from '@technifit/ui';
 
+import { ErrorAlert, type ErrorAlertProps } from '~/ui/error-alert';
 import type { ResetPasswordFormData } from '../schema/reset-password-form-schema';
 import { resetPasswordResolver as resolver } from '../schema/reset-password-form-schema';
 
 export const ResetPasswordForm = () => {
   const { isLoaded, signIn, setActive } = useSignIn();
+  const [error, setError] = useState<ErrorAlertProps | null>(null);
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -51,9 +54,17 @@ export const ResetPasswordForm = () => {
         }
       } catch (error) {
         if (isClerkAPIResponseError(error)) {
-          console.error(error.message);
+          error.errors.forEach((error) => {
+            setError({
+              heading: 'Something went wrong',
+              description: error.message,
+            });
+          });
         } else {
-          console.error('unknown error');
+          setError({
+            heading: 'Something went wrong',
+            description: 'Please try again later.',
+          });
         }
       }
     }
@@ -90,6 +101,7 @@ export const ResetPasswordForm = () => {
             )}
           />
         </div>
+        {error ? <ErrorAlert heading={error.heading} description={error.description} /> : null}
         <Button disabled={!isLoaded || form.formState.isSubmitting} className='w-full'>
           {form.formState.isSubmitting ? 'Resetting Password...' : 'Reset Password'}
         </Button>

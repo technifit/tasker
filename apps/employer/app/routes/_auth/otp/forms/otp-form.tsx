@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { isClerkAPIResponseError, useSignUp } from '@clerk/remix';
 import { Form, useNavigate } from '@remix-run/react';
 import { RemixFormProvider, useRemixForm } from 'remix-hook-form';
@@ -5,11 +6,13 @@ import { $path } from 'remix-routes';
 
 import { Button, FormControl, FormField, FormItem, FormLabel, FormMessage, Input } from '@technifit/ui';
 
+import { ErrorAlert, type ErrorAlertProps } from '~/ui/error-alert';
 import type { OtpFormData } from '../schema/otp-form-schema';
 import { otpFormResolver as resolver } from '../schema/otp-form-schema';
 
 export const OtpForm = () => {
   const { isLoaded, signUp, setActive } = useSignUp();
+  const [error, setError] = useState<ErrorAlertProps | null>(null);
   const navigate = useNavigate();
 
   const form = useRemixForm<OtpFormData>({
@@ -55,9 +58,17 @@ export const OtpForm = () => {
         }
       } catch (error) {
         if (isClerkAPIResponseError(error)) {
-          console.error(error.message);
+          error.errors.forEach((error) => {
+            setError({
+              heading: 'Something went wrong',
+              description: error.message,
+            });
+          });
         } else {
-          console.error('unknown error');
+          setError({
+            heading: 'Something went wrong',
+            description: 'Please try again later.',
+          });
         }
       }
     }
@@ -81,6 +92,7 @@ export const OtpForm = () => {
             )}
           />
         </div>
+        {error ? <ErrorAlert heading={error.heading} description={error.description} /> : null}
         <Button disabled={!isLoaded || form.formState.isSubmitting} className='w-full'>
           {form.formState.isSubmitting ? 'Signing Up...' : 'Sign Up'}
         </Button>

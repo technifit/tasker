@@ -12,21 +12,20 @@ export const meta: MetaFunction = () => {
 
 export const SignUp = () => {
   return (
-    <div className='flex w-full max-w-md flex-col items-center justify-center gap-4'>
-      <div className='flex flex-col space-y-2 text-center'>
+    <div className='flex w-full max-w-md flex-col items-start justify-center gap-4'>
+      <div className='flex flex-col gap-2'>
         <Typography variant={'h1'} className='lg:text-2xl'>
           Sign in
         </Typography>
-        <Typography variant={'mutedText'}>Enter your email below to access your account</Typography>
+        <Typography variant={'mutedText'}>
+          New to Tasker?{' '}
+          <Link prefetch='intent' to={$path('/sign-up')} className='underline underline-offset-4 hover:text-primary'>
+            Sign up for an account
+          </Link>
+          .
+        </Typography>
       </div>
       <LoginForm />
-      <Typography variant={'mutedText'} className='text-center'>
-        Dont have an account?{' '}
-        <Link prefetch='intent' to={$path('/sign-up')} className='underline underline-offset-4 hover:text-primary'>
-          Sign Up
-        </Link>
-        .
-      </Typography>
     </div>
   );
 };

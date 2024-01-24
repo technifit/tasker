@@ -12,22 +12,22 @@ export const meta: MetaFunction = () => {
 
 export const Signup = () => {
   return (
-    <div className='flex w-full max-w-md flex-col items-center justify-center gap-4'>
-      <div className='flex flex-col space-y-2 text-center'>
+    <div className='flex w-full max-w-md flex-col items-start justify-center gap-4'>
+      <div className='flex flex-col gap-2'>
         <Typography variant={'h1'} className='lg:text-2xl'>
           Create an account
         </Typography>
-        <Typography variant={'mutedText'}>Enter your email below to create your account</Typography>
-      </div>
-      <SignUpForm />
-      <div className='flex flex-col gap-2 text-center'>
         <Typography variant={'mutedText'}>
+          {' '}
           Already have an account?{' '}
           <Link prefetch='intent' to={$path('/log-in')} className='underline underline-offset-4 hover:text-primary'>
             Sign In
           </Link>
           .
         </Typography>
+      </div>
+      <SignUpForm />
+      <div className='flex flex-col gap-2 text-center'>
         <Typography variant={'mutedText'}>
           By clicking continue, you agree to our{' '}
           <Link prefetch='intent' to='/terms' className='underline underline-offset-4 hover:text-primary'>
