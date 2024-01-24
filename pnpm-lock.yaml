@@ -87,8 +87,8 @@ importers:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
       remix-hook-form:
-        specifier: 4.0.0
-        version: 4.0.0(@remix-run/react@2.5.1)(react-dom@18.2.0)(react-hook-form@7.49.3)(react@18.2.0)
+        specifier: 4.0.1
+        version: 4.0.1(@remix-run/react@2.5.1)(react-dom@18.2.0)(react-hook-form@7.49.3)(react@18.2.0)
       remix-params-helper:
         specifier: 0.5.1
         version: 0.5.1(zod@3.22.4)
@@ -8024,8 +8024,8 @@ packages:
       minimatch: 5.1.6
     dev: true
 
-  /remix-hook-form@4.0.0(@remix-run/react@2.5.1)(react-dom@18.2.0)(react-hook-form@7.49.3)(react@18.2.0):
-    resolution: {integrity: sha512-QYlpJWOSu7PtGBjU7YoQDPEPoR/TrWFIyqVKieQO8OAgh9qtvinY2BnkKt9ij9EpXqoEzldcGNYuAuiQCioqyA==}
+  /remix-hook-form@4.0.1(@remix-run/react@2.5.1)(react-dom@18.2.0)(react-hook-form@7.49.3)(react@18.2.0):
+    resolution: {integrity: sha512-tHQWXRkLyNzfjr3NUL5XVfJSKWregoXWnhVOLSlso+QYT6n5ufbJgrum0YmMCGhHvRQsHQsT473tPWnOwAqybA==}
     peerDependencies:
       '@remix-run/react': ^2.0.0
       react: ^18.2.0
