@@ -15,7 +15,7 @@ import { type LinksFunction } from '@vercel/remix';
 import { SpeedInsights } from '@vercel/speed-insights/remix';
 import { PreventFlashOnWrongTheme, ThemeProvider, useTheme } from 'remix-themes';
 
-import { cn } from '@technifit/ui';
+import { cn, Toaster } from '@technifit/ui';
 
 import stylesheet from '~/styles/global.css';
 import type { loader } from './_root.server';
@@ -81,6 +81,7 @@ const App = () => {
         <ScrollRestoration nonce={nonce} />
         <Scripts nonce={nonce} />
         <LiveReload nonce={nonce} />
+        <Toaster />
         <Analytics />
         <SpeedInsights />
       </body>

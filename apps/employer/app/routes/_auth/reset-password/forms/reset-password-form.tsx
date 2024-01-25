@@ -4,7 +4,7 @@ import { Form, useNavigate } from '@remix-run/react';
 import { RemixFormProvider, useRemixForm } from 'remix-hook-form';
 import { $path } from 'remix-routes';
 
-import { Button, FormControl, FormField, FormItem, FormLabel, FormMessage, Input, useToast } from '@technifit/ui';
+import { Button, FormControl, FormField, FormItem, FormLabel, FormMessage, Input, toast } from '@technifit/ui';
 
 import { ErrorAlert, type ErrorAlertProps } from '~/ui/error-alert';
 import type { ResetPasswordFormData } from '../schema/reset-password-form-schema';
@@ -14,7 +14,6 @@ export const ResetPasswordForm = () => {
   const { isLoaded, signIn, setActive } = useSignIn();
   const [error, setError] = useState<ErrorAlertProps | null>(null);
   const navigate = useNavigate();
-  const { toast } = useToast();
 
   const form = useRemixForm<ResetPasswordFormData>({
     resolver,
@@ -41,8 +40,7 @@ export const ResetPasswordForm = () => {
         if (signInResponse.status === 'complete') {
           setActive({ session: signInResponse.createdSessionId });
 
-          toast({
-            title: 'Password Updated',
+          toast('Password Updated', {
             description: 'You will be redirected to the dashboard',
           });
 
