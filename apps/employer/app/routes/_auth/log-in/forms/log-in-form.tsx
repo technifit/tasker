@@ -4,7 +4,7 @@ import { Form, Link, useNavigate } from '@remix-run/react';
 import { RemixFormProvider, useRemixForm } from 'remix-hook-form';
 import { $path } from 'remix-routes';
 
-import { Button, FormControl, FormField, FormItem, FormLabel, FormMessage, Input } from '@technifit/ui';
+import { Button, FormControl, FormField, FormItem, FormLabel, FormMessage, Input, Typography } from '@technifit/ui';
 
 import { ErrorAlert, type ErrorAlertProps } from '~/ui/error-alert';
 import type { LogInFormData } from '../schema/log-in-form-schema';
@@ -124,13 +124,11 @@ export const LoginForm = () => {
                 </FormItem>
               )}
             />
-            <Link
-              prefetch='intent'
-              to={$path('/forgot-password')}
-              className='text-sm underline underline-offset-4 hover:text-primary'
-            >
-              Forgot Password?
-            </Link>
+            <Typography asChild variant={'link'} className='text-sm'>
+              <Link prefetch='intent' to={$path('/forgot-password')}>
+                Forgot Password?
+              </Link>
+            </Typography>
           </div>
         </div>
         {error ? <ErrorAlert heading={error.heading} description={error.description} /> : null}

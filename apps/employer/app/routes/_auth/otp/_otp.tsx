@@ -28,9 +28,11 @@ export const Otp = () => {
       <div className='flex flex-col gap-2 text-center'>
         <Typography variant={'mutedText'}>
           Already have an account?{' '}
-          <Link prefetch='intent' to={$path('/log-in')} className='underline underline-offset-4 hover:text-primary'>
-            Sign In
-          </Link>
+          <Typography asChild variant={'link'}>
+            <Link prefetch='intent' to={$path('/log-in')}>
+              Sign In
+            </Link>
+          </Typography>
           .
         </Typography>
       </div>

@@ -22,9 +22,11 @@ export const ForgotPassword = () => {
       <ForgotPasswordForm />
       <Typography variant={'mutedText'} className='text-center'>
         Dont have an account?{' '}
-        <Link prefetch='intent' to={$path('/sign-up')} className='underline underline-offset-4 hover:text-primary'>
-          Sign Up
-        </Link>
+        <Typography asChild variant={'link'}>
+          <Link prefetch='intent' to={$path('/sign-up')}>
+            Sign Up
+          </Link>
+        </Typography>
         .
       </Typography>
     </div>

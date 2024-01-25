@@ -21,6 +21,7 @@ const typographyVariants = cva('', {
       largeText: 'text-lg font-semibold',
       smallText: 'text-sm font-medium leading-none',
       mutedText: 'text-base text-muted-foreground',
+      link: 'underline underline-offset-4 hover:text-primary',
     },
   },
   defaultVariants: {
@@ -45,6 +46,7 @@ const variantElementMap: Record<NonNullable<VariantPropType['variant']>, string>
   lead: 'p',
   mutedText: 'p',
   ul: 'ul',
+  link: 'a',
 };
 
 export interface TypographyProps extends React.HTMLAttributes<HTMLElement>, VariantProps<typeof typographyVariants> {

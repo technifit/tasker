@@ -19,9 +19,11 @@ export const SignUp = () => {
         </Typography>
         <Typography variant={'mutedText'}>
           New to Tasker?{' '}
-          <Link prefetch='intent' to={$path('/sign-up')} className='underline underline-offset-4 hover:text-primary'>
-            Sign up for an account
-          </Link>
+          <Typography asChild variant={'link'}>
+            <Link prefetch='intent' to={$path('/sign-up')}>
+              Sign up for an account
+            </Link>
+          </Typography>
           .
         </Typography>
       </div>

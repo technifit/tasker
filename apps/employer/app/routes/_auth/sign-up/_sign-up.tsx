@@ -20,9 +20,11 @@ export const Signup = () => {
         <Typography variant={'mutedText'}>
           {' '}
           Already have an account?{' '}
-          <Link prefetch='intent' to={$path('/log-in')} className='underline underline-offset-4 hover:text-primary'>
-            Sign In
-          </Link>
+          <Typography asChild variant={'link'}>
+            <Link prefetch='intent' to={$path('/log-in')}>
+              Sign In
+            </Link>
+          </Typography>
           .
         </Typography>
       </div>
@@ -30,13 +32,17 @@ export const Signup = () => {
       <div className='flex flex-col gap-2 text-center'>
         <Typography variant={'mutedText'}>
           By clicking continue, you agree to our{' '}
-          <Link prefetch='intent' to='/terms' className='underline underline-offset-4 hover:text-primary'>
-            Terms of Service
-          </Link>{' '}
+          <Typography asChild variant={'link'}>
+            <Link prefetch='intent' to='/terms'>
+              Terms of Service
+            </Link>
+          </Typography>{' '}
           and{' '}
-          <Link prefetch='intent' to='/privacy' className='underline underline-offset-4 hover:text-primary'>
-            Privacy Policy
-          </Link>
+          <Typography asChild variant={'link'}>
+            <Link prefetch='intent' to='/privacy'>
+              Privacy Policy
+            </Link>
+          </Typography>
           .
         </Typography>
       </div>
