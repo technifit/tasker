@@ -29,7 +29,7 @@
     "@vercel/speed-insights": "1.0.8",
     "isbot": "4.4.0",
     "lodash": "4.17.21",
-    "lucide-react": "0.316.0",
+    "lucide-react": "0.317.0",
     "nanoid": "5.0.4",
     "pretty-cache-header": "1.0.0",
     "react-dom": "18.2.0",
