@@ -64,7 +64,7 @@
   },
   "devDependencies": {
     "@tanstack/react-table": "8.11.7",
-    "@technifit/tailwind-config": "0.1.0",
+    "@technifit/tailwind-config": "1.0.0",
     "@technifit/tsconfig": "1.0.0",
     "@types/react": "18.2.48",
     "@types/react-dom": "18.2.18",
