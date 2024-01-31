@@ -61,7 +61,7 @@ const App = () => {
   }
 
   return (
-    <html lang='en' className={`${theme} h-full overflow-x-hidden`}>
+    <html lang='en' className={`${theme} h-dvh overflow-x-hidden`}>
       <head>
         <ClientHintCheck nonce={nonce} />
         <meta charSet='utf-8' />
@@ -70,9 +70,9 @@ const App = () => {
         <PreventFlashOnWrongTheme ssrTheme={Boolean(theme)} />
         <Links />
       </head>
-      <body className={cn('min-h-screen bg-background font-sans text-foreground antialiased')}>
+      <body className={cn('h-dvh bg-background font-sans text-foreground antialiased')}>
         <PublicEnv nonce={nonce} publicEnvs={publicKeys} />
-        <div className='relative flex min-h-screen flex-col'>
+        <div className='relative flex h-dvh flex-col'>
           <div className='flex flex-1'>
             <Outlet />
           </div>
@@ -102,7 +102,7 @@ const BaseErrorBoundary = () => {
         <Meta />
         <Links />
       </head>
-      <body className='min-h-screen bg-background font-sans text-foreground antialiased'>
+      <body className='min-h-dvh bg-background font-sans text-foreground antialiased'>
         <h1>Booom Error!</h1>
         <p>Make me pretty</p>
       </body>
