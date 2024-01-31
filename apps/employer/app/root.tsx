@@ -10,11 +10,11 @@ import {
   useRouteError,
 } from '@remix-run/react';
 import { captureRemixErrorBoundaryError, withSentry } from '@sentry/remix';
-import { Analytics } from '@vercel/analytics/react';
 import { type LinksFunction } from '@vercel/remix';
-import { SpeedInsights } from '@vercel/speed-insights/remix';
 import { PreventFlashOnWrongTheme, ThemeProvider, useTheme } from 'remix-themes';
 
+import { Analytics } from '@technifit/analytics';
+import { SpeedInsights } from '@technifit/speed-insights';
 import { cn, Toaster } from '@technifit/ui';
 
 import stylesheet from '~/styles/global.css';

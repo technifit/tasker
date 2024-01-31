@@ -1,0 +1,32 @@
+{
+  "name": "@technifit/analytics",
+  "version": "1.0.0",
+  "private": true,
+  "exports": {
+    ".": {
+      "default": "./src/index.tsx"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./src/index.tsx"
+      ]
+    }
+  },
+  "scripts": {
+    "clean": "git clean -xdf dist .turbo node_modules",
+    "format:fix": "prettier . --write --cache --cache-location='node_modules/.cache/.prettiercache' --log-level=warn",
+    "format": "prettier . --check --cache --cache-location='node_modules/.cache/.prettiercache'",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@vercel/analytics": "1.1.2",
+    "react": "18.2.0"
+  },
+  "devDependencies": {
+    "@technifit/tsconfig": "1.0.0",
+    "eslint": "8.56.0",
+    "typescript": "5.3.3"
+  }
+}
