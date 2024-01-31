@@ -1,5 +1,5 @@
 import { RemixServer } from '@remix-run/react';
-import { CaptureConsole } from '@sentry/integrations';
+import { captureConsoleIntegration } from '@sentry/integrations';
 import { ProfilingIntegration } from '@sentry/profiling-node';
 import * as Sentry from '@sentry/remix';
 import { handleRequest } from '@vercel/remix';
@@ -20,7 +20,7 @@ if (!isbot) {
     profilesSampleRate: 1,
     integrations: [
       new ProfilingIntegration(),
-      new CaptureConsole({
+      captureConsoleIntegration({
         levels: ['error'],
       }),
     ],

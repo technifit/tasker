@@ -23,7 +23,7 @@ if (!isbot) {
         tracePropagationTargets: ['localhost'],
         routingInstrumentation: Sentry.remixRouterInstrumentation(useEffect, useLocation, useMatches),
       }),
-      new Sentry.Replay(),
+      Sentry.replayIntegration({}),
     ],
     // Performance Monitoring
     tracesSampleRate: getPublicEnv('NODE_ENV') === 'production' ? 0.1 : 1.0, // Capture 100% of the transactions, reduce in production!
