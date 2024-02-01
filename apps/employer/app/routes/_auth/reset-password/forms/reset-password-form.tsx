@@ -6,7 +6,8 @@ import { $path } from 'remix-routes';
 
 import { Button, FormControl, FormField, FormItem, FormLabel, FormMessage, Input, toast } from '@technifit/ui';
 
-import { ErrorAlert, type ErrorAlertProps } from '~/ui/error-alert';
+import { ErrorAlert } from '~/ui/error-alert';
+import type { ErrorAlertProps } from '~/ui/error-alert';
 import type { ResetPasswordFormData } from '../schema/reset-password-form-schema';
 import { resetPasswordResolver as resolver } from '../schema/reset-password-form-schema';
 
@@ -38,7 +39,7 @@ export const ResetPasswordForm = () => {
         });
 
         if (signInResponse.status === 'complete') {
-          setActive({ session: signInResponse.createdSessionId });
+          await setActive({ session: signInResponse.createdSessionId });
 
           toast('Password Updated', {
             description: 'You will be redirected to the dashboard',

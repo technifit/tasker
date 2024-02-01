@@ -1,11 +1,10 @@
 {
-  "name": "@technifit/tailwind-config",
+  "name": "@technifit/eslint-config",
   "version": "1.0.0",
-  "main": "index.ts",
-  "license": "MIT",
   "files": [
-    "index.ts",
-    "postcss.js"
+    "base.js",
+    "remix.js",
+    "react.js"
   ],
   "scripts": {
     "clean": "git clean -xdf node_modules dist .turbo",
@@ -14,13 +13,19 @@
     "lint:fix": "eslint . --fix --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
     "lint": "eslint . --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0"
   },
-  "devDependencies": {
-    "@technifit/eslint-config": "1.0.0",
+  "dependencies": {
+    "@remix-run/eslint-config": "2.5.1",
     "@technifit/tsconfig": "1.0.0",
-    "autoprefixer": "10.4.17",
+    "@types/eslint": "8.56.2",
+    "@typescript-eslint/eslint-plugin": "6.20.0",
+    "@typescript-eslint/parser": "6.20.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-config-turbo": "1.12.2",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-jsx-a11y": "6.8.0",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-react": "7.33.2",
     "eslint": "8.56.0",
-    "postcss": "8.4.33",
-    "tailwindcss": "3.4.1",
     "typescript": "5.3.3"
   }
 }

@@ -66,7 +66,7 @@ export default function (
 
 export function handleError(error: unknown, { request }: DataFunctionArgs): void {
   if (error instanceof Error) {
-    Sentry.captureRemixServerException(error, 'remix.server', request);
+    void Sentry.captureRemixServerException(error, 'remix.server', request);
   } else {
     // Optionally capture non-Error objects
     Sentry.captureException(error);

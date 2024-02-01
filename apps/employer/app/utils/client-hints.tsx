@@ -66,6 +66,8 @@ export function getHints(request?: Request) {
     },
     {} as {
       [name in ClientHintNames]: (typeof clientHints)[name] extends {
+        // TODO: infer the return type of the transform function
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         transform: (value: any) => infer ReturnValue;
       }
         ? ReturnValue

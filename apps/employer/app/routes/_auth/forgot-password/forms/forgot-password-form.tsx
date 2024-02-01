@@ -6,7 +6,8 @@ import { $path } from 'remix-routes';
 
 import { Button, FormControl, FormField, FormItem, FormLabel, FormMessage, Input } from '@technifit/ui';
 
-import { ErrorAlert, type ErrorAlertProps } from '~/ui/error-alert';
+import { ErrorAlert } from '~/ui/error-alert';
+import type { ErrorAlertProps } from '~/ui/error-alert';
 import type { ForgotPasswordFormData } from '../schema/forgot-password-form-schema';
 import { forgotPasswordFormResolver as resolver } from '../schema/forgot-password-form-schema';
 

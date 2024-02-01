@@ -13,6 +13,7 @@ export default defineConfig({
   minify: true,
   outDir: 'dist',
   sourcemap: true,
+  // eslint-disable-next-line @typescript-eslint/require-await
   onSuccess: async () => {
     exec('tsc --emitDeclarationOnly');
   },
