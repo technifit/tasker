@@ -6,7 +6,8 @@ import { $path } from 'remix-routes';
 
 import { Button, FormControl, FormField, FormItem, FormLabel, FormMessage, Input } from '@technifit/ui';
 
-import { ErrorAlert, type ErrorAlertProps } from '~/ui/error-alert';
+import { ErrorAlert } from '~/ui/error-alert';
+import type { ErrorAlertProps } from '~/ui/error-alert';
 import type { OtpFormData } from '../schema/otp-form-schema';
 import { otpFormResolver as resolver } from '../schema/otp-form-schema';
 
@@ -37,7 +38,7 @@ export const OtpForm = () => {
 
         switch (signInResponse.status) {
           case 'complete':
-            setActive({ session: signInResponse.createdSessionId });
+            await setActive({ session: signInResponse.createdSessionId });
 
             setTimeout(() => {
               navigate($path('/'));

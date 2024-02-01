@@ -47,7 +47,7 @@ export function UserNav() {
       <DropdownMenuTrigger asChild>
         <Button variant='ghost' className='relative h-8 w-8 rounded-full'>
           <Avatar className='h-9 w-9'>
-            <AvatarImage src={user.imageUrl} alt={user.fullName || 'User Image'} />
+            <AvatarImage src={user.imageUrl} alt={user.fullName ?? 'User Image'} />
             <AvatarFallback>
               {user?.fullName
                 ?.match(/(\b\S)?/g)

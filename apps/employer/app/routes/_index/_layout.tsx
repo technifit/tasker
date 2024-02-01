@@ -1,5 +1,5 @@
 import { Outlet } from '@remix-run/react';
-import { type MetaFunction } from '@vercel/remix';
+import type { MetaFunction } from '@vercel/remix';
 
 import { UserNav } from './components/user-nav';
 

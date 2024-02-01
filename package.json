@@ -7,8 +7,8 @@
   "packageManager": "pnpm@8.15.1",
   "scripts": {
     "build": "turbo build",
-    "checks:fix": "turbo format:fix --continue --force",
-    "checks": "turbo format typecheck --continue",
+    "checks:fix": "turbo format:fix lint:fix --continue --force",
+    "checks": "turbo format typecheck lint --continue",
     "clean:workspaces": "turbo clean",
     "clean": "git clean -xdf node_modules dist .next .turbo",
     "dev": "turbo dev --parallel",

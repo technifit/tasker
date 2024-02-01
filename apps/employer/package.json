@@ -13,6 +13,8 @@
     "dev": "run-p dev:*",
     "format:fix": "prettier . --write --cache --cache-location='node_modules/.cache/.prettiercache' --log-level=warn",
     "format": "prettier . --check --cache --cache-location='node_modules/.cache/.prettiercache'",
+    "lint:fix": "eslint . --fix --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
+    "lint": "eslint . --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
     "start": "remix-serve build",
     "typecheck": "tsc --noEmit"
   },

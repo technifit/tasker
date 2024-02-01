@@ -6,7 +6,8 @@ import { $path } from 'remix-routes';
 
 import { Button, FormControl, FormField, FormItem, FormLabel, FormMessage, Input } from '@technifit/ui';
 
-import { ErrorAlert, type ErrorAlertProps } from '~/ui/error-alert';
+import { ErrorAlert } from '~/ui/error-alert';
+import type { ErrorAlertProps } from '~/ui/error-alert';
 import type { SignUpFormData } from '../schema/sign-up-form-schema';
 import { signUpFormResolver as resolver } from '../schema/sign-up-form-schema';
 
@@ -40,7 +41,7 @@ export const SignUpForm = () => {
 
         switch (signInResponse.status) {
           case 'complete':
-            setActive({ session: signInResponse.createdSessionId });
+            await setActive({ session: signInResponse.createdSessionId });
 
             navigate($path('/'));
             break;

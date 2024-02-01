@@ -1,7 +1,7 @@
 import { Link, Outlet } from '@remix-run/react';
 import { $path } from 'remix-routes';
 
-import { buttonVariants, cn, LogIn, Typography } from '@technifit/ui';
+import { Typography } from '@technifit/ui';
 
 export { loader } from './_layout.server';
 
