@@ -280,6 +280,9 @@ importers:
       '@tanstack/react-table':
         specifier: 8.11.7
         version: 8.11.7(react-dom@18.2.0)(react@18.2.0)
+      '@technifit/eslint-config':
+        specifier: 1.0.0
+        version: link:../../tooling/eslint-config
       '@technifit/tailwind-config':
         specifier: 1.0.0
         version: link:../../tooling/tailwind-config
@@ -295,6 +298,9 @@ importers:
       date-fns:
         specifier: 3.3.1
         version: 3.3.1
+      eslint:
+        specifier: 8.56.0
+        version: 8.56.0
       postcss:
         specifier: 8.4.33
         version: 8.4.33
@@ -391,18 +397,9 @@ importers:
 
   tooling/typescript-config:
     devDependencies:
-      '@technifit/eslint-config':
-        specifier: 1.0.0
-        version: link:../eslint-config
-      eslint:
-        specifier: 8.56.0
-        version: 8.56.0
       prettier:
         specifier: 3.2.4
         version: 3.2.4
-      typescript:
-        specifier: 5.3.3
-        version: 5.3.3
 
 packages:
 

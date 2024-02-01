@@ -3,7 +3,7 @@ const config = {
   extends: ['@technifit/eslint-config/base'],
   root: true,
   parserOptions: {
-    project: './tsconfig.json',
+    project: true,
   },
 };
 

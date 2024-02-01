@@ -1,6 +1,9 @@
 /** @type {import('eslint').Linter.Config} */
 const config = {
-  extends: ['./base'],
+  extends: [
+    '@technifit/eslint-config/base',
+    '@technifit/eslint-config/react',
+  ],
   root: true,
   parserOptions: {
     project: true,
