@@ -4,6 +4,6 @@
     "outDir": "dist",
     "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
   },
-  "include": ["email", "*.ts", "*.cjs"],
+  "include": ["emails", "*.ts", "*.cjs"],
   "exclude": ["node_modules", "dist"],
 }
