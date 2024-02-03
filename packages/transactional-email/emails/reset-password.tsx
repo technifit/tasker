@@ -7,6 +7,7 @@ import {
   Html,
   Link,
   Preview,
+  render,
   Section,
   Tailwind,
   Text,
@@ -62,5 +63,10 @@ export const ResetPasswordEmail = ({ requested_at, requested_from, inviteLink }:
     </Html>
   );
 };
+
+export const renderResetPasswordEmail = (props: ResetPasswordEmailProps) =>
+  render(<ResetPasswordEmail {...props} />, {
+    pretty: true,
+  });
 
 export default ResetPasswordEmail;
