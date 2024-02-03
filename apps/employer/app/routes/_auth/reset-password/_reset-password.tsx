@@ -6,7 +6,7 @@ import { Typography } from '@technifit/ui';
 
 import { ResetPasswordForm } from './forms/reset-password-form';
 
-export const config = { runtime: 'edge' };
+// export const config = { runtime: 'edge' };
 
 export const meta: MetaFunction = () => {
   return [{ title: 'Tasker | Log In' }, { name: 'description', content: 'Log in' }];

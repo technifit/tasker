@@ -6,7 +6,7 @@ import { Typography } from '@technifit/ui';
 
 import { ForgotPasswordForm } from './forms/forgot-password-form';
 
-export const config = { runtime: 'edge' };
+// export const config = { runtime: 'edge' };
 
 export const meta: MetaFunction = () => {
   return [{ title: 'Tasker | Forgot Password' }, { name: 'description', content: 'Forgot Password' }];

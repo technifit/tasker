@@ -7,7 +7,7 @@ import { Typography } from '@technifit/ui';
 
 import { OtpForm } from './forms/otp-form';
 
-export const config = { runtime: 'edge' };
+// export const config = { runtime: 'edge' };
 
 export const meta: MetaFunction = () => {
   return [{ title: 'Tasker | One Time Password' }, { name: 'description', content: 'One Time Password' }];

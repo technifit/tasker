@@ -3,7 +3,7 @@ import type { MetaFunction } from '@vercel/remix';
 
 import { UserNav } from './components/user-nav';
 
-export const config = { runtime: 'edge' };
+// export const config = { runtime: 'edge' };
 
 export { loader } from './_layout.server';
 

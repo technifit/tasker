@@ -6,7 +6,7 @@ import * as SentryEdge from '@sentry/vercel-edge';
 import { handleRequest } from '@vercel/remix';
 import type { DataFunctionArgs, EntryContext } from '@vercel/remix';
 import { isbot } from 'isbot';
-import { customAlphabet } from 'nanoid';
+import { nanoid } from 'nanoid';
 import { cacheHeader } from 'pretty-cache-header';
 import { isPrefetch } from 'remix-utils/is-prefetch';
 
@@ -51,8 +51,6 @@ export default function (
   remixContext: EntryContext,
 ) {
   //? NOTE: shelved secure generation pending: https://github.com/ai/nanoid/discussions/443
-  const NANOID_SIZE = 6;
-  const nanoid = customAlphabet('eEaAoSsIiLlHhNn0MmKkGgBb1Jj2Pp3Ff4Ww5Qq6Yy7Uu8Zz9_-', NANOID_SIZE);
   const nonce = nanoid();
 
   const remixServer = (

@@ -6,7 +6,7 @@ import { Typography } from '@technifit/ui';
 
 import { LoginForm } from './forms/log-in-form';
 
-export const config = { runtime: 'edge' };
+// export const config = { runtime: 'edge' };
 
 export const meta: MetaFunction = () => {
   return [{ title: 'Tasker | Log In' }, { name: 'description', content: 'Log in' }];
