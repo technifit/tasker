@@ -1,12 +1,10 @@
 {
   "name": "@technifit/ui",
   "version": "1.0.0",
-  "main": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
   "scripts": {
-    "build": "tsup",
     "clean": "git clean -xdf dist .turbo node_modules",
-    "dev": "npm run build -- --watch",
     "format:fix": "prettier . --write --cache --cache-location='node_modules/.cache/.prettiercache' --log-level=warn",
     "format": "prettier . --check --cache --cache-location='node_modules/.cache/.prettiercache'",
     "lint:fix": "eslint . --fix --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
@@ -70,7 +68,7 @@
     "@technifit/tailwind-config": "1.0.0",
     "@technifit/tsconfig": "1.0.0",
     "@types/react-dom": "18.2.18",
-    "@types/react": "18.2.51",
+    "@types/react": "18.2.52",
     "date-fns": "3.3.1",
     "eslint": "8.56.0",
     "postcss": "8.4.33",
@@ -82,13 +80,5 @@
     "tailwindcss": "3.4.1",
     "tsup": "8.0.1",
     "typescript": "5.3.3"
-  },
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs",
-      "types": "./dist/index.d.mts"
-    }
   }
 }
