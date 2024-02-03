@@ -2,6 +2,7 @@ import { RemixServer } from '@remix-run/react';
 import { captureConsoleIntegration } from '@sentry/integrations';
 import { ProfilingIntegration } from '@sentry/profiling-node';
 import * as Sentry from '@sentry/remix';
+import * as SentryEdge from '@sentry/vercel-edge';
 import { handleRequest } from '@vercel/remix';
 import type { DataFunctionArgs, EntryContext } from '@vercel/remix';
 import { isbot } from 'isbot';
@@ -12,19 +13,35 @@ import { isPrefetch } from 'remix-utils/is-prefetch';
 import { environment } from './lib/environment/environment.server';
 import { NonceProvider } from './utils/nonce-provider';
 
+declare const EdgeRuntime: string;
+
 if (!isbot) {
-  Sentry.init({
-    dsn: environment().SENTRY_DSN,
-    // Performance Monitoring
-    tracesSampleRate: environment().NODE_ENV === 'production' ? 0.1 : 1.0,
-    profilesSampleRate: 1,
-    integrations: [
-      new ProfilingIntegration(),
-      captureConsoleIntegration({
-        levels: ['error'],
-      }),
-    ],
-  });
+  if (typeof EdgeRuntime !== 'string') {
+    Sentry.init({
+      dsn: environment().SENTRY_DSN,
+      // Performance Monitoring
+      tracesSampleRate: environment().NODE_ENV === 'production' ? 0.1 : 1.0,
+      profilesSampleRate: 1,
+      integrations: [
+        new ProfilingIntegration(),
+        captureConsoleIntegration({
+          levels: ['error'],
+        }),
+      ],
+    });
+  } else {
+    SentryEdge.init({
+      dsn: environment().SENTRY_DSN,
+      // Performance Monitoring
+      tracesSampleRate: environment().NODE_ENV === 'production' ? 0.1 : 1.0,
+      integrations: [
+        new ProfilingIntegration(),
+        captureConsoleIntegration({
+          levels: ['error'],
+        }),
+      ],
+    });
+  }
 }
 
 export default function (

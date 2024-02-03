@@ -3,6 +3,8 @@ import { $path } from 'remix-routes';
 
 import { Typography } from '@technifit/ui';
 
+export const config = { runtime: 'edge' };
+
 export { loader } from './_layout.server';
 
 const Layout = () => {

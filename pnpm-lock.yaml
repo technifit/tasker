@@ -53,6 +53,9 @@ importers:
       '@sentry/remix':
         specifier: 7.99.0
         version: 7.99.0(@remix-run/node@2.5.1)(@remix-run/react@2.5.1)(react@18.2.0)
+      '@sentry/vercel-edge':
+        specifier: 7.99.0
+        version: 7.99.0
       '@technifit/ui':
         specifier: 1.0.0
         version: link:../../packages/ui
@@ -4651,6 +4654,16 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       '@sentry/types': 7.99.0
+    dev: false
+
+  /@sentry/vercel-edge@7.99.0:
+    resolution: {integrity: sha512-9Uw3Iuy8KMlcv71ifnaguwndb1NkHeOAbYcBEeq9W+n0f5ocFZvMlnwszSlVNAL3cK+hlpcBhelXNAO/mBWCfg==}
+    engines: {node: '>=8'}
+    dependencies:
+      '@sentry-internal/tracing': 7.99.0
+      '@sentry/core': 7.99.0
+      '@sentry/types': 7.99.0
+      '@sentry/utils': 7.99.0
     dev: false
 
   /@socket.io/component-emitter@3.1.0:
