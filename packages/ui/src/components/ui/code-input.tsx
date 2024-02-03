@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { useRef, useState } from 'react';
-import { cn } from '@/lib/utils';
 import { getSegmentCssWidth, CodeInput as Rsi } from 'rci';
 
+import { cn } from '../..';
 import { useIsFocused } from '../hooks/use-is-focused';
 
 type CodeState = 'input' | 'loading' | 'error' | 'success';
