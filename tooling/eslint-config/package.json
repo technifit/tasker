@@ -8,10 +8,10 @@
   ],
   "scripts": {
     "clean": "git clean -xdf node_modules dist .turbo",
-    "format:fix": "prettier . --write --cache --cache-location='node_modules/.cache/.prettiercache' --log-level=warn",
     "format": "prettier . --check --cache --cache-location='node_modules/.cache/.prettiercache'",
-    "lint:fix": "eslint . --fix --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
-    "lint": "eslint . --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0"
+    "format:fix": "prettier . --write --cache --cache-location='node_modules/.cache/.prettiercache' --log-level=warn",
+    "lint": "eslint . --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
+    "lint:fix": "eslint . --fix --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0"
   },
   "dependencies": {
     "@remix-run/eslint-config": "2.5.1",
@@ -19,13 +19,13 @@
     "@types/eslint": "8.56.2",
     "@typescript-eslint/eslint-plugin": "6.21.0",
     "@typescript-eslint/parser": "6.21.0",
+    "eslint": "8.56.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-config-turbo": "1.12.3",
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-jsx-a11y": "6.8.0",
-    "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-react": "7.33.2",
-    "eslint": "8.56.0",
+    "eslint-plugin-react-hooks": "4.6.0",
     "typescript": "5.3.3"
   }
 }

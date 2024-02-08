@@ -34,8 +34,8 @@
     "lucide-react": "0.323.0",
     "nanoid": "5.0.5",
     "pretty-cache-header": "1.0.0",
-    "react-dom": "18.2.0",
     "react": "18.2.0",
+    "react-dom": "18.2.0",
     "remix-hook-form": "4.0.1",
     "remix-params-helper": "0.5.1",
     "remix-routes": "1.7.0",
@@ -50,16 +50,16 @@
     "@technifit/tsconfig": "1.0.0",
     "@types/cookie": "0.6.0",
     "@types/lodash": "4.14.202",
-    "@types/react-dom": "18.2.19",
     "@types/react": "18.2.55",
+    "@types/react-dom": "18.2.19",
     "cookie": "0.6.0",
     "eslint": "8.56.0",
     "npm-run-all2": "6.1.2",
     "remix-flat-routes": "0.6.4",
-    "tailwindcss-animate": "1.0.7",
     "tailwindcss": "3.4.1",
-    "typescript-remix-routes-plugin": "1.0.1",
-    "typescript": "5.3.3"
+    "tailwindcss-animate": "1.0.7",
+    "typescript": "5.3.3",
+    "typescript-remix-routes-plugin": "1.0.1"
   },
   "engines": {
     "node": ">=20.11.0"

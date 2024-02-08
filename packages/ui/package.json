@@ -5,10 +5,10 @@
   "types": "./src/index.ts",
   "scripts": {
     "clean": "git clean -xdf dist .turbo node_modules",
-    "format:fix": "prettier . --write --cache --cache-location='node_modules/.cache/.prettiercache' --log-level=warn",
     "format": "prettier . --check --cache --cache-location='node_modules/.cache/.prettiercache'",
-    "lint:fix": "eslint . --fix --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
+    "format:fix": "prettier . --write --cache --cache-location='node_modules/.cache/.prettiercache' --log-level=warn",
     "lint": "eslint . --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
+    "lint:fix": "eslint . --fix --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -53,6 +53,25 @@
     "vaul": "^0.9.0",
     "zod": "3.22.4"
   },
+  "devDependencies": {
+    "@tanstack/react-table": "8.11.8",
+    "@technifit/eslint-config": "1.0.0",
+    "@technifit/tailwind-config": "1.0.0",
+    "@technifit/tsconfig": "1.0.0",
+    "@types/react": "18.2.55",
+    "@types/react-dom": "18.2.19",
+    "date-fns": "3.3.1",
+    "eslint": "8.56.0",
+    "postcss": "8.4.35",
+    "react": "18.2.0",
+    "react-day-picker": "8.10.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "7.50.1",
+    "tailwindcss": "3.4.1",
+    "tailwindcss-animate": "1.0.7",
+    "tsup": "8.0.1",
+    "typescript": "5.3.3"
+  },
   "peerDependencies": {
     "@tanstack/react-table": "8.11.8",
     "react": "18.2.0",
@@ -61,24 +80,5 @@
     "react-hook-form": "7.50.1",
     "tailwindcss": "3.4.1",
     "tailwindcss-animate": "1.0.7"
-  },
-  "devDependencies": {
-    "@tanstack/react-table": "8.11.8",
-    "@technifit/eslint-config": "1.0.0",
-    "@technifit/tailwind-config": "1.0.0",
-    "@technifit/tsconfig": "1.0.0",
-    "@types/react-dom": "18.2.19",
-    "@types/react": "18.2.55",
-    "date-fns": "3.3.1",
-    "eslint": "8.56.0",
-    "postcss": "8.4.35",
-    "react-day-picker": "8.10.0",
-    "react-dom": "18.2.0",
-    "react-hook-form": "7.50.1",
-    "react": "18.2.0",
-    "tailwindcss-animate": "1.0.7",
-    "tailwindcss": "3.4.1",
-    "tsup": "8.0.1",
-    "typescript": "5.3.3"
   }
 }

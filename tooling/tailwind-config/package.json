@@ -1,18 +1,18 @@
 {
   "name": "@technifit/tailwind-config",
   "version": "1.0.0",
-  "main": "index.ts",
   "license": "MIT",
+  "main": "index.ts",
   "files": [
     "index.ts",
     "postcss.js"
   ],
   "scripts": {
     "clean": "git clean -xdf node_modules dist .turbo",
-    "format:fix": "prettier . --write --cache --cache-location='node_modules/.cache/.prettiercache' --log-level=warn",
     "format": "prettier . --check --cache --cache-location='node_modules/.cache/.prettiercache'",
-    "lint:fix": "eslint . --fix --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
-    "lint": "eslint . --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0"
+    "format:fix": "prettier . --write --cache --cache-location='node_modules/.cache/.prettiercache' --log-level=warn",
+    "lint": "eslint . --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
+    "lint:fix": "eslint . --fix --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0"
   },
   "devDependencies": {
     "@technifit/eslint-config": "1.0.0",
