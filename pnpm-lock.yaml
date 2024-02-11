@@ -290,8 +290,8 @@ importers:
         specifier: 0.1.0
         version: 0.1.0(react-dom@18.2.0)(react@18.2.0)
       react-resizable-panels:
-        specifier: ^2.0.4
-        version: 2.0.4(react-dom@18.2.0)(react@18.2.0)
+        specifier: ^2.0.5
+        version: 2.0.5(react-dom@18.2.0)(react@18.2.0)
       sonner:
         specifier: ^1.4.0
         version: 1.4.0(react-dom@18.2.0)(react@18.2.0)
@@ -10276,14 +10276,15 @@ packages:
       use-sidecar: 1.1.2(@types/react@18.2.55)(react@18.2.0)
     dev: false
 
-  /react-resizable-panels@2.0.4(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-rVPtUxxETRaChQePc6xwdwcXCH3ZoGmALVFye1NllTHMBddvOtCkJ5c7CLLHErfNwInBNYSrF9OOm23DLop7Vw==}
+  /react-resizable-panels@2.0.5(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-2fX4sx0K48tGWpBRppYaGoG3tpq3Xg4elTQ1s/MbqDgoPrxK6N1SaWSk/wG8fYEYRHg5DEsKbU5jMLQaH72hnw==}
     peerDependencies:
       react: ^16.14.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.14.0 || ^17.0.0 || ^18.0.0
     dependencies:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
+      stacking-order: 1.0.1
     dev: false
 
   /react-router-dom@6.21.3(react-dom@18.2.0)(react@18.2.0):
@@ -11028,6 +11029,10 @@ packages:
     dependencies:
       minipass: 7.0.3
     dev: true
+
+  /stacking-order@1.0.1:
+    resolution: {integrity: sha512-IxD2jw+DDiQ3FaXr6QcvSt5uE2vDWBYcC7bbCWfI5R9kEoj8Zgi4rFwPXALOjTtE96iIdZjcJFLQVr7r7xIdAA==}
+    dev: false
 
   /stacktrace-parser@0.1.10:
     resolution: {integrity: sha512-KJP1OCML99+8fhOHxwwzyWrlUuVX5GQ0ZpJTd1DFXhdkrvg1szxfHhawXUZ3g9TkXORQd4/WG68jMlQZ2p8wlg==}
