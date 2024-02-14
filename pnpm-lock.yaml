@@ -63,8 +63,8 @@ importers:
         specifier: 2.5.1
         version: 2.5.1(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)
       '@vercel/speed-insights':
-        specifier: 1.0.9
-        version: 1.0.9(react@18.2.0)
+        specifier: 1.0.10
+        version: 1.0.10(react@18.2.0)
       isbot:
         specifier: 4.4.0
         version: 4.4.0
@@ -5068,8 +5068,8 @@ packages:
       - typescript
     dev: false
 
-  /@vercel/speed-insights@1.0.9(react@18.2.0):
-    resolution: {integrity: sha512-f+XFP0O+aZ4Olj9h+BitkB1b4NJQaxtyCb69wWuDxytJHY6Pa4QtZPdBUftHOcajUCHRVeq062fk3MKXKtjNVQ==}
+  /@vercel/speed-insights@1.0.10(react@18.2.0):
+    resolution: {integrity: sha512-4uzdKB0RW6Ff2FkzshzjZ+RlJfLPxgm/00i0XXgxfMPhwnnsk92YgtqsxT9OcPLdJUyVU1DqFlSWWjIQMPkh0g==}
     requiresBuild: true
     peerDependencies:
       '@sveltejs/kit': ^1 || ^2
