@@ -26,7 +26,7 @@
     "@sentry/profiling-node": "7.101.1",
     "@sentry/remix": "7.101.1",
     "@technifit/ui": "1.0.0",
-    "@vercel/analytics": "1.1.4",
+    "@vercel/analytics": "1.2.0",
     "@vercel/remix": "2.5.1",
     "@vercel/speed-insights": "1.0.10",
     "isbot": "5.1.0",
