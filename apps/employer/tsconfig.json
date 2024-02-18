@@ -4,16 +4,16 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./app/*"],
+      "~/*": ["./app/*"]
     },
     "plugins": [
       {
-        "name": "typescript-remix-routes-plugin",
-      },
+        "name": "typescript-remix-routes-plugin"
+      }
     ],
     // Remix takes care of building everything in `remix build`.
     "noEmit": true,
-    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
   },
-  "exclude": ["node_modules", "build"],
+  "exclude": ["node_modules", "build"]
 }
