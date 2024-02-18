@@ -18,4 +18,3 @@ module.exports = {
   },
   watchPaths: ['../../packages/ui/src/**/*'],
 };
-JJ
