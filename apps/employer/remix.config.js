@@ -10,7 +10,7 @@ module.exports = {
     v3_fetcherPersist: true,
     v3_relativeSplatPaths: true,
   },
-  serverDependenciesToBundle: ['nanoid', /^remix-utils.*/, /^@technifit\/ui$/],
+  serverDependenciesToBundle: ['nanoid', /^@vercel\/analytics/, /^remix-utils.*/, /^@technifit\/ui$/],
   routes: async (defineRoutes) => {
     return flatRoutes('routes', defineRoutes, {
       ignoredRouteFiles: ['.*', '**/*.css', '**/*.test.{js,jsx,ts,tsx}', '**/__*.*'],
@@ -18,3 +18,4 @@ module.exports = {
   },
   watchPaths: ['../../packages/ui/src/**/*'],
 };
+JJ
