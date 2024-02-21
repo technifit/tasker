@@ -20,14 +20,14 @@
   },
   "dependencies": {
     "@clerk/remix": "3.1.18",
-    "@remix-run/react": "2.6.0",
-    "@remix-run/serve": "2.6.0",
+    "@remix-run/react": "2.7.1",
+    "@remix-run/serve": "2.7.1",
     "@sentry/integrations": "7.102.0",
     "@sentry/profiling-node": "7.102.0",
     "@sentry/remix": "7.102.0",
     "@technifit/ui": "1.0.0",
     "@vercel/analytics": "1.2.2",
-    "@vercel/remix": "2.6.0",
+    "@vercel/remix": "2.7.1",
     "@vercel/speed-insights": "1.0.10",
     "isbot": "5.1.0",
     "lodash": "4.17.21",
@@ -44,7 +44,7 @@
     "zod": "3.22.4"
   },
   "devDependencies": {
-    "@remix-run/dev": "2.6.0",
+    "@remix-run/dev": "2.7.1",
     "@technifit/eslint-config": "1.0.0",
     "@technifit/tailwind-config": "1.0.0",
     "@technifit/tsconfig": "1.0.0",
