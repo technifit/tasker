@@ -53,7 +53,7 @@
     "@types/react": "18.2.58",
     "@types/react-dom": "18.2.19",
     "cookie": "0.6.0",
-    "eslint": "8.56.0",
+    "eslint": "8.57.0",
     "npm-run-all2": "6.1.2",
     "remix-flat-routes": "0.6.4",
     "tailwindcss": "3.4.1",
