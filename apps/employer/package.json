@@ -50,7 +50,7 @@
     "@technifit/tsconfig": "1.0.0",
     "@types/cookie": "0.6.0",
     "@types/lodash": "4.14.202",
-    "@types/react": "18.2.57",
+    "@types/react": "18.2.58",
     "@types/react-dom": "18.2.19",
     "cookie": "0.6.0",
     "eslint": "8.56.0",
