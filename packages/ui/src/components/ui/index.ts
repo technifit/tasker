@@ -28,6 +28,7 @@ export * from './popover';
 export * from './progress';
 export * from './radio-group';
 export * from './resizable';
+export * from './screen-size-indicator';
 export * from './scroll-area';
 export * from './select';
 export * from './separator';
