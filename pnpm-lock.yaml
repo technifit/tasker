@@ -53,8 +53,11 @@ importers:
       '@sentry/remix':
         specifier: 7.102.1
         version: 7.102.1(@remix-run/node@2.7.1)(@remix-run/react@2.7.1)(react@18.2.0)
+      '@technifit/email':
+        specifier: '*'
+        version: link:../../packages/email
       '@technifit/ui':
-        specifier: 1.0.0
+        specifier: '*'
         version: link:../../packages/ui
       '@vercel/analytics':
         specifier: 1.2.2
@@ -109,13 +112,13 @@ importers:
         specifier: 2.7.1
         version: 2.7.1(@remix-run/serve@2.7.1)(typescript@5.3.3)
       '@technifit/eslint-config':
-        specifier: 1.0.0
+        specifier: '*'
         version: link:../../tooling/eslint-config
       '@technifit/tailwind-config':
-        specifier: 1.0.0
+        specifier: '*'
         version: link:../../tooling/tailwind-config
       '@technifit/tsconfig':
-        specifier: 1.0.0
+        specifier: '*'
         version: link:../../tooling/typescript-config
       '@types/cookie':
         specifier: 0.6.0
@@ -154,6 +157,24 @@ importers:
         specifier: 1.0.1
         version: 1.0.1
 
+  packages/email:
+    devDependencies:
+      '@technifit/eslint-config':
+        specifier: '*'
+        version: link:../../tooling/eslint-config
+      '@technifit/tailwind-config':
+        specifier: '*'
+        version: link:../../tooling/tailwind-config
+      '@technifit/tsconfig':
+        specifier: '*'
+        version: link:../../tooling/typescript-config
+      eslint:
+        specifier: 8.57.0
+        version: 8.57.0
+      typescript:
+        specifier: 5.3.3
+        version: 5.3.3
+
   packages/transactional-email:
     dependencies:
       '@react-email/components':
@@ -167,13 +188,13 @@ importers:
         version: 2.1.0(@babel/core@7.22.6)(eslint@8.57.0)
     devDependencies:
       '@technifit/eslint-config':
-        specifier: 1.0.0
+        specifier: '*'
         version: link:../../tooling/eslint-config
       '@technifit/tailwind-config':
-        specifier: 1.0.0
+        specifier: '*'
         version: link:../../tooling/tailwind-config
       '@technifit/tsconfig':
-        specifier: 1.0.0
+        specifier: '*'
         version: link:../../tooling/typescript-config
       eslint:
         specifier: 8.57.0
@@ -309,13 +330,13 @@ importers:
         specifier: 8.12.0
         version: 8.12.0(react-dom@18.2.0)(react@18.2.0)
       '@technifit/eslint-config':
-        specifier: 1.0.0
+        specifier: '*'
         version: link:../../tooling/eslint-config
       '@technifit/tailwind-config':
-        specifier: 1.0.0
+        specifier: '*'
         version: link:../../tooling/tailwind-config
       '@technifit/tsconfig':
-        specifier: 1.0.0
+        specifier: '*'
         version: link:../../tooling/typescript-config
       '@types/react':
         specifier: 18.2.58
@@ -360,7 +381,7 @@ importers:
         specifier: 2.7.1
         version: 2.7.1(eslint@8.57.0)(react@18.2.0)(typescript@5.3.3)
       '@technifit/tsconfig':
-        specifier: 1.0.0
+        specifier: '*'
         version: link:../typescript-config
       '@types/eslint':
         specifier: 8.56.3
@@ -399,10 +420,10 @@ importers:
   tooling/tailwind-config:
     devDependencies:
       '@technifit/eslint-config':
-        specifier: 1.0.0
+        specifier: '*'
         version: link:../eslint-config
       '@technifit/tsconfig':
-        specifier: 1.0.0
+        specifier: '*'
         version: link:../typescript-config
       autoprefixer:
         specifier: 10.4.17

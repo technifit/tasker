@@ -1,0 +1,9 @@
+{
+  "extends": "@technifit/tsconfig/base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
+  },
+  "include": ["src/**/*", "*.ts", "*.cjs"],
+  "exclude": ["node_modules", "dist"]
+}
