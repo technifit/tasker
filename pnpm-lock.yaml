@@ -36,8 +36,8 @@ importers:
   apps/employer:
     dependencies:
       '@clerk/remix':
-        specifier: 3.1.19
-        version: 3.1.19(@remix-run/react@2.7.1)(@remix-run/server-runtime@2.7.1)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 3.1.20
+        version: 3.1.20(@remix-run/react@2.7.1)(@remix-run/server-runtime@2.7.1)(react-dom@18.2.0)(react@18.2.0)
       '@remix-run/react':
         specifier: 2.7.1
         version: 2.7.1(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)
@@ -966,8 +966,8 @@ packages:
       tslib: 2.4.1
     dev: false
 
-  /@clerk/remix@3.1.19(@remix-run/react@2.7.1)(@remix-run/server-runtime@2.7.1)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-6WPVlcvmjnzHwgOFZdAjLTPtk5C+a+drF6++b7B01cZOCrhC4wBX663tE+sfLma+owP06osSKvHWK+gKUaiVQA==}
+  /@clerk/remix@3.1.20(@remix-run/react@2.7.1)(@remix-run/server-runtime@2.7.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-3D96j26qYQ2F4fIo0QTSPjBVx8yKoSMFTnpgShv1Fz21pAZyIAV0XS6HEQbWRNsb0HAeBCpvreiw53IALgv9yw==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       '@remix-run/react': ^2.0.0
