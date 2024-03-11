@@ -4,7 +4,18 @@ import { Form, useNavigate } from '@remix-run/react';
 import { RemixFormProvider, useRemixForm } from 'remix-hook-form';
 import { $path } from 'remix-routes';
 
-import { Button, FormControl, FormField, FormItem, FormLabel, FormMessage, Input } from '@technifit/ui';
+import {
+  Button,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSeparator,
+  InputOTPSlot,
+} from '@technifit/ui';
 
 import { ErrorAlert } from '~/ui/error-alert';
 import type { ErrorAlertProps } from '~/ui/error-alert';
@@ -86,7 +97,26 @@ export const OtpForm = () => {
               <FormItem>
                 <FormLabel>Code</FormLabel>
                 <FormControl>
-                  <Input autoComplete='one-time-code' type='numeric' placeholder='12345' {...field} />
+                  <InputOTP
+                    className='w-full'
+                    maxLength={6}
+                    render={({ slots }) => (
+                      <>
+                        <InputOTPGroup>
+                          {slots.slice(0, 3).map((slot, index) => (
+                            <InputOTPSlot key={index} {...slot} />
+                          ))}{' '}
+                        </InputOTPGroup>
+                        <InputOTPSeparator />
+                        <InputOTPGroup>
+                          {slots.slice(3).map((slot, index) => (
+                            <InputOTPSlot key={index + 3} {...slot} />
+                          ))}
+                        </InputOTPGroup>
+                      </>
+                    )}
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
