@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "sideEffects": false,
+  "type": "module",
   "scripts": {
     "build": "remix vite:build",
     "clean": "rm -rf .turbo node_modules .cache build types/remix-routes.d.ts",
