@@ -4,18 +4,14 @@
   "private": true,
   "sideEffects": false,
   "scripts": {
-    "build:remix": "remix build --sourcemap",
-    "build:routes": "remix-routes -o ./types",
-    "build": "run-s build:*",
+    "build": "remix vite:build",
     "clean": "rm -rf .turbo node_modules .cache build types/remix-routes.d.ts",
-    "dev:remix": "remix dev",
-    "dev:routes": "remix-routes -w ./types",
-    "dev": "run-p dev:*",
+    "dev": "remix vite:dev",
     "format:fix": "prettier . --write --cache --cache-location='node_modules/.cache/.prettiercache' --log-level=warn",
     "format": "prettier . --check --cache --cache-location='node_modules/.cache/.prettiercache'",
     "lint:fix": "eslint . --fix --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
     "lint": "eslint . --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
-    "start": "remix-serve build",
+    "start": "remix-serve ./build/server/index.js",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -56,11 +52,14 @@
     "cookie": "0.6.0",
     "eslint": "8.57.0",
     "npm-run-all2": "6.1.2",
+    "postcss": "8.4.35",
     "remix-flat-routes": "0.6.4",
     "tailwindcss": "3.4.1",
     "tailwindcss-animate": "1.0.7",
     "typescript": "5.4.2",
-    "typescript-remix-routes-plugin": "1.0.1"
+    "typescript-remix-routes-plugin": "1.0.1",
+    "vite": "5.1.6",
+    "vite-tsconfig-paths": "4.3.1"
   },
   "engines": {
     "node": ">=20.11.1"

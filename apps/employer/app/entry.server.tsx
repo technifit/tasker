@@ -9,7 +9,7 @@ import { nanoid } from 'nanoid';
 import { cacheHeader } from 'pretty-cache-header';
 import { isPrefetch } from 'remix-utils/is-prefetch';
 
-import { environment } from './lib/environment/environment.server';
+import { environment } from './lib/environment/environment';
 import { NonceProvider } from './utils/nonce-provider';
 
 if (!isbot) {

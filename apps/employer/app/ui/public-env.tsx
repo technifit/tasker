@@ -1,5 +1,5 @@
-import type { PublicEnvironment } from '~/lib/environment/environment.server';
-import { environment } from '~/lib/environment/environment.server';
+import type { PublicEnvironment } from '~/lib/environment/environment';
+import { environment } from '~/lib/environment/environment';
 
 declare global {
   interface Window {

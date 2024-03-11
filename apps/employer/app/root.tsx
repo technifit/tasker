@@ -1,14 +1,5 @@
 import { ClerkApp, ClerkErrorBoundary } from '@clerk/remix';
-import {
-  Links,
-  LiveReload,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-  useLoaderData,
-  useRouteError,
-} from '@remix-run/react';
+import { Links, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData, useRouteError } from '@remix-run/react';
 import { captureRemixErrorBoundaryError, withSentry } from '@sentry/remix';
 import { Analytics } from '@vercel/analytics/react';
 import type { LinksFunction } from '@vercel/remix';
@@ -17,7 +8,9 @@ import { PreventFlashOnWrongTheme, ThemeProvider, useTheme } from 'remix-themes'
 
 import { cn, Toaster } from '@technifit/ui';
 
-import stylesheet from '~/styles/global.css';
+// https://remix.run/docs/en/main/future/vite#fix-up-css-imports
+import '~/styles/global.css';
+
 import type { loader } from './_root.server';
 import { THEME_ROUTE_PATH } from './routes/resources+/theme/_index';
 import { PublicEnv } from './ui/public-env';
@@ -31,10 +24,7 @@ const interWoff2 = Array.from({ length: 9 }, (_, i) => `inter/inter-latin-ext-${
 
 const fonts = [...calSans, ...interWoff, ...interWoff2];
 
-export const links: LinksFunction = () => [
-  ...fonts.map((font) => ({ rel: 'preload', href: `/fonts/${font}` })),
-  { rel: 'stylesheet', href: stylesheet },
-];
+export const links: LinksFunction = () => [...fonts.map((font) => ({ rel: 'preload', href: `/fonts/${font}` }))];
 
 export { loader } from './_root.server';
 
@@ -80,7 +70,6 @@ const App = () => {
         <TailwindIndicator />
         <ScrollRestoration nonce={nonce} />
         <Scripts nonce={nonce} />
-        <LiveReload nonce={nonce} />
         <Toaster />
         <Analytics />
         <SpeedInsights />

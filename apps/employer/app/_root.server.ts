@@ -2,7 +2,7 @@ import { rootAuthLoader } from '@clerk/remix/ssr.server';
 import type { DataFunctionArgs } from '@vercel/remix';
 import { json } from '@vercel/remix';
 
-import { getPublicKeys } from './lib/environment/environment.server';
+import { getPublicKeys } from './lib/environment/environment';
 import { getTheme } from './routes/resources+/theme/theme.server';
 import { getHints } from './utils/client-hints';
 
