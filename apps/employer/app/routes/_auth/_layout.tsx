@@ -1,11 +1,16 @@
 import { Link, Outlet } from '@remix-run/react';
+import type { LoaderFunctionArgs } from '@vercel/remix';
 import { $path } from 'remix-routes';
 
 import { Typography } from '@technifit/ui';
 
-// export const config = { runtime: 'edge' };
+import { requireUnauthenticatedUser } from '~/lib/guards/auth-guard.server';
 
-export { loader } from './_layout.server';
+export const loader = async (args: LoaderFunctionArgs) => {
+  await requireUnauthenticatedUser(args);
+
+  return null;
+};
 
 const Layout = () => {
   return (

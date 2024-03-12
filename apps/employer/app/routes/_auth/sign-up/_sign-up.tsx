@@ -6,8 +6,6 @@ import { Typography } from '@technifit/ui';
 
 import { SignUpForm } from './forms/sign-up-form';
 
-// export const config = { runtime: 'edge' };
-
 export const meta: MetaFunction = () => {
   return [{ title: 'Tasker | Sign Up' }, { name: 'description', content: 'Sign up' }];
 };

@@ -1,8 +1,8 @@
 import { ClerkApp, ClerkErrorBoundary } from '@clerk/remix';
-import { Links, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData, useRouteError } from '@remix-run/react';
+import { json, Links, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData, useRouteError } from '@remix-run/react';
 import { captureRemixErrorBoundaryError, withSentry } from '@sentry/remix';
 import { Analytics } from '@vercel/analytics/react';
-import type { LinksFunction } from '@vercel/remix';
+import type { LinksFunction, LoaderFunctionArgs } from '@vercel/remix';
 import { SpeedInsights } from '@vercel/speed-insights/remix';
 import { PreventFlashOnWrongTheme, ThemeProvider, useTheme } from 'remix-themes';
 
@@ -11,11 +11,14 @@ import { cn, Toaster } from '@technifit/ui';
 // https://remix.run/docs/en/main/future/vite#fix-up-css-imports
 import '~/styles/global.css';
 
-import type { loader } from './_root.server';
+import { rootAuthLoader } from '@clerk/remix/ssr.server';
+
+import { getPublicKeys } from './lib/environment/environment';
 import { THEME_ROUTE_PATH } from './routes/resources+/theme/_index';
+import { getTheme } from './routes/resources+/theme/theme.server';
 import { PublicEnv } from './ui/public-env';
 import { TailwindIndicator } from './ui/tailwind-indicator';
-import { ClientHintCheck } from './utils/client-hints';
+import { ClientHintCheck, getHints } from './utils/client-hints';
 import { useNonce } from './utils/nonce-provider';
 
 const calSans = ['cal-sans/CalSans-SemiBold.woff', 'cal-sans/CalSans-SemiBold.woff2'];
@@ -26,7 +29,24 @@ const fonts = [...calSans, ...interWoff, ...interWoff2];
 
 export const links: LinksFunction = () => [...fonts.map((font) => ({ rel: 'preload', href: `/fonts/${font}` }))];
 
-export { loader } from './_root.server';
+export const loader = async (args: LoaderFunctionArgs) => {
+  return rootAuthLoader(args, async ({ request }) => {
+    return json({
+      // user,
+      requestInfo: {
+        hints: getHints(request),
+        // origin: getDomainUrl(request),
+        // path: new URL(request.url).pathname,
+        userPrefs: {
+          theme: await getTheme(request),
+        },
+      },
+      publicKeys: {
+        ...getPublicKeys(),
+      },
+    });
+  });
+};
 
 const AppWithProviders = () => {
   const {

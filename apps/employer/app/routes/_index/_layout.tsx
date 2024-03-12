@@ -1,11 +1,14 @@
 import { Outlet } from '@remix-run/react';
-import type { MetaFunction } from '@vercel/remix';
+import type { LoaderFunctionArgs, MetaFunction } from '@vercel/remix';
 
+import { requireAuthenticatedUser } from '~/lib/guards/auth-guard.server';
 import { UserNav } from './components/user-nav';
 
-// export const config = { runtime: 'edge' };
+export const loader = async (args: LoaderFunctionArgs) => {
+  await requireAuthenticatedUser(args);
 
-export { loader } from './_layout.server';
+  return null;
+};
 
 export const meta: MetaFunction = () => {
   return [{ title: 'Tasker' }, { name: 'description', content: 'Large scale job processing done right' }];
