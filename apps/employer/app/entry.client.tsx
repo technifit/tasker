@@ -17,11 +17,11 @@ if (!isbot) {
     dsn: getPublicEnv('SENTRY_DSN'),
     environment: getPublicEnv('NODE_ENV'),
     integrations: [
-      new Sentry.BrowserProfilingIntegration(),
-      new Sentry.BrowserTracing({
-        // Set 'tracePropagationTargets' to control for which URLs distributed tracing should be enabled
-        tracePropagationTargets: ['localhost'],
-        routingInstrumentation: Sentry.remixRouterInstrumentation(useEffect, useLocation, useMatches),
+      Sentry.browserProfilingIntegration(),
+      Sentry.browserTracingIntegration({
+        useEffect,
+        useLocation,
+        useMatches,
       }),
       Sentry.replayIntegration({}),
     ],
@@ -30,6 +30,7 @@ if (!isbot) {
     // Session Replay
     replaysSessionSampleRate: getPublicEnv('NODE_ENV') === 'production' ? 0.1 : 1.0, // This sets the sample rate at 10% in production.
     replaysOnErrorSampleRate: 1.0, // If you're not already sampling the entire session, change the sample rate to 100% when sampling sessions where errors occur.
+    tracePropagationTargets: ['localhost'],
     // Set profilesSampleRate to 1.0 to profile every transaction.
     // Since profilesSampleRate is relative to tracesSampleRate,
     // the final profiling rate can be computed as tracesSampleRate * profilesSampleRate

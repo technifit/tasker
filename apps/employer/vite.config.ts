@@ -1,4 +1,5 @@
 import { vitePlugin as remix } from '@remix-run/dev';
+import { sentryVitePlugin } from '@sentry/vite-plugin';
 import { vercelPreset } from '@vercel/remix/vite';
 import dotenv from 'dotenv';
 import { remixDevTools } from 'remix-development-tools';
@@ -30,6 +31,7 @@ export default defineConfig({
         defaultHandler(warning);
       },
     },
+    sourcemap: true,
   },
   plugins: [
     remixDevTools(),
@@ -63,6 +65,11 @@ export default defineConfig({
       outDir: './types',
     }),
     tsconfigPaths(),
+    sentryVitePlugin({
+      org: 'technifit-1f',
+      project: 'tasker',
+      authToken: process.env.SENTRY_AUTH_TOKEN,
+    }),
   ],
   ssr: {
     noExternal: ['remix-i18next'],

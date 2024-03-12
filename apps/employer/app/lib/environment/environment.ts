@@ -6,6 +6,7 @@ const environmentSchema = z.object({
   CLERK_SECRET_KEY: z.string(),
   NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
   SENTRY_DSN: z.string().url(),
+  SENTRY_AUTH_TOKEN: z.string(),
   SESSION_SECRET: z.string().uuid(),
   VERCEL_ENV: z.enum(['production', 'preview', 'development']).default('development'),
 });

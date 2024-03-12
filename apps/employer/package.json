@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "@remix-run/dev": "2.8.1",
+    "@sentry/vite-plugin": "2.14.3",
     "@technifit/eslint-config": "*",
     "@technifit/tailwind-config": "*",
     "@technifit/tsconfig": "*",
