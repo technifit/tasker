@@ -1,6 +1,7 @@
 import { vitePlugin as remix } from '@remix-run/dev';
 import { vercelPreset } from '@vercel/remix/vite';
 import dotenv from 'dotenv';
+import { remixDevTools } from 'remix-development-tools';
 import { flatRoutes } from 'remix-flat-routes';
 import { remixRoutes } from 'remix-routes/vite';
 import { defineConfig } from 'vite';
@@ -31,7 +32,7 @@ export default defineConfig({
     },
   },
   plugins: [
-    tsconfigPaths(),
+    remixDevTools(),
     remix({
       serverBuildFile: 'remix.js',
       presets: [vercelPreset()],
@@ -61,6 +62,7 @@ export default defineConfig({
       strict: true,
       outDir: './types',
     }),
+    tsconfigPaths(),
   ],
   ssr: {
     noExternal: ['remix-i18next'],
