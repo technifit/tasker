@@ -17,7 +17,7 @@
     "typecheck": "turbo typecheck --continue"
   },
   "devDependencies": {
-    "@ianvs/prettier-plugin-sort-imports": "4.1.1",
+    "@ianvs/prettier-plugin-sort-imports": "4.2.0",
     "@technifit/tsconfig": "1.0.0",
     "@typescript-eslint/eslint-plugin": "7.2.0",
     "prettier": "3.2.5",
