@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { isClerkAPIResponseError, useSignIn } from '@clerk/remix';
 import { useNavigate } from '@remix-run/react';
-import { RemixFormProvider, useRemixForm } from 'remix-hook-form';
+import { useRemixForm } from 'remix-hook-form';
 import { $path } from 'remix-routes';
 
 import {
   Button,
+  Form,
   FormControl,
   FormField,
   FormItem,
@@ -75,7 +76,7 @@ export const ResetPasswordForm = () => {
   });
 
   return (
-    <RemixFormProvider {...form}>
+    <Form {...form}>
       <form onSubmit={form.handleSubmit} className='flex w-full flex-col gap-4'>
         <div className='flex w-full flex-col gap-2'>
           <FormField
@@ -131,6 +132,6 @@ export const ResetPasswordForm = () => {
           {form.formState.isSubmitting ? 'Resetting Password...' : 'Reset Password'}
         </Button>
       </form>
-    </RemixFormProvider>
+    </Form>
   );
 };

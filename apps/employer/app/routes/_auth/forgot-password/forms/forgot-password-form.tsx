@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { isClerkAPIResponseError, useSignIn } from '@clerk/remix';
 import { useNavigate } from '@remix-run/react';
-import { RemixFormProvider, useRemixForm } from 'remix-hook-form';
+import { useRemixForm } from 'remix-hook-form';
 import { $path } from 'remix-routes';
 
-import { Button, FormControl, FormField, FormItem, FormLabel, FormMessage, Input } from '@technifit/ui';
+import { Button, Form, FormControl, FormField, FormItem, FormLabel, FormMessage, Input } from '@technifit/ui';
 
 import { ErrorAlert } from '~/ui/error-alert';
 import type { ErrorAlertProps } from '~/ui/error-alert';
@@ -56,7 +56,7 @@ export const ForgotPasswordForm = () => {
   });
 
   return (
-    <RemixFormProvider {...form}>
+    <Form {...form}>
       <form onSubmit={form.handleSubmit} className='flex w-full flex-col gap-4'>
         <div className='flex w-full flex-col gap-2'>
           <FormField
@@ -78,6 +78,6 @@ export const ForgotPasswordForm = () => {
           {form.formState.isSubmitting ? 'Sending Password Reset Email...' : 'Get Password Reset Email'}
         </Button>
       </form>
-    </RemixFormProvider>
+    </Form>
   );
 };
