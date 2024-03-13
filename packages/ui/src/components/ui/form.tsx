@@ -3,7 +3,7 @@ import type * as LabelPrimitive from '@radix-ui/react-label';
 import { Slot } from '@radix-ui/react-slot';
 import { Controller } from 'react-hook-form';
 import type { ControllerProps, FieldPath, FieldValues } from 'react-hook-form';
-import { RemixFormProvider, useRemixFormContext } from 'remix-hook-form';
+import { RemixFormProvider, useRemixForm, useRemixFormContext } from 'remix-hook-form';
 
 import { cn, Label } from '../..';
 import { Typography } from '../typography';
@@ -143,6 +143,7 @@ FormMessage.displayName = 'FormMessage';
 export {
   useFormField,
   RemixFormProvider as Form,
+  useRemixForm as useForm,
   FormItem,
   FormLabel,
   FormControl,

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { isClerkAPIResponseError, useSignIn } from '@clerk/remix';
 import { useNavigate } from '@remix-run/react';
-import { useRemixForm } from 'remix-hook-form';
 import { $path } from 'remix-routes';
 
 import {
@@ -18,6 +17,7 @@ import {
   InputOTPSeparator,
   InputOTPSlot,
   toast,
+  useForm,
 } from '@technifit/ui';
 
 import { ErrorAlert } from '~/ui/error-alert';
@@ -30,7 +30,7 @@ export const ResetPasswordForm = () => {
   const [error, setError] = useState<ErrorAlertProps | null>(null);
   const navigate = useNavigate();
 
-  const form = useRemixForm<ResetPasswordFormData>({
+  const form = useForm<ResetPasswordFormData>({
     resolver,
     submitHandlers: {
       onValid: async ({ code, password }) => {
