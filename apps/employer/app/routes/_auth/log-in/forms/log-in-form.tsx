@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { isClerkAPIResponseError, useSignIn } from '@clerk/remix';
-import { Form, Link, useNavigate } from '@remix-run/react';
+import { Link, useNavigate } from '@remix-run/react';
 import { RemixFormProvider, useRemixForm } from 'remix-hook-form';
 import { $path } from 'remix-routes';
 
@@ -89,7 +89,7 @@ export const LoginForm = () => {
 
   return (
     <RemixFormProvider {...form}>
-      <Form onSubmit={form.handleSubmit} className='flex w-full flex-col gap-4'>
+      <form onSubmit={form.handleSubmit} className='flex w-full flex-col gap-4'>
         <div className='flex w-full flex-col gap-2'>
           <FormField
             control={form.control}
@@ -129,7 +129,7 @@ export const LoginForm = () => {
         <Button disabled={!isLoaded || form.formState.isSubmitting} className='w-full'>
           {form.formState.isSubmitting ? 'Signing In...' : 'Sign In'}
         </Button>
-      </Form>
+      </form>
     </RemixFormProvider>
   );
 };
