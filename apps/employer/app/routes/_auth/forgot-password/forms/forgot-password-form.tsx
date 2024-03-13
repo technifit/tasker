@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { isClerkAPIResponseError, useSignIn } from '@clerk/remix';
-import { Form, useNavigate } from '@remix-run/react';
-import { RemixFormProvider, useRemixForm } from 'remix-hook-form';
+import { useNavigate } from '@remix-run/react';
+import { useRemixForm } from 'remix-hook-form';
 import { $path } from 'remix-routes';
 
-import { Button, FormControl, FormField, FormItem, FormLabel, FormMessage, Input } from '@technifit/ui';
+import { Button, Form, FormControl, FormField, FormItem, FormLabel, FormMessage, Input } from '@technifit/ui';
 
 import { ErrorAlert } from '~/ui/error-alert';
 import type { ErrorAlertProps } from '~/ui/error-alert';
@@ -19,53 +19,45 @@ export const ForgotPasswordForm = () => {
 
   const form = useRemixForm<ForgotPasswordFormData>({
     resolver,
+    submitHandlers: {
+      onValid: async ({ email }) => {
+        if (isLoaded) {
+          try {
+            const signInResponse = await signIn.create({
+              strategy: 'reset_password_email_code',
+              identifier: email,
+            });
+
+            if (signInResponse.status === 'needs_first_factor') {
+              setTimeout(() => {
+                navigate($path('/reset-password'));
+              }, 500);
+            } else if (signInResponse.status === 'needs_new_password') {
+              console.log('invalid password!');
+            }
+          } catch (error) {
+            if (isClerkAPIResponseError(error)) {
+              error.errors.forEach((error) => {
+                setError({
+                  heading: 'Something went wrong',
+                  description: error.message,
+                });
+              });
+            } else {
+              setError({
+                heading: 'Something went wrong',
+                description: 'Please try again later.',
+              });
+            }
+          }
+        }
+      },
+    },
   });
 
-  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement> | undefined) => {
-    const isValid = await form.trigger();
-
-    if (!isValid) {
-      return;
-    }
-
-    if (isLoaded) {
-      e?.preventDefault();
-      const { email } = form.getValues();
-
-      try {
-        const signInResponse = await signIn.create({
-          strategy: 'reset_password_email_code',
-          identifier: email,
-        });
-
-        if (signInResponse.status === 'needs_first_factor') {
-          setTimeout(() => {
-            navigate($path('/reset-password'));
-          }, 500);
-        } else if (signInResponse.status === 'needs_new_password') {
-          console.log('invalid password!');
-        }
-      } catch (error) {
-        if (isClerkAPIResponseError(error)) {
-          error.errors.forEach((error) => {
-            setError({
-              heading: 'Something went wrong',
-              description: error.message,
-            });
-          });
-        } else {
-          setError({
-            heading: 'Something went wrong',
-            description: 'Please try again later.',
-          });
-        }
-      }
-    }
-  };
-
   return (
-    <RemixFormProvider {...form}>
-      <Form onSubmit={handleFormSubmit} className='flex w-full flex-col gap-4'>
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit} className='flex w-full flex-col gap-4'>
         <div className='flex w-full flex-col gap-2'>
           <FormField
             control={form.control}
@@ -85,7 +77,7 @@ export const ForgotPasswordForm = () => {
         <Button disabled={!isLoaded || form.formState.isSubmitting} className='w-full'>
           {form.formState.isSubmitting ? 'Sending Password Reset Email...' : 'Get Password Reset Email'}
         </Button>
-      </Form>
-    </RemixFormProvider>
+      </form>
+    </Form>
   );
 };

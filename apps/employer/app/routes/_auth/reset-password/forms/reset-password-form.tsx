@@ -1,10 +1,24 @@
 import { useState } from 'react';
 import { isClerkAPIResponseError, useSignIn } from '@clerk/remix';
-import { Form, useNavigate } from '@remix-run/react';
-import { RemixFormProvider, useRemixForm } from 'remix-hook-form';
+import { useNavigate } from '@remix-run/react';
+import { useRemixForm } from 'remix-hook-form';
 import { $path } from 'remix-routes';
 
-import { Button, FormControl, FormField, FormItem, FormLabel, FormMessage, Input, toast } from '@technifit/ui';
+import {
+  Button,
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+  Input,
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSeparator,
+  InputOTPSlot,
+  toast,
+} from '@technifit/ui';
 
 import { ErrorAlert } from '~/ui/error-alert';
 import type { ErrorAlertProps } from '~/ui/error-alert';
@@ -18,60 +32,52 @@ export const ResetPasswordForm = () => {
 
   const form = useRemixForm<ResetPasswordFormData>({
     resolver,
+    submitHandlers: {
+      onValid: async ({ code, password }) => {
+        if (isLoaded) {
+          try {
+            const signInResponse = await signIn.attemptFirstFactor({
+              strategy: 'reset_password_email_code',
+              code,
+              password,
+            });
+
+            if (signInResponse.status === 'complete') {
+              await setActive({ session: signInResponse.createdSessionId });
+
+              toast('Password Updated', {
+                description: 'You will be redirected to the dashboard',
+              });
+
+              setTimeout(() => {
+                navigate($path('/log-in'));
+              }, 500);
+            } else if (signInResponse.status === 'needs_new_password') {
+              console.log('invalid password!');
+            }
+          } catch (error) {
+            if (isClerkAPIResponseError(error)) {
+              error.errors.forEach((error) => {
+                setError({
+                  heading: 'Something went wrong',
+                  description: error.message,
+                });
+              });
+            } else {
+              setError({
+                heading: 'Something went wrong',
+                description: 'Please try again later.',
+              });
+            }
+          }
+        }
+      },
+    },
   });
 
-  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement> | undefined) => {
-    const isValid = await form.trigger();
-
-    if (!isValid) {
-      return;
-    }
-
-    if (isLoaded) {
-      e?.preventDefault();
-      const { code, password } = form.getValues();
-
-      try {
-        const signInResponse = await signIn.attemptFirstFactor({
-          strategy: 'reset_password_email_code',
-          code,
-          password,
-        });
-
-        if (signInResponse.status === 'complete') {
-          await setActive({ session: signInResponse.createdSessionId });
-
-          toast('Password Updated', {
-            description: 'You will be redirected to the dashboard',
-          });
-
-          setTimeout(() => {
-            navigate($path('/log-in'));
-          }, 500);
-        } else if (signInResponse.status === 'needs_new_password') {
-          console.log('invalid password!');
-        }
-      } catch (error) {
-        if (isClerkAPIResponseError(error)) {
-          error.errors.forEach((error) => {
-            setError({
-              heading: 'Something went wrong',
-              description: error.message,
-            });
-          });
-        } else {
-          setError({
-            heading: 'Something went wrong',
-            description: 'Please try again later.',
-          });
-        }
-      }
-    }
-  };
-
   return (
-    <RemixFormProvider {...form}>
-      <Form onSubmit={handleFormSubmit} className='flex w-full flex-col gap-4'>
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit} className='flex w-full flex-col gap-4'>
         <div className='flex w-full flex-col gap-2'>
           <FormField
             control={form.control}
@@ -80,7 +86,28 @@ export const ResetPasswordForm = () => {
               <FormItem>
                 <FormLabel>Code</FormLabel>
                 <FormControl>
-                  <Input autoComplete='one-time-code' type='numeric' placeholder='123456' {...field} />
+                  <InputOTP
+                    autoComplete='one-time-code'
+                    type='numeric'
+                    className='w-full'
+                    maxLength={6}
+                    render={({ slots }) => (
+                      <>
+                        <InputOTPGroup>
+                          {slots.slice(0, 3).map((slot, index) => (
+                            <InputOTPSlot key={index} {...slot} />
+                          ))}{' '}
+                        </InputOTPGroup>
+                        <InputOTPSeparator />
+                        <InputOTPGroup>
+                          {slots.slice(3).map((slot, index) => (
+                            <InputOTPSlot key={index + 3} {...slot} />
+                          ))}
+                        </InputOTPGroup>
+                      </>
+                    )}
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -104,7 +131,7 @@ export const ResetPasswordForm = () => {
         <Button disabled={!isLoaded || form.formState.isSubmitting} className='w-full'>
           {form.formState.isSubmitting ? 'Resetting Password...' : 'Reset Password'}
         </Button>
-      </Form>
-    </RemixFormProvider>
+      </form>
+    </Form>
   );
 };

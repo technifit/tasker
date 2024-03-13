@@ -1,13 +1,12 @@
 import * as React from 'react';
 import type * as LabelPrimitive from '@radix-ui/react-label';
 import { Slot } from '@radix-ui/react-slot';
-import { Controller, FormProvider, useFormContext } from 'react-hook-form';
+import { Controller } from 'react-hook-form';
 import type { ControllerProps, FieldPath, FieldValues } from 'react-hook-form';
+import { RemixFormProvider, useRemixFormContext } from 'remix-hook-form';
 
 import { cn, Label } from '../..';
 import { Typography } from '../typography';
-
-const Form = FormProvider;
 
 interface FormFieldContextValue<
   TFieldValues extends FieldValues = FieldValues,
@@ -34,7 +33,7 @@ const FormField = <
 const useFormField = () => {
   const fieldContext = React.useContext(FormFieldContext);
   const itemContext = React.useContext(FormItemContext);
-  const { getFieldState, formState } = useFormContext();
+  const { getFieldState, formState } = useRemixFormContext();
 
   const fieldState = getFieldState(fieldContext.name, formState);
 
@@ -141,4 +140,13 @@ const FormMessage = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<
 );
 FormMessage.displayName = 'FormMessage';
 
-export { useFormField, Form, FormItem, FormLabel, FormControl, FormDescription, FormMessage, FormField };
+export {
+  useFormField,
+  RemixFormProvider as Form,
+  FormItem,
+  FormLabel,
+  FormControl,
+  FormDescription,
+  FormMessage,
+  FormField,
+};
