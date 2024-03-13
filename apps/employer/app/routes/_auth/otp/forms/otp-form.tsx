@@ -29,66 +29,58 @@ export const OtpForm = () => {
 
   const form = useRemixForm<OtpFormData>({
     resolver,
-  });
+    submitHandlers: {
+      onValid: async ({ otp }) => {
+        if (isLoaded) {
+          try {
+            const signInResponse = await signUp.attemptEmailAddressVerification({
+              code: otp,
+            });
 
-  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement> | undefined) => {
-    const isValid = await form.trigger();
+            switch (signInResponse.status) {
+              case 'complete':
+                await setActive({ session: signInResponse.createdSessionId });
 
-    if (!isValid) {
-      return;
-    }
-
-    if (isLoaded) {
-      e?.preventDefault();
-      const { otp } = form.getValues();
-
-      try {
-        const signInResponse = await signUp.attemptEmailAddressVerification({
-          code: otp,
-        });
-
-        switch (signInResponse.status) {
-          case 'complete':
-            await setActive({ session: signInResponse.createdSessionId });
-
-            setTimeout(() => {
-              navigate($path('/'));
-            }, 500);
-            break;
-          case 'missing_requirements':
-            if (signInResponse.unverifiedFields.some((x) => x === 'email_address')) {
-              // TODO: Refactor this to use a switch to handle the unverified fields
-              // TODO: redirect to a enter email code page (check can we retrieve a sign in)
-              // TODO: create an email link verification page
-              await signUp.prepareEmailAddressVerification({
-                strategy: 'email_code',
+                setTimeout(() => {
+                  navigate($path('/'));
+                }, 500);
+                break;
+              case 'missing_requirements':
+                if (signInResponse.unverifiedFields.some((x) => x === 'email_address')) {
+                  // TODO: Refactor this to use a switch to handle the unverified fields
+                  // TODO: redirect to a enter email code page (check can we retrieve a sign in)
+                  // TODO: create an email link verification page
+                  await signUp.prepareEmailAddressVerification({
+                    strategy: 'email_code',
+                  });
+                }
+                break;
+              default:
+                break;
+            }
+          } catch (error) {
+            if (isClerkAPIResponseError(error)) {
+              error.errors.forEach((error) => {
+                setError({
+                  heading: 'Something went wrong',
+                  description: error.message,
+                });
+              });
+            } else {
+              setError({
+                heading: 'Something went wrong',
+                description: 'Please try again later.',
               });
             }
-            break;
-          default:
-            break;
+          }
         }
-      } catch (error) {
-        if (isClerkAPIResponseError(error)) {
-          error.errors.forEach((error) => {
-            setError({
-              heading: 'Something went wrong',
-              description: error.message,
-            });
-          });
-        } else {
-          setError({
-            heading: 'Something went wrong',
-            description: 'Please try again later.',
-          });
-        }
-      }
-    }
-  };
+      },
+    },
+  });
 
   return (
     <RemixFormProvider {...form}>
-      <Form onSubmit={handleFormSubmit} className='flex w-full flex-col gap-4'>
+      <Form onSubmit={form.handleSubmit} className='flex w-full flex-col gap-4'>
         <div className='flex w-full flex-col gap-2'>
           <FormField
             control={form.control}
@@ -98,6 +90,8 @@ export const OtpForm = () => {
                 <FormLabel>Code</FormLabel>
                 <FormControl>
                   <InputOTP
+                    autoComplete='one-time-code'
+                    type='numeric'
                     className='w-full'
                     maxLength={6}
                     render={({ slots }) => (

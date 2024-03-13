@@ -18,85 +18,78 @@ export const LoginForm = () => {
 
   const form = useRemixForm<LogInFormData>({
     resolver,
+    submitHandlers: {
+      onValid: async ({ email, password }) => {
+        if (isLoaded) {
+          try {
+            const signInResponse = await signIn.create({
+              identifier: email,
+              password,
+            });
+
+            switch (signInResponse.status) {
+              case 'complete':
+                await setActive({ session: signInResponse.createdSessionId });
+                setTimeout(() => {
+                  navigate($path('/'));
+                }, 500);
+                break;
+              case 'needs_new_password':
+                setError({
+                  heading: 'Password Reset Required',
+                  description: 'Your password has expired. Please reset your password to continue.',
+                });
+                break;
+              case 'needs_first_factor':
+                setError({
+                  heading: 'First Factor Authentication Required',
+                  description:
+                    'First factor verification for the provided identifier needs to be prepared and verified.',
+                });
+                break;
+              case 'needs_second_factor':
+                setError({
+                  heading: 'Second Factor Authentication Required',
+                  description:
+                    'Second factor verification (2FA) for the provided identifier needs to be prepared and verified.',
+                });
+                break;
+              case 'needs_identifier':
+                setError({
+                  heading: 'Invalid configuration',
+                  description: `The authentication identifier hasn't been provided.`,
+                });
+                break;
+              default:
+                setError({
+                  heading: 'Unknown Error',
+                  description: 'An unknown error occurred. Please try again.',
+                });
+                break;
+            }
+          } catch (error) {
+            if (isClerkAPIResponseError(error)) {
+              error.errors.forEach((error) => {
+                setError({
+                  heading: 'Invalid email or password',
+                  description: error.message,
+                });
+              });
+            } else {
+              setError({
+                heading: 'Something went wrong',
+                description: 'Please try again later.',
+              });
+            }
+          }
+        }
+      },
+    },
   });
-
-  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement> | undefined) => {
-    const isValid = await form.trigger();
-
-    if (!isValid) {
-      return;
-    }
-
-    if (isLoaded) {
-      e?.preventDefault();
-      const { email, password } = form.getValues();
-
-      try {
-        const signInResponse = await signIn.create({
-          identifier: email,
-          password,
-        });
-
-        switch (signInResponse.status) {
-          case 'complete':
-            await setActive({ session: signInResponse.createdSessionId });
-            setTimeout(() => {
-              navigate($path('/'));
-            }, 500);
-            break;
-          case 'needs_new_password':
-            setError({
-              heading: 'Password Reset Required',
-              description: 'Your password has expired. Please reset your password to continue.',
-            });
-            break;
-          case 'needs_first_factor':
-            setError({
-              heading: 'First Factor Authentication Required',
-              description: 'First factor verification for the provided identifier needs to be prepared and verified.',
-            });
-            break;
-          case 'needs_second_factor':
-            setError({
-              heading: 'Second Factor Authentication Required',
-              description:
-                'Second factor verification (2FA) for the provided identifier needs to be prepared and verified.',
-            });
-            break;
-          case 'needs_identifier':
-            setError({
-              heading: 'Invalid configuration',
-              description: `The authentication identifier hasn't been provided.`,
-            });
-            break;
-          default:
-            setError({
-              heading: 'Unknown Error',
-              description: 'An unknown error occurred. Please try again.',
-            });
-            break;
-        }
-      } catch (error) {
-        if (isClerkAPIResponseError(error)) {
-          error.errors.forEach((error) => {
-            setError({
-              heading: 'Invalid email or password',
-              description: error.message,
-            });
-          });
-        } else {
-          setError({
-            heading: 'Something went wrong',
-            description: 'Please try again later.',
-          });
-        }
-      }
-    }
-  };
 
   return (
     <RemixFormProvider {...form}>
-      <Form onSubmit={handleFormSubmit} className='flex w-full flex-col gap-4'>
+      <Form onSubmit={form.handleSubmit} className='flex w-full flex-col gap-4'>
         <div className='flex w-full flex-col gap-2'>
           <FormField
             control={form.control}
