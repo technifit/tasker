@@ -93,7 +93,6 @@ export const OtpForm = () => {
                   <InputOTP
                     autoComplete='one-time-code'
                     type='numeric'
-                    className='w-full'
                     maxLength={6}
                     render={({ slots }) => (
                       <>
