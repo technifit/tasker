@@ -50,8 +50,8 @@ export const ResetPasswordForm = () => {
               });
 
               setTimeout(() => {
-                navigate($path('/log-in'));
-              }, 500);
+                navigate($path('/'));
+              }, 1500);
             } else if (signInResponse.status === 'needs_new_password') {
               console.log('invalid password!');
             }
@@ -89,7 +89,6 @@ export const ResetPasswordForm = () => {
                   <InputOTP
                     autoComplete='one-time-code'
                     type='numeric'
-                    className='w-full'
                     maxLength={6}
                     render={({ slots }) => (
                       <>
