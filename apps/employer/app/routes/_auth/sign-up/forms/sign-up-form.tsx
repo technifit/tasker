@@ -67,9 +67,9 @@ export const SignUpForm = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit} className='flex w-full flex-col gap-4'>
-        <div className='flex w-full flex-col gap-2'>
-          <div className='flex w-full flex-col gap-2 lg:flex-row'>
+      <form onSubmit={form.handleSubmit} className='flex w-full flex-col gap-6'>
+        <div className='flex w-full flex-col gap-3'>
+          <div className='flex w-full flex-col gap-3 lg:flex-row'>
             <FormField
               control={form.control}
               name='firstName'

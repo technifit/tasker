@@ -15,7 +15,7 @@ export const Otp = () => {
   const { signUp } = useSignUp();
 
   return (
-    <div className='flex w-full max-w-md flex-col items-start justify-center gap-4'>
+    <div className='flex w-full max-w-md flex-col items-start justify-center gap-6'>
       <div className='flex flex-col gap-2'>
         <Typography variant={'h1'} className='lg:text-2xl'>
           Verify email

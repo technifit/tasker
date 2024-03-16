@@ -99,8 +99,8 @@ export const LoginForm = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit} className='flex w-full flex-col gap-4'>
-        <div className='flex w-full flex-col gap-2'>
+      <form onSubmit={form.handleSubmit} className='flex w-full flex-col gap-6'>
+        <div className='flex w-full flex-col gap-3'>
           <FormField
             control={form.control}
             name='email'
