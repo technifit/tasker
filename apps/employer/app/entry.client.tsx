@@ -26,9 +26,9 @@ if (!isbot) {
       Sentry.replayIntegration({}),
     ],
     // Performance Monitoring
-    tracesSampleRate: getPublicEnv('NODE_ENV') === 'production' ? 0.1 : 1.0, // Capture 100% of the transactions, reduce in production!
+    tracesSampleRate: getPublicEnv('NODE_ENV') === 'production' ? 1.0 : 1.0, // Capture 100% of the transactions, reduce in production!
     // Session Replay
-    replaysSessionSampleRate: getPublicEnv('NODE_ENV') === 'production' ? 0.1 : 1.0, // This sets the sample rate at 10% in production.
+    replaysSessionSampleRate: getPublicEnv('NODE_ENV') === 'production' ? 1.0 : 1.0, // This sets the sample rate at 10% in production.
     replaysOnErrorSampleRate: 1.0, // If you're not already sampling the entire session, change the sample rate to 100% when sampling sessions where errors occur.
     tracePropagationTargets: ['localhost'],
     // Set profilesSampleRate to 1.0 to profile every transaction.

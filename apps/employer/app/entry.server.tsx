@@ -1,9 +1,9 @@
 import { RemixServer } from '@remix-run/react';
 import { captureConsoleIntegration } from '@sentry/integrations';
-import { ProfilingIntegration } from '@sentry/profiling-node';
+import { nodeProfilingIntegration } from '@sentry/profiling-node';
 import * as Sentry from '@sentry/remix';
 import { handleRequest } from '@vercel/remix';
-import type { DataFunctionArgs, EntryContext } from '@vercel/remix';
+import type { EntryContext, LoaderFunctionArgs } from '@vercel/remix';
 import { isbot } from 'isbot';
 import { nanoid } from 'nanoid';
 import { cacheHeader } from 'pretty-cache-header';
@@ -19,7 +19,7 @@ if (!isbot) {
     tracesSampleRate: environment().NODE_ENV === 'production' ? 0.1 : 1.0,
     profilesSampleRate: 1,
     integrations: [
-      new ProfilingIntegration(),
+      nodeProfilingIntegration(),
       captureConsoleIntegration({
         levels: ['error'],
       }),
@@ -64,7 +64,7 @@ export default function (
   return handleRequest(request, responseStatusCode, responseHeaders, remixServer);
 }
 
-export function handleError(error: unknown, { request }: DataFunctionArgs): void {
+export function handleError(error: unknown, { request }: LoaderFunctionArgs): void {
   if (error instanceof Error) {
     void Sentry.captureRemixServerException(error, 'remix.server', request);
   } else {
