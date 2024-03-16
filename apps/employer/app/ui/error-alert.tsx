@@ -10,7 +10,7 @@ export interface ErrorAlertProps {
 export function ErrorAlert({ heading, description }: ErrorAlertProps) {
   return (
     <Alert className='animate-in fade-in' variant='destructive'>
-      <AlertCircle className='h-4 w-4' />
+      <AlertCircle className='size-4' />
       <AlertTitle>{heading}</AlertTitle>
       <AlertDescription>{description}</AlertDescription>
     </Alert>
