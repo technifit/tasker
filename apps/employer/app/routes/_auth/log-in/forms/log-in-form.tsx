@@ -97,6 +97,8 @@ export const LoginForm = () => {
     },
   });
 
+  const { email } = form.watch();
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit} className='flex w-full flex-col gap-6'>
@@ -129,7 +131,7 @@ export const LoginForm = () => {
               )}
             />
             <Typography asChild variant={'link'} className='text-sm'>
-              <Link prefetch='intent' to={$path('/forgot-password')}>
+              <Link prefetch='intent' to={$path('/forgot-password', email ? { email } : undefined)}>
                 Forgot Password?
               </Link>
             </Typography>

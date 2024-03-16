@@ -1,14 +1,24 @@
 import { Link } from '@remix-run/react';
-import type { MetaFunction } from '@vercel/remix';
+import type { LoaderFunctionArgs, MetaFunction } from '@vercel/remix';
+import { getSearchParams } from 'remix-params-helper';
 import { $path } from 'remix-routes';
 
 import { Typography } from '@technifit/ui';
 
 import { ForgotPasswordForm } from './forms/forgot-password-form';
+import { forgotPasswordSearchParamsSchema } from './schema/forgot-password-form-schema';
+import type { ForgotPasswordSearchParams } from './schema/forgot-password-form-schema';
 
+export const loader = ({ request }: LoaderFunctionArgs) => {
+  const { success, data } = getSearchParams(request, forgotPasswordSearchParamsSchema);
+
+  return { email: success && data.email ? data.email : undefined };
+};
 export const meta: MetaFunction = () => {
   return [{ title: 'Tasker | Forgot Password' }, { name: 'description', content: 'Forgot Password' }];
 };
+
+export type SearchParams = ForgotPasswordSearchParams;
 
 export const ForgotPassword = () => {
   return (

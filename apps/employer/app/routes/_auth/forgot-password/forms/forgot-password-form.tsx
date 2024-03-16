@@ -1,16 +1,18 @@
 import { useState } from 'react';
 import { isClerkAPIResponseError, useSignIn } from '@clerk/remix';
-import { useNavigate } from '@remix-run/react';
+import { useLoaderData, useNavigate } from '@remix-run/react';
 import { $path } from 'remix-routes';
 
 import { Button, Form, FormControl, FormField, FormItem, FormLabel, FormMessage, Input, useForm } from '@technifit/ui';
 
 import { ErrorAlert } from '~/ui/error-alert';
 import type { ErrorAlertProps } from '~/ui/error-alert';
+import type { loader } from '../_forgot-password';
 import type { ForgotPasswordFormData } from '../schema/forgot-password-form-schema';
 import { forgotPasswordFormResolver as resolver } from '../schema/forgot-password-form-schema';
 
 export const ForgotPasswordForm = () => {
+  const { email } = useLoaderData<typeof loader>();
   const { isLoaded, signIn } = useSignIn();
   const [error, setError] = useState<ErrorAlertProps | null>(null);
 
@@ -18,6 +20,9 @@ export const ForgotPasswordForm = () => {
 
   const form = useForm<ForgotPasswordFormData>({
     resolver,
+    defaultValues: {
+      email,
+    },
     submitHandlers: {
       onValid: async ({ email }) => {
         if (isLoaded) {
