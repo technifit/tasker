@@ -148,8 +148,8 @@ importers:
         specifier: 8.4.36
         version: 8.4.36
       remix-development-tools:
-        specifier: 4.0.9
-        version: 4.0.9(@remix-run/node@2.8.1)(@remix-run/react@2.8.1)(@types/react-dom@18.2.22)(@types/react@18.2.67)(react-dom@18.2.0)(react@18.2.0)(vite@5.1.6)
+        specifier: 4.0.10
+        version: 4.0.10(@remix-run/node@2.8.1)(@remix-run/react@2.8.1)(@types/react-dom@18.2.22)(@types/react@18.2.67)(react-dom@18.2.0)(react@18.2.0)(vite@5.1.6)
       remix-flat-routes:
         specifier: 0.6.4
         version: 0.6.4(@remix-run/dev@2.8.1)
@@ -10223,8 +10223,8 @@ packages:
       mdast-util-to-hast: 12.3.0
       unified: 10.1.2
 
-  /remix-development-tools@4.0.9(@remix-run/node@2.8.1)(@remix-run/react@2.8.1)(@types/react-dom@18.2.22)(@types/react@18.2.67)(react-dom@18.2.0)(react@18.2.0)(vite@5.1.6):
-    resolution: {integrity: sha512-Vo63pnyyOyhAEFQ4YwoYvRc3AsfYI7jedm/NjrkltMslxf59gVFlROs0XEQ5A12OdyU2qW0k8N4KBnFpYw+hQQ==}
+  /remix-development-tools@4.0.10(@remix-run/node@2.8.1)(@remix-run/react@2.8.1)(@types/react-dom@18.2.22)(@types/react@18.2.67)(react-dom@18.2.0)(react@18.2.0)(vite@5.1.6):
+    resolution: {integrity: sha512-0N5IX2R2hd34azFu0FB9ffpd/LZ0Es9T45yzrw/j9tmHKwNGQREkDnV8IGF9ATpXXP0A/UkJv5stPlIg1B2peg==}
     peerDependencies:
       '@remix-run/react': '>=1.15'
       react: '>=17'

@@ -55,7 +55,7 @@
     "eslint": "8.57.0",
     "npm-run-all2": "6.1.2",
     "postcss": "8.4.36",
-    "remix-development-tools": "4.0.9",
+    "remix-development-tools": "4.0.10",
     "remix-flat-routes": "0.6.4",
     "tailwindcss": "3.4.1",
     "tailwindcss-animate": "1.0.7",
