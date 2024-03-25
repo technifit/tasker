@@ -148,8 +148,8 @@ importers:
         specifier: 8.4.36
         version: 8.4.36
       remix-development-tools:
-        specifier: 4.0.10
-        version: 4.0.10(@remix-run/node@2.8.1)(@remix-run/react@2.8.1)(@types/react-dom@18.2.22)(@types/react@18.2.67)(react-dom@18.2.0)(react@18.2.0)(vite@5.2.3)
+        specifier: 4.1.1
+        version: 4.1.1(@remix-run/react@2.8.1)(@types/react-dom@18.2.22)(@types/react@18.2.67)(react-dom@18.2.0)(react@18.2.0)(vite@5.2.3)
       remix-flat-routes:
         specifier: 0.6.4
         version: 0.6.4(@remix-run/dev@2.8.1)
@@ -2375,7 +2375,7 @@ packages:
       '@types/react-dom':
         optional: true
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.24.1
       '@radix-ui/primitive': 1.0.1
       '@radix-ui/react-compose-refs': 1.0.1(@types/react@18.2.67)(react@18.2.0)
       '@radix-ui/react-context': 1.0.1(@types/react@18.2.67)(react@18.2.0)
@@ -2824,7 +2824,7 @@ packages:
       '@types/react-dom':
         optional: true
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.24.1
       '@radix-ui/primitive': 1.0.1
       '@radix-ui/react-compose-refs': 1.0.1(@types/react@18.2.67)(react@18.2.0)
       '@radix-ui/react-context': 1.0.1(@types/react@18.2.67)(react@18.2.0)
@@ -2994,7 +2994,7 @@ packages:
       '@types/react-dom':
         optional: true
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.24.1
       '@radix-ui/react-compose-refs': 1.0.1(@types/react@18.2.67)(react@18.2.0)
       '@radix-ui/react-use-layout-effect': 1.0.1(@types/react@18.2.67)(react@18.2.0)
       '@types/react': 18.2.67
@@ -3275,7 +3275,7 @@ packages:
       '@types/react':
         optional: true
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.24.1
       '@radix-ui/react-compose-refs': 1.0.1(@types/react@18.2.67)(react@18.2.0)
       '@types/react': 18.2.67
       react: 18.2.0
@@ -3430,7 +3430,7 @@ packages:
       '@types/react-dom':
         optional: true
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.24.1
       '@radix-ui/primitive': 1.0.1
       '@radix-ui/react-compose-refs': 1.0.1(@types/react@18.2.67)(react@18.2.0)
       '@radix-ui/react-context': 1.0.1(@types/react@18.2.67)(react@18.2.0)
@@ -3544,7 +3544,7 @@ packages:
       '@types/react':
         optional: true
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.24.1
       '@types/react': 18.2.67
       react: 18.2.0
 
@@ -3571,7 +3571,7 @@ packages:
       '@types/react':
         optional: true
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.24.1
       '@radix-ui/react-use-layout-effect': 1.0.1(@types/react@18.2.67)(react@18.2.0)
       '@types/react': 18.2.67
       react: 18.2.0
@@ -10461,8 +10461,8 @@ packages:
       mdast-util-to-hast: 12.3.0
       unified: 10.1.2
 
-  /remix-development-tools@4.0.10(@remix-run/node@2.8.1)(@remix-run/react@2.8.1)(@types/react-dom@18.2.22)(@types/react@18.2.67)(react-dom@18.2.0)(react@18.2.0)(vite@5.2.3):
-    resolution: {integrity: sha512-0N5IX2R2hd34azFu0FB9ffpd/LZ0Es9T45yzrw/j9tmHKwNGQREkDnV8IGF9ATpXXP0A/UkJv5stPlIg1B2peg==}
+  /remix-development-tools@4.1.1(@remix-run/react@2.8.1)(@types/react-dom@18.2.22)(@types/react@18.2.67)(react-dom@18.2.0)(react@18.2.0)(vite@5.2.3):
+    resolution: {integrity: sha512-WVqAZlEiiQszazkTP8u9f8ywl+r649Wm5/xXEIfzCWSez6XIVuqPEuJwX/ZGLAjIzbCc0NW2wyeMEyLA1aiyew==}
     peerDependencies:
       '@remix-run/react': '>=1.15'
       react: '>=17'
@@ -10485,21 +10485,13 @@ packages:
       react: 18.2.0
       react-diff-viewer-continued: 3.4.0(react-dom@18.2.0)(react@18.2.0)
       react-dom: 18.2.0(react@18.2.0)
-      remix-utils: 7.5.0(@remix-run/node@2.8.1)(@remix-run/react@2.8.1)(react@18.2.0)(zod@3.22.4)
       tailwind-merge: 1.14.0
       uuid: 9.0.1
       vite: 5.2.3
       zod: 3.22.4
     transitivePeerDependencies:
-      - '@remix-run/cloudflare'
-      - '@remix-run/deno'
-      - '@remix-run/node'
-      - '@remix-run/router'
       - '@types/react'
       - '@types/react-dom'
-      - crypto-js
-      - intl-parse-accept-language
-      - is-ip
     dev: true
 
   /remix-flat-routes@0.6.4(@remix-run/dev@2.8.1):
@@ -10599,6 +10591,7 @@ packages:
       react: 18.2.0
       type-fest: 4.8.1
       zod: 3.22.4
+    dev: false
 
   /require-directory@2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
@@ -11277,7 +11270,7 @@ packages:
   /tailwind-merge@2.2.0:
     resolution: {integrity: sha512-SqqhhaL0T06SW59+JVNfAqKdqLs0497esifRrZ7jOaefP3o64fdFNDMrAQWZFMxTLJPiHVjRLUywT8uFz1xNWQ==}
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.24.1
     dev: false
 
   /tailwind-merge@2.2.2:
@@ -11672,6 +11665,7 @@ packages:
   /type-fest@4.8.1:
     resolution: {integrity: sha512-ShaaYnjf+0etG8W/FumARKMjjIToy/haCaTjN2dvcewOSoNqCQzdgG7m2JVOlM5qndGTHjkvsrWZs+k/2Z7E0Q==}
     engines: {node: '>=16'}
+    dev: false
 
   /type-is@1.6.18:
     resolution: {integrity: sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==}
