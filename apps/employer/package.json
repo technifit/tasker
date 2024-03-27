@@ -57,7 +57,7 @@
     "postcss": "8.4.38",
     "remix-development-tools": "4.1.4",
     "remix-flat-routes": "0.6.4",
-    "tailwindcss": "3.4.1",
+    "tailwindcss": "3.4.3",
     "tailwindcss-animate": "1.0.7",
     "typescript": "5.4.3",
     "typescript-remix-routes-plugin": "1.0.1",
