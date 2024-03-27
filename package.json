@@ -28,6 +28,6 @@
   },
   "packageManager": "pnpm@8.15.5",
   "engines": {
-    "node": ">=20.11.1"
+    "node": ">=20.12.0"
   }
 }
