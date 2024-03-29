@@ -12,6 +12,7 @@ const config = {
   trailingComma: 'all',
   tabWidth: 2,
   plugins: ['@ianvs/prettier-plugin-sort-imports', 'prettier-plugin-tailwindcss', 'prettier-plugin-packagejson'],
+  tailwindFunctions: ['cn'],
   tailwindConfig: './tooling/tailwind-config/index.ts',
   importOrderParserPlugins: ['typescript', 'jsx', 'decorators-legacy'],
   importOrder: [
