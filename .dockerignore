@@ -1,0 +1,14 @@
+**/.*
+!**/*.server
+**/node_modules
+**/public/build
+**/build
+**/decisions
+**/test
+**/*test*
+**/vitest.config.ts
+**/.cache
+**/README.md
+**/fly.*
+**/Dockerfile
+**/types

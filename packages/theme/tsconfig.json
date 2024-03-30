@@ -1,0 +1,9 @@
+{
+  "extends": "@technifit/tsconfig/base.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
+    "moduleResolution": "node"
+  },
+  "include": ["."],
+  "exclude": ["node_modules"]
+}

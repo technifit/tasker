@@ -1,0 +1,19 @@
+{
+  "extends": "@technifit/tsconfig/remix.json",
+  "include": ["types/env.d.ts", "**/*.ts", "**/*.tsx", "postcss.config.mjs", "tailwind.config.ts"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./app/*"]
+    },
+    "plugins": [
+      {
+        "name": "typescript-remix-routes-plugin"
+      }
+    ],
+    // Vite takes care of building everything, not tsc.
+    "noEmit": true,
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
+  },
+  "exclude": ["node_modules", "build"]
+}

@@ -1,0 +1,32 @@
+{
+  "landing": {
+    "meta": {
+      "title": "Landing - Meta",
+      "description": "Description - Meta"
+    },
+    "header": {
+      "title": "Welcome to the Landing Page",
+      "description": "This is the landing page for the application"
+    }
+  },
+  "employer": {
+    "meta": {
+      "title": "Employer - Meta",
+      "description": "Description - Meta"
+    },
+    "header": {
+      "title": "Employer Page",
+      "description": "This is the employer page for the application"
+    }
+  },
+  "employee": {
+    "meta": {
+      "title": "Employee - Meta",
+      "description": "Description - Meta"
+    },
+    "header": {
+      "title": "Employee Page",
+      "description": "This is the employee page for the application"
+    }
+  }
+}
