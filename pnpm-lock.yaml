@@ -36,8 +36,8 @@ importers:
   apps/employee:
     dependencies:
       '@hono/node-server':
-        specifier: 1.9.0
-        version: 1.9.0
+        specifier: 1.9.1
+        version: 1.9.1
       '@remix-run/express':
         specifier: 2.8.1
         version: 2.8.1(express@4.18.2)(typescript@5.4.3)
@@ -2150,8 +2150,8 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
-  /@hono/node-server@1.9.0:
-    resolution: {integrity: sha512-oJjk7WXBlENeHhWiMqSyxPIZ3Kmf5ZYxqdlcSIXyN8Rn50bNJsPl99G4POBS03Jxh56FdfRJ0SEnC8mAVIiavQ==}
+  /@hono/node-server@1.9.1:
+    resolution: {integrity: sha512-XBru0xbtRlTZJyAiFJLn7XDKbCVXBaRhVQAQhB9TwND2gwj8jf9SDWIj/7VxVtNAjURJf7Ofcz58DRA6DPYiWA==}
     engines: {node: '>=18.14.1'}
 
   /@hono/vite-dev-server@0.10.0(hono@4.1.4):
@@ -2160,7 +2160,7 @@ packages:
     peerDependencies:
       hono: '*'
     dependencies:
-      '@hono/node-server': 1.9.0
+      '@hono/node-server': 1.9.1
       hono: 4.1.4
       miniflare: 3.20240320.1
       minimatch: 9.0.3
@@ -2544,7 +2544,7 @@ packages:
       '@types/react-dom':
         optional: true
     dependencies:
-      '@babel/runtime': 7.24.1
+      '@babel/runtime': 7.22.3
       '@radix-ui/primitive': 1.0.1
       '@radix-ui/react-collapsible': 1.0.3(@types/react-dom@18.2.22)(@types/react@18.2.72)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-collection': 1.0.3(@types/react-dom@18.2.22)(@types/react@18.2.72)(react-dom@18.2.0)(react@18.2.0)
