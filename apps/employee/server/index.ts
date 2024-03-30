@@ -8,7 +8,7 @@ import { logger } from 'hono/logger';
 import { remix } from 'remix-hono/handler';
 import { getSession, session } from 'remix-hono/session';
 import { typedEnv } from 'remix-hono/typed-env';
-import { cache, generateIdempotencyKey, idempotency, theme, token } from 'server/middlewares';
+import { cache, generateIdempotencyKey, idempotency, theme } from 'server/middlewares';
 
 import { themeSchema } from '@technifit/theme';
 import type { Theme } from '@technifit/theme';
