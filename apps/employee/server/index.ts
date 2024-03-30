@@ -10,11 +10,12 @@ import { getSession, session } from 'remix-hono/session';
 import { typedEnv } from 'remix-hono/typed-env';
 import { cache, generateIdempotencyKey, idempotency, theme, token } from 'server/middlewares';
 
+import { themeSchema } from '@technifit/theme';
+import type { Theme } from '@technifit/theme';
+
 import { importDevBuild } from './dev/server.js';
 import { envSchema } from './env.js';
 import type { Env } from './env.js';
-import { themeSchema } from './theme.js';
-import type { Theme } from './theme.js';
 
 const mode = process.env.NODE_ENV === 'test' ? 'development' : process.env.NODE_ENV;
 
@@ -93,7 +94,7 @@ app.use('*', theme());
 /**
  * Add token middleware
  */
-app.use('*', token());
+// app.use('*', token());
 
 /**
  * Add idempotency middleware

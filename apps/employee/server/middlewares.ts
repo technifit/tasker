@@ -5,8 +5,8 @@ import { nanoid } from 'nanoid';
 import { cacheHeader } from 'pretty-cache-header';
 import { getSession } from 'remix-hono/session';
 
-import { defaultTheme, extractThemVariablesFromRequest, themeSchema } from './theme';
-import type { Theme } from './theme';
+import { defaultTheme, extractThemVariablesFromRequest, themeSchema } from '@technifit/theme';
+import type { Theme } from '@technifit/theme';
 
 /**
  * Creates a middleware that adds caching headers to the response.
