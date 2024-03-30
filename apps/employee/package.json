@@ -68,7 +68,7 @@
     "cross-env": "7.0.3",
     "dotenv-cli": "7.4.1",
     "esbuild": "0.20.2",
-    "npm-run-all2": "5.0.2",
+    "npm-run-all2": "6.1.2",
     "postcss": "8.4.38",
     "remix-development-tools": "4.1.4",
     "remix-flat-routes": "0.6.4",
