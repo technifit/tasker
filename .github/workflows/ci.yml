@@ -68,7 +68,7 @@ jobs:
           node-version: 20
 
       - name: Install deps (with cache)
-        run: npm run install
+        run: npm install
 
       - run: cp .env.example .env.local
 
