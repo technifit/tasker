@@ -34,7 +34,7 @@ const config = {
     '.turbo',
     'dist',
     'build',
-    'pnpm-lock.yaml',
+    'package-lock.json',
   ],
   reportUnusedDisableDirectives: true,
 };

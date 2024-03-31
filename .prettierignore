@@ -1,6 +1,7 @@
 node_modules
 
 pnpm-lock.yaml
+npm-lock.json
 
 # Remove this when you fix the loop issue when calling turbo lint --continue
 apps/employer/types/remix-routes.d.ts

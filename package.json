@@ -1,6 +1,12 @@
 {
   "name": "tasker",
   "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "packages/transactional/.react-email",
+    "tooling/*"
+  ],
   "scripts": {
     "build": "turbo build",
     "checks": "turbo format typecheck lint --continue",
@@ -26,7 +32,7 @@
     "turbo": "1.13.0",
     "typescript": "5.4.3"
   },
-  "packageManager": "pnpm@8.15.5",
+  "packageManager": "npm@10.1.0",
   "engines": {
     "node": ">=20.12.0"
   }

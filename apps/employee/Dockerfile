@@ -4,15 +4,7 @@ ARG APP_PKG_NAME=@technifit/$APP_NAME
 
 # base node image
 FROM node:20-bookworm-slim as node
-
-# set the environment to bash
-ENV SHELL=/bin/bash
-
-# install dependencies using npm or pnpm
-RUN npm install -g pnpm
-RUN pnpm setup
-RUN pnpm config set global-bin-dir /usr/local/bin
-RUN pnpm add turbo --global
+RUN npm i -g turbo
 
 # pruner
 FROM node as pruner
@@ -29,12 +21,12 @@ COPY --from=pruner /app/out/json/ .
 
 FROM base AS dev-deps
 WORKDIR /app
-RUN pnpm install
+RUN npm install
 
 FROM base AS production-deps
 WORKDIR /app
 ENV NODE_ENV production
-RUN pnpm install --production
+RUN npm install
 
 FROM base AS builder
 ARG APP_PKG_NAME
@@ -61,4 +53,4 @@ COPY --from=builder /app/$APP_GROUP/$APP_NAME/build ./$APP_GROUP/$APP_NAME/build
 WORKDIR /app/$APP_GROUP/$APP_NAME
 
 # It is the app package.json
-CMD [ "pnpm", "start" ]
+CMD [ "npm", "run", "start" ]
