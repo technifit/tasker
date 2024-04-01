@@ -26,7 +26,7 @@ RUN npm install
 FROM base AS production-deps
 WORKDIR /app
 ENV NODE_ENV production
-RUN npm install
+RUN npm install --production
 
 FROM base AS builder
 ARG APP_PKG_NAME
