@@ -13,9 +13,9 @@ import { cache, generateIdempotencyKey, idempotency, theme } from 'server/middle
 import { themeSchema } from '@technifit/theme';
 import type { Theme } from '@technifit/theme';
 
-import { importDevBuild } from './dev/server.js';
-import { envSchema } from './env.js';
-import type { Env } from './env.js';
+import { importDevBuild } from './dev/server';
+import { envSchema } from './env';
+import type { Env } from './env';
 
 const mode = process.env.NODE_ENV === 'test' ? 'development' : process.env.NODE_ENV;
 
