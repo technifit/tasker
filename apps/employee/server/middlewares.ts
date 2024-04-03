@@ -12,7 +12,7 @@ import type { Theme } from '@technifit/theme';
  * Creates a middleware that adds caching headers to the response.
  * @param seconds The number of seconds to cache the response.
  */
-export function cache(seconds: number) {
+export const cache = (seconds: number) => {
   return createMiddleware(async (c, next) => {
     if (!c.req.path.match(/\.[a-zA-Z0-9]+$/) || c.req.path.endsWith('.data')) {
       return next();
@@ -24,9 +24,15 @@ export function cache(seconds: number) {
       return;
     }
 
-    c.res.headers.set('cache-control', `public, max-age=${seconds}`);
+    c.res.headers.set(
+      'cache-control',
+      cacheHeader({
+        public: true,
+        maxAge: `${seconds}s`,
+      }),
+    );
   });
-}
+};
 
 /**
  * Middleware that handles the theme for the application.

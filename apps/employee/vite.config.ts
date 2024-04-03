@@ -1,4 +1,4 @@
-import devServer, { defaultOptions } from '@hono/vite-dev-server';
+import devServer from '@hono/vite-dev-server';
 import { vitePlugin as remix } from '@remix-run/dev';
 import dotenv from 'dotenv';
 import esbuild from 'esbuild';
