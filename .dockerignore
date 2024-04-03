@@ -5,7 +5,7 @@
 **/build
 **/decisions
 **/test
-**/*test*
+**/*.test.*
 **/vitest.config.ts
 **/.cache
 **/README.md

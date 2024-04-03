@@ -13,9 +13,9 @@ import { cache, generateIdempotencyKey, idempotency, theme } from 'server/middle
 import { themeSchema } from '@technifit/theme';
 import type { Theme } from '@technifit/theme';
 
-import { importDevBuild } from './dev/server.js';
-import { envSchema } from './env.js';
-import type { Env } from './env.js';
+import { importDevBuild } from './dev/server';
+import { envSchema } from './env';
+import type { Env } from './env';
 
 const mode = process.env.NODE_ENV === 'test' ? 'development' : process.env.NODE_ENV;
 
@@ -38,13 +38,13 @@ app.use(
 app.use(
   '/locales/*',
   cache(60 * 60), // 1 hour
-  serveStatic({ root: './build/client' }),
+  serveStatic({ root: isProductionMode ? './build/client' : './public' }),
 );
 
 /**
  * Serve public files
  */
-app.use('*', cache(60 * 60), serveStatic({ root: './build/client' })); // 1 hour
+app.use('*', cache(60 * 60), serveStatic({ root: isProductionMode ? './build/client' : './public' })); // 1 hour
 
 /**
  * Add logger middleware
@@ -106,7 +106,9 @@ app.use('*', idempotency());
  */
 app.use(async (c, next) => {
   const build = (isProductionMode
-    ? await import('../build/server/remix.js')
+    ? // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      await import('../build/server/remix.js')
     : await importDevBuild()) as unknown as ServerBuild;
 
   return remix({

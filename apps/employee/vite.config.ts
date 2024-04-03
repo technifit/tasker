@@ -19,6 +19,14 @@ export default defineConfig({
     //key: './server/dev/key.pem',
     //cert: './server/dev/cert.pem',
     //},
+    // https://github.com/remix-run/remix/discussions/8917#discussioncomment-8640023
+    warmup: {
+      clientFiles: ['./app/entry.client.tsx', './app/root.tsx', './app/routes/**/*'],
+    },
+  },
+  // https://github.com/remix-run/remix/discussions/8917#discussioncomment-8640023
+  optimizeDeps: {
+    include: ['./app/routes/**/*'],
   },
   build: {
     // Todo: Remove this once https://github.com/vitejs/vite/issues/15012 is fixed
@@ -35,8 +43,8 @@ export default defineConfig({
   plugins: [
     devServer({
       injectClientScript: false,
-      entry: './server/index.ts', // The file path of your server.
-      exclude: [/^\/(app)\/.+/, ...defaultOptions.exclude],
+      entry: 'server/index.ts', // The file path of your server.
+      exclude: [/^\/(app)\/.+/, /^\/@.+$/, /^\/node_modules\/.*/],
     }),
     tsconfigPaths(),
     remixDevTools(),
@@ -66,6 +74,7 @@ export default defineConfig({
       buildEnd: async () => {
         await esbuild
           .build({
+            alias: { '~': './app' },
             // The final file name
             outfile: 'build/server/index.js',
             // Our server entry point
