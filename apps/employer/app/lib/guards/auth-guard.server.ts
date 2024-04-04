@@ -1,9 +1,9 @@
 import { getAuth } from '@clerk/remix/ssr.server';
-import type { DataFunctionArgs } from '@vercel/remix';
+import type { LoaderFunctionArgs } from '@vercel/remix';
 import { redirect } from '@vercel/remix';
 import { $path } from 'remix-routes';
 
-export const requireAuthenticatedUser = async (args: DataFunctionArgs) => {
+export const requireAuthenticatedUser = async (args: LoaderFunctionArgs) => {
   const auth = await getAuth(args);
 
   if (!auth.userId) {
@@ -11,7 +11,7 @@ export const requireAuthenticatedUser = async (args: DataFunctionArgs) => {
   }
 };
 
-export const requireUnauthenticatedUser = async (args: DataFunctionArgs) => {
+export const requireUnauthenticatedUser = async (args: LoaderFunctionArgs) => {
   const { userId } = await getAuth(args);
 
   if (userId) {
