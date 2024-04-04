@@ -7,7 +7,7 @@ import { Button, Form, FormControl, FormField, FormItem, FormLabel, FormMessage,
 
 import { ErrorAlert } from '~/ui/error-alert';
 import type { ErrorAlertProps } from '~/ui/error-alert';
-import type { loader } from '../_forgot-password';
+import type { loader } from '../route';
 import type { ForgotPasswordFormData } from '../schema/forgot-password-form-schema';
 import { forgotPasswordFormResolver as resolver } from '../schema/forgot-password-form-schema';
 
