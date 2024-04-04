@@ -13,7 +13,7 @@ dotenv.config({ path: '../../.env' });
 
 export default defineConfig({
   server: {
-    port: 3000,
+    port: 3001,
     // TODO: Uncomment the following lines to enable HTTPS once we figure out playwright https issue with self-signed certs on macOS
     //https: {
     //key: './server/dev/key.pem',
