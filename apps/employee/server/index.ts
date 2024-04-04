@@ -8,10 +8,7 @@ import { logger } from 'hono/logger';
 import { remix } from 'remix-hono/handler';
 import { getSession, session } from 'remix-hono/session';
 import { typedEnv } from 'remix-hono/typed-env';
-import { cache, generateIdempotencyKey, idempotency, theme } from 'server/middlewares';
-
-import { themeSchema } from '@technifit/theme';
-import type { Theme } from '@technifit/theme';
+import { cache, generateIdempotencyKey, idempotency } from 'server/middlewares';
 
 import { importDevBuild } from './dev/server';
 import { envSchema } from './env';
@@ -87,11 +84,6 @@ app.use(
 );
 
 /**
- * Add theme middleware
- */
-app.use('*', theme());
-
-/**
  * Add token middleware
  */
 // app.use('*', token());
@@ -117,9 +109,6 @@ app.use(async (c, next) => {
     getLoadContext(c) {
       const session = getSession(c);
 
-      // Theme
-      const theme = themeSchema.parse(session.get('theme'));
-
       // Typed environment variables
       const env = typedEnv(c, envSchema);
 
@@ -131,7 +120,6 @@ app.use(async (c, next) => {
       return {
         appVersion: isProductionMode ? build.assets.version : 'dev',
         env,
-        theme,
         idempotencyKey,
       } satisfies AppLoadContext;
     },
@@ -172,10 +160,6 @@ declare module '@remix-run/node' {
      * The environment variables.
      */
     readonly env: Env;
-    /**
-     * The theme.
-     */
-    readonly theme: Theme;
     /**
      * The idempotency key.
      */

@@ -5,9 +5,6 @@ import { nanoid } from 'nanoid';
 import { cacheHeader } from 'pretty-cache-header';
 import { getSession } from 'remix-hono/session';
 
-import { defaultTheme, extractThemVariablesFromRequest, themeSchema } from '@technifit/theme';
-import type { Theme } from '@technifit/theme';
-
 /**
  * Creates a middleware that adds caching headers to the response.
  * @param seconds The number of seconds to cache the response.
@@ -31,35 +28,6 @@ export const cache = (seconds: number) => {
         maxAge: `${seconds}s`,
       }),
     );
-  });
-};
-
-/**
- * Middleware that handles the theme for the application.
- * It retrieves the theme variables from the request and sets them in the session.
- * If no theme variables are found in the request, it checks if there is an existing theme in the session.
- * If no existing theme is found, it sets the default theme.
- */
-export const theme = () => {
-  return createMiddleware(async (c, next) => {
-    const session = getSession(c);
-
-    const themeVariablesFromRequest = extractThemVariablesFromRequest(c.req.url);
-    const existingTheme = session.get('theme') as Theme;
-
-    if (Object.keys(themeVariablesFromRequest).length) {
-      const parsedThemeVariables = themeSchema.parse(themeVariablesFromRequest);
-
-      if (!_.isEqual(parsedThemeVariables, defaultTheme)) {
-        session.set('theme', parsedThemeVariables);
-      }
-    } else if (existingTheme) {
-      session.set('theme', existingTheme);
-    } else {
-      session.set('theme', defaultTheme);
-    }
-
-    await next();
   });
 };
 

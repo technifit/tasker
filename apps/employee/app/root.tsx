@@ -29,10 +29,10 @@ const fonts = [...interWoff, ...interWoff2];
 
 export const links: LinksFunction = () => [...fonts.map((font) => ({ rel: 'preload', href: `public/fonts/${font}` }))];
 
-export async function loader({ request, context: { theme } }: LoaderFunctionArgs) {
+export async function loader({ request }: LoaderFunctionArgs) {
   const locale = await i18nextConfig.getLocale(request);
 
-  return { locale, theme };
+  return { locale };
 }
 
 export const handle = {
@@ -46,7 +46,7 @@ export const handle = {
 export function Layout({ children }: { children: React.ReactNode }) {
   // Get the locale from the loader
   const { ref } = useReportSizeChangeToParent<HTMLBodyElement>();
-  const { locale, theme } = useLoaderData<typeof loader>();
+  const { locale } = useLoaderData<typeof loader>();
 
   const { i18n } = useTranslation();
 
@@ -61,34 +61,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet='utf-8' />
         <meta name='viewport' content='width=device-width,initial-scale=1.0,maximum-scale=1.0,viewport-fit=cover' />
-        <style
-          dangerouslySetInnerHTML={{
-            __html: `
-              :root {
-                --background: ${theme.backgroundColor};
-                --foreground: ${theme.foregroundColor};
-                --card: ${theme.cardColor};
-                --card-foreground: ${theme.cardForegroundColor};
-                --popover: ${theme.popoverColor};
-                --popover-foreground: ${theme.popoverForegroundColor};
-                --primary: ${theme.primaryColor};
-                --primary-foreground: ${theme.primaryForegroundColor};
-                --secondary: ${theme.secondaryColor};
-                --secondary-foreground: ${theme.secondaryForegroundColor};
-                --muted: ${theme.mutedColor};
-                --muted-foreground: ${theme.mutedForegroundColor};
-                --accent: ${theme.accentColor};
-                --accent-foreground: ${theme.accentForegroundColor};
-                --destructive: ${theme.destructiveColor};
-                --destructive-foreground: ${theme.destructiveForegroundColor};
-                --border: ${theme.borderColor};
-                --input: ${theme.inputColor};
-                --ring: ${theme.ringColor};
-                --radius: ${theme.radius};
-              }
-            `,
-          }}
-        />
         <Meta />
         <Links />
       </head>

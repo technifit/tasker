@@ -1,0 +1,16 @@
+# fly.web.toml
+
+# fly.toml app configuration file generated for tasker-employee"
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "tasker-employee"
+primary_region = "lhr"
+
+[build]
+  dockerfile = "./apps/employee/Dockerfile"
+  ignorefile = ".dockerignore"
+
+[build.args]
+  PROJECT="tasker-employee"
