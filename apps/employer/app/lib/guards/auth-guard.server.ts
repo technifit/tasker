@@ -9,6 +9,8 @@ export const requireAuthenticatedUser = async (args: LoaderFunctionArgs) => {
   if (!auth.userId) {
     throw redirect($path('/log-in'));
   }
+
+  return auth;
 };
 
 export const requireAuthenticatedOrgUser = async (args: LoaderFunctionArgs) => {
@@ -19,8 +21,10 @@ export const requireAuthenticatedOrgUser = async (args: LoaderFunctionArgs) => {
   }
 
   if (!auth.orgId) {
-    throw redirect($path('/organization/create'));
+    throw redirect($path('/create-team'));
   }
+
+  return auth;
 };
 
 export const requireUnauthenticatedUser = async (args: LoaderFunctionArgs) => {

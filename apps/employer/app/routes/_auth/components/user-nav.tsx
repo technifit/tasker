@@ -1,5 +1,5 @@
 import { useClerk, useUser } from '@clerk/remix';
-import { useNavigate } from '@remix-run/react';
+import { Link, useNavigate } from '@remix-run/react';
 import { $path } from 'remix-routes';
 import { Theme, useTheme } from 'remix-themes';
 
@@ -80,7 +80,11 @@ export function UserNav() {
             Settings
             <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
           </DropdownMenuItem>
-          <DropdownMenuItem>New Team</DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link prefetch='intent' to={$path('/create-team')}>
+              New Team
+            </Link>
+          </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem className='inline-flex w-full justify-between gap-1' onClick={handleChangeThemeClick}>
