@@ -20,7 +20,7 @@
     "@technifit/eslint-config": "*",
     "@technifit/tsconfig": "*",
     "@vitest/coverage-v8": "1.4.0",
-    "eslint": "8.57.0",
+    "eslint": "9.0.0",
     "typescript": "5.4.4",
     "vitest": "1.4.0"
   }
