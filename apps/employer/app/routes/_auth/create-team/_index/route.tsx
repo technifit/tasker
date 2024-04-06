@@ -20,7 +20,7 @@ export const action = async (args: ActionFunctionArgs) => {
     createdBy: auth.userId,
   });
 
-  return null;
+  return createdOrg;
 };
 
 export const CreateOrganization = () => {
