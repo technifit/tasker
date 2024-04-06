@@ -9,7 +9,7 @@ export const meta: MetaFunction = () => {
 
 export const Layout = () => {
   return (
-    <div className='container grid grid-cols-1 py-4 lg:grid-cols-1'>
+    <main className='container grid grow grid-cols-1 py-4 lg:grid-cols-1'>
       <div className='flex flex-col gap-2'>
         <div className='flex justify-end'>
           <UserNav />
@@ -18,7 +18,7 @@ export const Layout = () => {
           <Outlet />
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

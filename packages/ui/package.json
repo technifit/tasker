@@ -47,6 +47,7 @@
     "input-otp": "1.2.4",
     "lucide-react": "0.365.0",
     "react-resizable-panels": "2.0.16",
+    "react-wrap-balancer": "1.1.0",
     "remix-hook-form": "4.3.1",
     "sonner": "1.4.41",
     "tailwind-merge": "2.2.2",

@@ -80,13 +80,9 @@ const App = () => {
         <PreventFlashOnWrongTheme ssrTheme={Boolean(theme)} />
         <Links />
       </head>
-      <body className={cn('h-dvh bg-background font-sans text-foreground antialiased')}>
+      <body className={cn('flex min-h-dvh flex-col bg-background font-sans text-foreground antialiased')}>
         <PublicEnv nonce={nonce} publicEnvs={publicKeys} />
-        <div className='relative flex h-dvh flex-col'>
-          <div className='flex flex-1'>
-            <Outlet />
-          </div>
-        </div>
+        <Outlet />
         <TailwindIndicator />
         <ScrollRestoration nonce={nonce} />
         <Scripts nonce={nonce} />
