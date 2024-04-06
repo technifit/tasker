@@ -61,7 +61,7 @@
     "@types/react": "18.2.74",
     "@types/react-dom": "18.2.24",
     "date-fns": "3.6.0",
-    "eslint": "8.57.0",
+    "eslint": "9.0.0",
     "postcss": "8.4.38",
     "react": "18.2.0",
     "react-day-picker": "8.10.0",
