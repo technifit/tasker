@@ -100,10 +100,10 @@ importers:
         version: 14.1.0(i18next@23.10.1)(react-dom@18.2.0)(react@18.2.0)
       remix-hono:
         specifier: 0.0.16
-        version: 0.0.16(i18next@23.10.1)(remix-i18next@6.0.1)(typescript@5.4.4)(zod@3.22.4)
+        version: 0.0.16(i18next@23.10.1)(remix-i18next@6.1.0)(typescript@5.4.4)(zod@3.22.4)
       remix-i18next:
-        specifier: 6.0.1
-        version: 6.0.1(@remix-run/node@2.8.1)(@remix-run/react@2.8.1)(i18next@23.10.1)(react-i18next@14.1.0)(react@18.2.0)
+        specifier: 6.1.0
+        version: 6.1.0(@remix-run/node@2.8.1)(@remix-run/react@2.8.1)(i18next@23.10.1)(react-i18next@14.1.0)(react@18.2.0)
       remix-routes:
         specifier: 1.7.2
         version: 1.7.2
@@ -11264,7 +11264,7 @@ packages:
       minimatch: 5.1.6
     dev: true
 
-  /remix-hono@0.0.16(i18next@23.10.1)(remix-i18next@6.0.1)(typescript@5.4.4)(zod@3.22.4):
+  /remix-hono@0.0.16(i18next@23.10.1)(remix-i18next@6.1.0)(typescript@5.4.4)(zod@3.22.4):
     resolution: {integrity: sha512-IPooI2E0eSFRV9wAgTzpsklSoOyij6Nsk6ANIugGhD9vYlovbYb2BT+siz++sLzWseZSPEtIzx/LBel203jBfQ==}
     peerDependencies:
       '@remix-run/cloudflare': ^2.0.0
@@ -11285,7 +11285,7 @@ packages:
       hono: 4.2.1
       i18next: 23.10.1
       pretty-cache-header: 1.0.0
-      remix-i18next: 6.0.1(@remix-run/node@2.8.1)(@remix-run/react@2.8.1)(i18next@23.10.1)(react-i18next@14.1.0)(react@18.2.0)
+      remix-i18next: 6.1.0(@remix-run/node@2.8.1)(@remix-run/react@2.8.1)(i18next@23.10.1)(react-i18next@14.1.0)(react@18.2.0)
       zod: 3.22.4
     transitivePeerDependencies:
       - typescript
@@ -11305,8 +11305,8 @@ packages:
       react-hook-form: 7.51.2(react@18.2.0)
     dev: false
 
-  /remix-i18next@6.0.1(@remix-run/node@2.8.1)(@remix-run/react@2.8.1)(i18next@23.10.1)(react-i18next@14.1.0)(react@18.2.0):
-    resolution: {integrity: sha512-zO7sYe/Ui4s/ZGHMZoScFUNsuarykzQsQ9AB3KPswb7lLahwqIu+K09XFNZBUGBOPHOUl9txv0+2vOrIiGCSPA==}
+  /remix-i18next@6.1.0(@remix-run/node@2.8.1)(@remix-run/react@2.8.1)(i18next@23.10.1)(react-i18next@14.1.0)(react@18.2.0):
+    resolution: {integrity: sha512-uoI+NaxdGN1iaoOI2P/62HY+ARf9Nem0gf07+Uc/oJFReZ5Q36tu32TF4TE1MOGYYamzhMmQsin18xasKcFKpQ==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       '@remix-run/cloudflare': ^2.0.0
