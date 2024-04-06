@@ -1,5 +1,7 @@
 import type { LoaderFunctionArgs } from '@vercel/remix';
 
+import { CardHeader, CardTitle } from '@technifit/ui';
+
 import { requireAuthenticatedUser } from '~/lib/guards/auth-guard.server';
 
 export const loader = async (args: LoaderFunctionArgs) => {
@@ -9,7 +11,13 @@ export const loader = async (args: LoaderFunctionArgs) => {
 };
 
 export const AddOrganizationMembers = () => {
-  return <div className='w-full grow'>Add Members</div>;
+  return (
+    <>
+      <CardHeader>
+        <CardTitle>Add Members</CardTitle>
+      </CardHeader>
+    </>
+  );
 };
 
 export default AddOrganizationMembers;

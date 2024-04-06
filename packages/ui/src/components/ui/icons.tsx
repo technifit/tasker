@@ -32,6 +32,8 @@ export const Twitter = Lucide.Twitter;
 export const User = Lucide.User;
 export const Warning = Lucide.AlertTriangle;
 
+export const CircleHelp = Lucide.CircleHelp;
+
 export const System = (props: LucideProps) => (
   <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' {...props}>
     <path
