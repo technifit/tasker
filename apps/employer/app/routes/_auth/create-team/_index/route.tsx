@@ -110,7 +110,7 @@ export const CreateOrganization = () => {
                   </TooltipProvider>
                 </FormLabel>
                 <FormControl>
-                  <Input autoFocus placeholder='my awesome team' {...field} />
+                  <Input placeholder='my awesome team' {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
