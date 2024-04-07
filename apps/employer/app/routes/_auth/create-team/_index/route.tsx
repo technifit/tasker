@@ -1,8 +1,7 @@
-import { createClerkClient } from '@clerk/remix/api.server';
+import { useClerk, useOrganizationList } from '@clerk/remix';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { json, redirect } from '@vercel/remix';
-import type { ActionFunctionArgs, LoaderFunctionArgs, MetaFunction } from '@vercel/remix';
-import { getValidatedFormData } from 'remix-hook-form';
+import { useNavigate } from '@remix-run/react';
+import type { LoaderFunctionArgs, MetaFunction } from '@vercel/remix';
 import { $path } from 'remix-routes';
 import { z } from 'zod';
 
@@ -29,7 +28,6 @@ import {
   useForm,
 } from '@technifit/ui';
 
-import { environment } from '~/lib/environment/environment';
 import { requireAuthenticatedUser } from '~/lib/guards/auth-guard.server';
 
 export const createTeamFormSchema = z.object({
@@ -46,37 +44,29 @@ export const loader = async (args: LoaderFunctionArgs) => {
   return null;
 };
 
-export const action = async (args: ActionFunctionArgs) => {
-  const { request } = args;
-
-  const {
-    errors,
-    data,
-    receivedValues: defaultValues,
-  } = await getValidatedFormData<CreateTeamFormData>(request, resolver);
-  if (errors) {
-    // The keys "errors" and "defaultValue" are picked up automatically by useRemixForm
-    return json({ errors, defaultValues });
-  }
-
-  const { userId } = await requireAuthenticatedUser(args);
-
-  const response = await createClerkClient({
-    secretKey: environment().CLERK_SECRET_KEY,
-  }).organizations.createOrganization({
-    name: data.teamName,
-    createdBy: userId,
-  });
-
-  return redirect($path('/create-team/:teamSlug/add-members', { teamSlug: response.slug! }));
-};
-
 export const meta: MetaFunction = () => {
   return [{ title: 'Tasker | Create Team' }, { name: 'description', content: 'Create Team' }];
 };
 export const CreateOrganization = () => {
+  const { createOrganization } = useClerk();
+  const { setActive } = useOrganizationList();
+  const navigate = useNavigate();
+
   const form = useForm<CreateTeamFormData>({
     resolver,
+    submitHandlers: {
+      onValid: async ({ teamName }) => {
+        const { id, slug } = await createOrganization({ name: teamName });
+
+        if (!setActive) {
+          throw new Error('Organization not set');
+        }
+
+        await setActive({ organization: id });
+
+        navigate($path('/create-team/:teamSlug/add-members', { teamSlug: slug! }));
+      },
+    },
   });
 
   return (
