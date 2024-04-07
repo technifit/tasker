@@ -29,6 +29,7 @@ import {
 } from '@technifit/ui';
 
 import { requireAuthenticatedUser } from '~/lib/guards/auth-guard.server';
+import { getStep } from '../config';
 
 export const createTeamFormSchema = z.object({
   teamName: z.string({ required_error: 'Please enter your team name' }).min(1),
@@ -64,7 +65,7 @@ export const CreateOrganization = () => {
 
         await setActive({ organization: id });
 
-        navigate($path('/create-team/:teamSlug/add-members', { teamSlug: slug! }));
+        navigate(getStep({ direction: 'next', url: window.location.href, params: { teamSlug: slug! } }));
       },
     },
   });
@@ -108,7 +109,7 @@ export const CreateOrganization = () => {
           />
         </CardContent>
         <CardFooter>
-          <Button disabled={form.formState.isSubmitting} className='w-full'>
+          <Button disabled={form.formState.isSubmitting}>
             {form.formState.isSubmitting ? 'Creating Team...' : 'Continue'}
           </Button>
         </CardFooter>
