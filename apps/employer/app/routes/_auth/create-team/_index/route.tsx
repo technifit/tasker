@@ -2,7 +2,6 @@ import { useClerk, useOrganizationList } from '@clerk/remix';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useNavigate } from '@remix-run/react';
 import type { LoaderFunctionArgs, MetaFunction } from '@vercel/remix';
-import { $path } from 'remix-routes';
 import { z } from 'zod';
 
 import {
