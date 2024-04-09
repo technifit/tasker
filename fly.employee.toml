@@ -7,6 +7,19 @@
 
 app = "tasker-employee"
 primary_region = "lhr"
+kill_signal = "SIGINT"
+kill_timeout = "5s"
+swap_size_mb = 256
+
+[experimental]
+auto_rollback = true
+
+[deploy]
+strategy = "bluegreen"
+
+[env]
+NODE_ENV = "production"
+PORT = "8080"
 
 [build]
   dockerfile = "./apps/employee/Dockerfile"
@@ -14,3 +27,29 @@ primary_region = "lhr"
 
 [build.args]
   PROJECT="tasker-employee"
+
+[http_service]
+internal_port = 8080
+force_https = true
+auto_stop_machines = false
+auto_start_machines = false
+min_machines_running = 1
+processes = ["app"]
+
+[http_service.concurrency]
+type = "requests"
+soft_limit = 80
+hard_limit = 100
+
+[[http_service.checks]]
+grace_period = "5s"
+interval = "10s"
+method = "GET"
+timeout = "2s"
+path = "/healthcheck"
+protocol = "http"
+
+[[vm]]
+cpu_kind = "shared"
+cpus = 1
+memory_mb = 256
