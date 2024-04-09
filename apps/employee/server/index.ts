@@ -20,6 +20,8 @@ const isProductionMode = mode === 'production';
 
 const app = new Hono();
 
+app.get('/health-check', (c) => c.json({}, 200));
+
 /**
  * Serve assets files from build/client/assets
  */
