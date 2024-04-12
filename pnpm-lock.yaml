@@ -36,8 +36,8 @@ importers:
   apps/employee:
     dependencies:
       '@hono/node-server':
-        specifier: 1.9.1
-        version: 1.9.1
+        specifier: 1.10.0
+        version: 1.10.0
       '@remix-run/express':
         specifier: 2.8.1
         version: 2.8.1(express@4.19.2)(typescript@5.4.5)
@@ -2105,12 +2105,6 @@ packages:
   /@hono/node-server@1.10.0:
     resolution: {integrity: sha512-XXFmIT4swUm3gG9yPU/HMAqHAHTP/Wr2mqgJakOFQhbbWipomaLu7ys0h9KrgF9032j18efBYk2aHz2SfgDbTA==}
     engines: {node: '>=18.14.1'}
-    dev: true
-
-  /@hono/node-server@1.9.1:
-    resolution: {integrity: sha512-XBru0xbtRlTZJyAiFJLn7XDKbCVXBaRhVQAQhB9TwND2gwj8jf9SDWIj/7VxVtNAjURJf7Ofcz58DRA6DPYiWA==}
-    engines: {node: '>=18.14.1'}
-    dev: false
 
   /@hono/vite-dev-server@0.11.0(hono@4.2.3):
     resolution: {integrity: sha512-qFx7lCOtNFM4B7bATrsDvaqTTcjejwvKH0o5lwW34Nqerx/YPXgnEYVCi0uXu9HaapRpD2gs04AzuFZHdZNVRg==}
