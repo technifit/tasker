@@ -22,11 +22,11 @@
     "@technifit/tsconfig": "*",
     "@types/react": "18.2.76",
     "@types/react-dom": "18.2.25",
-    "@vitest/coverage-v8": "1.4.0",
+    "@vitest/coverage-v8": "1.5.0",
     "eslint": "8.57.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "5.4.5",
-    "vitest": "1.4.0"
+    "vitest": "1.5.0"
   }
 }
