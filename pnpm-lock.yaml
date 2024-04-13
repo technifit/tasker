@@ -63,8 +63,8 @@ importers:
         specifier: 16.4.5
         version: 16.4.5
       hono:
-        specifier: 4.2.3
-        version: 4.2.3
+        specifier: 4.2.4
+        version: 4.2.4
       i18next:
         specifier: 23.11.1
         version: 23.11.1
@@ -113,7 +113,7 @@ importers:
     devDependencies:
       '@hono/vite-dev-server':
         specifier: 0.11.0
-        version: 0.11.0(hono@4.2.3)
+        version: 0.11.0(hono@4.2.4)
       '@playwright/test':
         specifier: 1.43.1
         version: 1.43.1
@@ -2106,14 +2106,14 @@ packages:
     resolution: {integrity: sha512-XXFmIT4swUm3gG9yPU/HMAqHAHTP/Wr2mqgJakOFQhbbWipomaLu7ys0h9KrgF9032j18efBYk2aHz2SfgDbTA==}
     engines: {node: '>=18.14.1'}
 
-  /@hono/vite-dev-server@0.11.0(hono@4.2.3):
+  /@hono/vite-dev-server@0.11.0(hono@4.2.4):
     resolution: {integrity: sha512-qFx7lCOtNFM4B7bATrsDvaqTTcjejwvKH0o5lwW34Nqerx/YPXgnEYVCi0uXu9HaapRpD2gs04AzuFZHdZNVRg==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
       hono: '*'
     dependencies:
       '@hono/node-server': 1.10.0
-      hono: 4.2.3
+      hono: 4.2.4
       miniflare: 3.20240403.0
       minimatch: 9.0.4
     transitivePeerDependencies:
@@ -8430,8 +8430,8 @@ packages:
       react-is: 16.13.1
     dev: false
 
-  /hono@4.2.3:
-    resolution: {integrity: sha512-yZDnPOp/XzjIB7KUWaOxwLSywnhxMvAKth8hfKhWQiWXeZhBfC6GlFnEst/FOOgn7rSWjShhQPS89PLEuHxq3Q==}
+  /hono@4.2.4:
+    resolution: {integrity: sha512-2T5Ahxh8tT0ISKCrNeA+OIwfD5W4EZ00iIMYBBCuiIivr+sOrZYOphinARSG7wL3nFsY6zkFHMMZbcR9CzEzug==}
     engines: {node: '>=16.0.0'}
 
   /hosted-git-info@2.8.9:
@@ -11282,7 +11282,7 @@ packages:
         optional: true
     dependencies:
       '@remix-run/server-runtime': 2.8.1(typescript@5.4.5)
-      hono: 4.2.3
+      hono: 4.2.4
       i18next: 23.11.1
       pretty-cache-header: 1.0.0
       remix-i18next: 6.1.0(@remix-run/node@2.8.1)(@remix-run/react@2.8.1)(i18next@23.11.1)(react-i18next@14.1.0)(react@18.2.0)
