@@ -59,7 +59,7 @@
     "@technifit/eslint-config": "*",
     "@technifit/tailwind-config": "*",
     "@technifit/tsconfig": "*",
-    "@types/react": "18.2.78",
+    "@types/react": "18.2.79",
     "@types/react-dom": "18.2.25",
     "date-fns": "3.6.0",
     "eslint": "8.57.0",
