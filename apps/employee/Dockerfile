@@ -3,7 +3,7 @@ ARG APP_NAME=employee
 ARG APP_PKG_NAME=@technifit/$APP_NAME
 
 # base node image
-FROM node:20-bookworm-slim as node
+FROM node:20.12.2-bookworm-slim as node
 
 # set the environment to bash
 ENV SHELL=/bin/bash
