@@ -105,8 +105,8 @@ importers:
         specifier: 6.1.0
         version: 6.1.0(@remix-run/node@2.8.1)(@remix-run/react@2.8.1)(i18next@23.11.1)(react-i18next@14.1.0)(react@18.2.0)
       remix-routes:
-        specifier: 1.7.2
-        version: 1.7.2
+        specifier: 1.7.3
+        version: 1.7.3
       zod:
         specifier: 3.22.4
         version: 3.22.4
@@ -253,8 +253,8 @@ importers:
         specifier: 0.5.1
         version: 0.5.1(zod@3.22.4)
       remix-routes:
-        specifier: 1.7.2
-        version: 1.7.2
+        specifier: 1.7.3
+        version: 1.7.3
       remix-themes:
         specifier: 1.3.1
         version: 1.3.1(@remix-run/react@2.8.1)(@remix-run/server-runtime@2.8.1)
@@ -11341,8 +11341,8 @@ packages:
       zod: 3.22.4
     dev: false
 
-  /remix-routes@1.7.2:
-    resolution: {integrity: sha512-iRwX3QyAyFZrXhxyWtIJJmmqUV45BnRH2Kz//Fabr0YopSSbQKX/RYs1up0rmyIuHSIi2eC2gBtPQsJ7J0/anw==}
+  /remix-routes@1.7.3:
+    resolution: {integrity: sha512-bNA8I0nhUtYtdCPTSWk/1MRTlKMCi2apx0cZ4rkHyc++oQhW18a5Q2cZ18oQ8d0Z1pHY5kwV/fB0QKxyUgrQEA==}
     hasBin: true
     dependencies:
       chokidar: 3.6.0
@@ -12136,7 +12136,7 @@ packages:
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
-      chokidar: 3.5.3
+      chokidar: 3.6.0
       didyoumean: 1.2.2
       dlv: 1.1.3
       fast-glob: 3.3.2
