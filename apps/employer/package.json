@@ -16,7 +16,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@clerk/remix": "3.2.3",
+    "@clerk/remix": "3.2.4",
     "@remix-run/react": "2.8.1",
     "@remix-run/serve": "2.8.1",
     "@sentry/integrations": "7.110.1",
