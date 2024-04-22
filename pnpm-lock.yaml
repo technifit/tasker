@@ -115,8 +115,8 @@ importers:
         version: 3.22.5
     devDependencies:
       '@hono/vite-dev-server':
-        specifier: 0.11.0
-        version: 0.11.0(hono@4.2.5)
+        specifier: 0.11.1
+        version: 0.11.1(hono@4.2.5)
       '@playwright/test':
         specifier: 1.43.1
         version: 1.43.1
@@ -2167,14 +2167,20 @@ packages:
   /@hono/node-server@1.10.1:
     resolution: {integrity: sha512-5BKW25JH5PQKPDkTcIgv3yNUPtOAbnnjFFgWvIxxAY/B/ZNeYjjWoAeDmqhIiCgOAJ3Tauuw+0G+VainhuZRYQ==}
     engines: {node: '>=18.14.1'}
+    dev: false
 
-  /@hono/vite-dev-server@0.11.0(hono@4.2.5):
-    resolution: {integrity: sha512-qFx7lCOtNFM4B7bATrsDvaqTTcjejwvKH0o5lwW34Nqerx/YPXgnEYVCi0uXu9HaapRpD2gs04AzuFZHdZNVRg==}
+  /@hono/node-server@1.11.0:
+    resolution: {integrity: sha512-TLIJq9TMtD1NEG1mVoqNUn1Ita0qSaB5XboZErjFBcO/GJYXwWY4dVdTi9G0lbxtu0x+hJXDItcLaFHb7rlFTw==}
+    engines: {node: '>=18.14.1'}
+    dev: true
+
+  /@hono/vite-dev-server@0.11.1(hono@4.2.5):
+    resolution: {integrity: sha512-maTukjHPH19XVyE9zU7bBFg3WIiiKrJ5sFa3GMDJxJFKn16sAT1X5IIYJgXSGCb5hWiIJRU+sE/ybuIzb6qlBg==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
       hono: '*'
     dependencies:
-      '@hono/node-server': 1.10.1
+      '@hono/node-server': 1.11.0
       hono: 4.2.5
       miniflare: 3.20240403.0
       minimatch: 9.0.4
