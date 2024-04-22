@@ -53,6 +53,9 @@ importers:
       '@technifit/hooks':
         specifier: '*'
         version: link:../../packages/hooks
+      '@technifit/middleware':
+        specifier: '*'
+        version: link:../../packages/middleware
       '@technifit/ui':
         specifier: '*'
         version: link:../../packages/ui
@@ -402,6 +405,65 @@ importers:
       react-dom:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+      vitest:
+        specifier: 1.5.0
+        version: 1.5.0(@types/node@20.12.7)
+
+  packages/id:
+    dependencies:
+      nanoid:
+        specifier: 5.0.7
+        version: 5.0.7
+    devDependencies:
+      '@technifit/eslint-config':
+        specifier: '*'
+        version: link:../../tooling/eslint-config
+      '@technifit/tsconfig':
+        specifier: '*'
+        version: link:../../tooling/typescript-config
+      '@vitest/coverage-v8':
+        specifier: 1.5.0
+        version: 1.5.0(vitest@1.5.0)
+      eslint:
+        specifier: 8.57.0
+        version: 8.57.0
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+      vitest:
+        specifier: 1.5.0
+        version: 1.5.0(@types/node@20.12.7)
+
+  packages/middleware:
+    dependencies:
+      '@technifit/id':
+        specifier: '*'
+        version: link:../id
+      hono:
+        specifier: 4.2.5
+        version: 4.2.5
+      pretty-cache-header:
+        specifier: 1.0.0
+        version: 1.0.0
+      remix-hono:
+        specifier: 0.0.16
+        version: 0.0.16(i18next@23.11.2)(remix-i18next@6.1.0)(typescript@5.4.5)(zod@3.23.0)
+    devDependencies:
+      '@technifit/eslint-config':
+        specifier: '*'
+        version: link:../../tooling/eslint-config
+      '@technifit/tsconfig':
+        specifier: '*'
+        version: link:../../tooling/typescript-config
+      '@vitest/coverage-v8':
+        specifier: 1.5.0
+        version: 1.5.0(vitest@1.5.0)
+      eslint:
+        specifier: 8.57.0
+        version: 8.57.0
       typescript:
         specifier: 5.4.5
         version: 5.4.5
@@ -8428,6 +8490,11 @@ packages:
     resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
     dependencies:
       react-is: 16.13.1
+    dev: false
+
+  /hono@4.2.6:
+    resolution: {integrity: sha512-AtbHZJYWsm+uFHLz0C6xltX7hjOV44a55gSEGBfoQOJ00KSxEUOoiIkmd+NXfapNX0j2GCKhqMmYeegBdHRwcQ==}
+    engines: {node: '>=16.0.0'}
     dev: false
 
   /hono@4.2.6:
