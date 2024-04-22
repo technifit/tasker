@@ -6,25 +6,27 @@
   "exports": {
     "./access-token": {
       "import": {
-        "types": "./src/access-token.d.ts",
-        "default": "./src/access-token.js"
+        "types": "./dist/access-token.d.ts",
+        "default": "./dist/access-token.js"
       }
     },
     "./cache": {
       "import": {
-        "types": "./src/cache.d.ts",
-        "default": "./src/cache.js"
+        "types": "./dist/cache.d.ts",
+        "default": "./dist/cache.js"
       }
     },
     "./idempotency": {
       "import": {
-        "types": "./src/idempotency.d.ts",
-        "default": "./src/idempotency.js"
+        "types": "./dist/idempotency.d.ts",
+        "default": "./dist/idempotency.js"
       }
     }
   },
   "scripts": {
+    "build": "tsup",
     "clean": "git clean -xdf dist .turbo node_modules",
+    "dev": "tsup --watch",
     "format": "prettier . --check --cache --cache-location='node_modules/.cache/.prettiercache'",
     "format:fix": "prettier . --write --cache --cache-location='node_modules/.cache/.prettiercache' --log-level=warn",
     "lint": "eslint . --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
@@ -36,7 +38,7 @@
   },
   "dependencies": {
     "@technifit/id": "*",
-    "hono": "4.2.5",
+    "hono": "4.2.6",
     "pretty-cache-header": "1.0.0",
     "remix-hono": "0.0.16"
   },
@@ -45,6 +47,7 @@
     "@technifit/tsconfig": "*",
     "@vitest/coverage-v8": "1.5.0",
     "eslint": "8.57.0",
+    "tsup": "8.0.2",
     "typescript": "5.4.5",
     "vitest": "1.5.0"
   }

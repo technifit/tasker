@@ -6,13 +6,15 @@
   "exports": {
     "./new-id": {
       "import": {
-        "types": "./src/new-id.d.ts",
-        "default": "./src/new-id.js"
+        "types": "./dist/new-id.d.ts",
+        "default": "./dist/new-id.js"
       }
     }
   },
   "scripts": {
+    "build": "tsup",
     "clean": "git clean -xdf dist .turbo node_modules",
+    "dev": "tsup --watch",
     "format": "prettier . --check --cache --cache-location='node_modules/.cache/.prettiercache'",
     "format:fix": "prettier . --write --cache --cache-location='node_modules/.cache/.prettiercache' --log-level=warn",
     "lint": "eslint . --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
@@ -30,6 +32,7 @@
     "@technifit/tsconfig": "*",
     "@vitest/coverage-v8": "1.5.0",
     "eslint": "8.57.0",
+    "tsup": "8.0.2",
     "typescript": "5.4.5",
     "vitest": "1.5.0"
   }
