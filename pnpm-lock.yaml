@@ -69,8 +69,8 @@ importers:
         specifier: 4.2.6
         version: 4.2.6
       i18next:
-        specifier: 23.11.1
-        version: 23.11.1
+        specifier: 23.11.2
+        version: 23.11.2
       i18next-browser-languagedetector:
         specifier: 7.2.1
         version: 7.2.1
@@ -100,13 +100,13 @@ importers:
         version: 18.2.0(react@18.2.0)
       react-i18next:
         specifier: 14.1.0
-        version: 14.1.0(i18next@23.11.1)(react-dom@18.2.0)(react@18.2.0)
+        version: 14.1.0(i18next@23.11.2)(react-dom@18.2.0)(react@18.2.0)
       remix-hono:
         specifier: 0.0.16
-        version: 0.0.16(i18next@23.11.1)(remix-i18next@6.1.0)(typescript@5.4.5)(zod@3.23.0)
+        version: 0.0.16(i18next@23.11.2)(remix-i18next@6.1.0)(typescript@5.4.5)(zod@3.23.0)
       remix-i18next:
         specifier: 6.1.0
-        version: 6.1.0(@remix-run/node@2.8.1)(@remix-run/react@2.8.1)(i18next@23.11.1)(react-i18next@14.1.0)(react@18.2.0)
+        version: 6.1.0(@remix-run/node@2.8.1)(@remix-run/react@2.8.1)(i18next@23.11.2)(react-i18next@14.1.0)(react@18.2.0)
       remix-routes:
         specifier: 1.7.3
         version: 1.7.3
@@ -8596,8 +8596,8 @@ packages:
       - encoding
     dev: false
 
-  /i18next@23.11.1:
-    resolution: {integrity: sha512-mXw4A24BiPZKRsbb9ewgSvjYd6fxFCNwJyfK6nYfSTIAX2GkCWcb598m3DFkDZmqADatvuASrKo6qwORz3VwTQ==}
+  /i18next@23.11.2:
+    resolution: {integrity: sha512-qMBm7+qT8jdpmmDw/kQD16VpmkL9BdL+XNAK5MNbNFaf1iQQq35ZbPrSlqmnNPOSUY4m342+c0t0evinF5l7sA==}
     dependencies:
       '@babel/runtime': 7.24.4
     dev: false
@@ -11007,7 +11007,7 @@ packages:
     dependencies:
       react: 18.2.0
 
-  /react-i18next@14.1.0(i18next@23.11.1)(react-dom@18.2.0)(react@18.2.0):
+  /react-i18next@14.1.0(i18next@23.11.2)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-3KwX6LHpbvGQ+sBEntjV4sYW3Zovjjl3fpoHbUwSgFHf0uRBcbeCBLR5al6ikncI5+W0EFb71QXZmfop+J6NrQ==}
     peerDependencies:
       i18next: '>= 23.2.3'
@@ -11022,7 +11022,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.24.4
       html-parse-stringify: 3.0.1
-      i18next: 23.11.1
+      i18next: 23.11.2
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
@@ -11326,7 +11326,7 @@ packages:
       minimatch: 5.1.6
     dev: true
 
-  /remix-hono@0.0.16(i18next@23.11.1)(remix-i18next@6.1.0)(typescript@5.4.5)(zod@3.23.0):
+  /remix-hono@0.0.16(i18next@23.11.2)(remix-i18next@6.1.0)(typescript@5.4.5)(zod@3.23.0):
     resolution: {integrity: sha512-IPooI2E0eSFRV9wAgTzpsklSoOyij6Nsk6ANIugGhD9vYlovbYb2BT+siz++sLzWseZSPEtIzx/LBel203jBfQ==}
     peerDependencies:
       '@remix-run/cloudflare': ^2.0.0
@@ -11345,9 +11345,9 @@ packages:
     dependencies:
       '@remix-run/server-runtime': 2.8.1(typescript@5.4.5)
       hono: 4.2.6
-      i18next: 23.11.1
+      i18next: 23.11.2
       pretty-cache-header: 1.0.0
-      remix-i18next: 6.1.0(@remix-run/node@2.8.1)(@remix-run/react@2.8.1)(i18next@23.11.1)(react-i18next@14.1.0)(react@18.2.0)
+      remix-i18next: 6.1.0(@remix-run/node@2.8.1)(@remix-run/react@2.8.1)(i18next@23.11.2)(react-i18next@14.1.0)(react@18.2.0)
       zod: 3.23.0
     transitivePeerDependencies:
       - typescript
@@ -11367,7 +11367,7 @@ packages:
       react-hook-form: 7.51.3(react@18.2.0)
     dev: false
 
-  /remix-i18next@6.1.0(@remix-run/node@2.8.1)(@remix-run/react@2.8.1)(i18next@23.11.1)(react-i18next@14.1.0)(react@18.2.0):
+  /remix-i18next@6.1.0(@remix-run/node@2.8.1)(@remix-run/react@2.8.1)(i18next@23.11.2)(react-i18next@14.1.0)(react@18.2.0):
     resolution: {integrity: sha512-uoI+NaxdGN1iaoOI2P/62HY+ARf9Nem0gf07+Uc/oJFReZ5Q36tu32TF4TE1MOGYYamzhMmQsin18xasKcFKpQ==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
@@ -11389,10 +11389,10 @@ packages:
       '@remix-run/node': 2.8.1(typescript@5.4.5)
       '@remix-run/react': 2.8.1(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.5)
       accept-language-parser: 1.5.0
-      i18next: 23.11.1
+      i18next: 23.11.2
       intl-parse-accept-language: 1.0.0
       react: 18.2.0
-      react-i18next: 14.1.0(i18next@23.11.1)(react-dom@18.2.0)(react@18.2.0)
+      react-i18next: 14.1.0(i18next@23.11.2)(react-dom@18.2.0)(react@18.2.0)
     dev: false
 
   /remix-params-helper@0.5.1(zod@3.23.0):
