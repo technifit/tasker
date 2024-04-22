@@ -1,0 +1,51 @@
+{
+  "name": "@technifit/middleware",
+  "version": "1.0.0",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    "./access-token": {
+      "import": {
+        "types": "./src/access-token.d.ts",
+        "default": "./src/access-token.js"
+      }
+    },
+    "./cache": {
+      "import": {
+        "types": "./src/cache.d.ts",
+        "default": "./src/cache.js"
+      }
+    },
+    "./idempotency": {
+      "import": {
+        "types": "./src/idempotency.d.ts",
+        "default": "./src/idempotency.js"
+      }
+    }
+  },
+  "scripts": {
+    "clean": "git clean -xdf dist .turbo node_modules",
+    "format": "prettier . --check --cache --cache-location='node_modules/.cache/.prettiercache'",
+    "format:fix": "prettier . --write --cache --cache-location='node_modules/.cache/.prettiercache' --log-level=warn",
+    "lint": "eslint . --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
+    "lint:fix": "eslint . --fix --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
+    "test": "vitest --run",
+    "test:coverage": "vitest --coverage",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@technifit/id": "*",
+    "hono": "4.2.5",
+    "pretty-cache-header": "1.0.0",
+    "remix-hono": "0.0.16"
+  },
+  "devDependencies": {
+    "@technifit/eslint-config": "*",
+    "@technifit/tsconfig": "*",
+    "@vitest/coverage-v8": "1.5.0",
+    "eslint": "8.57.0",
+    "typescript": "5.4.5",
+    "vitest": "1.5.0"
+  }
+}

@@ -53,6 +53,9 @@ importers:
       '@technifit/hooks':
         specifier: '*'
         version: link:../../packages/hooks
+      '@technifit/middleware':
+        specifier: '*'
+        version: link:../../packages/middleware
       '@technifit/ui':
         specifier: '*'
         version: link:../../packages/ui
@@ -402,6 +405,65 @@ importers:
       react-dom:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+      vitest:
+        specifier: 1.5.0
+        version: 1.5.0(@types/node@20.12.7)
+
+  packages/id:
+    dependencies:
+      nanoid:
+        specifier: 5.0.7
+        version: 5.0.7
+    devDependencies:
+      '@technifit/eslint-config':
+        specifier: '*'
+        version: link:../../tooling/eslint-config
+      '@technifit/tsconfig':
+        specifier: '*'
+        version: link:../../tooling/typescript-config
+      '@vitest/coverage-v8':
+        specifier: 1.5.0
+        version: 1.5.0(vitest@1.5.0)
+      eslint:
+        specifier: 8.57.0
+        version: 8.57.0
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+      vitest:
+        specifier: 1.5.0
+        version: 1.5.0(@types/node@20.12.7)
+
+  packages/middleware:
+    dependencies:
+      '@technifit/id':
+        specifier: '*'
+        version: link:../id
+      hono:
+        specifier: 4.2.5
+        version: 4.2.5
+      pretty-cache-header:
+        specifier: 1.0.0
+        version: 1.0.0
+      remix-hono:
+        specifier: 0.0.16
+        version: 0.0.16(i18next@23.11.1)(remix-i18next@6.1.0)(typescript@5.4.5)(zod@3.22.5)
+    devDependencies:
+      '@technifit/eslint-config':
+        specifier: '*'
+        version: link:../../tooling/eslint-config
+      '@technifit/tsconfig':
+        specifier: '*'
+        version: link:../../tooling/typescript-config
+      '@vitest/coverage-v8':
+        specifier: 1.5.0
+        version: 1.5.0(vitest@1.5.0)
+      eslint:
+        specifier: 8.57.0
+        version: 8.57.0
       typescript:
         specifier: 5.4.5
         version: 5.4.5
