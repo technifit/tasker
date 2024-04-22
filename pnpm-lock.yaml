@@ -450,7 +450,7 @@ importers:
         version: 1.0.0
       remix-hono:
         specifier: 0.0.16
-        version: 0.0.16(i18next@23.11.1)(remix-i18next@6.1.0)(typescript@5.4.5)(zod@3.22.5)
+        version: 0.0.16(i18next@23.11.2)(remix-i18next@6.1.0)(typescript@5.4.5)(zod@3.23.0)
     devDependencies:
       '@technifit/eslint-config':
         specifier: '*'
@@ -8490,6 +8490,11 @@ packages:
     resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
     dependencies:
       react-is: 16.13.1
+    dev: false
+
+  /hono@4.2.5:
+    resolution: {integrity: sha512-uonJD3i/yy005kQ7bPZRVfG3rejYJwyPqBmPoUGijS4UB/qM+YlrZ7xzSWy+ByDu9buGHUG+f+SKzz03Y6V1Kw==}
+    engines: {node: '>=16.0.0'}
     dev: false
 
   /hono@4.2.6:
