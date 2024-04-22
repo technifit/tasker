@@ -9,7 +9,7 @@ FROM node:20.12.2-bookworm-slim as node
 ENV SHELL=/bin/bash
 
 # install dependencies using npm or pnpm
-RUN npm install -g pnpm
+RUN npm install -g pnpm@v8.15.7
 RUN pnpm setup
 RUN pnpm config set global-bin-dir /usr/local/bin
 RUN pnpm add turbo --global
