@@ -50,7 +50,7 @@
     "remix-hono": "0.0.16",
     "remix-i18next": "6.1.0",
     "remix-routes": "1.7.3",
-    "zod": "3.23.0"
+    "zod": "3.23.3"
   },
   "devDependencies": {
     "@hono/vite-dev-server": "0.11.1",
