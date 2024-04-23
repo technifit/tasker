@@ -4443,7 +4443,7 @@ packages:
     peerDependencies:
       '@remix-run/dev': ^1.15.0 || ^2.0.0
     dependencies:
-      '@remix-run/dev': 2.8.1(@types/node@20.12.7)(typescript@5.4.5)(vite@5.2.10)
+      '@remix-run/dev': 2.8.1(@remix-run/serve@2.8.1)(typescript@5.4.5)(vite@5.2.10)
       minimatch: 7.4.6
     dev: true
 
@@ -11387,7 +11387,7 @@ packages:
     peerDependencies:
       '@remix-run/dev': ^1.15.0 || ^2
     dependencies:
-      '@remix-run/dev': 2.8.1(@types/node@20.12.7)(typescript@5.4.5)(vite@5.2.10)
+      '@remix-run/dev': 2.8.1(@remix-run/serve@2.8.1)(typescript@5.4.5)(vite@5.2.10)
       '@remix-run/v1-route-convention': 0.1.4(@remix-run/dev@2.8.1)
       fs-extra: 11.2.0
       minimatch: 5.1.6
