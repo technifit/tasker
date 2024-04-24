@@ -87,7 +87,6 @@ app.use(async (c, next) => {
     : await importDevBuild()) as unknown as ServerBuild;
 
   return remix({
-    // @ts-expect-error remix-hono types are not up to date
     build,
     mode,
     getLoadContext(c) {
