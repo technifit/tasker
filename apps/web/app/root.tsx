@@ -24,7 +24,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className={cn('size-full h-dvh bg-background font-sans text-foreground antialiased')}>
+      <body className={cn('flex min-h-dvh flex-col bg-background font-sans text-foreground antialiased')}>
         {children}
         <ScrollRestoration />
         <Scripts />
