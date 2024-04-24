@@ -1,4 +1,6 @@
-import type { LinksFunction } from '@remix-run/node';
+import { ClerkApp } from '@clerk/remix';
+import { rootAuthLoader } from '@clerk/remix/ssr.server';
+import type { LinksFunction, LoaderFunction } from '@remix-run/node';
 import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration, useRouteError } from '@remix-run/react';
 
 import { cn } from '@technifit/ui';
@@ -14,6 +16,19 @@ export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: styles },
   ...fonts.map((font) => ({ rel: 'preload', href: `public/fonts/${font}` })),
 ];
+
+export const loader: LoaderFunction = (args) => {
+  return rootAuthLoader(
+    args,
+    () => {
+      return null;
+    },
+    {
+      publishableKey: args.context.env.CLERK_PUBLISHABLE_KEY,
+      secretKey: args.context.env.CLERK_SECRET_KEY,
+    },
+  );
+};
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -33,9 +48,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default function App() {
+function App() {
   return <Outlet />;
 }
+
+export default ClerkApp(App);
 
 export function ErrorBoundary() {
   const error = useRouteError();
