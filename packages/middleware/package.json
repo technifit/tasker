@@ -4,9 +4,18 @@
   "sideEffects": false,
   "type": "module",
   "exports": {
-    "./access-token": "./src/access-token.ts",
-    "./cache": "./src/cache.ts",
-    "./idempotency": "./src/idempotency.ts"
+    "./access-token": {
+      "types": "./dist/access-token.d.ts",
+      "default": "./dist/access-token.js"
+    },
+    "./cache": {
+      "types": "./dist/cache.d.ts",
+      "default": "./dist/cache.js"
+    },
+    "./idempotency": {
+      "types": "./dist/idempotency.d.ts",
+      "default": "./dist/idempotency.js"
+    }
   },
   "scripts": {
     "build": "tsup",

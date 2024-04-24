@@ -4,7 +4,10 @@
   "sideEffects": false,
   "type": "module",
   "exports": {
-    "./new-id": "./src/new-id.ts"
+    "./new-id": {
+      "types": "./dist/new-id.d.ts",
+      "default": "./dist/new-id.js"
+    }
   },
   "scripts": {
     "build": "tsup",
