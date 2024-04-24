@@ -9,12 +9,11 @@ import { remix } from 'remix-hono/handler';
 import { session } from 'remix-hono/session';
 import { typedEnv } from 'remix-hono/typed-env';
 
-import { cache } from '@technifit/middleware/cache';
-import { generateIdempotencyKey, getIdempotencyKey, idempotency } from '@technifit/middleware/idempotency';
-
 import { importDevBuild } from './dev/server';
 import { envSchema } from './env';
 import type { Env } from './env';
+import { cache } from './middleware/cache';
+import { generateIdempotencyKey, getIdempotencyKey, idempotency } from './middleware/idempotency';
 
 const mode = process.env.NODE_ENV === 'test' ? 'development' : process.env.NODE_ENV;
 
