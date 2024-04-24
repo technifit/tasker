@@ -180,6 +180,9 @@ importers:
       '@hono/node-server':
         specifier: 1.11.0
         version: 1.11.0
+      '@hookform/resolvers':
+        specifier: 3.3.4
+        version: 3.3.4(react-hook-form@7.51.3)
       '@remix-run/express':
         specifier: 2.8.1
         version: 2.8.1(express@4.19.2)(typescript@5.4.5)
