@@ -8,7 +8,6 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-  Badge,
   Button,
   DropdownMenu,
   DropdownMenuContent,
