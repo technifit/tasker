@@ -1,7 +1,7 @@
 import { useClerk, useOrganizationList } from '@clerk/remix';
 import { zodResolver } from '@hookform/resolvers/zod';
+import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
 import { useNavigate } from '@remix-run/react';
-import type { LoaderFunctionArgs, MetaFunction } from '@vercel/remix';
 import { z } from 'zod';
 
 import {

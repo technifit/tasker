@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { useSignIn } from '@clerk/remix';
 import { isClerkAPIResponseError } from '@clerk/remix/errors';
 import { zodResolver } from '@hookform/resolvers/zod';
+import type { MetaFunction } from '@remix-run/node';
 import { Link, useNavigate } from '@remix-run/react';
-import type { MetaFunction } from '@vercel/remix';
 import { $path } from 'remix-routes';
 import { z } from 'zod';
 

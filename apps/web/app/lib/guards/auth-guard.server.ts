@@ -1,6 +1,6 @@
 import { getAuth } from '@clerk/remix/ssr.server';
-import type { LoaderFunctionArgs } from '@vercel/remix';
-import { redirect } from '@vercel/remix';
+import type { LoaderFunctionArgs } from '@remix-run/node';
+import { redirect } from '@remix-run/node';
 import { $path } from 'remix-routes';
 
 export const requireAuthenticatedUser = async (args: LoaderFunctionArgs) => {

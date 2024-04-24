@@ -1,4 +1,4 @@
-import type { LoaderFunctionArgs } from '@vercel/remix';
+import type { LoaderFunctionArgs } from '@remix-run/node';
 
 import { requireAuthenticatedOrgUser } from '~/lib/guards/auth-guard.server';
 

@@ -4,12 +4,14 @@ import type { LucideProps } from 'lucide-react';
 export type Icon = LucideProps;
 
 export const Add = Lucide.Plus;
+export const AlertCircle = Lucide.AlertCircle;
 export const ArrowLeft = Lucide.MoveLeft;
 export const ArrowRight = Lucide.MoveRight;
 export const Billing = Lucide.CreditCard;
 export const Check = Lucide.Check;
 export const ChevronLeft = Lucide.ChevronLeft;
 export const ChevronRight = Lucide.ChevronRight;
+export const CircleHelp = Lucide.CircleHelp;
 export const Close = Lucide.X;
 export const Copy = Lucide.Copy;
 export const CopyDone = Lucide.ClipboardCheck;
@@ -31,8 +33,6 @@ export const Trash = Lucide.Trash;
 export const Twitter = Lucide.Twitter;
 export const User = Lucide.User;
 export const Warning = Lucide.AlertTriangle;
-
-export const CircleHelp = Lucide.CircleHelp;
 
 export const System = (props: LucideProps) => (
   <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' {...props}>

@@ -1,6 +1,4 @@
-import { AlertCircle } from 'lucide-react';
-
-import { Alert, AlertDescription, AlertTitle } from '@technifit/ui';
+import { Alert, AlertCircle, AlertDescription, AlertTitle } from '@technifit/ui';
 
 export interface ErrorAlertProps {
   heading: React.ReactNode;
