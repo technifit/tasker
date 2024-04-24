@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-display: swap;
+  font-family: 'CalSans';
+  src:
+    url('/fonts/cal-sans/CalSans-SemiBold.woff2') format('woff2'),
+    /* Chrome 36+, Opera 23+, Firefox 39+ */ url('/fonts/cal-sans/CalSans-SemiBold.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100;
+  src:
+    url('/fonts/inter/inter-latin-ext-100-normal.woff2') format('woff2'),
+    /* Chrome 36+, Opera 23+, Firefox 39+ */ url('/fonts/inter/inter-latin-ext-100-normal.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 200;
+  src:
+    url('/fonts/inter/inter-latin-ext-200-normal.woff2') format('woff2'),
+    /* Chrome 36+, Opera 23+, Firefox 39+ */ url('/fonts/inter/inter-latin-ext-200-normal.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  src:
+    url('/fonts/inter/inter-latin-ext-300-normal.woff2') format('woff2'),
+    /* Chrome 36+, Opera 23+, Firefox 39+ */ url('/fonts/inter/inter-latin-ext-300-normal.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url('/fonts/inter/inter-latin-ext-400-normal.woff2') format('woff2'),
+    /* Chrome 36+, Opera 23+, Firefox 39+ */ url('/fonts/inter/inter-latin-ext-400-normal.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src:
+    url('/fonts/inter/inter-latin-ext-500-normal.woff2') format('woff2'),
+    /* Chrome 36+, Opera 23+, Firefox 39+ */ url('/fonts/inter/inter-latin-ext-500-normal.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  src:
+    url('/fonts/inter/inter-latin-ext-600-normal.woff2') format('woff2'),
+    /* Chrome 36+, Opera 23+, Firefox 39+ */ url('/fonts/inter/inter-latin-ext-600-normal.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    url('/fonts/inter/inter-latin-ext-700-normal.woff2') format('woff2'),
+    /* Chrome 36+, Opera 23+, Firefox 39+ */ url('/fonts/inter/inter-latin-ext-700-normal.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  src:
+    url('/fonts/inter/inter-latin-ext-800-normal.woff2') format('woff2'),
+    /* Chrome 36+, Opera 23+, Firefox 39+ */ url('/fonts/inter/inter-latin-ext-800-normal.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  src:
+    url('/fonts/inter/inter-latin-ext-900-normal.woff2') format('woff2'),
+    /* Chrome 36+, Opera 23+, Firefox 39+ */ url('/fonts/inter/inter-latin-ext-900-normal.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 346.8 77.2% 49.8%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 142.1 76.2% 36.3%;
+    --secondary-foreground: 355.7 100% 97.3%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 346.8 77.2% 49.8%;
+    --radius: 0.5rem;
+
+    --font-sans: 'Inter';
+    --font-cal: 'CalSans';
+  }
+
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 95%;
+    --card: 24 9.8% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 142.1 70.6% 45.3%;
+    --primary-foreground: 0 0% 95%;
+    --secondary: 346.8 77.2% 49.8%;
+    --secondary-foreground: 355.7 100% 97.3%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 346.8 77.2% 49.8%;
+    --radius: 0.5rem;
+
+    --font-sans: 'Inter';
+    --font-cal: 'CalSans';
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground selection:rounded selection:bg-primary/95 selection:text-primary-foreground;
+  }
+}

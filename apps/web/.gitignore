@@ -1,0 +1,28 @@
+# Enable for this app only
+!*.pem
+
+
+node_modules
+
+.cache
+.env
+.vercel
+.output
+.DS_Store
+
+/build/
+/public/build
+/api/index.js
+/api/index.js.map
+
+# Remix-Routes
+/types/remix-routes.d.ts
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# Vitest
+/coverage/
