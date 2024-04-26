@@ -47,7 +47,7 @@
     "zod": "3.23.4"
   },
   "devDependencies": {
-    "@hono/vite-dev-server": "0.11.1",
+    "@hono/vite-dev-server": "0.12.0",
     "@playwright/test": "1.43.1",
     "@remix-run/dev": "2.8.1",
     "@technifit/eslint-config": "*",
