@@ -1,6 +1,13 @@
 {
   "extends": "@technifit/tsconfig/remix.json",
-  "include": ["types/env.d.ts", "**/*.ts", "**/*.tsx", "postcss.config.mjs", "tailwind.config.ts"],
+  "include": [
+    "types/env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "postcss.config.mjs",
+    "tailwind.config.ts",
+    "node_modules/@remix-run/react/future/single-fetch.d.ts"
+  ],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
