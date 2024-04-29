@@ -60,8 +60,8 @@ importers:
         specifier: 16.4.5
         version: 16.4.5
       hono:
-        specifier: 4.2.8
-        version: 4.2.8
+        specifier: 4.2.9
+        version: 4.2.9
       isbot:
         specifier: 5.1.5
         version: 5.1.5
@@ -101,7 +101,7 @@ importers:
     devDependencies:
       '@hono/vite-dev-server':
         specifier: 0.12.0
-        version: 0.12.0(hono@4.2.8)
+        version: 0.12.0(hono@4.2.9)
       '@playwright/test':
         specifier: 1.43.1
         version: 1.43.1
@@ -227,8 +227,8 @@ importers:
         specifier: '*'
         version: link:../id
       hono:
-        specifier: 4.2.8
-        version: 4.2.8
+        specifier: 4.2.9
+        version: 4.2.9
       pretty-cache-header:
         specifier: 1.0.0
         version: 1.0.0
@@ -2045,14 +2045,14 @@ packages:
     resolution: {integrity: sha512-GW1Iomhmm1o4Z+X57xGby8A35Cu9UZLL7pSMdqDBkD99U5cywff8F+8hLk5aBTzNubnsFAvWQ/fZjNwPsEn9lA==}
     engines: {node: '>=18.14.1'}
 
-  /@hono/vite-dev-server@0.12.0(hono@4.2.8):
+  /@hono/vite-dev-server@0.12.0(hono@4.2.9):
     resolution: {integrity: sha512-FJIMuTNfJaL7VjktNfqthFMqRyasXPgeMrS2wKKkDEzaLhlRmllC0bajPGrwH+xRQsTJxD/y6ttjg0x6dJeoMw==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
       hono: '*'
     dependencies:
       '@hono/node-server': 1.11.1
-      hono: 4.2.8
+      hono: 4.2.9
       miniflare: 3.20240419.0
       minimatch: 9.0.4
     transitivePeerDependencies:
@@ -8223,8 +8223,8 @@ packages:
     resolution: {integrity: sha512-nAxA0v8+vXSBDt3AnRUNjyRIQ0rD+ntpbAp4LnPkumc5M9yUbSMa4XDU9Q6etY4f1Wp4bNgvc1yjiZtsTTrSng==}
     dev: true
 
-  /hono@4.2.8:
-    resolution: {integrity: sha512-re/zNrOWb7Sp9KhojlMEgcgvqsE8Rgk9IcmumqsbKa9ruPT5XuOcx1U+xuNaI4SUnwrPsiTQ72MiodtpJEVfjg==}
+  /hono@4.2.9:
+    resolution: {integrity: sha512-59FAv52UxDWUt/NlC0NzrRCjeVCThUnVlqlrKYm+k80XujBu6uJwBIa5gACKKZWobjA0MJ6Vds0I3URKf383Cw==}
     engines: {node: '>=16.0.0'}
 
   /hosted-git-info@2.8.9:
@@ -11056,7 +11056,7 @@ packages:
         optional: true
     dependencies:
       '@remix-run/server-runtime': 2.9.1(typescript@5.4.5)
-      hono: 4.2.8
+      hono: 4.2.9
       pretty-cache-header: 1.0.0
       zod: 3.23.4
     transitivePeerDependencies:
