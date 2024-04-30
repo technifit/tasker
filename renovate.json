@@ -1,6 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "automerge": true,
+  "automergeSchedule": ["at any time"],
   "extends": ["config:base"],
   "packageRules": [
     {
@@ -9,5 +10,8 @@
     }
   ],
   "updateInternalDeps": true,
-  "rangeStrategy": "bump"
+  "rangeStrategy": "bump",
+  "vulnerabilityAlerts": {
+    "enabled": true
+  }
 }
