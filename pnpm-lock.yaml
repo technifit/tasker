@@ -82,22 +82,22 @@ importers:
         version: 7.51.3(react@18.3.1)
       remix-hono:
         specifier: 0.0.16
-        version: 0.0.16(typescript@5.4.5)(zod@3.23.4)
+        version: 0.0.16(typescript@5.4.5)(zod@3.23.5)
       remix-hook-form:
         specifier: 4.3.1
         version: 4.3.1(@remix-run/react@2.9.1)(react-dom@18.3.1)(react-hook-form@7.51.3)(react@18.3.1)
       remix-params-helper:
         specifier: 0.5.1
-        version: 0.5.1(zod@3.23.4)
+        version: 0.5.1(zod@3.23.5)
       remix-routes:
         specifier: 1.7.3
         version: 1.7.3
       remix-utils:
         specifier: 7.6.0
-        version: 7.6.0(@remix-run/node@2.9.1)(@remix-run/react@2.9.1)(react@18.3.1)(zod@3.23.4)
+        version: 7.6.0(@remix-run/node@2.9.1)(@remix-run/react@2.9.1)(react@18.3.1)(zod@3.23.5)
       zod:
-        specifier: 3.23.4
-        version: 3.23.4
+        specifier: 3.23.5
+        version: 3.23.5
     devDependencies:
       '@hono/vite-dev-server':
         specifier: 0.12.0
@@ -234,7 +234,7 @@ importers:
         version: 1.0.0
       remix-hono:
         specifier: 0.0.16
-        version: 0.0.16(typescript@5.4.5)(zod@3.23.4)
+        version: 0.0.16(typescript@5.4.5)(zod@3.23.5)
     devDependencies:
       '@technifit/eslint-config':
         specifier: '*'
@@ -409,8 +409,8 @@ importers:
         specifier: 0.9.0
         version: 0.9.0(@types/react-dom@18.3.0)(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1)
       zod:
-        specifier: 3.23.4
-        version: 3.23.4
+        specifier: 3.23.5
+        version: 3.23.5
     devDependencies:
       '@tanstack/react-table':
         specifier: 8.16.0
@@ -9524,7 +9524,7 @@ packages:
       workerd: 1.20240419.0
       ws: 8.16.0
       youch: 3.3.3
-      zod: 3.23.4
+      zod: 3.23.5
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -10986,7 +10986,7 @@ packages:
       tailwind-merge: 1.14.0
       uuid: 9.0.1
       vite: 5.2.10(@types/node@20.12.7)
-      zod: 3.23.4
+      zod: 3.23.5
     transitivePeerDependencies:
       - '@types/react'
       - '@types/react-dom'
@@ -11004,7 +11004,7 @@ packages:
       minimatch: 5.1.6
     dev: true
 
-  /remix-hono@0.0.16(typescript@5.4.5)(zod@3.23.4):
+  /remix-hono@0.0.16(typescript@5.4.5)(zod@3.23.5):
     resolution: {integrity: sha512-IPooI2E0eSFRV9wAgTzpsklSoOyij6Nsk6ANIugGhD9vYlovbYb2BT+siz++sLzWseZSPEtIzx/LBel203jBfQ==}
     peerDependencies:
       '@remix-run/cloudflare': ^2.0.0
@@ -11024,7 +11024,7 @@ packages:
       '@remix-run/server-runtime': 2.9.1(typescript@5.4.5)
       hono: 4.2.9
       pretty-cache-header: 1.0.0
-      zod: 3.23.4
+      zod: 3.23.5
     transitivePeerDependencies:
       - typescript
     dev: false
@@ -11043,12 +11043,12 @@ packages:
       react-hook-form: 7.51.3(react@18.3.1)
     dev: false
 
-  /remix-params-helper@0.5.1(zod@3.23.4):
+  /remix-params-helper@0.5.1(zod@3.23.5):
     resolution: {integrity: sha512-aYn//NPpVD5igSbn04QLTfHkxjoDCW2SbArfaAxczW2MNvwV+ow0nDDpBsVRDQJE3UajeINVMXIgdO8JxL8RdQ==}
     peerDependencies:
       zod: ^3.11.6
     dependencies:
-      zod: 3.23.4
+      zod: 3.23.5
     dev: false
 
   /remix-routes@1.7.3:
@@ -11063,7 +11063,7 @@ packages:
       typescript-remix-routes-plugin: 1.0.1
     dev: false
 
-  /remix-utils@7.6.0(@remix-run/node@2.9.1)(@remix-run/react@2.9.1)(react@18.3.1)(zod@3.23.4):
+  /remix-utils@7.6.0(@remix-run/node@2.9.1)(@remix-run/react@2.9.1)(react@18.3.1)(zod@3.23.5):
     resolution: {integrity: sha512-BPhCUEy+nwrhDDDg2v3+LFSszV6tluMbeSkbffj2o4tqZxt5Kn69Y9sNpGxYLAj8gjqeYDuxjv55of+gYnnykA==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
@@ -11103,7 +11103,7 @@ packages:
       '@remix-run/react': 2.9.1(react-dom@18.3.1)(react@18.3.1)(typescript@5.4.5)
       react: 18.3.1
       type-fest: 4.17.0
-      zod: 3.23.4
+      zod: 3.23.5
     dev: false
 
   /require-like@0.1.2:
@@ -13037,8 +13037,8 @@ packages:
       stacktracey: 2.1.8
     dev: true
 
-  /zod@3.23.4:
-    resolution: {integrity: sha512-/AtWOKbBgjzEYYQRNfoGKHObgfAZag6qUJX1VbHo2PRBgS+wfWagEY2mizjfyAPcGesrJOcx/wcl0L9WnVrHFw==}
+  /zod@3.23.5:
+    resolution: {integrity: sha512-fkwiq0VIQTksNNA131rDOsVJcns0pfVUjHzLrNBiF/O/Xxb5lQyEXkhZWcJ7npWsYlvs+h0jFWXXy4X46Em1JA==}
 
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
