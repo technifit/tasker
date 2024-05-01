@@ -36,8 +36,8 @@ importers:
   apps/web:
     dependencies:
       '@clerk/remix':
-        specifier: 4.0.2
-        version: 4.0.2(@remix-run/react@2.9.1)(@remix-run/server-runtime@2.9.1)(eslint@8.57.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.4.5)
+        specifier: 4.0.3
+        version: 4.0.3(@remix-run/react@2.9.1)(@remix-run/server-runtime@2.9.1)(eslint@8.57.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.4.5)
       '@hono/node-server':
         specifier: 1.11.1
         version: 1.11.1
@@ -938,11 +938,11 @@ packages:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
-  /@clerk/backend@1.1.0(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-1qd0tKl0B0jJlmmg+o37pXSfzQHRMTk/HGPTvFGWhYCscMXjlKcXrSgDIjN3TATmOIDtA2vCT3AMxBWyVTcKmQ==}
+  /@clerk/backend@1.1.1(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-6r2SPtO5TB53OiGwexLP19LvVoUO+Nz7KlE4US1uposaT2X1+enRtA0LD9DwJnv1YJKxnPXVkwiuqYYlGysusw==}
     engines: {node: '>=18.17.0'}
     dependencies:
-      '@clerk/shared': 2.0.0(react-dom@18.3.1)(react@18.3.1)
+      '@clerk/shared': 2.0.1(react-dom@18.3.1)(react@18.3.1)
       cookie: 0.5.0
       snakecase-keys: 5.4.4
       tslib: 2.4.1
@@ -951,15 +951,15 @@ packages:
       - react-dom
     dev: false
 
-  /@clerk/clerk-react@5.0.1(eslint@8.57.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.4.5):
-    resolution: {integrity: sha512-JMwOtFFYGfEOI7Ux3Hg5QbuSYSUN1srf3rL6ORK6hgNuTbS1Cd24v6XZz3c7xfMo6yL70o870gXi20FecdeYYw==}
+  /@clerk/clerk-react@5.0.2(eslint@8.57.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.4.5):
+    resolution: {integrity: sha512-gSRFc5oCsBvusdmG5PT8JECySf5qhPW9pl0o9s15KAxy+HlbBJDzombJmGvj3E4nFd/UiYm9LF4S2I61eGBf2w==}
     engines: {node: '>=18.17.0'}
     peerDependencies:
       react: '>=18'
       react-dom: '>=18'
     dependencies:
-      '@clerk/shared': 2.0.0(react-dom@18.3.1)(react@18.3.1)
-      '@clerk/types': 4.1.0
+      '@clerk/shared': 2.0.1(react-dom@18.3.1)(react@18.3.1)
+      '@clerk/types': 4.2.0
       eslint-config-custom: 0.0.0(eslint@8.57.0)(typescript@5.4.5)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -971,8 +971,8 @@ packages:
       - typescript
     dev: false
 
-  /@clerk/remix@4.0.2(@remix-run/react@2.9.1)(@remix-run/server-runtime@2.9.1)(eslint@8.57.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.4.5):
-    resolution: {integrity: sha512-Oc5LmARCYHgTX87biVXgDEOC05oSEQ37GCwpA3hrmPNec/4IMAS6nGr2XSIyMxHxDD+7rXUTA/bMz+sKGOJqBg==}
+  /@clerk/remix@4.0.3(@remix-run/react@2.9.1)(@remix-run/server-runtime@2.9.1)(eslint@8.57.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.4.5):
+    resolution: {integrity: sha512-MGOMDgYXi/ydMRNPxnfP9yHSyTWuYthlgImQUsmsapfTGWViBPy/6CSToBdgsH1qO1DbAIDCst3Mb7IMrZBqgg==}
     engines: {node: '>=18.17.0'}
     peerDependencies:
       '@remix-run/react': ^2.0.0
@@ -980,9 +980,9 @@ packages:
       react: '>=18'
       react-dom: '>=18'
     dependencies:
-      '@clerk/backend': 1.1.0(react-dom@18.3.1)(react@18.3.1)
-      '@clerk/clerk-react': 5.0.1(eslint@8.57.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.4.5)
-      '@clerk/shared': 2.0.0(react-dom@18.3.1)(react@18.3.1)
+      '@clerk/backend': 1.1.1(react-dom@18.3.1)(react@18.3.1)
+      '@clerk/clerk-react': 5.0.2(eslint@8.57.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.4.5)
+      '@clerk/shared': 2.0.1(react-dom@18.3.1)(react@18.3.1)
       '@remix-run/react': 2.9.1(react-dom@18.3.1)(react@18.3.1)(typescript@5.4.5)
       '@remix-run/server-runtime': 2.9.1(typescript@5.4.5)
       cookie: 0.5.0
@@ -996,8 +996,8 @@ packages:
       - typescript
     dev: false
 
-  /@clerk/shared@2.0.0(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-HRbBGhAetOE6gSFd2jlLJTo+BFjuEr9lD1xigtBXdJUnmVngunciikQU2dZ4i/20X7B4VTrofhNpYi9MsCm7dw==}
+  /@clerk/shared@2.0.1(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-iRjvWCGVzcN5vi9O3+/bEbA22TegxlnHJJE1a6989OFeeXqSKFqmYwDrvM48umJrbvX5cMbKEgctSVXT2IOgCw==}
     engines: {node: '>=18.17.0'}
     requiresBuild: true
     peerDependencies:
@@ -1017,8 +1017,8 @@ packages:
       swr: 2.2.0(react@18.3.1)
     dev: false
 
-  /@clerk/types@4.1.0:
-    resolution: {integrity: sha512-e9vsD7EdQE0q9mPwPMq1kPtPC9BYGR8BucEoEu+pEyXXD5cdSkzM+WvhUonnTHNzYE/W/X5d1zFDNvCV5YfS5Q==}
+  /@clerk/types@4.2.0:
+    resolution: {integrity: sha512-JtQINgvRGkO9K8os8pSj3QvNrBDvdc0lFpbTwpF3J1CBLafiJmJiBUyUSzWcI/k/9FlClMZxauZufVp9jlSBjg==}
     engines: {node: '>=18.17.0'}
     dependencies:
       csstype: 3.1.1
@@ -6344,7 +6344,7 @@ packages:
     resolution: {integrity: sha512-Kv5nKlh6yRrdrGvxeJ2e5y2eRUpkUosIW4A2AS38zwSz27zu7ufDwQPi5Jhs3XAlGNetl3bmnGhQsMtkKJnj3w==}
     dependencies:
       no-case: 3.0.4
-      tslib: 2.4.1
+      tslib: 2.6.2
     dev: false
 
   /dotenv-cli@7.4.1:
@@ -8729,7 +8729,7 @@ packages:
   /lower-case@2.0.2:
     resolution: {integrity: sha512-7fm3l3NAF9WfN6W3JOmf5drwpVqX78JtoGJ3A6W0a6ZnldM41w2fV5D490psKFTpMds8TJse/eHLFFsNHHjHgg==}
     dependencies:
-      tslib: 2.4.1
+      tslib: 2.6.2
     dev: false
 
   /lru-cache@10.2.1:
@@ -9534,7 +9534,7 @@ packages:
     resolution: {integrity: sha512-fgAN3jGAh+RoxUGZHTSOLJIqUc2wmoBwGR4tbpNAKmmovFoWq0OdRkb0VkldReO2a2iBT/OEulG9XSUc10r3zg==}
     dependencies:
       lower-case: 2.0.2
-      tslib: 2.4.1
+      tslib: 2.6.2
     dev: false
 
   /node-releases@2.0.14:
@@ -11190,7 +11190,7 @@ packages:
     resolution: {integrity: sha512-LAOh4z89bGQvl9pFfNF8V146i7o7/CqFPbqzYgP+yYzDIDeS9HaNFtXABamRW+AQzEVODcvE79ljJ+8a9YSdMg==}
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.4.1
+      tslib: 2.6.2
     dev: false
 
   /snakecase-keys@5.4.4:
