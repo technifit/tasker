@@ -24,7 +24,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@clerk/remix": "4.0.3",
+    "@clerk/remix": "4.0.4",
     "@hono/node-server": "1.11.1",
     "@hookform/resolvers": "3.3.4",
     "@remix-run/express": "2.9.1",
