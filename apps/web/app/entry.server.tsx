@@ -2,22 +2,22 @@ import { PassThrough } from 'node:stream';
 import type { EntryContext } from '@remix-run/node';
 import { createReadableStreamFromReadable } from '@remix-run/node';
 import { RemixServer } from '@remix-run/react';
+import { nodeProfilingIntegration } from '@sentry/profiling-node';
 import * as Sentry from '@sentry/remix';
 import { wrapRemixHandleError } from '@sentry/remix';
 import { isbot } from 'isbot';
 import { renderToPipeableStream } from 'react-dom/server';
 
-if (!isbot) {
-  Sentry.init({
-    dsn: process.env.SENTRY_DSN,
-    debug: process.env.NODE_ENV === 'development',
-    // Set tracesSampleRate to 1.0 to capture 100%
-    // of transactions for performance monitoring.
-    // We recommend adjusting this value in production
-    tracesSampleRate: 1.0,
-    integrations: [Sentry.sessionTimingIntegration()],
-  });
-}
+Sentry.init({
+  dsn: process.env.SENTRY_DSN,
+  debug: process.env.NODE_ENV === 'development',
+  // Set tracesSampleRate to 1.0 to capture 100%
+  // of transactions for performance monitoring.
+  // We recommend adjusting this value in production
+  tracesSampleRate: 1.0,
+  profilesSampleRate: 1.0, // Profiling sample rate is relative to tracesSampleRate
+  integrations: [Sentry.sessionTimingIntegration(), nodeProfilingIntegration()],
+});
 
 export const handleError = wrapRemixHandleError;
 
