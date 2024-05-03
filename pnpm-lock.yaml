@@ -66,8 +66,8 @@ importers:
         specifier: 16.4.5
         version: 16.4.5
       hono:
-        specifier: 4.2.9
-        version: 4.2.9
+        specifier: 4.3.0
+        version: 4.3.0
       isbot:
         specifier: 5.1.6
         version: 5.1.6
@@ -88,26 +88,26 @@ importers:
         version: 7.51.3(react@18.3.1)
       remix-hono:
         specifier: 0.0.16
-        version: 0.0.16(typescript@5.4.5)(zod@3.23.5)
+        version: 0.0.16(typescript@5.4.5)(zod@3.23.6)
       remix-hook-form:
         specifier: 4.3.1
         version: 4.3.1(@remix-run/react@2.9.1)(react-dom@18.3.1)(react-hook-form@7.51.3)(react@18.3.1)
       remix-params-helper:
         specifier: 0.5.1
-        version: 0.5.1(zod@3.23.5)
+        version: 0.5.1(zod@3.23.6)
       remix-routes:
         specifier: 1.7.3
         version: 1.7.3
       remix-utils:
         specifier: 7.6.0
-        version: 7.6.0(@remix-run/node@2.9.1)(@remix-run/react@2.9.1)(react@18.3.1)(zod@3.23.5)
+        version: 7.6.0(@remix-run/node@2.9.1)(@remix-run/react@2.9.1)(react@18.3.1)(zod@3.23.6)
       zod:
-        specifier: 3.23.5
-        version: 3.23.5
+        specifier: 3.23.6
+        version: 3.23.6
     devDependencies:
       '@hono/vite-dev-server':
         specifier: 0.12.0
-        version: 0.12.0(hono@4.2.9)
+        version: 0.12.0(hono@4.3.0)
       '@playwright/test':
         specifier: 1.43.1
         version: 1.43.1
@@ -139,8 +139,8 @@ importers:
         specifier: 18.3.0
         version: 18.3.0
       '@vitest/coverage-v8':
-        specifier: 1.5.3
-        version: 1.5.3(vitest@1.5.3)
+        specifier: 1.6.0
+        version: 1.6.0(vitest@1.6.0)
       autoprefixer:
         specifier: 10.4.19
         version: 10.4.19(postcss@8.4.38)
@@ -166,8 +166,8 @@ importers:
         specifier: 3.4.3
         version: 3.4.3
       tsx:
-        specifier: 4.8.2
-        version: 4.8.2
+        specifier: 4.9.0
+        version: 4.9.0
       typescript:
         specifier: 5.4.5
         version: 5.4.5
@@ -181,8 +181,8 @@ importers:
         specifier: 4.3.2
         version: 4.3.2(typescript@5.4.5)(vite@5.2.11)
       vitest:
-        specifier: 1.5.3
-        version: 1.5.3(@types/node@20.12.8)
+        specifier: 1.6.0
+        version: 1.6.0(@types/node@20.12.8)
 
   packages/email:
     devDependencies:
@@ -215,8 +215,8 @@ importers:
         specifier: '*'
         version: link:../../tooling/typescript-config
       '@vitest/coverage-v8':
-        specifier: 1.5.3
-        version: 1.5.3(vitest@1.5.3)
+        specifier: 1.6.0
+        version: 1.6.0(vitest@1.6.0)
       eslint:
         specifier: 8.57.0
         version: 8.57.0
@@ -227,8 +227,8 @@ importers:
         specifier: 5.4.5
         version: 5.4.5
       vitest:
-        specifier: 1.5.3
-        version: 1.5.3(@types/node@20.12.8)
+        specifier: 1.6.0
+        version: 1.6.0(@types/node@20.12.8)
 
   packages/middleware:
     dependencies:
@@ -236,14 +236,14 @@ importers:
         specifier: '*'
         version: link:../id
       hono:
-        specifier: 4.2.9
-        version: 4.2.9
+        specifier: 4.3.0
+        version: 4.3.0
       pretty-cache-header:
         specifier: 1.0.0
         version: 1.0.0
       remix-hono:
         specifier: 0.0.16
-        version: 0.0.16(typescript@5.4.5)(zod@3.23.5)
+        version: 0.0.16(typescript@5.4.5)(zod@3.23.6)
     devDependencies:
       '@technifit/eslint-config':
         specifier: '*'
@@ -252,8 +252,8 @@ importers:
         specifier: '*'
         version: link:../../tooling/typescript-config
       '@vitest/coverage-v8':
-        specifier: 1.5.3
-        version: 1.5.3(vitest@1.5.3)
+        specifier: 1.6.0
+        version: 1.6.0(vitest@1.6.0)
       eslint:
         specifier: 8.57.0
         version: 8.57.0
@@ -264,8 +264,8 @@ importers:
         specifier: 5.4.5
         version: 5.4.5
       vitest:
-        specifier: 1.5.3
-        version: 1.5.3(@types/node@20.12.8)
+        specifier: 1.6.0
+        version: 1.6.0(@types/node@20.12.8)
 
   packages/transactional-email:
     dependencies:
@@ -418,8 +418,8 @@ importers:
         specifier: 0.9.0
         version: 0.9.0(@types/react-dom@18.3.0)(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1)
       zod:
-        specifier: 3.23.5
-        version: 3.23.5
+        specifier: 3.23.6
+        version: 3.23.6
     devDependencies:
       '@tanstack/react-table':
         specifier: 8.16.0
@@ -2054,14 +2054,14 @@ packages:
     resolution: {integrity: sha512-GW1Iomhmm1o4Z+X57xGby8A35Cu9UZLL7pSMdqDBkD99U5cywff8F+8hLk5aBTzNubnsFAvWQ/fZjNwPsEn9lA==}
     engines: {node: '>=18.14.1'}
 
-  /@hono/vite-dev-server@0.12.0(hono@4.2.9):
+  /@hono/vite-dev-server@0.12.0(hono@4.3.0):
     resolution: {integrity: sha512-FJIMuTNfJaL7VjktNfqthFMqRyasXPgeMrS2wKKkDEzaLhlRmllC0bajPGrwH+xRQsTJxD/y6ttjg0x6dJeoMw==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
       hono: '*'
     dependencies:
       '@hono/node-server': 1.11.1
-      hono: 4.2.9
+      hono: 4.3.0
       miniflare: 3.20240419.0
       minimatch: 9.0.4
     transitivePeerDependencies:
@@ -5210,7 +5210,7 @@ packages:
       mlly: 1.6.1
       outdent: 0.8.0
       vite: 5.2.11(@types/node@20.12.8)
-      vite-node: 1.5.2(@types/node@20.12.8)
+      vite-node: 1.5.3(@types/node@20.12.8)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -5226,10 +5226,10 @@ packages:
     resolution: {integrity: sha512-8FGD6AejeC/nXcblgNCM5rnZb9KXa4WNkR03HCWtdJBpANjTgjHEglNLFnhuvdQ78tC6afaxBPI+g7F2NX3tgg==}
     dev: true
 
-  /@vitest/coverage-v8@1.5.3(vitest@1.5.3):
-    resolution: {integrity: sha512-DPyGSu/fPHOJuPxzFSQoT4N/Fu/2aJfZRtEpEp8GI7NHsXBGE94CQ+pbEGBUMFjatsHPDJw/+TAF9r4ens2CNw==}
+  /@vitest/coverage-v8@1.6.0(vitest@1.6.0):
+    resolution: {integrity: sha512-KvapcbMY/8GYIG0rlwwOKCVNRc0OL20rrhFkg/CHNzncV03TE2XWvO5w9uZYoxNiMEBacAJt3unSOiZ7svePew==}
     peerDependencies:
-      vitest: 1.5.3
+      vitest: 1.6.0
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 0.2.3
@@ -5244,43 +5244,43 @@ packages:
       std-env: 3.7.0
       strip-literal: 2.1.0
       test-exclude: 6.0.0
-      vitest: 1.5.3(@types/node@20.12.8)
+      vitest: 1.6.0(@types/node@20.12.8)
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@vitest/expect@1.5.3:
-    resolution: {integrity: sha512-y+waPz31pOFr3rD7vWTbwiLe5+MgsMm40jTZbQE8p8/qXyBX3CQsIXRx9XK12IbY7q/t5a5aM/ckt33b4PxK2g==}
+  /@vitest/expect@1.6.0:
+    resolution: {integrity: sha512-ixEvFVQjycy/oNgHjqsL6AZCDduC+tflRluaHIzKIsdbzkLn2U/iBnVeJwB6HsIjQBdfMR8Z0tRxKUsvFJEeWQ==}
     dependencies:
-      '@vitest/spy': 1.5.3
-      '@vitest/utils': 1.5.3
+      '@vitest/spy': 1.6.0
+      '@vitest/utils': 1.6.0
       chai: 4.4.1
     dev: true
 
-  /@vitest/runner@1.5.3:
-    resolution: {integrity: sha512-7PlfuReN8692IKQIdCxwir1AOaP5THfNkp0Uc4BKr2na+9lALNit7ub9l3/R7MP8aV61+mHKRGiqEKRIwu6iiQ==}
+  /@vitest/runner@1.6.0:
+    resolution: {integrity: sha512-P4xgwPjwesuBiHisAVz/LSSZtDjOTPYZVmNAnpHHSR6ONrf8eCJOFRvUwdHn30F5M1fxhqtl7QZQUk2dprIXAg==}
     dependencies:
-      '@vitest/utils': 1.5.3
+      '@vitest/utils': 1.6.0
       p-limit: 5.0.0
       pathe: 1.1.2
     dev: true
 
-  /@vitest/snapshot@1.5.3:
-    resolution: {integrity: sha512-K3mvIsjyKYBhNIDujMD2gfQEzddLe51nNOAf45yKRt/QFJcUIeTQd2trRvv6M6oCBHNVnZwFWbQ4yj96ibiDsA==}
+  /@vitest/snapshot@1.6.0:
+    resolution: {integrity: sha512-+Hx43f8Chus+DCmygqqfetcAZrDJwvTj0ymqjQq4CvmpKFSTVteEOBzCusu1x2tt4OJcvBflyHUE0DZSLgEMtQ==}
     dependencies:
       magic-string: 0.30.10
       pathe: 1.1.2
       pretty-format: 29.7.0
     dev: true
 
-  /@vitest/spy@1.5.3:
-    resolution: {integrity: sha512-Llj7Jgs6lbnL55WoshJUUacdJfjU2honvGcAJBxhra5TPEzTJH8ZuhI3p/JwqqfnTr4PmP7nDmOXP53MS7GJlg==}
+  /@vitest/spy@1.6.0:
+    resolution: {integrity: sha512-leUTap6B/cqi/bQkXUu6bQV5TZPx7pmMBKBQiI0rJA8c3pB56ZsaTbREnF7CJfmvAS4V2cXIBAh/3rVwrrCYgw==}
     dependencies:
       tinyspy: 2.2.1
     dev: true
 
-  /@vitest/utils@1.5.3:
-    resolution: {integrity: sha512-rE9DTN1BRhzkzqNQO+kw8ZgfeEBCLXiHJwetk668shmNBpSagQxneT5eSqEBLP+cqSiAeecvQmbpFfdMyLcIQA==}
+  /@vitest/utils@1.6.0:
+    resolution: {integrity: sha512-21cPiuGMoMZwiOHa2i4LXkMkMkCGzA+MVFV70jRwHo95dL4x/ts5GZhML1QWuy7yfp3WzK3lRvZi3JnXTYqrBw==}
     dependencies:
       diff-sequences: 29.6.3
       estree-walker: 3.0.3
@@ -8297,8 +8297,8 @@ packages:
       react-is: 16.13.1
     dev: false
 
-  /hono@4.2.9:
-    resolution: {integrity: sha512-59FAv52UxDWUt/NlC0NzrRCjeVCThUnVlqlrKYm+k80XujBu6uJwBIa5gACKKZWobjA0MJ6Vds0I3URKf383Cw==}
+  /hono@4.3.0:
+    resolution: {integrity: sha512-rf9142VLQNMVBj+BjVLISgDWDxnJGUIuX39dvqcdySwr2gTsPfsqW1twWDUjfwQNWm9hEn40MpDu9RFGUN+e8A==}
     engines: {node: '>=16.0.0'}
 
   /hosted-git-info@2.8.9:
@@ -9647,7 +9647,7 @@ packages:
       workerd: 1.20240419.0
       ws: 8.16.0
       youch: 3.3.3
-      zod: 3.23.5
+      zod: 3.23.6
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -11129,7 +11129,7 @@ packages:
       tailwind-merge: 1.14.0
       uuid: 9.0.1
       vite: 5.2.11(@types/node@20.12.8)
-      zod: 3.23.5
+      zod: 3.23.6
     transitivePeerDependencies:
       - '@types/react'
       - '@types/react-dom'
@@ -11147,7 +11147,7 @@ packages:
       minimatch: 5.1.6
     dev: true
 
-  /remix-hono@0.0.16(typescript@5.4.5)(zod@3.23.5):
+  /remix-hono@0.0.16(typescript@5.4.5)(zod@3.23.6):
     resolution: {integrity: sha512-IPooI2E0eSFRV9wAgTzpsklSoOyij6Nsk6ANIugGhD9vYlovbYb2BT+siz++sLzWseZSPEtIzx/LBel203jBfQ==}
     peerDependencies:
       '@remix-run/cloudflare': ^2.0.0
@@ -11165,9 +11165,9 @@ packages:
         optional: true
     dependencies:
       '@remix-run/server-runtime': 2.9.1(typescript@5.4.5)
-      hono: 4.2.9
+      hono: 4.3.0
       pretty-cache-header: 1.0.0
-      zod: 3.23.5
+      zod: 3.23.6
     transitivePeerDependencies:
       - typescript
     dev: false
@@ -11186,12 +11186,12 @@ packages:
       react-hook-form: 7.51.3(react@18.3.1)
     dev: false
 
-  /remix-params-helper@0.5.1(zod@3.23.5):
+  /remix-params-helper@0.5.1(zod@3.23.6):
     resolution: {integrity: sha512-aYn//NPpVD5igSbn04QLTfHkxjoDCW2SbArfaAxczW2MNvwV+ow0nDDpBsVRDQJE3UajeINVMXIgdO8JxL8RdQ==}
     peerDependencies:
       zod: ^3.11.6
     dependencies:
-      zod: 3.23.5
+      zod: 3.23.6
     dev: false
 
   /remix-routes@1.7.3:
@@ -11206,7 +11206,7 @@ packages:
       typescript-remix-routes-plugin: 1.0.1
     dev: false
 
-  /remix-utils@7.6.0(@remix-run/node@2.9.1)(@remix-run/react@2.9.1)(react@18.3.1)(zod@3.23.5):
+  /remix-utils@7.6.0(@remix-run/node@2.9.1)(@remix-run/react@2.9.1)(react@18.3.1)(zod@3.23.6):
     resolution: {integrity: sha512-BPhCUEy+nwrhDDDg2v3+LFSszV6tluMbeSkbffj2o4tqZxt5Kn69Y9sNpGxYLAj8gjqeYDuxjv55of+gYnnykA==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
@@ -11246,7 +11246,7 @@ packages:
       '@remix-run/react': 2.9.1(react-dom@18.3.1)(react@18.3.1)(typescript@5.4.5)
       react: 18.3.1
       type-fest: 4.17.0
-      zod: 3.23.5
+      zod: 3.23.6
     dev: false
 
   /require-directory@2.1.1:
@@ -12321,8 +12321,8 @@ packages:
       typescript: 5.4.5
     dev: false
 
-  /tsx@4.8.2:
-    resolution: {integrity: sha512-hmmzS4U4mdy1Cnzpl/NQiPUC2k34EcNSTZYVJThYKhdqTwuBeF+4cG9KUK/PFQ7KHaAaYwqlb7QfmsE2nuj+WA==}
+  /tsx@4.9.0:
+    resolution: {integrity: sha512-UY0UUhDPL6MkqkZU4xTEjEBOLfV+RIt4xeeJ1qwK73xai4/zveG+X6+tieILa7rjtegUW2LE4p7fw7gAoLuytA==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     dependencies:
@@ -12770,8 +12770,8 @@ packages:
       vfile-message: 3.1.4
     dev: true
 
-  /vite-node@1.5.2(@types/node@20.12.8):
-    resolution: {integrity: sha512-Y8p91kz9zU+bWtF7HGt6DVw2JbhyuB2RlZix3FPYAYmUyZ3n7iTp8eSyLyY6sxtPegvxQtmlTMhfPhUfCUF93A==}
+  /vite-node@1.5.3(@types/node@20.12.8):
+    resolution: {integrity: sha512-axFo00qiCpU/JLd8N1gu9iEYL3xTbMbMrbe5nDp9GL0nb6gurIdZLkkFogZXWnE8Oyy5kfSLwNVIcVsnhE7lgQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     dependencies:
@@ -12791,8 +12791,8 @@ packages:
       - terser
     dev: true
 
-  /vite-node@1.5.3(@types/node@20.12.8):
-    resolution: {integrity: sha512-axFo00qiCpU/JLd8N1gu9iEYL3xTbMbMrbe5nDp9GL0nb6gurIdZLkkFogZXWnE8Oyy5kfSLwNVIcVsnhE7lgQ==}
+  /vite-node@1.6.0(@types/node@20.12.8):
+    resolution: {integrity: sha512-de6HJgzC+TFzOu0NTC4RAIsyf/DY/ibWDYQUcuEA84EMHhcefTUGkjFHKKEJhQN4A+6I0u++kr3l36ZF2d7XRw==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     dependencies:
@@ -12865,15 +12865,15 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vitest@1.5.3(@types/node@20.12.8):
-    resolution: {integrity: sha512-2oM7nLXylw3mQlW6GXnRriw+7YvZFk/YNV8AxIC3Z3MfFbuziLGWP9GPxxu/7nRlXhqyxBikpamr+lEEj1sUEw==}
+  /vitest@1.6.0(@types/node@20.12.8):
+    resolution: {integrity: sha512-H5r/dN06swuFnzNFhq/dnz37bPXnq8xB2xB5JOVk8K09rUtoeNN+LHWkoQ0A/i3hvbUKKcCei9KpbxqHMLhLLA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
       '@edge-runtime/vm': '*'
       '@types/node': ^18.0.0 || >=20.0.0
-      '@vitest/browser': 1.5.3
-      '@vitest/ui': 1.5.3
+      '@vitest/browser': 1.6.0
+      '@vitest/ui': 1.6.0
       happy-dom: '*'
       jsdom: '*'
     peerDependenciesMeta:
@@ -12891,11 +12891,11 @@ packages:
         optional: true
     dependencies:
       '@types/node': 20.12.8
-      '@vitest/expect': 1.5.3
-      '@vitest/runner': 1.5.3
-      '@vitest/snapshot': 1.5.3
-      '@vitest/spy': 1.5.3
-      '@vitest/utils': 1.5.3
+      '@vitest/expect': 1.6.0
+      '@vitest/runner': 1.6.0
+      '@vitest/snapshot': 1.6.0
+      '@vitest/spy': 1.6.0
+      '@vitest/utils': 1.6.0
       acorn-walk: 8.3.2
       chai: 4.4.1
       debug: 4.3.4
@@ -12909,7 +12909,7 @@ packages:
       tinybench: 2.8.0
       tinypool: 0.8.4
       vite: 5.2.11(@types/node@20.12.8)
-      vite-node: 1.5.3(@types/node@20.12.8)
+      vite-node: 1.6.0(@types/node@20.12.8)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
       - less
@@ -13232,8 +13232,8 @@ packages:
       stacktracey: 2.1.8
     dev: true
 
-  /zod@3.23.5:
-    resolution: {integrity: sha512-fkwiq0VIQTksNNA131rDOsVJcns0pfVUjHzLrNBiF/O/Xxb5lQyEXkhZWcJ7npWsYlvs+h0jFWXXy4X46Em1JA==}
+  /zod@3.23.6:
+    resolution: {integrity: sha512-RTHJlZhsRbuA8Hmp/iNL7jnfc4nZishjsanDAfEY1QpDQZCahUp3xDzl+zfweE9BklxMUcgBgS1b7Lvie/ZVwA==}
 
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
