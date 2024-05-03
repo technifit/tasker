@@ -4,10 +4,8 @@
   "extends": "./base.json",
   "compilerOptions": {
     "allowJs": true,
-    "incremental": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "moduleResolution": "Bundler"
+    "lib": ["ES2022", "DOM", "DOM.Iterable"]
   }
 }

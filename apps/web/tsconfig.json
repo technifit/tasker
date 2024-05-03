@@ -1,13 +1,6 @@
 {
   "extends": "@technifit/tsconfig/remix.json",
-  "include": [
-    "types/env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "postcss.config.mjs",
-    "tailwind.config.ts",
-    "node_modules/@remix-run/react/future/single-fetch.d.ts"
-  ],
+  "include": ["types/env.d.ts", "**/*.ts", "**/*.tsx", "postcss.config.mjs", "tailwind.config.ts"],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
@@ -20,7 +13,8 @@
     ],
     // Vite takes care of building everything, not tsc.
     "noEmit": true,
-    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
+    "types": ["@remix-run/react/future/single-fetch.d.ts"]
   },
   "exclude": ["node_modules", "build"]
 }
