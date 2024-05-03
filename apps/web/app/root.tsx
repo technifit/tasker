@@ -1,10 +1,22 @@
 import { ClerkApp } from '@clerk/remix';
 import { rootAuthLoader } from '@clerk/remix/ssr.server';
-import type { LinksFunction, LoaderFunction } from '@remix-run/node';
-import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration, useRouteError } from '@remix-run/react';
+import type { LinksFunction, LoaderFunctionArgs } from '@remix-run/node';
+import {
+  isRouteErrorResponse,
+  Links,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+  useLoaderData,
+  useRouteError,
+} from '@remix-run/react';
+import { captureRemixErrorBoundaryError, withSentry } from '@sentry/remix';
+import { publicEnvSchema } from 'server/env';
 
 import { cn } from '@technifit/ui';
 
+import { PublicEnvironment } from './lib/environment/public-env';
 import styles from './styles/global.css?url';
 
 const interWoff = Array.from({ length: 9 }, (_, i) => `inter/inter-latin-ext-${i * 100 + 100}-normal.woff`);
@@ -17,11 +29,13 @@ export const links: LinksFunction = () => [
   ...fonts.map((font) => ({ rel: 'preload', href: `public/fonts/${font}` })),
 ];
 
-export const loader: LoaderFunction = (args) => {
+export const loader = (args: LoaderFunctionArgs) => {
   return rootAuthLoader(
     args,
     () => {
-      return null;
+      return {
+        publicKeys: publicEnvSchema.parse(args.context.env),
+      };
     },
     {
       publishableKey: args.context.env.CLERK_PUBLISHABLE_KEY,
@@ -31,6 +45,7 @@ export const loader: LoaderFunction = (args) => {
 };
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  const { publicKeys } = useLoaderData<typeof loader>();
   return (
     <html lang='en'>
       <head>
@@ -38,6 +53,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name='viewport' content='width=device-width,initial-scale=1.0,maximum-scale=1.0,viewport-fit=cover' />
         <Meta />
         <Links />
+        <PublicEnvironment publicEnvs={publicKeys} />
       </head>
       <body className={cn('flex min-h-dvh flex-col bg-background font-sans text-foreground antialiased')}>
         {children}
@@ -52,10 +68,15 @@ function App() {
   return <Outlet />;
 }
 
-export default ClerkApp(App);
+export default withSentry(ClerkApp(App), {
+  errorBoundaryOptions: {
+    fallback: <ErrorBoundary />,
+  },
+});
 
 export function ErrorBoundary() {
   const error = useRouteError();
+  captureRemixErrorBoundaryError(error);
 
   if (isRouteErrorResponse(error)) {
     return (
