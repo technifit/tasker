@@ -1,5 +1,6 @@
 import devServer from '@hono/vite-dev-server';
 import { vitePlugin as remix } from '@remix-run/dev';
+import { sentryVitePlugin } from '@sentry/vite-plugin';
 import dotenv from 'dotenv';
 import esbuild from 'esbuild';
 import { remixDevTools } from 'remix-development-tools';
@@ -29,6 +30,7 @@ export default defineConfig({
     include: ['./app/routes/**/*'],
   },
   build: {
+    sourcemap: true,
     // Todo: Remove this once https://github.com/vitejs/vite/issues/15012 is fixed
     rollupOptions: {
       onwarn(warning, defaultHandler) {
@@ -95,6 +97,11 @@ export default defineConfig({
             process.exit(1);
           });
       },
+    }),
+    sentryVitePlugin({
+      authToken: process.env.SENTRY_AUTH_TOKEN,
+      org: process.env.SENTRY_ORG,
+      project: process.env.SENTRY_PROJECT,
     }),
     remixRoutes({
       strict: true,
