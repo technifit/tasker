@@ -1,8 +1,304 @@
 {
   "name": "@technifit/ui",
   "version": "1.0.0",
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    "./utils": {
+      "import": {
+        "types": "./src/lib/utils.d.ts",
+        "default": "./src/lib/utils.js"
+      }
+    },
+    "./typography": {
+      "import": {
+        "types": "./src/components/typography/typography.d.ts",
+        "default": "./src/components/typography/typography.js"
+      }
+    },
+    "./accordion": {
+      "import": {
+        "types": "./src/components/ui/accordion.d.ts",
+        "default": "./src/components/ui/accordion.js"
+      }
+    },
+    "./alert-dialog": {
+      "import": {
+        "types": "./src/components/ui/alert-dialog.d.ts",
+        "default": "./src/components/ui/alert-dialog.js"
+      }
+    },
+    "./alert": {
+      "import": {
+        "types": "./src/components/ui/alert.d.ts",
+        "default": "./src/components/ui/alert.js"
+      }
+    },
+    "./aspect-ratio": {
+      "import": {
+        "types": "./src/components/ui/aspect-ratio.d.ts",
+        "default": "./src/components/ui/aspect-ratio.js"
+      }
+    },
+    "./avatar": {
+      "import": {
+        "types": "./src/components/ui/avatar.d.ts",
+        "default": "./src/components/ui/avatar.js"
+      }
+    },
+    "./badge": {
+      "import": {
+        "types": "./src/components/ui/badge.d.ts",
+        "default": "./src/components/ui/badge.js"
+      }
+    },
+    "./balancer": {
+      "import": {
+        "types": "./src/components/ui/balancer.d.ts",
+        "default": "./src/components/ui/balancer.js"
+      }
+    },
+    "./button": {
+      "import": {
+        "types": "./src/components/ui/button.d.ts",
+        "default": "./src/components/ui/button.js"
+      }
+    },
+    "./calendar": {
+      "import": {
+        "types": "./src/components/ui/calendar.d.ts",
+        "default": "./src/components/ui/calendar.js"
+      }
+    },
+    "./card": {
+      "import": {
+        "types": "./src/components/ui/card.d.ts",
+        "default": "./src/components/ui/card.js"
+      }
+    },
+    "./carousel": {
+      "import": {
+        "types": "./src/components/ui/carousel.d.ts",
+        "default": "./src/components/ui/carousel.js"
+      }
+    },
+    "./checkbox": {
+      "import": {
+        "types": "./src/components/ui/checkbox.d.ts",
+        "default": "./src/components/ui/checkbox.js"
+      }
+    },
+    "./collapsible": {
+      "import": {
+        "types": "./src/components/ui/collapsible.d.ts",
+        "default": "./src/components/ui/collapsible.js"
+      }
+    },
+    "./command": {
+      "import": {
+        "types": "./src/components/ui/command.d.ts",
+        "default": "./src/components/ui/command.js"
+      }
+    },
+    "./context-menu": {
+      "import": {
+        "types": "./src/components/ui/context-menu.d.ts",
+        "default": "./src/components/ui/context-menu.js"
+      }
+    },
+    "./dialog": {
+      "import": {
+        "types": "./src/components/ui/dialog.d.ts",
+        "default": "./src/components/ui/dialog.js"
+      }
+    },
+    "./drawer": {
+      "import": {
+        "types": "./src/components/ui/drawer.d.ts",
+        "default": "./src/components/ui/drawer.js"
+      }
+    },
+    "./dropdown-menu": {
+      "import": {
+        "types": "./src/components/ui/dropdown-menu.d.ts",
+        "default": "./src/components/ui/dropdown-menu.js"
+      }
+    },
+    "./form": {
+      "import": {
+        "types": "./src/components/ui/form.d.ts",
+        "default": "./src/components/ui/form.js"
+      }
+    },
+    "./hover-card": {
+      "import": {
+        "types": "./src/components/ui/hover-card.d.ts",
+        "default": "./src/components/ui/hover-card.js"
+      }
+    },
+    "./icons": {
+      "import": {
+        "types": "./src/components/ui/icons.d.ts",
+        "default": "./src/components/ui/icons.js"
+      }
+    },
+    "./input": {
+      "import": {
+        "types": "./src/components/ui/input.d.ts",
+        "default": "./src/components/ui/input.js"
+      }
+    },
+    "./input-otp": {
+      "import": {
+        "types": "./src/components/ui/input-otp.d.ts",
+        "default": "./src/components/ui/input-otp.js"
+      }
+    },
+    "./label": {
+      "import": {
+        "types": "./src/components/ui/label.d.ts",
+        "default": "./src/components/ui/label.js"
+      }
+    },
+    "./menubar": {
+      "import": {
+        "types": "./src/components/ui/menubar.d.ts",
+        "default": "./src/components/ui/menubar.js"
+      }
+    },
+    "./navigation-menu": {
+      "import": {
+        "types": "./src/components/ui/navigation-menu.d.ts",
+        "default": "./src/components/ui/navigation-menu.js"
+      }
+    },
+    "./number-stepper": {
+      "import": {
+        "types": "./src/components/ui/number-stepper.d.ts",
+        "default": "./src/components/ui/number-stepper.js"
+      }
+    },
+    "./pagination": {
+      "import": {
+        "types": "./src/components/ui/pagination.d.ts",
+        "default": "./src/components/ui/pagination.js"
+      }
+    },
+    "./popover": {
+      "import": {
+        "types": "./src/components/ui/popover.d.ts",
+        "default": "./src/components/ui/popover.js"
+      }
+    },
+    "./progress": {
+      "import": {
+        "types": "./src/components/ui/progress.d.ts",
+        "default": "./src/components/ui/progress.js"
+      }
+    },
+    "./radio-group": {
+      "import": {
+        "types": "./src/components/ui/radio-group.d.ts",
+        "default": "./src/components/ui/radio-group.js"
+      }
+    },
+    "./resizable": {
+      "import": {
+        "types": "./src/components/ui/resizable.d.ts",
+        "default": "./src/components/ui/resizable.js"
+      }
+    },
+    "./screen-size-indicator": {
+      "import": {
+        "types": "./src/components/ui/screen-size-indicator.d.ts",
+        "default": "./src/components/ui/screen-size-indicator.js"
+      }
+    },
+    "./scroll-area": {
+      "import": {
+        "types": "./src/components/ui/scroll-area.d.ts",
+        "default": "./src/components/ui/scroll-area.js"
+      }
+    },
+    "./select": {
+      "import": {
+        "types": "./src/components/ui/select.d.ts",
+        "default": "./src/components/ui/select.js"
+      }
+    },
+    "./separator": {
+      "import": {
+        "types": "./src/components/ui/separator.d.ts",
+        "default": "./src/components/ui/separator.js"
+      }
+    },
+    "./sheet": {
+      "import": {
+        "types": "./src/components/ui/sheet.d.ts",
+        "default": "./src/components/ui/sheet.js"
+      }
+    },
+    "./skeleton": {
+      "import": {
+        "types": "./src/components/ui/skeleton.d.ts",
+        "default": "./src/components/ui/skeleton.js"
+      }
+    },
+    "./slider": {
+      "import": {
+        "types": "./src/components/ui/slider.d.ts",
+        "default": "./src/components/ui/slider.js"
+      }
+    },
+    "./sonner": {
+      "import": {
+        "types": "./src/components/ui/sonner.d.ts",
+        "default": "./src/components/ui/sonner.js"
+      }
+    },
+    "./switch": {
+      "import": {
+        "types": "./src/components/ui/switch.d.ts",
+        "default": "./src/components/ui/switch.js"
+      }
+    },
+    "./table": {
+      "import": {
+        "types": "./src/components/ui/table.d.ts",
+        "default": "./src/components/ui/table.js"
+      }
+    },
+    "./tabs": {
+      "import": {
+        "types": "./src/components/ui/tabs.d.ts",
+        "default": "./src/components/ui/tabs.js"
+      }
+    },
+    "./textarea": {
+      "import": {
+        "types": "./src/components/ui/textarea.d.ts",
+        "default": "./src/components/ui/textarea.js"
+      }
+    },
+    "./toggle-group": {
+      "import": {
+        "types": "./src/components/ui/toggle-group.d.ts",
+        "default": "./src/components/ui/toggle-group.js"
+      }
+    },
+    "./toggle": {
+      "import": {
+        "types": "./src/components/ui/toggle.d.ts",
+        "default": "./src/components/ui/toggle.js"
+      }
+    },
+    "./tooltip": {
+      "import": {
+        "types": "./src/components/ui/tooltip.d.ts",
+        "default": "./src/components/ui/tooltip.js"
+      }
+    }
+  },
   "scripts": {
     "clean": "git clean -xdf dist .turbo node_modules",
     "format": "prettier . --check --cache --cache-location='node_modules/.cache/.prettiercache'",

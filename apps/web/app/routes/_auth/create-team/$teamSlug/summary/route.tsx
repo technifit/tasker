@@ -2,7 +2,8 @@ import type { LoaderFunctionArgs } from '@remix-run/node';
 import { Link, useLoaderData } from '@remix-run/react';
 import { $params } from 'remix-routes';
 
-import { Button, CardFooter, CardHeader, CardTitle } from '@technifit/ui';
+import { Button } from '@technifit/ui/button';
+import { CardFooter, CardHeader, CardTitle } from '@technifit/ui/card';
 
 import { requireAuthenticatedUser } from '~/lib/guards/auth-guard.server';
 import { getStep } from '../../config';

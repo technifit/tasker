@@ -7,21 +7,10 @@ import { Link, useNavigate } from '@remix-run/react';
 import { $path } from 'remix-routes';
 import { z } from 'zod';
 
-import {
-  Button,
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-  InputOTP,
-  InputOTPGroup,
-  InputOTPSeparator,
-  InputOTPSlot,
-  Typography,
-  useForm,
-} from '@technifit/ui';
+import { Button } from '@technifit/ui/button';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage, useForm } from '@technifit/ui/form';
+import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from '@technifit/ui/input-otp';
+import { Typography } from '@technifit/ui/typography';
 
 import { ErrorAlert } from '~/ui/error-alert';
 import type { ErrorAlertProps } from '~/ui/error-alert';
