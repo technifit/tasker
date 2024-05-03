@@ -1,4 +1,5 @@
-import { Alert, AlertCircle, AlertDescription, AlertTitle } from '@technifit/ui';
+import { Alert, AlertDescription, AlertTitle } from '@technifit/ui/alert';
+import { AlertCircle } from '@technifit/ui/icons';
 
 export interface ErrorAlertProps {
   heading: React.ReactNode;

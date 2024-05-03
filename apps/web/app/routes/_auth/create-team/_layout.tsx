@@ -1,6 +1,6 @@
 import { Outlet } from '@remix-run/react';
 
-import { Card } from '@technifit/ui';
+import { Card } from '@technifit/ui/card';
 
 import { ProgressStepper } from '~/ui/progress-stepper';
 import { useGetStepProgress } from './config';

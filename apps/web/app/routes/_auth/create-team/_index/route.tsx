@@ -4,28 +4,14 @@ import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
 import { useNavigate } from '@remix-run/react';
 import { z } from 'zod';
 
-import {
-  Balancer,
-  Button,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-  CircleHelp,
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-  Input,
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-  Typography,
-  useForm,
-} from '@technifit/ui';
+import { Balancer } from '@technifit/ui/balancer';
+import { Button } from '@technifit/ui/button';
+import { CardContent, CardFooter, CardHeader, CardTitle } from '@technifit/ui/card';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage, useForm } from '@technifit/ui/form';
+import { CircleHelp } from '@technifit/ui/icons';
+import { Input } from '@technifit/ui/input';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@technifit/ui/tooltip';
+import { Typography } from '@technifit/ui/typography';
 
 import { requireAuthenticatedUser } from '~/lib/guards/auth-guard.server';
 import { getStep } from '../config';

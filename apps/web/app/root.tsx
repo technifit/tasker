@@ -14,7 +14,7 @@ import {
 import { captureRemixErrorBoundaryError, withSentry } from '@sentry/remix';
 import { publicEnvSchema } from 'server/env';
 
-import { cn } from '@technifit/ui';
+import { cn } from '@technifit/ui/utils';
 
 import { PublicEnvironment } from './lib/environment/public-env';
 import styles from './styles/global.css?url';

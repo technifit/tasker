@@ -4,11 +4,9 @@ import { $path } from 'remix-routes';
 
 //import { Theme, useTheme } from 'remix-themes';
 
+import { Avatar, AvatarFallback, AvatarImage } from '@technifit/ui/avatar';
+import { Button } from '@technifit/ui/button';
 import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-  Button,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
@@ -17,8 +15,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
-  Skeleton,
-} from '@technifit/ui';
+} from '@technifit/ui/dropdown-menu';
+import { Skeleton } from '@technifit/ui/skeleton';
 
 export function UserNav() {
   const { signOut } = useClerk();

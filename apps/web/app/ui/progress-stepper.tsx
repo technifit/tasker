@@ -1,4 +1,4 @@
-import { Progress } from '@technifit/ui';
+import { Progress } from '@technifit/ui/progress';
 
 export const ProgressStepper = ({ activeStep, totalSteps }: { totalSteps: number; activeStep: number }) => {
   return (
