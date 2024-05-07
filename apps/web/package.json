@@ -50,7 +50,7 @@
   },
   "devDependencies": {
     "@hono/vite-dev-server": "0.12.0",
-    "@playwright/test": "1.43.1",
+    "@playwright/test": "1.44.0",
     "@remix-run/dev": "2.9.1",
     "@sentry/vite-plugin": "2.16.1",
     "@technifit/eslint-config": "*",
