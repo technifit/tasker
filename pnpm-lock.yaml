@@ -106,8 +106,8 @@ importers:
         version: 3.23.7
     devDependencies:
       '@hono/vite-dev-server':
-        specifier: 0.12.0
-        version: 0.12.0(hono@4.3.3)
+        specifier: 0.12.1
+        version: 0.12.1(hono@4.3.3)
       '@playwright/test':
         specifier: 1.44.0
         version: 1.44.0
@@ -1987,8 +1987,8 @@ packages:
     resolution: {integrity: sha512-GW1Iomhmm1o4Z+X57xGby8A35Cu9UZLL7pSMdqDBkD99U5cywff8F+8hLk5aBTzNubnsFAvWQ/fZjNwPsEn9lA==}
     engines: {node: '>=18.14.1'}
 
-  /@hono/vite-dev-server@0.12.0(hono@4.3.3):
-    resolution: {integrity: sha512-FJIMuTNfJaL7VjktNfqthFMqRyasXPgeMrS2wKKkDEzaLhlRmllC0bajPGrwH+xRQsTJxD/y6ttjg0x6dJeoMw==}
+  /@hono/vite-dev-server@0.12.1(hono@4.3.3):
+    resolution: {integrity: sha512-Fm7BXm9onjEaU5OqkLhU4pkdBKenlulrExDSkBxXULF+7NQznHppWnKcDI6A0pvjz0oNykNy5F7QnHhofmnMdQ==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
       hono: '*'
