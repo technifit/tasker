@@ -96,8 +96,8 @@ importers:
         specifier: 0.5.1
         version: 0.5.1(zod@3.23.8)
       remix-routes:
-        specifier: 1.7.3
-        version: 1.7.3
+        specifier: 1.7.4
+        version: 1.7.4
       remix-utils:
         specifier: 7.6.0
         version: 7.6.0(@remix-run/node@2.9.1)(@remix-run/react@2.9.1)(react@18.3.1)(zod@3.23.8)
@@ -9970,8 +9970,8 @@ packages:
       zod: 3.23.8
     dev: false
 
-  /remix-routes@1.7.3:
-    resolution: {integrity: sha512-bNA8I0nhUtYtdCPTSWk/1MRTlKMCi2apx0cZ4rkHyc++oQhW18a5Q2cZ18oQ8d0Z1pHY5kwV/fB0QKxyUgrQEA==}
+  /remix-routes@1.7.4:
+    resolution: {integrity: sha512-UBw+WPk+Jh4Rv2bC9e2ITxAx2dNVH09GmbWdRzr8NX/4C6wO+1/lQsfjkEsvrjd3BIe2A5TdJ7j0UaItwmC9Hg==}
     hasBin: true
     dependencies:
       chokidar: 3.6.0
