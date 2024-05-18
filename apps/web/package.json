@@ -64,7 +64,7 @@
     "autoprefixer": "10.4.19",
     "dotenv-cli": "7.4.2",
     "esbuild": "0.21.3",
-    "npm-run-all2": "6.1.2",
+    "npm-run-all2": "6.2.0",
     "postcss": "8.4.38",
     "remix-development-tools": "4.1.6",
     "remix-flat-routes": "0.6.5",
