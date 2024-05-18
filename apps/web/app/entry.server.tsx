@@ -4,7 +4,7 @@ import { createReadableStreamFromReadable } from '@remix-run/node';
 import { RemixServer } from '@remix-run/react';
 import { nodeProfilingIntegration } from '@sentry/profiling-node';
 import * as Sentry from '@sentry/remix';
-import { wrapRemixHandleError } from '@sentry/remix';
+import { sentryHandleError } from '@sentry/remix';
 import { isbot } from 'isbot';
 import { renderToPipeableStream } from 'react-dom/server';
 
@@ -16,10 +16,10 @@ Sentry.init({
   // We recommend adjusting this value in production
   tracesSampleRate: 1.0,
   profilesSampleRate: 1.0, // Profiling sample rate is relative to tracesSampleRate
-  integrations: [Sentry.sessionTimingIntegration(), nodeProfilingIntegration()],
+  integrations: [nodeProfilingIntegration()],
 });
 
-export const handleError = wrapRemixHandleError;
+export const handleError = sentryHandleError;
 
 // Reject all pending promises from handler functions after 5 seconds
 export const streamTimeout = 5000;
