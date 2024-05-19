@@ -37,7 +37,7 @@ importers:
     dependencies:
       '@clerk/remix':
         specifier: 4.0.10
-        version: 4.0.10(@remix-run/react@2.9.2)(@remix-run/server-runtime@2.9.1)(react-dom@18.3.1)(react@18.3.1)
+        version: 4.0.10(@remix-run/react@2.9.2)(@remix-run/server-runtime@2.9.2)(react-dom@18.3.1)(react@18.3.1)
       '@hono/node-server':
         specifier: 1.11.1
         version: 1.11.1
@@ -345,8 +345,8 @@ importers:
         specifier: 1.0.0
         version: 1.0.0(@types/react-dom@18.3.0)(@types/react@18.3.2)(react-dom@18.3.1)(react@18.3.1)
       embla-carousel-react:
-        specifier: 8.1.1
-        version: 8.1.1(react@18.3.1)
+        specifier: 8.1.2
+        version: 8.1.2(react@18.3.1)
       input-otp:
         specifier: 1.2.4
         version: 1.2.4(react-dom@18.3.1)(react@18.3.1)
@@ -921,7 +921,7 @@ packages:
       tslib: 2.4.1
     dev: false
 
-  /@clerk/remix@4.0.10(@remix-run/react@2.9.2)(@remix-run/server-runtime@2.9.1)(react-dom@18.3.1)(react@18.3.1):
+  /@clerk/remix@4.0.10(@remix-run/react@2.9.2)(@remix-run/server-runtime@2.9.2)(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-DMLndRBzt4twt3fttWaUF3gJGvzWRmm1I8NqGl8iWLPJ9HS98CgX7l0wHXVnYDLMsut2uK/uqIJ6shauc40uPg==}
     engines: {node: '>=18.17.0'}
     peerDependencies:
@@ -934,7 +934,7 @@ packages:
       '@clerk/clerk-react': 5.1.0(react-dom@18.3.1)(react@18.3.1)
       '@clerk/shared': 2.1.1(react-dom@18.3.1)(react@18.3.1)
       '@remix-run/react': 2.9.2(react-dom@18.3.1)(react@18.3.1)(typescript@5.4.5)
-      '@remix-run/server-runtime': 2.9.1(typescript@5.4.5)
+      '@remix-run/server-runtime': 2.9.2(typescript@5.4.5)
       cookie: 0.5.0
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -6472,26 +6472,26 @@ packages:
   /electron-to-chromium@1.4.750:
     resolution: {integrity: sha512-9ItEpeu15hW5m8jKdriL+BQrgwDTXEL9pn4SkillWFu73ZNNNQ2BKKLS+ZHv2vC9UkNhosAeyfxOf/5OSeTCPA==}
 
-  /embla-carousel-react@8.1.1(react@18.3.1):
-    resolution: {integrity: sha512-VuIrNyGneFKlDzAvkRGeXjEOw+FW2Ob76R/Y+kdSuKj68bnaAJCEf8PlHtJJWle1/rR/Sfv9NTIa00zlA8iXgw==}
+  /embla-carousel-react@8.1.2(react@18.3.1):
+    resolution: {integrity: sha512-gDJ82bdP3VujDpnfX+HyDcIiq5IDArnBCu9Y5nRZoGpon3UcTeDnQdYBrj/n8yluQnkYdXWCKdfPlduJgf1U/w==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.1 || ^18.0.0
     dependencies:
-      embla-carousel: 8.1.1
-      embla-carousel-reactive-utils: 8.1.1(embla-carousel@8.1.1)
+      embla-carousel: 8.1.2
+      embla-carousel-reactive-utils: 8.1.2(embla-carousel@8.1.2)
       react: 18.3.1
     dev: false
 
-  /embla-carousel-reactive-utils@8.1.1(embla-carousel@8.1.1):
-    resolution: {integrity: sha512-zlsaorYN56qtoXoVNw8hA/IbUjxq0pdggZpl9b5V2Cxvrd47ZSL5Lat7GgC+kgyUEdEocP1iOmw5+vpCX9rZPA==}
+  /embla-carousel-reactive-utils@8.1.2(embla-carousel@8.1.2):
+    resolution: {integrity: sha512-iDTx9WKtxz/ljZWmcUTY6Xfd6lx/Zkpz4tDqZHeHnMOmI1Wgu1S4ZWA7yzHWqpj14mND8Gw1BH9kkycuXL/PeQ==}
     peerDependencies:
-      embla-carousel: 8.1.1
+      embla-carousel: 8.1.2
     dependencies:
-      embla-carousel: 8.1.1
+      embla-carousel: 8.1.2
     dev: false
 
-  /embla-carousel@8.1.1:
-    resolution: {integrity: sha512-PfdhNbPoNl7V5YnwuKe2zmKd0+/HY+Q4O59xQcVvinsgv2LkpAVQ1NB/q5STqAde8nZ56U2uQOe6X+9u4IZlhA==}
+  /embla-carousel@8.1.2:
+    resolution: {integrity: sha512-UCjqg223H6xZ0xxosmyV5CDfzdbw31yIgkm3xGGLeRRD5yIbtR2AhWzkk2ntjHK09/v3dKcY8G09OawDV3gbew==}
     dev: false
 
   /emoji-regex@8.0.0:
