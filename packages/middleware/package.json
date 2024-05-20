@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@technifit/id": "*",
-    "hono": "4.3.7",
+    "hono": "4.3.8",
     "pretty-cache-header": "1.0.0",
     "remix-hono": "0.0.16"
   },
