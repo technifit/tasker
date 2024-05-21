@@ -42,8 +42,8 @@ importers:
         specifier: 1.11.1
         version: 1.11.1
       '@hookform/resolvers':
-        specifier: 3.4.0
-        version: 3.4.0(react-hook-form@7.51.4)
+        specifier: 3.4.2
+        version: 3.4.2(react-hook-form@7.51.4)
       '@remix-run/express':
         specifier: 2.9.2
         version: 2.9.2(express@4.19.2)(typescript@5.4.5)
@@ -252,8 +252,8 @@ importers:
   packages/ui:
     dependencies:
       '@hookform/resolvers':
-        specifier: 3.4.0
-        version: 3.4.0(react-hook-form@7.51.4)
+        specifier: 3.4.2
+        version: 3.4.2(react-hook-form@7.51.4)
       '@radix-ui/react-accordion':
         specifier: 1.1.2
         version: 1.1.2(@types/react-dom@18.3.0)(@types/react@18.3.2)(react-dom@18.3.1)(react@18.3.1)
@@ -1992,8 +1992,8 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@hookform/resolvers@3.4.0(react-hook-form@7.51.4):
-    resolution: {integrity: sha512-+oAqK3okmoEDnvUkJ3N/mvNMeeMv5Apgy1jkoRmlaaAF4vBgcJs9tHvtXU7VE4DvPosvAUUkPOaNFunzt1dbgA==}
+  /@hookform/resolvers@3.4.2(react-hook-form@7.51.4):
+    resolution: {integrity: sha512-1m9uAVIO8wVf7VCDAGsuGA0t6Z3m6jVGAN50HkV9vYLl0yixKK/Z1lr01vaRvYCkIKGoy1noVRxMzQYb4y/j1Q==}
     peerDependencies:
       react-hook-form: ^7.0.0
     dependencies:
