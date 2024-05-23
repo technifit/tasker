@@ -52,7 +52,7 @@
     "@hono/vite-dev-server": "0.12.1",
     "@playwright/test": "1.44.0",
     "@remix-run/dev": "2.9.2",
-    "@sentry/vite-plugin": "2.16.1",
+    "@sentry/vite-plugin": "2.17.0",
     "@technifit/eslint-config": "*",
     "@technifit/tailwind-config": "*",
     "@technifit/tsconfig": "*",
