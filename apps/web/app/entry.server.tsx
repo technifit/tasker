@@ -1,5 +1,5 @@
 import { PassThrough } from 'node:stream';
-import type { EntryContext } from '@remix-run/node';
+import type { AppLoadContext, EntryContext } from '@remix-run/node';
 import { createReadableStreamFromReadable } from '@remix-run/node';
 import { RemixServer } from '@remix-run/react';
 import { nodeProfilingIntegration } from '@sentry/profiling-node';
@@ -7,6 +7,8 @@ import * as Sentry from '@sentry/remix';
 import { sentryHandleError } from '@sentry/remix';
 import { isbot } from 'isbot';
 import { renderToPipeableStream } from 'react-dom/server';
+import { createExpressApp } from 'remix-create-express-app';
+import { envSchema } from 'server/env';
 
 Sentry.init({
   dsn: process.env.SENTRY_DSN,
@@ -150,3 +152,15 @@ function handleBrowserRequest(
     setTimeout(abort, ABORT_DELAY);
   });
 }
+
+export const app = createExpressApp({
+  configure: (app) => {
+    // customize your express app with additional middleware
+    //app.use(morgan('tiny'))
+  },
+  getLoadContext: (req, res, { build }) => {
+    // return the AppLoadContext
+    return { appVersion: build.assets.version, env: envSchema.parse(process.env) } as AppLoadContext;
+  },
+  unstable_middleware: true,
+});

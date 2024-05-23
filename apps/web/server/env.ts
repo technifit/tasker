@@ -16,5 +16,24 @@ const publicEnvSchema = envSchema.pick({
 type Env = z.infer<typeof envSchema>;
 type PublicEnv = z.infer<typeof publicEnvSchema>;
 
+/**
+ * Declare our loaders and actions context type
+ */
+declare module '@remix-run/node' {
+  /**
+   * Represents the context for loading the app.
+   */
+  interface AppLoadContext {
+    /**
+     * The app version from the build assets.
+     */
+    readonly appVersion: string;
+    /**
+     * The environment variables.
+     */
+    readonly env: Env;
+  }
+}
+
 export { envSchema, publicEnvSchema };
 export type { Env, PublicEnv };

@@ -1,12 +1,12 @@
-import devServer from '@hono/vite-dev-server';
 import { vitePlugin as remix } from '@remix-run/dev';
 import { sentryVitePlugin } from '@sentry/vite-plugin';
 import dotenv from 'dotenv';
-import esbuild from 'esbuild';
 import { remixDevTools } from 'remix-development-tools';
+import { expressDevServer } from 'remix-express-dev-server';
 import { flatRoutes } from 'remix-flat-routes';
 import { remixRoutes } from 'remix-routes/vite';
 import { defineConfig } from 'vite';
+import envOnly from 'vite-env-only';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 // Load environment variables from .env file at the root of your monorepo
@@ -30,6 +30,7 @@ export default defineConfig({
     include: ['./app/routes/**/*'],
   },
   build: {
+    target: 'esnext',
     sourcemap: true,
     // Todo: Remove this once https://github.com/vitejs/vite/issues/15012 is fixed
     rollupOptions: {
@@ -43,11 +44,8 @@ export default defineConfig({
     },
   },
   plugins: [
-    devServer({
-      injectClientScript: false,
-      entry: 'server/index.ts', // The file path of your server.
-      exclude: [/^\/(app)\/.+/, /^\/@.+$/, /^\/node_modules\/.*/],
-    }),
+    expressDevServer(),
+    envOnly(),
     tsconfigPaths(),
     remixDevTools(),
     remix({
@@ -74,35 +72,12 @@ export default defineConfig({
           ],
         });
       },
-      buildEnd: async () => {
-        await esbuild
-          .build({
-            alias: { '~': './app' },
-            // The final file name
-            outfile: 'build/server/index.js',
-            // Our server entry point
-            entryPoints: ['server/index.ts'],
-            // Dependencies that should not be bundled
-            // We import the remix build from "../build/server/remix.js", so no need to bundle it again
-            external: ['./build/server/*'],
-            platform: 'node',
-            format: 'esm',
-            // Don't include node_modules in the bundle
-            packages: 'external',
-            bundle: true,
-            logLevel: 'info',
-          })
-          .catch((error: unknown) => {
-            console.error(error);
-            process.exit(1);
-          });
-      },
     }),
-    sentryVitePlugin({
-      authToken: process.env.SENTRY_AUTH_TOKEN,
-      org: process.env.SENTRY_ORG,
-      project: process.env.SENTRY_PROJECT,
-    }),
+    //sentryVitePlugin({
+    //authToken: process.env.SENTRY_AUTH_TOKEN,
+    //org: process.env.SENTRY_ORG,
+    //project: process.env.SENTRY_PROJECT,
+    //}),
     remixRoutes({
       strict: true,
       outDir: './types',
