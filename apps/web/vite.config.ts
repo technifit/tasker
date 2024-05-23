@@ -49,7 +49,6 @@ export default defineConfig({
     tsconfigPaths(),
     remixDevTools(),
     remix({
-      serverBuildFile: 'remix.js',
       future: {
         v3_fetcherPersist: true,
         v3_relativeSplatPath: true,

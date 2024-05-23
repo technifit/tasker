@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useSignIn } from '@clerk/remix';
 import { isClerkAPIResponseError } from '@clerk/remix/errors';
 import { zodResolver } from '@hookform/resolvers/zod';
-import type { MetaFunction } from '@remix-run/node';
+import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
 import { Link, useNavigate } from '@remix-run/react';
 import { $path } from 'remix-routes';
 import { z } from 'zod';
@@ -23,6 +23,12 @@ const logInFormSchema = z.object({
 type LogInFormData = z.infer<typeof logInFormSchema>;
 
 const resolver = zodResolver(logInFormSchema);
+
+export const loader = ({ context: { appVersion } }: LoaderFunctionArgs) => {
+  console.log('appVersion', appVersion);
+
+  return null;
+};
 
 export const meta: MetaFunction = () => {
   return [{ title: 'Tasker | Log In' }, { name: 'description', content: 'Log in' }];
