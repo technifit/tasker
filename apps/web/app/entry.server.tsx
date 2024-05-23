@@ -10,8 +10,6 @@ import { renderToPipeableStream } from 'react-dom/server';
 import { createExpressApp } from 'remix-create-express-app';
 import { envSchema } from 'server/env';
 
-import { newId } from '@technifit/id/new-id';
-
 Sentry.init({
   dsn: process.env.SENTRY_DSN,
   debug: process.env.NODE_ENV === 'development',
@@ -156,13 +154,13 @@ function handleBrowserRequest(
 }
 
 export const app = createExpressApp({
-  configure: (app) => {
+  configure: () => {
     // customize your express app with additional middleware
     //app.use(morgan('tiny'))
   },
   getLoadContext: (req, res, { build }) => {
     // return the AppLoadContext
-    return { appVersion: newId('session'), env: envSchema.parse(process.env) } as AppLoadContext;
+    return { appVersion: build.assets.version, env: envSchema.parse(process.env) } as AppLoadContext;
   },
   unstable_middleware: true,
 });

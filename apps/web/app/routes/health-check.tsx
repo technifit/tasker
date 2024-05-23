@@ -1,6 +1,4 @@
-import type { LoaderFunctionArgs } from '@remix-run/node';
-
-export function loader({ params }: LoaderFunctionArgs) {
+export function loader() {
   return new Response('Healthy', {
     status: 200,
   });
