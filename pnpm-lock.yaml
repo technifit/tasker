@@ -341,9 +341,15 @@ importers:
       input-otp:
         specifier: 1.2.4
         version: 1.2.4(react-dom@18.3.1)(react@18.3.1)
+      libphonenumber-js:
+        specifier: 1.11.1
+        version: 1.11.1
       lucide-react:
         specifier: 0.379.0
         version: 0.379.0(react@18.3.1)
+      react-circle-flags:
+        specifier: 0.0.20
+        version: 0.0.20(react@18.3.1)
       react-resizable-panels:
         specifier: 2.0.19
         version: 2.0.19(react-dom@18.3.1)(react@18.3.1)
@@ -8084,6 +8090,10 @@ packages:
       prelude-ls: 1.2.1
       type-check: 0.4.0
 
+  /libphonenumber-js@1.11.1:
+    resolution: {integrity: sha512-Wze1LPwcnzvcKGcRHFGFECTaLzxOtujwpf924difr5zniyYv1C2PiW0419qDR7m8lKDxsImu5mwxFuXhXpjmvw==}
+    dev: false
+
   /lilconfig@2.1.0:
     resolution: {integrity: sha512-utWOt/GHzuUxnLKxB6dk81RoOeoNeHgbrXiuGk4yyF5qlRz+iIVWu56E2fqGHFrXz0QNUhLB/8nKqvRH66JKGQ==}
     engines: {node: '>=10'}
@@ -9810,6 +9820,15 @@ packages:
       http-errors: 2.0.0
       iconv-lite: 0.4.24
       unpipe: 1.0.0
+
+  /react-circle-flags@0.0.20(react@18.3.1):
+    resolution: {integrity: sha512-/Q18+veXCSA0lQWbnRo/AtR4G/NDRrukKyU6Cl7iLLXAG9KywjgFdPqHD2YJklicjfALXm2wLdbONRs0QKDITA==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: ^16.0.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.3.1
+    dev: false
 
   /react-day-picker@8.10.1(date-fns@3.6.0)(react@18.3.1):
     resolution: {integrity: sha512-TMx7fNbhLk15eqcMt+7Z7S2KF7mfTId/XJDjKE8f+IUcFn0l08/kI4FiYTL/0yuOLmEcbR4Fwe3GJf/NiiMnPA==}

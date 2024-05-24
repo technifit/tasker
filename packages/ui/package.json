@@ -184,6 +184,12 @@
         "default": "./src/components/ui/pagination.js"
       }
     },
+    "./phone-input": {
+      "import": {
+        "types": "./src/components/ui/phone-input.d.ts",
+        "default": "./src/components/ui/phone-input.js"
+      }
+    },
     "./popover": {
       "import": {
         "types": "./src/components/ui/popover.d.ts",
@@ -341,7 +347,9 @@
     "cmdk": "1.0.0",
     "embla-carousel-react": "8.1.3",
     "input-otp": "1.2.4",
+    "libphonenumber-js": "1.11.1",
     "lucide-react": "0.379.0",
+    "react-circle-flags": "0.0.20",
     "react-resizable-panels": "2.0.19",
     "react-wrap-balancer": "1.1.0",
     "remix-hook-form": "4.3.1",

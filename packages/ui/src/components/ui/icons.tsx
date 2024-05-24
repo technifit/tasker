@@ -11,6 +11,7 @@ export const Billing = Lucide.CreditCard;
 export const Check = Lucide.Check;
 export const ChevronLeft = Lucide.ChevronLeft;
 export const ChevronRight = Lucide.ChevronRight;
+export const ChevronsUpDown = Lucide.ChevronsUpDown;
 export const CircleHelp = Lucide.CircleHelp;
 export const Close = Lucide.X;
 export const Copy = Lucide.Copy;

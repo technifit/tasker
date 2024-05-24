@@ -5,8 +5,8 @@
   "type": "module",
   "exports": {
     "./new-id": {
-      "types": "./dist/new-id.d.ts",
-      "default": "./dist/new-id.js"
+      "types": "./src/new-id.d.ts",
+      "default": "./src/new-id.js"
     }
   },
   "scripts": {
