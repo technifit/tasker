@@ -354,8 +354,8 @@ importers:
         specifier: 2.0.19
         version: 2.0.19(react-dom@18.3.1)(react@18.3.1)
       react-wrap-balancer:
-        specifier: 1.1.0
-        version: 1.1.0(react@18.3.1)
+        specifier: 1.1.1
+        version: 1.1.1(react@18.3.1)
       remix-hook-form:
         specifier: 4.3.1
         version: 4.3.1(@remix-run/react@2.9.2)(react-dom@18.3.1)(react-hook-form@7.51.5)(react@18.3.1)
@@ -9969,8 +9969,8 @@ packages:
       react: 18.3.1
       tslib: 2.6.2
 
-  /react-wrap-balancer@1.1.0(react@18.3.1):
-    resolution: {integrity: sha512-EhF3jOZm5Fjx+Cx41e423qOv2c2aOvXAtym2OHqrGeMUnwERIyNsRBgnfT3plB170JmuYvts8K2KSPEIerKr5A==}
+  /react-wrap-balancer@1.1.1(react@18.3.1):
+    resolution: {integrity: sha512-AB+l7FPRWl6uZ28VcJ8skkwLn2+UC62bjiw8tQUrZPlEWDVnR9MG0lghyn7EyxuJSsFEpht4G+yh2WikEqQ/5Q==}
     peerDependencies:
       react: '>=16.8.0 || ^17.0.0 || ^18'
     dependencies:
