@@ -36,8 +36,8 @@ importers:
   apps/web:
     dependencies:
       '@clerk/remix':
-        specifier: 4.0.12
-        version: 4.0.12(@remix-run/react@2.9.2)(@remix-run/server-runtime@2.9.2)(react-dom@18.3.1)(react@18.3.1)
+        specifier: 4.0.13
+        version: 4.0.13(@remix-run/react@2.9.2)(@remix-run/server-runtime@2.9.2)(react-dom@18.3.1)(react@18.3.1)
       '@hookform/resolvers':
         specifier: 3.4.2
         version: 3.4.2(react-hook-form@7.51.5)
@@ -904,22 +904,22 @@ packages:
       - react-dom
     dev: false
 
-  /@clerk/clerk-react@5.2.1(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-cWy5ZC1+6rSqD8YRoewEULFl0Gs0Sbg3f8coLJQamg60qbAMlc6SkBwOYXfs4B0npUZAJc2j68gXSjNtvAyeKQ==}
+  /@clerk/clerk-react@5.2.2(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-QXjqNvjKxDUAV5nYiKcCHFB/PyY4AQODlpGuU37LeB06sfpeYTs09aTDdUeiJ59wA1bq2Y9nApznCkeQ+r6BgQ==}
     engines: {node: '>=18.17.0'}
     peerDependencies:
       react: '>=18 || >=19.0.0-beta'
       react-dom: '>=18 || >=19.0.0-beta'
     dependencies:
       '@clerk/shared': 2.2.1(react-dom@18.3.1)(react@18.3.1)
-      '@clerk/types': 4.5.0
+      '@clerk/types': 4.5.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       tslib: 2.4.1
     dev: false
 
-  /@clerk/remix@4.0.12(@remix-run/react@2.9.2)(@remix-run/server-runtime@2.9.2)(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-EA2oGIYc8jkO+YhC+lAxmEZ6LUBUhy/zr0DooWYHZhiBrUgo/Ndf1FUhvwI8hPazf22iJTaxVVdQgZQdGNJwvw==}
+  /@clerk/remix@4.0.13(@remix-run/react@2.9.2)(@remix-run/server-runtime@2.9.2)(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-ayQGXlAeTu3mawj5TZX3nCgZ9p3tFQzBQfFnmx/DgKWUbBDOHKHefgeHXB/h+UPKXcCaTHq1QxT1U9DTySC7Mg==}
     engines: {node: '>=18.17.0'}
     peerDependencies:
       '@remix-run/react': ^2.0.0
@@ -928,7 +928,7 @@ packages:
       react-dom: '>=18'
     dependencies:
       '@clerk/backend': 1.2.1(react-dom@18.3.1)(react@18.3.1)
-      '@clerk/clerk-react': 5.2.1(react-dom@18.3.1)(react@18.3.1)
+      '@clerk/clerk-react': 5.2.2(react-dom@18.3.1)(react@18.3.1)
       '@clerk/shared': 2.2.1(react-dom@18.3.1)(react@18.3.1)
       '@remix-run/react': 2.9.2(react-dom@18.3.1)(react@18.3.1)(typescript@5.4.5)
       '@remix-run/server-runtime': 2.9.2(typescript@5.4.5)
@@ -959,8 +959,8 @@ packages:
       swr: 2.2.0(react@18.3.1)
     dev: false
 
-  /@clerk/types@4.5.0:
-    resolution: {integrity: sha512-g+CulWZq/HG9uhYFkXr8n9e376zZKY7elhW8/vXKJHDQEYeBmcUAkDgtgYXOU9OtXNS8xTbnhAwScn1bk1pRNg==}
+  /@clerk/types@4.5.1:
+    resolution: {integrity: sha512-eLaH+IKnxgjGQhRZ5rhZA9pQszSKbtSZE5V6c3a/F2crlkYIFABrVdf1q6p5bSAEmcYdcV4u4kaEFZ5UpYNcOw==}
     engines: {node: '>=18.17.0'}
     dependencies:
       csstype: 3.1.1
