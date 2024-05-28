@@ -6,7 +6,7 @@ import { expressDevServer } from 'remix-express-dev-server';
 import { flatRoutes } from 'remix-flat-routes';
 import { remixRoutes } from 'remix-routes/vite';
 import { defineConfig } from 'vite';
-import envOnly from 'vite-env-only';
+import { envOnlyMacros } from 'vite-env-only';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 // Load environment variables from .env file at the root of your monorepo
@@ -45,7 +45,7 @@ export default defineConfig({
   },
   plugins: [
     expressDevServer(),
-    envOnly(),
+    envOnlyMacros(),
     tsconfigPaths(),
     remixDevTools(),
     remix({
