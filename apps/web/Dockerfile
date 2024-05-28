@@ -10,7 +10,7 @@ ENV SHELL=/bin/bash
 
 # install dependencies using npm or pnpm
 # TODO: remove pinned version when pnpm > 9 stops breaking turborepo in docker -- feature/task-81-remove-pinned-pnpm-version-in-dockerfile
-RUN npm install -g pnpm@9.1.3
+RUN npm install -g pnpm@8.15.8
 RUN pnpm setup
 RUN pnpm config set global-bin-dir /usr/local/bin
 RUN pnpm add turbo --global
