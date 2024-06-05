@@ -84,8 +84,8 @@ importers:
         specifier: 7.51.5
         version: 7.51.5(react@18.3.1)
       remix-create-express-app:
-        specifier: 0.3.7
-        version: 0.3.7(react-dom@18.3.1)(react@18.3.1)(typescript@5.4.5)
+        specifier: 0.3.11
+        version: 0.3.11(react-dom@18.3.1)(react@18.3.1)(typescript@5.4.5)
       remix-hook-form:
         specifier: 4.3.1
         version: 4.3.1(@remix-run/react@2.9.2)(react-dom@18.3.1)(react-hook-form@7.51.5)(react@18.3.1)
@@ -5055,7 +5055,7 @@ packages:
     dev: false
 
   /array-flatten@1.1.1:
-    resolution: {integrity: sha1-ml9pkFGx5wczKPKgCJaLZOopVdI=}
+    resolution: {integrity: sha512-PCVAQswWemu6UdxsDFFX/+gVeYqKAod3D3UVm91jHwynguOwAvYPhx8nNlM++NqRcK6CxxpUafjmhIdKiHibqg==}
 
   /array-includes@3.1.8:
     resolution: {integrity: sha512-itaWrbYbqpGXkGhZPGUulwnhVf5Hpy1xiCFsGqyIGglbBxmG5vSjxQen3/WGOjPpNEv1RtBLKxbmVXm8HpJStQ==}
@@ -5333,7 +5333,7 @@ packages:
     dev: true
 
   /bytes@3.0.0:
-    resolution: {integrity: sha1-0ygVQE1olpn4Wk6k+odV3ROpYEg=}
+    resolution: {integrity: sha512-pMhOfFDPiv9t5jjIXkHosWmkSyQbvsgEVNkz0ERHbuLh2T/7j4Mqqpz523Fe8MVY89KC6Sh/QfS2sM+SjgFDcw==}
     engines: {node: '>= 0.8'}
     dev: false
 
@@ -6083,7 +6083,7 @@ packages:
     dev: true
 
   /ee-first@1.1.1:
-    resolution: {integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=}
+    resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
 
   /ejs@3.1.10:
     resolution: {integrity: sha512-UeJmFfOrAQS8OJWPZ4qtgHyWExa088/MtK5UEyoJGFH67cDEXkZSviOiKRCZ4Xij0zxI3JECgYs3oKx+AizQBA==}
@@ -8401,7 +8401,7 @@ packages:
     dev: true
 
   /media-typer@0.3.0:
-    resolution: {integrity: sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=}
+    resolution: {integrity: sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==}
     engines: {node: '>= 0.6'}
 
   /memoize-one@6.0.0:
@@ -8432,7 +8432,7 @@ packages:
     dev: false
 
   /merge-descriptors@1.0.1:
-    resolution: {integrity: sha1-sAqqVW3YtEVoFQ7J0blT8/kMu2E=}
+    resolution: {integrity: sha512-cCi6g3/Zr1iqQi6ySbseM1Xvooa98N0w31jzUYrXPX2xqObmFGHJ0tQ5u74H3mVh7wLouTseZyYIq39g8cNp1w==}
 
   /merge-stream@2.0.0:
     resolution: {integrity: sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==}
@@ -10141,8 +10141,8 @@ packages:
       unified: 10.1.2
     dev: true
 
-  /remix-create-express-app@0.3.7(react-dom@18.3.1)(react@18.3.1)(typescript@5.4.5):
-    resolution: {integrity: sha512-Ck5PVP1Hbr5L5E1eviSywFUKg+KMk7ZSzl6A4aNJkzp9TUu0smkmxucbEtVjTd+ndtzldtemsBlLIPxeNaLzbQ==}
+  /remix-create-express-app@0.3.11(react-dom@18.3.1)(react@18.3.1)(typescript@5.4.5):
+    resolution: {integrity: sha512-TXKk4ZlNI4SpnO1Y4Gct3hRUbmb0KDEXVzggd/DrD91Oqia5b/2pq/oVjRQtGjpXfBy3zgufrYKnrF7wANvrJQ==}
     dependencies:
       '@remix-run/express': 2.9.2(express@4.19.2)(typescript@5.4.5)
       '@remix-run/node': 2.9.2(typescript@5.4.5)
@@ -11492,7 +11492,7 @@ packages:
       which-typed-array: 1.1.15
 
   /utils-merge@1.0.1:
-    resolution: {integrity: sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=}
+    resolution: {integrity: sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==}
     engines: {node: '>= 0.4.0'}
 
   /uuid@9.0.1:
