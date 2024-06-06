@@ -372,7 +372,7 @@
     "react-day-picker": "8.10.1",
     "react-dom": "18.3.1",
     "react-hook-form": "7.51.5",
-    "tailwindcss": "3.4.3",
+    "tailwindcss": "3.4.4",
     "tailwindcss-animate": "1.0.7",
     "typescript": "5.4.5"
   },
@@ -382,7 +382,7 @@
     "react-day-picker": "8.10.1",
     "react-dom": "18.3.1",
     "react-hook-form": "7.51.5",
-    "tailwindcss": "3.4.3",
+    "tailwindcss": "3.4.4",
     "tailwindcss-animate": "1.0.7"
   }
 }
