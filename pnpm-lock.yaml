@@ -84,8 +84,8 @@ importers:
         specifier: 7.51.5
         version: 7.51.5(react@18.3.1)
       remix-create-express-app:
-        specifier: 0.3.11
-        version: 0.3.11(react-dom@18.3.1)(react@18.3.1)(typescript@5.4.5)
+        specifier: 0.3.12
+        version: 0.3.12(react-dom@18.3.1)(react@18.3.1)(typescript@5.4.5)
       remix-hook-form:
         specifier: 4.3.1
         version: 4.3.1(@remix-run/react@2.9.2)(react-dom@18.3.1)(react-hook-form@7.51.5)(react@18.3.1)
@@ -10141,8 +10141,8 @@ packages:
       unified: 10.1.2
     dev: true
 
-  /remix-create-express-app@0.3.11(react-dom@18.3.1)(react@18.3.1)(typescript@5.4.5):
-    resolution: {integrity: sha512-TXKk4ZlNI4SpnO1Y4Gct3hRUbmb0KDEXVzggd/DrD91Oqia5b/2pq/oVjRQtGjpXfBy3zgufrYKnrF7wANvrJQ==}
+  /remix-create-express-app@0.3.12(react-dom@18.3.1)(react@18.3.1)(typescript@5.4.5):
+    resolution: {integrity: sha512-sEWIckCJkPzXFGRCiBCScDObbjcJbCrJFdWRXy+9j6HYPiXSaM3X5FKdUplOy5HE7UAxgsJ4rmljBdPG0nX2vA==}
     dependencies:
       '@remix-run/express': 2.9.2(express@4.19.2)(typescript@5.4.5)
       '@remix-run/node': 2.9.2(typescript@5.4.5)
