@@ -212,8 +212,8 @@ importers:
         specifier: '*'
         version: link:../id
       hono:
-        specifier: 4.4.0
-        version: 4.4.0
+        specifier: 4.4.4
+        version: 4.4.4
       pretty-cache-header:
         specifier: 1.0.0
         version: 1.0.0
@@ -7471,8 +7471,8 @@ packages:
       react-is: 16.13.1
     dev: false
 
-  /hono@4.4.0:
-    resolution: {integrity: sha512-Bb2GHk8jmlLIuxc3U+7UBGOoA5lByJTAFnRdH2N2fqEVy9TEQzJ9saIJUQ/ZqBvEvgEFe7UjPFNSFi8cyeU+3Q==}
+  /hono@4.4.4:
+    resolution: {integrity: sha512-zO5+4K8yf1iuKhBZhwmpZ/0LzPMr8Zt1RugEGM1xvOqgh9DyLb7tslOtoBks4bmm5bIcLtzLCXUpYpXOkwpABA==}
     engines: {node: '>=16.0.0'}
     dev: false
 
@@ -10234,7 +10234,7 @@ packages:
         optional: true
     dependencies:
       '@remix-run/server-runtime': 2.9.1(typescript@5.4.5)
-      hono: 4.4.0
+      hono: 4.4.4
       pretty-cache-header: 1.0.0
     transitivePeerDependencies:
       - typescript
