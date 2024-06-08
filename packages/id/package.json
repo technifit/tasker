@@ -24,8 +24,8 @@
     "nanoid": "5.0.7"
   },
   "devDependencies": {
-    "@technifit/eslint-config": "*",
-    "@technifit/tsconfig": "*",
+    "@technifit/eslint-config": "workspace:*",
+    "@technifit/tsconfig": "workspace:*",
     "@vitest/coverage-v8": "1.6.0",
     "eslint": "8.57.0",
     "typescript": "5.4.5",
