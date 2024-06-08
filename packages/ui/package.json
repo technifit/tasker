@@ -360,9 +360,9 @@
   },
   "devDependencies": {
     "@tanstack/react-table": "8.17.3",
-    "@technifit/eslint-config": "*",
-    "@technifit/tailwind-config": "*",
-    "@technifit/tsconfig": "*",
+    "@technifit/eslint-config": "workspace:*",
+    "@technifit/tailwind-config": "workspace:*",
+    "@technifit/tsconfig": "workspace:*",
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
     "date-fns": "3.6.0",
@@ -384,9 +384,5 @@
     "react-hook-form": "7.51.5",
     "tailwindcss": "3.4.4",
     "tailwindcss-animate": "1.0.7"
-  },
-  "packageManager": "pnpm@9.2.0",
-  "engines": {
-    "node": ">=20.14.0"
   }
 }

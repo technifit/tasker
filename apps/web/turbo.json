@@ -1,21 +1,11 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "extends": [
-    "//"
-  ],
+  "extends": ["//"],
   "tasks": {
     "build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "outputs": [
-        "build/**"
-      ],
-      "env": [
-        "CLERK_PUBLISHABLE_KEY",
-        "CLERK_SECRET_KEY",
-        "SESSION_SECRET"
-      ]
+      "dependsOn": ["^build"],
+      "outputs": ["build/**"],
+      "env": ["CLERK_PUBLISHABLE_KEY", "CLERK_SECRET_KEY", "SESSION_SECRET"]
     }
   }
 }

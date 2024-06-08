@@ -29,21 +29,17 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@technifit/id": "*",
+    "@technifit/id": "workspace:*",
     "hono": "4.4.4",
     "pretty-cache-header": "1.0.0",
     "remix-hono": "0.0.16"
   },
   "devDependencies": {
-    "@technifit/eslint-config": "*",
-    "@technifit/tsconfig": "*",
+    "@technifit/eslint-config": "workspace:*",
+    "@technifit/tsconfig": "workspace:*",
     "@vitest/coverage-v8": "1.6.0",
     "eslint": "8.57.0",
     "typescript": "5.4.5",
     "vitest": "1.6.0"
-  },
-  "packageManager": "pnpm@9.2.0",
-  "engines": {
-    "node": ">=20.14.0"
   }
 }
