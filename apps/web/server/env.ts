@@ -1,4 +1,7 @@
+import type { Session } from '@remix-run/node';
 import { z } from 'zod';
+
+import type { SessionData, SessionFlashData } from '@technifit/middleware/session';
 
 const envSchema = z.object({
   CLERK_PUBLISHABLE_KEY: z.string(),
@@ -32,6 +35,7 @@ declare module '@remix-run/node' {
      * The environment variables.
      */
     readonly env: Env;
+    session: Session<SessionData, SessionFlashData>;
   }
 }
 
