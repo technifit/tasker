@@ -32,7 +32,7 @@ const fonts = [...interWoff, ...interWoff2];
 const session = createSessionMiddleware(
   createCookieSessionStorage<SessionData, SessionFlashData>({
     cookie: {
-      name: '__session_test_cb',
+      name: '__web_session',
       path: '/',
       sameSite: 'lax',
       secrets: ['s3cret1'],
@@ -101,19 +101,27 @@ export function ErrorBoundary() {
 
   if (isRouteErrorResponse(error)) {
     return (
-      <>
-        <h1>
-          {error.status} {error.statusText}
-        </h1>
-        <p>{error.data}</p>
-      </>
+      <main className='container grid grow grid-cols-1 py-4 lg:grid-cols-1'>
+        <div className='flex flex-col gap-2'>
+          <div className='flex grow flex-col items-center justify-center'>
+            <h1>
+              {error.status} {error.statusText}
+            </h1>
+            <p>{error.data}</p>
+          </div>
+        </div>
+      </main>
     );
   }
 
   return (
-    <>
-      <h1>Error!</h1>
-      <p>Unknown error</p>
-    </>
+    <main className='container grid grow grid-cols-1 py-4 lg:grid-cols-1'>
+      <div className='flex flex-col gap-2'>
+        <div className='flex grow flex-col items-center justify-center'>
+          <h1>Error</h1>
+          <p>Unknown Error</p>
+        </div>
+      </div>
+    </main>
   );
 }

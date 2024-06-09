@@ -1,28 +1,27 @@
-import { createMiddleware } from 'hono/factory';
-import { getSession } from 'remix-hono/session';
+import type { MiddlewareFunctionArgs } from 'remix-create-express-app/middleware';
+
+import { SessionContext } from './session';
 
 /**
  * Middleware that handles the access token.
  * It retrieves the access token from the request URL's query parameters or from the session.
  * If the access token is not found, it throws an error.
  */
-const accessToken = () => {
-  return createMiddleware(async (c, next) => {
-    const session = getSession(c);
+const accessToken = ({ context, next, request }: MiddlewareFunctionArgs) => {
+  const sessionContext = context.get(SessionContext);
 
-    const accessToken = new URL(c.req.url).searchParams.get('accessToken');
-    const existingToken = session.get('accessToken') as string;
+  const accessToken = new URL(request.url).searchParams.get('access_token');
+  const existingToken = sessionContext.get('access_token');
 
-    if (accessToken) {
-      session.set('accessToken', accessToken);
-    } else if (existingToken) {
-      session.set('accessToken', existingToken);
-    } else {
-      throw new Error('Access token is required');
-    }
+  if (accessToken) {
+    sessionContext.set('access_token', accessToken);
+  }
 
-    await next();
-  });
+  if (!accessToken && !existingToken) {
+    throw Error('Access token is required');
+  }
+
+  return next();
 };
 
 export { accessToken };
