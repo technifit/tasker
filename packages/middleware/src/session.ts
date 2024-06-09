@@ -5,7 +5,6 @@ import type { MiddlewareFunctionArgs } from 'remix-create-express-app/middleware
 import { z } from 'zod';
 
 const sessionSchema = z.object({
-  access_token: z.string().optional(),
   idempotency_key: z.string().optional(),
 });
 

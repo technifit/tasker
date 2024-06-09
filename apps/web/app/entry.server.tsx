@@ -5,6 +5,7 @@ import { RemixServer } from '@remix-run/react';
 import { nodeProfilingIntegration } from '@sentry/profiling-node';
 import * as Sentry from '@sentry/remix';
 import { sentryHandleError } from '@sentry/remix';
+import { wrapExpressCreateRequestHandler } from '@sentry/remix';
 import { isbot } from 'isbot';
 import { renderToPipeableStream } from 'react-dom/server';
 import { createExpressApp } from 'remix-create-express-app';
@@ -161,6 +162,12 @@ export const app = createExpressApp({
   getLoadContext: (req, res, { build }) => {
     // return the AppLoadContext
     return { appVersion: build.assets.version, env: envSchema.parse(process.env) } as AppLoadContext;
+  },
+  customRequestHandler: (defaultCreateRequestHandler) => {
+    // enables you to wrap the default request handler
+    return envSchema.parse(process.env).NODE_ENV === 'production'
+      ? wrapExpressCreateRequestHandler(defaultCreateRequestHandler)
+      : defaultCreateRequestHandler; // use default in dev
   },
   unstable_middleware: true,
 });
