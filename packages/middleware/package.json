@@ -5,16 +5,20 @@
   "type": "module",
   "exports": {
     "./access-token": {
-      "types": "./dist/access-token.d.ts",
-      "default": "./dist/access-token.js"
+      "types": "./src/access-token.d.ts",
+      "default": "./src/access-token.js"
     },
     "./cache": {
-      "types": "./dist/cache.d.ts",
-      "default": "./dist/cache.js"
+      "types": "./src/cache.d.ts",
+      "default": "./src/cache.js"
     },
     "./idempotency": {
-      "types": "./dist/idempotency.d.ts",
-      "default": "./dist/idempotency.js"
+      "types": "./src/idempotency.d.ts",
+      "default": "./src/idempotency.js"
+    },
+    "./session": {
+      "types": "./src/session.d.ts",
+      "default": "./src/session.js"
     }
   },
   "scripts": {
@@ -29,10 +33,13 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@remix-run/node": "2.9.2",
     "@technifit/id": "workspace:*",
     "hono": "4.4.4",
     "pretty-cache-header": "1.0.0",
-    "remix-hono": "0.0.16"
+    "remix-create-express-app": "0.3.12",
+    "remix-hono": "0.0.16",
+    "zod": "3.23.8"
   },
   "devDependencies": {
     "@technifit/eslint-config": "workspace:*",
