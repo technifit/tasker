@@ -41,7 +41,7 @@
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-hook-form": "7.51.5",
-    "remix-create-express-app": "0.4.2",
+    "remix-create-express-app": "0.4.3",
     "remix-hook-form": "4.3.1",
     "remix-params-helper": "0.5.1",
     "remix-routes": "1.7.5",
