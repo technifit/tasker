@@ -87,8 +87,8 @@ importers:
         specifier: 7.51.5
         version: 7.51.5(react@18.3.1)
       remix-create-express-app:
-        specifier: 0.4.2
-        version: 0.4.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5)
+        specifier: 0.4.3
+        version: 0.4.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5)
       remix-hook-form:
         specifier: 4.3.1
         version: 4.3.1(@remix-run/react@2.9.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5))(react-dom@18.3.1(react@18.3.1))(react-hook-form@7.51.5(react@18.3.1))(react@18.3.1)
@@ -215,8 +215,8 @@ importers:
         specifier: workspace:*
         version: link:../id
       remix-create-express-app:
-        specifier: 0.4.2
-        version: 0.4.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5)
+        specifier: 0.4.3
+        version: 0.4.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5)
       zod:
         specifier: 3.23.8
         version: 3.23.8
@@ -5663,8 +5663,8 @@ packages:
   remark-rehype@10.1.0:
     resolution: {integrity: sha512-EFmR5zppdBp0WQeDVZ/b66CWJipB2q2VLNFMabzDSGR66Z2fQii83G5gTBbgGEnEEA0QRussvrFHxk1HWGJskw==}
 
-  remix-create-express-app@0.4.2:
-    resolution: {integrity: sha512-nA6DXMhpBcrlzK6LuZ1mUw8GmdUhiuPRowjOLqoIA9Tv4+22nn5K1xkDawmZEuf/RpPQ/sW3Ef3tYgCY7aY0Qw==}
+  remix-create-express-app@0.4.3:
+    resolution: {integrity: sha512-kV3SuuetPcyHxE4NK4svJ1C8ebH3qaeEyAAYRnyTdmNfK8dhBW7muhmVoIFPj2W3RdJK/qCUAMeJUfzW8DJPsg==}
 
   remix-development-tools@4.2.0:
     resolution: {integrity: sha512-e1x3n6hPXph2EuFzZiXwU+OzXeyOn8gAMlLH2dUoOgxnCHMmRGSBTOSbtlCsqn9SS7RqrYcOvH7/Nqiy+OJUhQ==}
@@ -12649,7 +12649,7 @@ snapshots:
       mdast-util-to-hast: 12.3.0
       unified: 10.1.2
 
-  remix-create-express-app@0.4.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5):
+  remix-create-express-app@0.4.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5):
     dependencies:
       '@remix-run/express': 2.9.2(express@4.19.2)(typescript@5.4.5)
       '@remix-run/node': 2.9.2(typescript@5.4.5)
