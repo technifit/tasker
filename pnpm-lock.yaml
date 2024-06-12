@@ -10,7 +10,7 @@ importers:
     devDependencies:
       '@ianvs/prettier-plugin-sort-imports':
         specifier: 4.2.1
-        version: 4.2.1(prettier@3.3.1)
+        version: 4.2.1(prettier@3.3.2)
       '@technifit/tsconfig':
         specifier: workspace:*
         version: link:tooling/typescript-config
@@ -18,14 +18,14 @@ importers:
         specifier: 7.13.0
         version: 7.13.0(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5)
       prettier:
-        specifier: 3.3.1
-        version: 3.3.1
+        specifier: 3.3.2
+        version: 3.3.2
       prettier-plugin-packagejson:
         specifier: 2.5.0
-        version: 2.5.0(prettier@3.3.1)
+        version: 2.5.0(prettier@3.3.2)
       prettier-plugin-tailwindcss:
         specifier: 0.6.3
-        version: 0.6.3(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.3.1))(prettier@3.3.1)
+        version: 0.6.3(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.3.2))(prettier@3.3.2)
       turbo:
         specifier: 2.0.3
         version: 2.0.3
@@ -490,8 +490,8 @@ importers:
   tooling/typescript-config:
     devDependencies:
       prettier:
-        specifier: 3.3.1
-        version: 3.3.1
+        specifier: 3.3.2
+        version: 3.3.2
 
 packages:
 
@@ -5403,8 +5403,8 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
 
-  prettier@3.3.1:
-    resolution: {integrity: sha512-7CAwy5dRsxs8PHXT3twixW9/OEll8MLE0VRPCJyl7CkS6VHGPSlsVaWTiASPTyGyYRyApxlaWTzwUxVNrhcwDg==}
+  prettier@3.3.2:
+    resolution: {integrity: sha512-rAVeHYMcv8ATV5d508CFdn+8/pHPpXeIid1DdrPwXnaAdH7cqjVbpJaT5eq4yRAFU/lsbwYwSF/n5iNrdJHPQA==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -7260,14 +7260,14 @@ snapshots:
 
   '@humanwhocodes/object-schema@2.0.3': {}
 
-  '@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.3.1)':
+  '@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.3.2)':
     dependencies:
       '@babel/core': 7.24.4
       '@babel/generator': 7.24.4
       '@babel/parser': 7.24.4
       '@babel/traverse': 7.24.1
       '@babel/types': 7.24.0
-      prettier: 3.3.1
+      prettier: 3.3.2
       semver: 7.6.0
     transitivePeerDependencies:
       - supports-color
@@ -12348,22 +12348,22 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-plugin-packagejson@2.5.0(prettier@3.3.1):
+  prettier-plugin-packagejson@2.5.0(prettier@3.3.2):
     dependencies:
       sort-package-json: 2.10.0
       synckit: 0.9.0
     optionalDependencies:
-      prettier: 3.3.1
+      prettier: 3.3.2
 
-  prettier-plugin-tailwindcss@0.6.3(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.3.1))(prettier@3.3.1):
+  prettier-plugin-tailwindcss@0.6.3(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.3.2))(prettier@3.3.2):
     dependencies:
-      prettier: 3.3.1
+      prettier: 3.3.2
     optionalDependencies:
-      '@ianvs/prettier-plugin-sort-imports': 4.2.1(prettier@3.3.1)
+      '@ianvs/prettier-plugin-sort-imports': 4.2.1(prettier@3.3.2)
 
   prettier@2.8.8: {}
 
-  prettier@3.3.1: {}
+  prettier@3.3.2: {}
 
   pretty-cache-header@1.0.0:
     dependencies:
