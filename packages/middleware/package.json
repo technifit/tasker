@@ -35,7 +35,7 @@
   "dependencies": {
     "@remix-run/node": "2.9.2",
     "@technifit/id": "workspace:*",
-    "remix-create-express-app": "0.3.12",
+    "remix-create-express-app": "0.4.2",
     "zod": "3.23.8"
   },
   "devDependencies": {
