@@ -157,8 +157,8 @@ importers:
         specifier: 4.2.0
         version: 4.2.0(@remix-run/react@2.9.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5))(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.2.13(@types/node@20.14.2))
       remix-express-dev-server:
-        specifier: 0.2.7
-        version: 0.2.7(@remix-run/dev@2.9.2(@remix-run/react@2.9.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5))(@types/node@20.14.2)(typescript@5.4.5)(vite@5.2.13(@types/node@20.14.2)))(esbuild@0.17.6)(vite@5.2.13(@types/node@20.14.2))
+        specifier: 0.4.0
+        version: 0.4.0(@remix-run/dev@2.9.2(@remix-run/react@2.9.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5))(@types/node@20.14.2)(typescript@5.4.5)(vite@5.2.13(@types/node@20.14.2)))(esbuild@0.17.6)(vite@5.2.13(@types/node@20.14.2))
       remix-flat-routes:
         specifier: 0.6.5
         version: 0.6.5(@remix-run/dev@2.9.2(@remix-run/react@2.9.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5))(@types/node@20.14.2)(typescript@5.4.5)(vite@5.2.13(@types/node@20.14.2)))
@@ -5674,8 +5674,8 @@ packages:
       react-dom: '>=17'
       vite: '>=5.0.0'
 
-  remix-express-dev-server@0.2.7:
-    resolution: {integrity: sha512-q3k2bkGQu42vM85QMemoG41BGKuyXgF6dk+ZE4iT7K0qkzGNesNKaM1/lrW4wlGeNg7Eo57sSOG2iXFOjp+K7Q==}
+  remix-express-dev-server@0.4.0:
+    resolution: {integrity: sha512-AR2uKpOIhROMgDBt/zjtkVCvdlusiqfm9BSDibjOuSTX+dLtwSOymGuWvHnqO70HbDfV19OyWNHDAbZs17TGpw==}
     peerDependencies:
       '@remix-run/dev': ^2.8.1
       esbuild: ^0.20.2
@@ -12691,7 +12691,7 @@ snapshots:
       - '@types/react'
       - '@types/react-dom'
 
-  remix-express-dev-server@0.2.7(@remix-run/dev@2.9.2(@remix-run/react@2.9.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5))(@types/node@20.14.2)(typescript@5.4.5)(vite@5.2.13(@types/node@20.14.2)))(esbuild@0.17.6)(vite@5.2.13(@types/node@20.14.2)):
+  remix-express-dev-server@0.4.0(@remix-run/dev@2.9.2(@remix-run/react@2.9.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5))(@types/node@20.14.2)(typescript@5.4.5)(vite@5.2.13(@types/node@20.14.2)))(esbuild@0.17.6)(vite@5.2.13(@types/node@20.14.2)):
     dependencies:
       '@remix-run/dev': 2.9.2(@remix-run/react@2.9.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5))(@types/node@20.14.2)(typescript@5.4.5)(vite@5.2.13(@types/node@20.14.2))
       esbuild: 0.17.6
