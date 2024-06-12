@@ -36,8 +36,8 @@ importers:
   apps/web:
     dependencies:
       '@clerk/remix':
-        specifier: 4.1.0
-        version: 4.1.0(@remix-run/react@2.9.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5))(@remix-run/server-runtime@2.9.2(typescript@5.4.5))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 4.1.1
+        version: 4.1.1(@remix-run/react@2.9.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5))(@remix-run/server-runtime@2.9.2(typescript@5.4.5))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@hookform/resolvers':
         specifier: 3.6.0
         version: 3.6.0(react-hook-form@7.51.5(react@18.3.1))
@@ -702,19 +702,19 @@ packages:
   '@bcoe/v8-coverage@0.2.3':
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
 
-  '@clerk/backend@1.2.2':
-    resolution: {integrity: sha512-P007QPL9Ls3bwiBtK3Pat85HcSiL8rhwh/X1wifIEBK6OGF8kez1gOpcvt5/SmoCEecGg8AhH11A2fOIZcwPgA==}
+  '@clerk/backend@1.2.3':
+    resolution: {integrity: sha512-tj812eTTn2ewXMgr4jwFjpqoXZRF2LMw9UBT+Nat0lmXw55sDA5ou2McLZ67e62WNZwbrCUa51MGKSBhrWnZcA==}
     engines: {node: '>=18.17.0'}
 
-  '@clerk/clerk-react@5.2.3':
-    resolution: {integrity: sha512-1vd6mLHBJwaBx96ne/4HeI3W/ajt22gDrXuugEwVOe2lMauPQBaJq3jDttrNhErcKjMhamIMELeu8hhifpxNgA==}
+  '@clerk/clerk-react@5.2.4':
+    resolution: {integrity: sha512-TaSjf3pdxUKQIDmwi6JkJDVGwHbs7pTeiwEr2/JksMrQnW6zMIutsEhJfW10dY1hOwJeDoSxGCkHw+7Br2rktw==}
     engines: {node: '>=18.17.0'}
     peerDependencies:
       react: '>=18 || >=19.0.0-beta'
       react-dom: '>=18 || >=19.0.0-beta'
 
-  '@clerk/remix@4.1.0':
-    resolution: {integrity: sha512-Z6GGK+eCnjcKlthpZFyKbANmDn+OiIIn8/qyARvK5eUf7oXR2HGAcOkCNyNQIhcX0/us/eTesE/LZqskTeM8MQ==}
+  '@clerk/remix@4.1.1':
+    resolution: {integrity: sha512-j0XoJwNs3jtW1hUY5Li96cfd10+6MhD6w54z056t06j4swKGQr/i942NMxqS21qbFXTpRDIijWJvLctSlOdX3w==}
     engines: {node: '>=18.17.0'}
     peerDependencies:
       '@remix-run/react': ^2.0.0
@@ -722,8 +722,8 @@ packages:
       react: '>=18'
       react-dom: '>=18'
 
-  '@clerk/shared@2.2.2':
-    resolution: {integrity: sha512-ThbAXiK5drCabR2TtXSQVHXW0fNtO/RPfiQUiSrjHFdbJAiEkTbPwGSLvPaY1svw5hZHFHLCF735szIDvNHe1A==}
+  '@clerk/shared@2.3.0':
+    resolution: {integrity: sha512-V/49MoOrALzpu0BbhYDCcKQYIjrHnhRa7QFho9+4wm94oCJgc9j3N5wxndJwj3Ur/fmIyBnjwMzDAT2nZZj47g==}
     engines: {node: '>=18.17.0'}
     peerDependencies:
       react: '>=18 || >=19.0.0-beta'
@@ -6903,9 +6903,9 @@ snapshots:
 
   '@bcoe/v8-coverage@0.2.3': {}
 
-  '@clerk/backend@1.2.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@clerk/backend@1.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@clerk/shared': 2.2.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@clerk/shared': 2.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@clerk/types': 4.6.0
       cookie: 0.5.0
       snakecase-keys: 5.4.4
@@ -6914,19 +6914,19 @@ snapshots:
       - react
       - react-dom
 
-  '@clerk/clerk-react@5.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@clerk/clerk-react@5.2.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@clerk/shared': 2.2.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@clerk/shared': 2.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@clerk/types': 4.6.0
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       tslib: 2.4.1
 
-  '@clerk/remix@4.1.0(@remix-run/react@2.9.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5))(@remix-run/server-runtime@2.9.2(typescript@5.4.5))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@clerk/remix@4.1.1(@remix-run/react@2.9.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5))(@remix-run/server-runtime@2.9.2(typescript@5.4.5))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@clerk/backend': 1.2.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@clerk/clerk-react': 5.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@clerk/shared': 2.2.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@clerk/backend': 1.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@clerk/clerk-react': 5.2.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@clerk/shared': 2.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@clerk/types': 4.6.0
       '@remix-run/react': 2.9.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5)
       '@remix-run/server-runtime': 2.9.2(typescript@5.4.5)
@@ -6935,7 +6935,7 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       tslib: 2.4.1
 
-  '@clerk/shared@2.2.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@clerk/shared@2.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@clerk/types': 4.6.0
       glob-to-regexp: 0.4.1
