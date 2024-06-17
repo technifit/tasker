@@ -2,6 +2,7 @@ import { useClerk, useOrganizationList } from '@clerk/remix';
 import { zodResolver } from '@hookform/resolvers/zod';
 import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
 import { useNavigate } from '@remix-run/react';
+import slugify from 'typescript-slugify';
 import { z } from 'zod';
 
 import { Balancer } from '@technifit/ui/balancer';
@@ -42,7 +43,7 @@ export const CreateOrganization = () => {
     resolver,
     submitHandlers: {
       onValid: async ({ teamName }) => {
-        const { id, slug } = await createOrganization({ name: teamName });
+        const { id, slug } = await createOrganization({ name: teamName, slug: slugify(teamName) });
 
         if (!setActive) {
           throw new Error('Organization not set');
