@@ -10,26 +10,26 @@ import { getStep } from '../../config';
 
 export const loader = async (args: LoaderFunctionArgs) => {
   await requireAuthenticatedUser(args);
-  const { teamSlug } = $params('/create-team/:teamSlug/summary', args.params);
+  const { organisationSlug } = $params('/create-organisation/:organisationSlug/add-members', args.params);
 
-  return { teamSlug, url: args.request.url };
+  return { organisationSlug, url: args.request.url };
 };
 
-export const CreateOrganizationSummary = () => {
-  const { teamSlug, url } = useLoaderData<typeof loader>();
+export const AddOrganizationMembers = () => {
+  const { organisationSlug, url } = useLoaderData<typeof loader>();
 
   return (
     <>
       <CardHeader>
-        <CardTitle>Summary</CardTitle>
+        <CardTitle>Add Members</CardTitle>
+        <CardFooter>
+          <Button asChild>
+            <Link to={getStep({ direction: 'next', url, params: { organisationSlug } })}>Continue</Link>
+          </Button>
+        </CardFooter>
       </CardHeader>
-      <CardFooter>
-        <Button asChild>
-          <Link to={getStep({ direction: 'next', url, params: { teamSlug } })}>Get Started</Link>
-        </Button>
-      </CardFooter>
     </>
   );
 };
 
-export default CreateOrganizationSummary;
+export default AddOrganizationMembers;

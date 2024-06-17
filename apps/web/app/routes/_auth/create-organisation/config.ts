@@ -5,17 +5,17 @@ import { $path } from 'remix-routes';
 import type { Routes } from 'remix-routes';
 
 export const steps: { path: keyof Routes }[] = [
-  { path: '/create-team' },
-  { path: '/create-team/:teamSlug/add-members' },
-  { path: '/create-team/:teamSlug/select-plan' },
-  { path: '/create-team/:teamSlug/summary' },
+  { path: '/create-organisation' },
+  { path: '/create-organisation/:organisationSlug/add-members' },
+  { path: '/create-organisation/:organisationSlug/select-plan' },
+  { path: '/create-organisation/:organisationSlug/summary' },
 ];
 
 interface GetStepProps {
   direction: 'next' | 'previous';
   url: string;
   params: {
-    teamSlug: string;
+    organisationSlug: string;
   };
 }
 
@@ -42,7 +42,7 @@ export const getStep = ({ direction, url, params }: GetStepProps) => {
   const step = steps[currentIndex + (direction === 'next' ? 1 : -1)];
 
   // If the direction is `next` and it's the last step
-  if (direction === 'next' && !step) return $path('/');
+  if (direction === 'next' && !step) return $path('/:organisationSlug', params);
 
   if (!step) return $path('/');
 

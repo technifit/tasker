@@ -79,7 +79,7 @@ export function UserNav() {
             <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link prefetch='intent' to={$path('/create-team')}>
+            <Link prefetch='intent' to={$path('/create-organisation')}>
               New Team
             </Link>
           </DropdownMenuItem>

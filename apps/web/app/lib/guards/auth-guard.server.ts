@@ -21,7 +21,7 @@ export const requireAuthenticatedOrgUser = async (args: LoaderFunctionArgs) => {
   }
 
   if (!auth.orgId) {
-    throw redirect($path('/create-team'));
+    throw redirect($path('/create-organisation'));
   }
 
   return auth;

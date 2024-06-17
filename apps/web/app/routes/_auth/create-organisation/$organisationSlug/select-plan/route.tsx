@@ -10,13 +10,13 @@ import { getStep } from '../../config';
 
 export const loader = async (args: LoaderFunctionArgs) => {
   await requireAuthenticatedUser(args);
-  const { teamSlug } = $params('/create-team/:teamSlug/select-plan', args.params);
+  const { organisationSlug } = $params('/create-organisation/:organisationSlug/select-plan', args.params);
 
-  return { teamSlug, url: args.request.url };
+  return { organisationSlug, url: args.request.url };
 };
 
 export const SelectOrganizationPlan = () => {
-  const { teamSlug, url } = useLoaderData<typeof loader>();
+  const { organisationSlug, url } = useLoaderData<typeof loader>();
 
   return (
     <>
@@ -25,7 +25,7 @@ export const SelectOrganizationPlan = () => {
       </CardHeader>
       <CardFooter>
         <Button asChild>
-          <Link to={getStep({ direction: 'next', url, params: { teamSlug } })}>Continue</Link>
+          <Link to={getStep({ direction: 'next', url, params: { organisationSlug } })}>Continue</Link>
         </Button>
       </CardFooter>
     </>

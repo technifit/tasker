@@ -1,11 +1,17 @@
+import { redirect } from '@remix-run/node';
 import type { LoaderFunctionArgs } from '@remix-run/node';
+import { $path } from 'remix-routes';
 
 import { requireAuthenticatedOrgUser } from '~/lib/guards/auth-guard.server';
 
 export const loader = async (args: LoaderFunctionArgs) => {
-  await requireAuthenticatedOrgUser(args);
+  const orgUser = await requireAuthenticatedOrgUser(args);
 
-  return null;
+  if (orgUser.orgSlug) {
+    return redirect($path('/:organisationSlug', { organisationSlug: orgUser.orgSlug }));
+  }
+
+  return redirect($path('/create-organisation'));
 };
 
 export const Index = () => {
