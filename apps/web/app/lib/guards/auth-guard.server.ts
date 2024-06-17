@@ -15,6 +15,7 @@ export const requireAuthenticatedUser = async (args: LoaderFunctionArgs) => {
 
 export const requireAuthenticatedOrgUser = async (args: LoaderFunctionArgs) => {
   const auth = await getAuth(args);
+  console.log('🚀 ~ requireAuthenticatedOrgUser ~ auth:', auth);
 
   if (!auth.userId) {
     throw redirect($path('/log-in'));
