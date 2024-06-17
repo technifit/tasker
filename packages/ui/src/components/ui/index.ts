@@ -21,6 +21,7 @@ export * from './hover-card';
 export * from './icons';
 export * from './icons';
 export * from './input-otp';
+export * from './input-password';
 export * from './input';
 export * from './label';
 export * from './menubar';

@@ -10,6 +10,7 @@ import { z } from 'zod';
 import { Button } from '@technifit/ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage, useForm } from '@technifit/ui/form';
 import { Input } from '@technifit/ui/input';
+import { InputPassword } from '@technifit/ui/input-password';
 import { Typography } from '@technifit/ui/typography';
 
 import { ErrorAlert } from '~/ui/error-alert';
@@ -153,7 +154,7 @@ export const Signup = () => {
                 <FormItem>
                   <FormLabel>Password</FormLabel>
                   <FormControl>
-                    <Input autoComplete='password' type='password' {...field} />
+                    <InputPassword autoComplete='password' {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

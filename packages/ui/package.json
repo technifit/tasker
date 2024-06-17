@@ -154,6 +154,12 @@
         "default": "./src/components/ui/input-otp.js"
       }
     },
+    "./input-password": {
+      "import": {
+        "types": "./src/components/ui/input-password.d.ts",
+        "default": "./src/components/ui/input-password.js"
+      }
+    },
     "./label": {
       "import": {
         "types": "./src/components/ui/label.d.ts",

@@ -159,9 +159,9 @@ export const app = createExpressApp({
     // customize your express app with additional middleware
     //app.use(morgan('tiny'))
   },
-  getLoadContext: (req, res, { build }) => {
+  getLoadContext: () => {
     // return the AppLoadContext
-    return { appVersion: build.assets.version, env: envSchema.parse(process.env) } as AppLoadContext;
+    return { env: envSchema.parse(process.env) } as AppLoadContext;
   },
   customRequestHandler: (defaultCreateRequestHandler) => {
     // enables you to wrap the default request handler

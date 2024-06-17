@@ -18,6 +18,9 @@ export const Copy = Lucide.Copy;
 export const CopyDone = Lucide.ClipboardCheck;
 export const Dashboard = Lucide.Activity;
 export const Ellipsis = Lucide.MoreVertical;
+export const Eye = Lucide.Eye;
+export const EyeOff = Lucide.EyeOff;
+
 export const Help = Lucide.HelpCircle;
 export const Key = Lucide.Key;
 export const LogIn = Lucide.LogIn;

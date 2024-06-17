@@ -28,10 +28,6 @@ declare module '@remix-run/node' {
    */
   interface AppLoadContext {
     /**
-     * The app version from the build assets.
-     */
-    readonly appVersion: string;
-    /**
      * The environment variables.
      */
     readonly env: Env;

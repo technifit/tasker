@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useSignIn } from '@clerk/remix';
 import { isClerkAPIResponseError } from '@clerk/remix/errors';
 import { zodResolver } from '@hookform/resolvers/zod';
-import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
+import type { MetaFunction } from '@remix-run/node';
 import { Link, useNavigate } from '@remix-run/react';
 import { $path } from 'remix-routes';
 import { z } from 'zod';
@@ -10,6 +10,7 @@ import { z } from 'zod';
 import { Button } from '@technifit/ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage, useForm } from '@technifit/ui/form';
 import { Input } from '@technifit/ui/input';
+import { InputPassword } from '@technifit/ui/input-password';
 import { Typography } from '@technifit/ui/typography';
 
 import { ErrorAlert } from '~/ui/error-alert';
@@ -24,9 +25,7 @@ type LogInFormData = z.infer<typeof logInFormSchema>;
 
 const resolver = zodResolver(logInFormSchema);
 
-export const loader = ({ context: { appVersion } }: LoaderFunctionArgs) => {
-  console.log('appVersion', appVersion);
-
+export const loader = () => {
   return null;
 };
 
@@ -152,7 +151,7 @@ export const SignUp = () => {
                   <FormItem>
                     <FormLabel>Password</FormLabel>
                     <FormControl>
-                      <Input autoComplete='password' type='password' {...field} />
+                      <InputPassword autoComplete='password' {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

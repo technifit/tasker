@@ -9,8 +9,8 @@ import { z } from 'zod';
 
 import { Button } from '@technifit/ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage, useForm } from '@technifit/ui/form';
-import { Input } from '@technifit/ui/input';
 import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from '@technifit/ui/input-otp';
+import { InputPassword } from '@technifit/ui/input-password';
 import { toast } from '@technifit/ui/sonner';
 import { Typography } from '@technifit/ui/typography';
 
@@ -137,7 +137,7 @@ export const ResetPassword = () => {
                 <FormItem>
                   <FormLabel>New Password</FormLabel>
                   <FormControl>
-                    <Input autoComplete='password' type='password' {...field} />
+                    <InputPassword autoComplete='password' {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

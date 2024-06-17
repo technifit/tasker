@@ -89,7 +89,7 @@ function App() {
   return <Outlet />;
 }
 
-export default withSentry(ClerkApp(App), {
+export default withSentry(ClerkApp(App, { clerkJSVariant: 'headless' }), {
   errorBoundaryOptions: {
     fallback: <ErrorBoundary />,
   },
