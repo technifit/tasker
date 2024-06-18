@@ -51,7 +51,7 @@ export const CreateOrganization = () => {
 
         await setActive({ organization: id });
 
-        navigate(getStep({ direction: 'next', url: window.location.href, params: { teamSlug: slug! } }));
+        navigate(getStep({ direction: 'next', url: window.location.href, params: { organisationSlug: slug! } }));
       },
     },
   });
