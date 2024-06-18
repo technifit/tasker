@@ -1,8 +1,10 @@
 [build]
 builder = "DOCKERFILE"
 dockerfilePath = "/apps/web/Dockerfile"
+buildEnvironment = "V2"
 
 [deploy]
+runtime = "V2"
 numReplicas = 1
 healthcheckPath = "/health-check"
 sleepApplication = false
