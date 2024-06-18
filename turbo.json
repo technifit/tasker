@@ -14,7 +14,8 @@
     "STRIPE_WEBHOOK_SECRET",
     "VERCEL_ENV",
     "VERCEL_URL",
-    "VERCEL"
+    "VERCEL",
+    "CODECOV_TOKEN"
   ],
   "tasks": {
     "topo": {
