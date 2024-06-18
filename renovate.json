@@ -1,8 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "automerge": true,
-  "schedule": ["daily"],
-  "automergeSchedule": ["daily"],
+  "schedule": ["at any time"],
   "extends": ["config:base"],
   "packageRules": [
     {
