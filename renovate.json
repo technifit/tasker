@@ -1,7 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "automerge": true,
-  "automergeSchedule": ["at any time"],
+  "schedule": ["daily"],
+  "automergeSchedule": ["daily"],
   "extends": ["config:base"],
   "packageRules": [
     {
@@ -9,6 +10,7 @@
       "enabled": false
     }
   ],
+  "labels": ["dependencies", "renovate", "automerge"],
   "updateInternalDeps": true,
   "rangeStrategy": "bump",
   "vulnerabilityAlerts": {
