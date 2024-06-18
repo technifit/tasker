@@ -13,9 +13,9 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from '@technifit/ui/dropdown-menu';
+import { Boxes, LogOut, Settings, Sun } from '@technifit/ui/icons';
 import { Skeleton } from '@technifit/ui/skeleton';
 
 export function UserNav() {
@@ -67,33 +67,37 @@ export function UserNav() {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            Profile
-            <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            Billing
-            <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            Settings
-            <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          <DropdownMenuItem asChild>
-            <Link prefetch='intent' to={$path('/create-organisation')}>
-              New Team
+            <Link
+              className='inline-flex grow items-center gap-3'
+              prefetch='intent'
+              to={$path('/settings/account/preferences')}
+            >
+              <Settings className='size-4' />
+              Settings
             </Link>
           </DropdownMenuItem>
+          {user.organizationMemberships.length === 0 ? (
+            <DropdownMenuItem>
+              <Link
+                className='inline-flex grow items-center gap-3'
+                prefetch='intent'
+                to={$path('/create-organisation')}
+              >
+                <Boxes className='size-4' />
+                New Team
+              </Link>
+            </DropdownMenuItem>
+          ) : null}
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem className='inline-flex w-full justify-between gap-1' onClick={handleChangeThemeClick}>
+        <DropdownMenuItem className='inline-flex w-full items-center gap-3' onClick={handleChangeThemeClick}>
+          <Sun className='size-4' />
           Switch Theme
-          {/* {theme ? <Badge className='px-1.5 py-0.5'>{theme}</Badge> : null} */}
-          <DropdownMenuShortcut>⇧⌘T</DropdownMenuShortcut>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={handleSignOutClick}>
+        <DropdownMenuItem className='inline-flex w-full items-center gap-3' onClick={handleSignOutClick}>
+          <LogOut className='size-4' />
           Log out
-          <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
