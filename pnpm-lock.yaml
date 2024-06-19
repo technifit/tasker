@@ -50,9 +50,6 @@ importers:
       '@remix-run/react':
         specifier: 2.9.2
         version: 2.9.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5)
-      '@sentry/profiling-node':
-        specifier: 8.10.0
-        version: 8.10.0
       '@sentry/remix':
         specifier: 8.10.0
         version: 8.10.0(@opentelemetry/api@1.9.0)(@opentelemetry/core@1.25.0(@opentelemetry/api@1.9.0))(@opentelemetry/instrumentation@0.52.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@1.25.0(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.25.0)(@remix-run/node@2.9.2(typescript@5.4.5))(@remix-run/react@2.9.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5))(react@18.3.1)
@@ -2460,11 +2457,6 @@ packages:
       '@opentelemetry/sdk-trace-base': ^1.25.0
       '@opentelemetry/semantic-conventions': ^1.25.0
 
-  '@sentry/profiling-node@8.10.0':
-    resolution: {integrity: sha512-fjs4IQT4oaSTAAt+HexWlXL0NbCiy1y4Ix2rfD6UY03zO/RQNelygSfpCMKlnwkd80O9KjJ24cssuSz7QBJwmA==}
-    engines: {node: '>=14.18'}
-    hasBin: true
-
   '@sentry/react@8.10.0':
     resolution: {integrity: sha512-Nwamhet8jeJWrRFJzLd08tyYgSbZOxZTQuDtyzU+EVkjzy2RVoYZUtYSHkopzg8MULz5MrI7BfrWFVSncDBNjA==}
     engines: {node: '>=14.18'}
@@ -3429,10 +3421,6 @@ packages:
   detect-indent@7.0.1:
     resolution: {integrity: sha512-Mc7QhQ8s+cLrnUfU/Ji94vG/r8M26m8f++vyres4ZoojaRDpZ1eSIh/EpzLNwlWuvzSZ3UbDFspjFvTDXe6e/g==}
     engines: {node: '>=12.20'}
-
-  detect-libc@2.0.3:
-    resolution: {integrity: sha512-bwy0MGW55bG41VqxxypOsdSdGqLwXPI/focwgTYCFMbdUiBAxLg9CFzG08sz2aqzknwiX7Hkl0bQENjg8iLByw==}
-    engines: {node: '>=8'}
 
   detect-newline@4.0.1:
     resolution: {integrity: sha512-qE3Veg1YXzGHQhlA6jzebZN2qVf6NX+A7m7qlhCGG30dJixrAQhYOsJjsnBjJkCSmuOPpCk30145fr8FV0bzog==}
@@ -4928,10 +4916,6 @@ packages:
 
   no-case@3.0.4:
     resolution: {integrity: sha512-fgAN3jGAh+RoxUGZHTSOLJIqUc2wmoBwGR4tbpNAKmmovFoWq0OdRkb0VkldReO2a2iBT/OEulG9XSUc10r3zg==}
-
-  node-abi@3.62.0:
-    resolution: {integrity: sha512-CPMcGa+y33xuL1E0TcNIu4YyaZCxnnvkVaEXrsosR3FxN+fV8xvb7Mzpb7IgKler10qeMkE6+Dp8qJhpzdq35g==}
-    engines: {node: '>=10'}
 
   node-fetch@2.7.0:
     resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
@@ -8802,17 +8786,6 @@ snapshots:
       '@sentry/types': 8.10.0
       '@sentry/utils': 8.10.0
 
-  '@sentry/profiling-node@8.10.0':
-    dependencies:
-      '@sentry/core': 8.10.0
-      '@sentry/node': 8.10.0
-      '@sentry/types': 8.10.0
-      '@sentry/utils': 8.10.0
-      detect-libc: 2.0.3
-      node-abi: 3.62.0
-    transitivePeerDependencies:
-      - supports-color
-
   '@sentry/react@8.10.0(react@18.3.1)':
     dependencies:
       '@sentry/browser': 8.10.0
@@ -9974,8 +9947,6 @@ snapshots:
   destroy@1.2.0: {}
 
   detect-indent@7.0.1: {}
-
-  detect-libc@2.0.3: {}
 
   detect-newline@4.0.1: {}
 
@@ -11926,10 +11897,6 @@ snapshots:
     dependencies:
       lower-case: 2.0.2
       tslib: 2.6.2
-
-  node-abi@3.62.0:
-    dependencies:
-      semver: 7.6.0
 
   node-fetch@2.7.0:
     dependencies:
