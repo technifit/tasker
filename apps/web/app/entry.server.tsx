@@ -2,10 +2,8 @@ import { PassThrough } from 'node:stream';
 import type { AppLoadContext, EntryContext } from '@remix-run/node';
 import { createReadableStreamFromReadable } from '@remix-run/node';
 import { RemixServer } from '@remix-run/react';
-import { nodeProfilingIntegration } from '@sentry/profiling-node';
 import * as Sentry from '@sentry/remix';
 import { sentryHandleError } from '@sentry/remix';
-import { wrapExpressCreateRequestHandler } from '@sentry/remix';
 import { isbot } from 'isbot';
 import { renderToPipeableStream } from 'react-dom/server';
 import { createExpressApp } from 'remix-create-express-app';
@@ -13,13 +11,13 @@ import { envSchema } from 'server/env';
 
 Sentry.init({
   dsn: process.env.SENTRY_DSN,
+  autoInstrumentRemix: true,
   debug: process.env.NODE_ENV === 'development',
   // Set tracesSampleRate to 1.0 to capture 100%
   // of transactions for performance monitoring.
   // We recommend adjusting this value in production
   tracesSampleRate: 1.0,
   profilesSampleRate: 1.0, // Profiling sample rate is relative to tracesSampleRate
-  integrations: [nodeProfilingIntegration()],
 });
 
 export const handleError = sentryHandleError;
@@ -162,12 +160,6 @@ export const app = createExpressApp({
   getLoadContext: () => {
     // return the AppLoadContext
     return { env: envSchema.parse(process.env) } as AppLoadContext;
-  },
-  customRequestHandler: (defaultCreateRequestHandler) => {
-    // enables you to wrap the default request handler
-    return envSchema.parse(process.env).NODE_ENV === 'production'
-      ? wrapExpressCreateRequestHandler(defaultCreateRequestHandler)
-      : defaultCreateRequestHandler; // use default in dev
   },
   unstable_middleware: true,
 });
