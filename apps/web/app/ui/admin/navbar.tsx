@@ -1,7 +1,7 @@
 import { Typography } from '@technifit/ui/typography';
 
-import { UserNav } from '~/routes/_auth/components/user-nav';
 import { SheetMenu } from './sheet-menu';
+import { UserNav } from './user-nav';
 
 const Navbar = () => {
   return (
