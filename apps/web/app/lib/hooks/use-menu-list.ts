@@ -23,12 +23,15 @@ interface Menu {
 
 interface Group {
   groupLabel: string;
+  hidden?: boolean;
   menus: Menu[];
 }
 
 const useGetMenuList = (): Group[] => {
   const { pathname } = useLocation();
-  const { isLoaded, organization } = useOrganization();
+  const { isLoaded, organization, membership } = useOrganization();
+
+  const isAdmin = membership?.role === 'admin';
 
   return [
     {
@@ -96,6 +99,7 @@ const useGetMenuList = (): Group[] => {
     // },
     {
       groupLabel: 'Admin',
+      hidden: !isAdmin,
       menus: [
         {
           href: organization?.slug ? $path('/:organisationSlug/members', { organisationSlug: organization.slug }) : '',
@@ -124,6 +128,7 @@ const useGetMenuList = (): Group[] => {
           href: $path('/settings/organisation'),
           label: 'Organisation Settings',
           active: pathname.includes('/settings/organisation'),
+          hidden: !organization || !isAdmin,
           icon: Boxes,
           submenus: [],
         },
