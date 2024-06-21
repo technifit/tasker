@@ -15,7 +15,6 @@ usernames = ["dependabot", "renovate"]
 [update]
 always = true # default: false
 require_automerge_label = false # default: true
-ignored_usernames = ["dependabot", "renovate"]
 
 [merge.message]
 # use title of PR for merge commit.
