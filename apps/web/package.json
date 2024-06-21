@@ -29,7 +29,7 @@
     "@remix-run/express": "2.9.2",
     "@remix-run/node": "2.9.2",
     "@remix-run/react": "2.9.2",
-    "@sentry/remix": "8.10.0",
+    "@sentry/remix": "8.11.0",
     "@technifit/id": "workspace:*",
     "@technifit/middleware": "workspace:*",
     "@technifit/ui": "workspace:*",
