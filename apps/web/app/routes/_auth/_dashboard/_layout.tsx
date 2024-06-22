@@ -1,14 +1,9 @@
-import type { MetaFunction } from '@remix-run/node';
 import { Outlet } from '@remix-run/react';
 
 import { cn } from '@technifit/ui/utils';
 
 import { Navbar } from '~/ui/admin/navbar';
 import { Sidebar } from '~/ui/admin/sidebar';
-
-export const meta: MetaFunction = () => {
-  return [{ title: 'Tasker' }, { name: 'description', content: 'Large scale job processing done right' }];
-};
 
 const AuthLayout = () => {
   // TODO: Replace with real data
