@@ -6,9 +6,10 @@ import type { SessionData, SessionFlashData } from '@technifit/middleware/sessio
 const envSchema = z.object({
   CLERK_PUBLISHABLE_KEY: z.string(),
   CLERK_SECRET_KEY: z.string(),
-  SESSION_SECRET: z.string().uuid(),
   NODE_ENV: z.literal('production').or(z.literal('development')).or(z.literal('test')),
   SENTRY_DSN: z.string().url(),
+  SESSION_SECRET: z.string().uuid(),
+  WORKOS_API_KEY: z.string(),
 });
 
 const publicEnvSchema = envSchema.pick({
