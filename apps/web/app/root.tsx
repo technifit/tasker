@@ -65,7 +65,7 @@ export const loader = (args: LoaderFunctionArgs) => {
   );
 };
 
-export function Layout({ children }: { children: React.ReactNode }) {
+function App() {
   const { publicKeys } = useLoaderData<typeof loader>();
   return (
     <html lang='en'>
@@ -77,16 +77,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <PublicEnvironment publicEnvs={publicKeys} />
       </head>
       <body className={cn('flex min-h-dvh flex-col bg-background font-sans text-foreground antialiased')}>
-        {children}
+        <Outlet />
         <ScrollRestoration />
         <Scripts />
       </body>
     </html>
   );
-}
-
-function App() {
-  return <Outlet />;
 }
 
 export default withSentry(ClerkApp(App, { clerkJSVariant: 'headless' }), {
@@ -101,27 +97,47 @@ export function ErrorBoundary() {
 
   if (isRouteErrorResponse(error)) {
     return (
-      <main className='container grid grow grid-cols-1 py-4 lg:grid-cols-1'>
-        <div className='flex flex-col gap-2'>
-          <div className='flex grow flex-col items-center justify-center'>
-            <h1>
-              {error.status} {error.statusText}
-            </h1>
-            <p>{error.data}</p>
-          </div>
-        </div>
-      </main>
+      <html lang='en'>
+        <head>
+          <meta charSet='utf-8' />
+          <meta name='viewport' content='width=device-width,initial-scale=1.0,maximum-scale=1.0,viewport-fit=cover' />
+        </head>
+        <body className={cn('flex min-h-dvh flex-col bg-background font-sans text-foreground antialiased')}>
+          <main className='container grid grow grid-cols-1 py-4 lg:grid-cols-1'>
+            <div className='flex flex-col gap-2'>
+              <div className='flex grow flex-col items-center justify-center'>
+                <h1>
+                  {error.status} {error.statusText}
+                </h1>
+                <p>{error.data}</p>
+              </div>
+            </div>
+          </main>
+          <ScrollRestoration />
+          <Scripts />
+        </body>
+      </html>
     );
   }
 
   return (
-    <main className='container grid grow grid-cols-1 py-4 lg:grid-cols-1'>
-      <div className='flex flex-col gap-2'>
-        <div className='flex grow flex-col items-center justify-center'>
-          <h1>Error</h1>
-          <p>Unknown Error</p>
-        </div>
-      </div>
-    </main>
+    <html lang='en'>
+      <head>
+        <meta charSet='utf-8' />
+        <meta name='viewport' content='width=device-width,initial-scale=1.0,maximum-scale=1.0,viewport-fit=cover' />
+      </head>
+      <body className={cn('flex min-h-dvh flex-col bg-background font-sans text-foreground antialiased')}>
+        <main className='container grid grow grid-cols-1 py-4 lg:grid-cols-1'>
+          <div className='flex flex-col gap-2'>
+            <div className='flex grow flex-col items-center justify-center'>
+              <h1>Error</h1>
+              <p>Unknown Error</p>
+            </div>
+          </div>
+        </main>
+        <ScrollRestoration />
+        <Scripts />
+      </body>
+    </html>
   );
 }
