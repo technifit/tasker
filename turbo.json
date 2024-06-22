@@ -5,9 +5,10 @@
     "CI",
     "CLERK_PUBLISHABLE_KEY",
     "CLERK_SECRET_KEY",
+    "CODECOV_TOKEN",
     "NODE_ENV",
-    "SENTRY_DSN",
     "SENTRY_AUTH_TOKEN",
+    "SENTRY_DSN",
     "SESSION_SECRET",
     "SKIP_ENV_VALIDATION",
     "STRIPE_API_KEY",
@@ -15,7 +16,7 @@
     "VERCEL_ENV",
     "VERCEL_URL",
     "VERCEL",
-    "CODECOV_TOKEN"
+    "WORKOS_API_KEY"
   ],
   "tasks": {
     "topo": {

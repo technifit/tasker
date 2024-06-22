@@ -5,7 +5,7 @@
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["build/**"],
-      "env": ["CLERK_PUBLISHABLE_KEY", "CLERK_SECRET_KEY", "SESSION_SECRET", "CODECOV_TOKEN"]
+      "env": ["CLERK_PUBLISHABLE_KEY", "CLERK_SECRET_KEY", "SESSION_SECRET", "CODECOV_TOKEN", "WORKOS_API_KEY"]
     }
   }
 }

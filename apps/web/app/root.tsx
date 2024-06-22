@@ -35,7 +35,7 @@ const session = createSessionMiddleware(
       name: '__web_session',
       path: '/',
       sameSite: 'lax',
-      secrets: ['s3cret1'],
+      secrets: [process.env.SESSION_SECRET ?? '6b063bce-33b8-454f-84ba-baf1aa28e4cd'],
     },
   }),
 );

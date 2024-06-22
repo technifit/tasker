@@ -33,6 +33,7 @@
     "@technifit/id": "workspace:*",
     "@technifit/middleware": "workspace:*",
     "@technifit/ui": "workspace:*",
+    "@workos-inc/node": "7.11.2",
     "dotenv": "16.4.5",
     "isbot": "5.1.9",
     "lodash": "4.17.21",
