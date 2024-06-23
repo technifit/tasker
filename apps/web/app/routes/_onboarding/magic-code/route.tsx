@@ -4,8 +4,10 @@ import { Link, redirect, useLoaderData } from '@remix-run/react';
 import { WorkOS } from '@workos-inc/node';
 import { getSearchParams } from 'remix-params-helper';
 import { $path } from 'remix-routes';
+import { getClientIPAddress } from 'remix-utils/get-client-ip-address';
 import { z } from 'zod';
 
+import { SessionContext } from '@technifit/middleware/session';
 import { Button } from '@technifit/ui/button';
 import {
   Form,
@@ -32,8 +34,7 @@ type OtpFormData = z.infer<typeof otpFormSchema>;
 const resolver = zodResolver(otpFormSchema);
 
 const searchParamsSchema = z.object({
-  emailAddress: z.string(),
-  userId: z.string(),
+  email: z.string(),
 });
 
 export type SearchParams = z.infer<typeof searchParamsSchema>;
@@ -46,16 +47,14 @@ export const loader = ({ request }: LoaderFunctionArgs) => {
   }
 
   return {
-    email: result.data.emailAddress,
+    email: result.data.email,
   };
 };
 
-export const action = async ({
-  request,
-  context: {
-    env: { WORKOS_API_KEY },
-  },
-}: ActionFunctionArgs) => {
+export const action = async ({ request, context }: ActionFunctionArgs) => {
+  const {
+    env: { WORKOS_API_KEY, WORKOS_CLIENT_ID },
+  } = context;
   const result = getSearchParams(request, searchParamsSchema);
 
   if (!result.success) {
@@ -71,8 +70,17 @@ export const action = async ({
 
   const { otp } = data;
   try {
-    const response = await workos.userManagement.verifyEmail({ code: otp, userId: result.data.userId });
-    console.log('🚀 ~ response:', response);
+    const response = await workos.userManagement.authenticateWithMagicAuth({
+      code: otp,
+      clientId: WORKOS_CLIENT_ID,
+      ipAddress: getClientIPAddress(request) ?? undefined,
+      userAgent: request.headers.get('user-agent') ?? undefined,
+      email: result.data.email,
+    });
+
+    const sessionContext = context.get(SessionContext);
+    sessionContext.set('access_token', response.accessToken);
+    sessionContext.set('refresh_token', response.refreshToken);
 
     // TODO: set cookie here to say user is logged in - https://linear.app/technifit/issue/TASK-106/set-cookie-when-logged-inotp-verified
     return redirect($path('/'));
@@ -97,7 +105,7 @@ export const Otp = () => {
     <div className='flex w-full max-w-md flex-col items-start justify-center gap-6'>
       <div className='flex flex-col gap-2'>
         <Typography variant={'h1'} className='lg:text-2xl'>
-          Verify email
+          Check your email
         </Typography>
         <Typography variant={'mutedText'}>
           Enter the code we have sent to <strong>{email ?? 'your email address'}</strong>
