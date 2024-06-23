@@ -1,7 +1,5 @@
-import type { Session } from '@remix-run/node';
+import type { ServerContext } from 'remix-create-express-app/context';
 import { z } from 'zod';
-
-import type { SessionData, SessionFlashData } from '@technifit/middleware/session';
 
 const envSchema = z.object({
   CLERK_PUBLISHABLE_KEY: z.string(),
@@ -28,12 +26,11 @@ declare module '@remix-run/node' {
   /**
    * Represents the context for loading the app.
    */
-  interface AppLoadContext {
+  interface AppLoadContext extends ServerContext {
     /**
      * The environment variables.
      */
     readonly env: Env;
-    session: Session<SessionData, SessionFlashData>;
   }
 }
 
