@@ -1,89 +1,89 @@
-import { useState } from 'react';
-import { useSignIn } from '@clerk/remix';
-import { isClerkAPIResponseError } from '@clerk/remix/errors';
 import { zodResolver } from '@hookform/resolvers/zod';
-import type { MetaFunction } from '@remix-run/node';
-import { Link, useNavigate } from '@remix-run/react';
+import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
+import { Link, redirect } from '@remix-run/react';
+import { WorkOS } from '@workos-inc/node';
+import { getSearchParams } from 'remix-params-helper';
 import { $path } from 'remix-routes';
 import { z } from 'zod';
 
 import { Button } from '@technifit/ui/button';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage, useForm } from '@technifit/ui/form';
-import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from '@technifit/ui/input-otp';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+  getValidatedFormData,
+  useForm,
+} from '@technifit/ui/form';
 import { InputPassword } from '@technifit/ui/input-password';
-import { toast } from '@technifit/ui/sonner';
 import { Typography } from '@technifit/ui/typography';
 
-import { ErrorAlert } from '~/ui/error-alert';
-import type { ErrorAlertProps } from '~/ui/error-alert';
-
 const resetPasswordSchema = z.object({
-  code: z
-    .string({ required_error: 'Please enter your password reset code' })
-    .min(6, { message: 'Code should be 6 characters' })
-    .max(6, { message: 'Code should be 6 characters' }),
-  password: z
+  newPassword: z
     .string({ required_error: 'Please enter your new password' })
-    .min(6, { message: 'Password should be a minimum of 6 characters' })
-    .max(9, { message: 'Password should be a maximum of 9 characters' }),
+    .min(10, { message: 'Password should be a minimum of 10 characters' }),
 });
 
 type ResetPasswordFormData = z.infer<typeof resetPasswordSchema>;
 
 const resolver = zodResolver(resetPasswordSchema);
 
+const searchParamsSchema = z.object({
+  token: z.string(),
+});
+
+export type SearchParams = z.infer<typeof searchParamsSchema>;
+
+export const action = async ({
+  request,
+  context: {
+    env: { WORKOS_API_KEY },
+  },
+}: LoaderFunctionArgs) => {
+  const result = getSearchParams(request, searchParamsSchema);
+
+  if (!result.success) {
+    throw redirect($path('/forgot-password'));
+  }
+
+  const {
+    errors,
+    data,
+    receivedValues: defaultValues,
+  } = await getValidatedFormData<ResetPasswordFormData>(request, resolver);
+  if (errors) {
+    return { errors, defaultValues };
+  }
+
+  const workos = new WorkOS(WORKOS_API_KEY);
+
+  const { newPassword } = data;
+  const token = result.data.token;
+
+  try {
+    const response = await workos.userManagement.resetPassword({
+      newPassword,
+      token,
+    });
+    console.log('🚀 ~ response:', response);
+
+    return redirect($path('/log-in'));
+  } catch (error) {
+    console.error(error);
+  }
+
+  return null;
+};
+
 export const meta: MetaFunction = () => {
   return [{ title: 'Tasker | Log In' }, { name: 'description', content: 'Log in' }];
 };
 
 export const ResetPassword = () => {
-  const { isLoaded, signIn, setActive } = useSignIn();
-  const [error, setError] = useState<ErrorAlertProps | null>(null);
-  const navigate = useNavigate();
-
   const form = useForm<ResetPasswordFormData>({
     resolver,
-    submitHandlers: {
-      onValid: async ({ code, password }) => {
-        if (isLoaded) {
-          try {
-            const signInResponse = await signIn.attemptFirstFactor({
-              strategy: 'reset_password_email_code',
-              code,
-              password,
-            });
-
-            if (signInResponse.status === 'complete') {
-              await setActive({ session: signInResponse.createdSessionId });
-
-              toast('Password Updated', {
-                description: 'You will be redirected to the dashboard',
-              });
-
-              setTimeout(() => {
-                navigate($path('/'));
-              }, 1500);
-            } else if (signInResponse.status === 'needs_new_password') {
-              console.log('invalid password!');
-            }
-          } catch (error) {
-            if (isClerkAPIResponseError(error)) {
-              error.errors.forEach((error) => {
-                setError({
-                  heading: 'Something went wrong',
-                  description: error.message,
-                });
-              });
-            } else {
-              setError({
-                heading: 'Something went wrong',
-                description: 'Please try again later.',
-              });
-            }
-          }
-        }
-      },
-    },
   });
 
   return (
@@ -95,44 +95,11 @@ export const ResetPassword = () => {
         <Typography variant={'mutedText'}>Enter the code from your email and your new password</Typography>
       </div>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit} className='flex w-full flex-col gap-6'>
+        <form method='POST' onSubmit={form.handleSubmit} className='flex w-full flex-col gap-6'>
           <div className='flex w-full flex-col gap-3'>
             <FormField
               control={form.control}
-              name='code'
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Code</FormLabel>
-                  <FormControl>
-                    <InputOTP
-                      autoComplete='one-time-code'
-                      type='numeric'
-                      maxLength={6}
-                      render={({ slots }) => (
-                        <>
-                          <InputOTPGroup>
-                            {slots.slice(0, 3).map((slot, index) => (
-                              <InputOTPSlot key={index} {...slot} />
-                            ))}{' '}
-                          </InputOTPGroup>
-                          <InputOTPSeparator />
-                          <InputOTPGroup>
-                            {slots.slice(3).map((slot, index) => (
-                              <InputOTPSlot key={index + 3} {...slot} />
-                            ))}
-                          </InputOTPGroup>
-                        </>
-                      )}
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name='password'
+              name='newPassword'
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>New Password</FormLabel>
@@ -144,8 +111,8 @@ export const ResetPassword = () => {
               )}
             />
           </div>
-          {error ? <ErrorAlert heading={error.heading} description={error.description} /> : null}
-          <Button disabled={!isLoaded || form.formState.isSubmitting} className='w-full'>
+          {/* {error ? <ErrorAlert heading={error.heading} description={error.description} /> : null} */}
+          <Button disabled={form.formState.isSubmitting} className='w-full'>
             {form.formState.isSubmitting ? 'Resetting Password...' : 'Reset Password'}
           </Button>
         </form>

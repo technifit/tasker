@@ -16,7 +16,8 @@
     "VERCEL_ENV",
     "VERCEL_URL",
     "VERCEL",
-    "WORKOS_API_KEY"
+    "WORKOS_API_KEY",
+    "WORKOS_CLIENT_ID"
   ],
   "tasks": {
     "topo": {
