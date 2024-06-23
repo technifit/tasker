@@ -44,7 +44,7 @@
     "remix-create-express-app": "0.4.4",
     "remix-hook-form": "5.0.1",
     "remix-params-helper": "0.5.1",
-    "remix-routes": "1.7.5",
+    "remix-routes": "1.7.6",
     "remix-utils": "7.6.0",
     "typescript-slugify": "1.0.1",
     "vite-env-only": "3.0.1",
