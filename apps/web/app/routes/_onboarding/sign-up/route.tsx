@@ -17,14 +17,12 @@ import {
   useForm,
 } from '@technifit/ui/form';
 import { Input } from '@technifit/ui/input';
-import { InputPassword } from '@technifit/ui/input-password';
 import { Typography } from '@technifit/ui/typography';
 
 const signUpFormSchema = z.object({
   firstName: z.string({ required_error: 'Please enter your first name' }).min(1),
   lastName: z.string({ required_error: 'Please enter your last name' }).min(1),
   email: z.string({ required_error: 'Please enter your email' }).email().min(1),
-  password: z.string({ required_error: 'Please enter your password' }).min(10),
 });
 
 type SignUpFormData = z.infer<typeof signUpFormSchema>;
@@ -44,18 +42,17 @@ export const action = async ({
 
   const workos = new WorkOS(WORKOS_API_KEY);
 
-  const { email, firstName, lastName, password } = data;
+  const { email, firstName, lastName } = data;
   try {
-    const user = await workos.userManagement.createUser({
+    await workos.userManagement.createUser({
       email,
-      password,
       firstName,
       lastName,
     });
 
-    await workos.userManagement.sendVerificationEmail({ userId: user.id });
+    await workos.userManagement.createMagicAuth({ email });
 
-    return redirect($path('/otp', { emailAddress: email, userId: user.id }));
+    return redirect($path('/magic-code', { email }));
   } catch (error) {
     console.error(error);
   }
@@ -128,19 +125,6 @@ export const Signup = () => {
                   <FormLabel>Email</FormLabel>
                   <FormControl>
                     <Input autoComplete='email' type='email' placeholder='joe.blogs@org.com' {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name='password'
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Password</FormLabel>
-                  <FormControl>
-                    <InputPassword autoComplete='password' {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
