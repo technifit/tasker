@@ -1,89 +1,75 @@
-import { useState } from 'react';
-import { useSignUp } from '@clerk/remix';
-import { isClerkAPIResponseError } from '@clerk/remix/errors';
 import { zodResolver } from '@hookform/resolvers/zod';
-import type { MetaFunction } from '@remix-run/node';
-import { Link, useNavigate } from '@remix-run/react';
+import type { ActionFunctionArgs, MetaFunction } from '@remix-run/node';
+import { Link, redirect } from '@remix-run/react';
+import { WorkOS } from '@workos-inc/node';
 import { $path } from 'remix-routes';
 import { z } from 'zod';
 
 import { Button } from '@technifit/ui/button';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage, useForm } from '@technifit/ui/form';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+  getValidatedFormData,
+  useForm,
+} from '@technifit/ui/form';
 import { Input } from '@technifit/ui/input';
 import { InputPassword } from '@technifit/ui/input-password';
 import { Typography } from '@technifit/ui/typography';
-
-import { ErrorAlert } from '~/ui/error-alert';
-import type { ErrorAlertProps } from '~/ui/error-alert';
 
 const signUpFormSchema = z.object({
   firstName: z.string({ required_error: 'Please enter your first name' }).min(1),
   lastName: z.string({ required_error: 'Please enter your last name' }).min(1),
   email: z.string({ required_error: 'Please enter your email' }).email().min(1),
-  password: z.string({ required_error: 'Please enter your password' }).min(8),
+  password: z.string({ required_error: 'Please enter your password' }).min(10),
 });
 
 type SignUpFormData = z.infer<typeof signUpFormSchema>;
 
 const resolver = zodResolver(signUpFormSchema);
 
+export const action = async ({
+  context: {
+    env: { WORKOS_API_KEY },
+  },
+  request,
+}: ActionFunctionArgs) => {
+  const { errors, data, receivedValues: defaultValues } = await getValidatedFormData<SignUpFormData>(request, resolver);
+  if (errors) {
+    return { errors, defaultValues };
+  }
+
+  const workos = new WorkOS(WORKOS_API_KEY);
+
+  const { email, firstName, lastName, password } = data;
+  try {
+    const user = await workos.userManagement.createUser({
+      email,
+      password,
+      firstName,
+      lastName,
+    });
+
+    await workos.userManagement.sendVerificationEmail({ userId: user.id });
+
+    return redirect($path('/otp', { emailAddress: email, userId: user.id }));
+  } catch (error) {
+    console.error(error);
+  }
+
+  return null;
+};
+
 export const meta: MetaFunction = () => {
   return [{ title: 'Tasker | Sign Up' }, { name: 'description', content: 'Sign up' }];
 };
 
 export const Signup = () => {
-  const { isLoaded, signUp, setActive } = useSignUp();
-  const [error, setError] = useState<ErrorAlertProps | null>(null);
-  const navigate = useNavigate();
-
   const form = useForm<SignUpFormData>({
     resolver,
-    submitHandlers: {
-      onValid: async ({ email, firstName, lastName, password }) => {
-        if (isLoaded) {
-          try {
-            const signInResponse = await signUp.create({
-              firstName,
-              lastName,
-              password,
-              emailAddress: email,
-            });
-
-            switch (signInResponse.status) {
-              case 'complete':
-                await setActive({ session: signInResponse.createdSessionId });
-
-                navigate($path('/'));
-                break;
-              case 'missing_requirements':
-                if (signInResponse.unverifiedFields.some((x) => x === 'email_address')) {
-                  await signUp.prepareEmailAddressVerification({
-                    strategy: 'email_code',
-                  });
-                  navigate($path('/otp'));
-                }
-                break;
-              default:
-                break;
-            }
-          } catch (error) {
-            if (isClerkAPIResponseError(error)) {
-              error.errors.forEach((error) => {
-                setError({
-                  heading: 'Something went wrong',
-                  description: error.message,
-                });
-              });
-            } else {
-              setError({
-                heading: 'Something went wrong',
-                description: 'Please try again later.',
-              });
-            }
-          }
-        }
-      },
-    },
   });
 
   return (
@@ -104,7 +90,7 @@ export const Signup = () => {
         </Typography>
       </div>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit} className='flex w-full flex-col gap-6'>
+        <form method='POST' onSubmit={form.handleSubmit} className='flex w-full flex-col gap-6'>
           <div className='flex w-full flex-col gap-3'>
             <div className='flex w-full flex-col gap-3 lg:flex-row'>
               <FormField
@@ -161,8 +147,8 @@ export const Signup = () => {
               )}
             />
           </div>
-          {error ? <ErrorAlert heading={error.heading} description={error.description} /> : null}
-          <Button disabled={!isLoaded || form.formState.isSubmitting} className='w-full'>
+          {/* {error ? <ErrorAlert heading={error.heading} description={error.description} /> : null} */}
+          <Button disabled={form.formState.isSubmitting} className='w-full'>
             {form.formState.isSubmitting ? 'Signing Up...' : 'Sign Up'}
           </Button>
         </form>
