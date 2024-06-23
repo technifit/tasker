@@ -6,6 +6,8 @@ import { z } from 'zod';
 
 const sessionSchema = z.object({
   idempotency_key: z.string().optional(),
+  access_token: z.string().optional(),
+  refresh_token: z.string().optional(),
 });
 
 type SessionData = z.infer<typeof sessionSchema>;

@@ -5,6 +5,7 @@ import { WorkOS } from '@workos-inc/node';
 import { $path } from 'remix-routes';
 import { z } from 'zod';
 
+import { SessionContext } from '@technifit/middleware/session';
 import { Button } from '@technifit/ui/button';
 import {
   Form,
@@ -29,12 +30,10 @@ type LogInFormData = z.infer<typeof logInFormSchema>;
 
 const resolver = zodResolver(logInFormSchema);
 
-export const action = async ({
-  request,
-  context: {
+export const action = async ({ request, context }: ActionFunctionArgs) => {
+  const {
     env: { WORKOS_API_KEY, WORKOS_CLIENT_ID },
-  },
-}: ActionFunctionArgs) => {
+  } = context;
   const { errors, data, receivedValues: defaultValues } = await getValidatedFormData<LogInFormData>(request, resolver);
   if (errors) {
     return { errors, defaultValues };
@@ -49,7 +48,10 @@ export const action = async ({
       password,
       clientId: WORKOS_CLIENT_ID,
     });
-    console.log('🚀 ~ response:', response);
+
+    const sessionContext = context.get(SessionContext);
+    sessionContext.set('access_token', response.accessToken);
+    sessionContext.set('refresh_token', response.refreshToken);
 
     return redirect($path('/'));
   } catch (error) {
