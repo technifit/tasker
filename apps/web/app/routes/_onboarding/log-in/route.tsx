@@ -3,6 +3,7 @@ import type { ActionFunctionArgs, MetaFunction } from '@remix-run/node';
 import { Link, redirect } from '@remix-run/react';
 import { WorkOS } from '@workos-inc/node';
 import { $path } from 'remix-routes';
+import { getClientIPAddress } from 'remix-utils/get-client-ip-address';
 import { z } from 'zod';
 
 import { SessionContext } from '@technifit/middleware/session';
@@ -47,6 +48,8 @@ export const action = async ({ request, context }: ActionFunctionArgs) => {
       email,
       password,
       clientId: WORKOS_CLIENT_ID,
+      ipAddress: getClientIPAddress(request) ?? undefined,
+      userAgent: request.headers.get('user-agent') ?? undefined,
     });
 
     const sessionContext = context.get(SessionContext);
