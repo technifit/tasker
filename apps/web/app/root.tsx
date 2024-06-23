@@ -32,9 +32,10 @@ const fonts = [...interWoff, ...interWoff2];
 const session = createSessionMiddleware(
   createCookieSessionStorage<SessionData, SessionFlashData>({
     cookie: {
-      name: '__web_session',
+      name: '__tasker_session',
       path: '/',
-      sameSite: 'lax',
+      sameSite: process.env.NODE_ENV === 'production' ? 'strict' : 'lax',
+      secure: process.env.NODE_ENV === 'production',
       secrets: [process.env.SESSION_SECRET ?? '6b063bce-33b8-454f-84ba-baf1aa28e4cd'],
     },
   }),
