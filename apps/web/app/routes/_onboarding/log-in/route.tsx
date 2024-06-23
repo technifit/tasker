@@ -63,8 +63,6 @@ export const SignUp = () => {
     resolver,
   });
 
-  const { email } = form.watch();
-
   return (
     <div className='flex w-full max-w-md flex-col items-start justify-center gap-6'>
       <div className='flex flex-col gap-2'>
