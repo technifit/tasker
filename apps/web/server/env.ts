@@ -10,6 +10,7 @@ const envSchema = z.object({
   SENTRY_DSN: z.string().url(),
   SESSION_SECRET: z.string().uuid(),
   WORKOS_API_KEY: z.string(),
+  WORKOS_CLIENT_ID: z.string(),
 });
 
 const publicEnvSchema = envSchema.pick({

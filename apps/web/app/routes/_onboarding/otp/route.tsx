@@ -1,19 +1,24 @@
-import { useState } from 'react';
-import { useSignUp } from '@clerk/remix';
-import { isClerkAPIResponseError } from '@clerk/remix/errors';
 import { zodResolver } from '@hookform/resolvers/zod';
-import type { MetaFunction } from '@remix-run/node';
-import { Link, useNavigate } from '@remix-run/react';
+import type { ActionFunctionArgs, LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
+import { Link, redirect, useLoaderData } from '@remix-run/react';
+import { WorkOS } from '@workos-inc/node';
+import { getSearchParams } from 'remix-params-helper';
 import { $path } from 'remix-routes';
 import { z } from 'zod';
 
 import { Button } from '@technifit/ui/button';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage, useForm } from '@technifit/ui/form';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+  getValidatedFormData,
+  useForm,
+} from '@technifit/ui/form';
 import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from '@technifit/ui/input-otp';
 import { Typography } from '@technifit/ui/typography';
-
-import { ErrorAlert } from '~/ui/error-alert';
-import type { ErrorAlertProps } from '~/ui/error-alert';
 
 const otpFormSchema = z.object({
   otp: z
@@ -26,64 +31,66 @@ type OtpFormData = z.infer<typeof otpFormSchema>;
 
 const resolver = zodResolver(otpFormSchema);
 
+const searchParamsSchema = z.object({
+  emailAddress: z.string(),
+  userId: z.string(),
+});
+
+export type SearchParams = z.infer<typeof searchParamsSchema>;
+
+export const loader = ({ request }: LoaderFunctionArgs) => {
+  const result = getSearchParams(request, searchParamsSchema);
+
+  if (!result.success) {
+    throw redirect($path('/log-in'));
+  }
+
+  return {
+    email: result.data.emailAddress,
+  };
+};
+
+export const action = async ({
+  request,
+  context: {
+    env: { WORKOS_API_KEY },
+  },
+}: ActionFunctionArgs) => {
+  const result = getSearchParams(request, searchParamsSchema);
+
+  if (!result.success) {
+    return redirect($path('/log-in'));
+  }
+
+  const { errors, data, receivedValues: defaultValues } = await getValidatedFormData<OtpFormData>(request, resolver);
+  if (errors) {
+    return { errors, defaultValues };
+  }
+
+  const workos = new WorkOS(WORKOS_API_KEY);
+
+  const { otp } = data;
+  try {
+    const response = await workos.userManagement.verifyEmail({ code: otp, userId: result.data.userId });
+    console.log('🚀 ~ response:', response);
+
+    // TODO: set cookie here to say user is logged in - https://linear.app/technifit/issue/TASK-106/set-cookie-when-logged-inotp-verified
+    return redirect($path('/'));
+  } catch (error) {
+    console.error(error);
+  }
+
+  return null;
+};
+
 export const meta: MetaFunction = () => {
   return [{ title: 'Tasker | One Time Password' }, { name: 'description', content: 'One Time Password' }];
 };
 
 export const Otp = () => {
-  const { isLoaded, signUp, setActive } = useSignUp();
-  const [error, setError] = useState<ErrorAlertProps | null>(null);
-  const navigate = useNavigate();
-
+  const { email } = useLoaderData<typeof loader>();
   const form = useForm<OtpFormData>({
     resolver,
-    submitHandlers: {
-      onValid: async ({ otp }) => {
-        if (isLoaded) {
-          try {
-            const signInResponse = await signUp.attemptEmailAddressVerification({
-              code: otp,
-            });
-
-            switch (signInResponse.status) {
-              case 'complete':
-                await setActive({ session: signInResponse.createdSessionId });
-
-                setTimeout(() => {
-                  navigate($path('/'));
-                }, 500);
-                break;
-              case 'missing_requirements':
-                if (signInResponse.unverifiedFields.some((x) => x === 'email_address')) {
-                  // TODO: Refactor this to use a switch to handle the unverified fields
-                  // TODO: redirect to a enter email code page (check can we retrieve a sign in)
-                  // TODO: create an email link verification page
-                  await signUp.prepareEmailAddressVerification({
-                    strategy: 'email_code',
-                  });
-                }
-                break;
-              default:
-                break;
-            }
-          } catch (error) {
-            if (isClerkAPIResponseError(error)) {
-              error.errors.forEach((error) => {
-                setError({
-                  heading: 'Something went wrong',
-                  description: error.message,
-                });
-              });
-            } else {
-              setError({
-                heading: 'Something went wrong',
-                description: 'Please try again later.',
-              });
-            }
-          }
-        }
-      },
-    },
   });
 
   return (
@@ -93,11 +100,11 @@ export const Otp = () => {
           Verify email
         </Typography>
         <Typography variant={'mutedText'}>
-          Enter the code we have sent to <strong>{signUp?.emailAddress}</strong>
+          Enter the code we have sent to <strong>{email ?? 'your email address'}</strong>
         </Typography>
       </div>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit} className='flex w-full flex-col gap-6'>
+        <form method='POST' onSubmit={form.handleSubmit} className='flex w-full flex-col gap-6'>
           <div className='flex w-full flex-col gap-3'>
             <FormField
               control={form.control}
@@ -133,9 +140,9 @@ export const Otp = () => {
               )}
             />
           </div>
-          {error ? <ErrorAlert heading={error.heading} description={error.description} /> : null}
-          <Button disabled={!isLoaded || form.formState.isSubmitting} className='w-full'>
-            {form.formState.isSubmitting ? 'Signing Up...' : 'Sign Up'}
+          {/* {error ? <ErrorAlert heading={error.heading} description={error.description} /> : null} */}
+          <Button disabled={form.formState.isSubmitting} className='w-full'>
+            {form.formState.isSubmitting ? 'Confirming Code...' : 'Confirm Code'}
           </Button>
         </form>
       </Form>
