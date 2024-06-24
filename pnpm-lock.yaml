@@ -63,8 +63,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/ui
       '@workos-inc/node':
-        specifier: 7.11.2
-        version: 7.11.2
+        specifier: 7.11.3
+        version: 7.11.3
       dotenv:
         specifier: 16.4.5
         version: 16.4.5
@@ -3043,8 +3043,8 @@ packages:
   '@web3-storage/multipart-parser@1.0.0':
     resolution: {integrity: sha512-BEO6al7BYqcnfX15W2cnGR+Q566ACXAT9UQykORCWW80lmkpWsnEob6zJS1ZVBKsSJC8+7vJkHwlp+lXG1UCdw==}
 
-  '@workos-inc/node@7.11.2':
-    resolution: {integrity: sha512-jxOfUMAn6OO7bNekwkaM8yxk6zfOKmbZKDZ58A5LQ+Gfj7iM1i8IjgVXAqUa6sUzQhBbZKRmVrci5wXSNyoiNA==}
+  '@workos-inc/node@7.11.3':
+    resolution: {integrity: sha512-f/lK2oQwt6W0pT9BRGSjvCChTYe7zt9X6BzL/YrArzob1A+n4maBRgL365YZwImOg449FlPpHSWXBxtQbrqTIw==}
     engines: {node: '>=16'}
 
   '@zxing/text-encoding@0.9.0':
@@ -9750,7 +9750,7 @@ snapshots:
 
   '@web3-storage/multipart-parser@1.0.0': {}
 
-  '@workos-inc/node@7.11.2':
+  '@workos-inc/node@7.11.3':
     dependencies:
       pluralize: 8.0.0
 
