@@ -124,8 +124,8 @@ importers:
         specifier: 2.9.2
         version: 2.9.2(@remix-run/react@2.9.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.2))(@types/node@20.14.8)(typescript@5.5.2)(vite@5.3.1(@types/node@20.14.8))
       '@sentry/vite-plugin':
-        specifier: 2.19.0
-        version: 2.19.0
+        specifier: 2.20.0
+        version: 2.20.0
       '@technifit/eslint-config':
         specifier: workspace:*
         version: link:../../tooling/eslint-config
@@ -2630,16 +2630,16 @@ packages:
     resolution: {integrity: sha512-NyuHW1Ds2GGW6PjN7nnRl/XoM31Y/BUnOhhLbNmbxWj5mgWuUP/7tOlz2PhP0YqZxVteZ99QIssfSRgtYOeQlg==}
     engines: {node: '>=14.18'}
 
-  '@sentry/babel-plugin-component-annotate@2.19.0':
-    resolution: {integrity: sha512-N2k8cMYu/7X6mzAH5j6bMeNcXQBJLL0lVAF63TDS57hUiT1v2uEqbeYFdH2CZBHb2LepLbMRXmvErIwy76FLTw==}
+  '@sentry/babel-plugin-component-annotate@2.20.0':
+    resolution: {integrity: sha512-HN/5+cGvI3NqBeW8rLRVGMpF1PADZpAi3h9LI6YBawJPxEz/ftJoryJ6/rXzV6pAPq/7hTEOhTqWPq8iXuM1dw==}
     engines: {node: '>= 14'}
 
   '@sentry/browser@8.11.0':
     resolution: {integrity: sha512-++5IrBpzkaAptNjAYnGTnQ2lCjmU6nlu/ABFjUTgi7Vu+ZNiY8qYKEUw65mSxD3EoFLt8IwtjvfAwSMVTB2q8w==}
     engines: {node: '>=14.18'}
 
-  '@sentry/bundler-plugin-core@2.19.0':
-    resolution: {integrity: sha512-PGTwpue2k4HnLlCuvLeg+cILPWHJorzheNq8KVlXed8mpb8kxKeY9EWQFxBqPS+XyktOMAxZmCMZfKdnHNaJVQ==}
+  '@sentry/bundler-plugin-core@2.20.0':
+    resolution: {integrity: sha512-boshDF6AwCTL7LBOjDQxINjCWELOU0eamBvD0ibSjT5bjXnqRjJItoUpmggu8D7PvhKlb6H9OjzB5yiHbmve4A==}
     engines: {node: '>= 14'}
 
   '@sentry/cli-darwin@2.32.1':
@@ -2729,8 +2729,8 @@ packages:
     resolution: {integrity: sha512-iDt5YVMYNgT151bPYVGo8XlpM0MHWy8DH+czmAiAlFTV7ns7lAeHGF6tsFYo7wOZOPDHxtF6F2CM7AvuYnOZGw==}
     engines: {node: '>=14.18'}
 
-  '@sentry/vite-plugin@2.19.0':
-    resolution: {integrity: sha512-xmntz/bvRwhhU9q2thZas1vQQch9CLMyD8oCfYlNqN57t5XKhIs2dsCU/uS7HCnxIXuuUb/cZtIS7AXVg16fFA==}
+  '@sentry/vite-plugin@2.20.0':
+    resolution: {integrity: sha512-ZWze5B+fG7z4GbL4/XmH5oZIhDus7FbyJd3dggfkdiiIjbAy1QdGHMLBDNzCATSUvjYKYI9wPLWvOh9t7f+EUw==}
     engines: {node: '>= 14'}
 
   '@sinclair/typebox@0.27.8':
@@ -3146,7 +3146,7 @@ packages:
     engines: {node: '>= 0.4'}
 
   array-flatten@1.1.1:
-    resolution: {integrity: sha1-ml9pkFGx5wczKPKgCJaLZOopVdI=}
+    resolution: {integrity: sha512-PCVAQswWemu6UdxsDFFX/+gVeYqKAod3D3UVm91jHwynguOwAvYPhx8nNlM++NqRcK6CxxpUafjmhIdKiHibqg==}
 
   array-includes@3.1.8:
     resolution: {integrity: sha512-itaWrbYbqpGXkGhZPGUulwnhVf5Hpy1xiCFsGqyIGglbBxmG5vSjxQen3/WGOjPpNEv1RtBLKxbmVXm8HpJStQ==}
@@ -3281,7 +3281,7 @@ packages:
     resolution: {integrity: sha512-SW9lzGTLvWTP1AY8xeAMZimqDrIaSdLQUcVr9DMef51niJ022Ri87SwRRKYm4A6iHfkPaiVUu/Duw2Wc4J7kKg==}
 
   bytes@3.0.0:
-    resolution: {integrity: sha1-0ygVQE1olpn4Wk6k+odV3ROpYEg=}
+    resolution: {integrity: sha512-pMhOfFDPiv9t5jjIXkHosWmkSyQbvsgEVNkz0ERHbuLh2T/7j4Mqqpz523Fe8MVY89KC6Sh/QfS2sM+SjgFDcw==}
     engines: {node: '>= 0.8'}
 
   bytes@3.1.2:
@@ -3448,7 +3448,7 @@ packages:
     engines: {node: '>= 0.8.0'}
 
   concat-map@0.0.1:
-    resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
+    resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
 
   concat-stream@1.6.2:
     resolution: {integrity: sha512-27HBghJxjiZtIk3Ycvn/4kbJk/1uZuJFfuPEns6LaEvpvG1f0hTea8lilrouyo9mVc2GWdcEZ8OLoGmSADlrCw==}
@@ -3747,7 +3747,7 @@ packages:
     hasBin: true
 
   ee-first@1.1.1:
-    resolution: {integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=}
+    resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
 
   ejs@3.1.10:
     resolution: {integrity: sha512-UeJmFfOrAQS8OJWPZ4qtgHyWExa088/MtK5UEyoJGFH67cDEXkZSviOiKRCZ4Xij0zxI3JECgYs3oKx+AizQBA==}
@@ -4921,7 +4921,7 @@ packages:
     resolution: {integrity: sha512-1N4qp+jE0pL5Xv4uEcwVUhIkwdUO3S/9gML90nqKA7v7FcOS5vUtatfzok9S9U1EJU8dHWlcv95WLnKmmxZI9w==}
 
   media-typer@0.3.0:
-    resolution: {integrity: sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=}
+    resolution: {integrity: sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==}
     engines: {node: '>= 0.6'}
 
   memoize-one@6.0.0:
@@ -4936,7 +4936,7 @@ packages:
     engines: {node: '>=10'}
 
   merge-descriptors@1.0.1:
-    resolution: {integrity: sha1-sAqqVW3YtEVoFQ7J0blT8/kMu2E=}
+    resolution: {integrity: sha512-cCi6g3/Zr1iqQi6ySbseM1Xvooa98N0w31jzUYrXPX2xqObmFGHJ0tQ5u74H3mVh7wLouTseZyYIq39g8cNp1w==}
 
   merge-stream@2.0.0:
     resolution: {integrity: sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==}
@@ -6679,7 +6679,7 @@ packages:
     resolution: {integrity: sha512-kZf/K6hEIrWHI6XqOFUiiMa+79wE/D8Q+NCNAWclkyg3b4d2k7s0QGepNjiABc+aR3N1PAyHL7p6UcLY6LmrnA==}
 
   utils-merge@1.0.1:
-    resolution: {integrity: sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=}
+    resolution: {integrity: sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==}
     engines: {node: '>= 0.4.0'}
 
   uuid@9.0.1:
@@ -9136,7 +9136,7 @@ snapshots:
       '@sentry/types': 8.11.0
       '@sentry/utils': 8.11.0
 
-  '@sentry/babel-plugin-component-annotate@2.19.0': {}
+  '@sentry/babel-plugin-component-annotate@2.20.0': {}
 
   '@sentry/browser@8.11.0':
     dependencies:
@@ -9148,10 +9148,10 @@ snapshots:
       '@sentry/types': 8.11.0
       '@sentry/utils': 8.11.0
 
-  '@sentry/bundler-plugin-core@2.19.0':
+  '@sentry/bundler-plugin-core@2.20.0':
     dependencies:
       '@babel/core': 7.24.4
-      '@sentry/babel-plugin-component-annotate': 2.19.0
+      '@sentry/babel-plugin-component-annotate': 2.20.0
       '@sentry/cli': 2.32.1
       dotenv: 16.4.5
       find-up: 5.0.0
@@ -9293,9 +9293,9 @@ snapshots:
     dependencies:
       '@sentry/types': 8.11.0
 
-  '@sentry/vite-plugin@2.19.0':
+  '@sentry/vite-plugin@2.20.0':
     dependencies:
-      '@sentry/bundler-plugin-core': 2.19.0
+      '@sentry/bundler-plugin-core': 2.20.0
       unplugin: 1.0.1
     transitivePeerDependencies:
       - encoding
