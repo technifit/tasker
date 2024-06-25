@@ -26,9 +26,9 @@
   "dependencies": {
     "@clerk/remix": "4.1.2",
     "@hookform/resolvers": "3.6.0",
-    "@remix-run/express": "2.9.2",
-    "@remix-run/node": "2.9.2",
-    "@remix-run/react": "2.9.2",
+    "@remix-run/express": "2.10.0",
+    "@remix-run/node": "2.10.0",
+    "@remix-run/react": "2.10.0",
     "@sentry/remix": "8.11.0",
     "@technifit/id": "workspace:*",
     "@technifit/middleware": "workspace:*",
@@ -54,7 +54,7 @@
   "devDependencies": {
     "@codecov/vite-plugin": "0.0.1-beta.10",
     "@playwright/test": "1.45.0",
-    "@remix-run/dev": "2.9.2",
+    "@remix-run/dev": "2.10.0",
     "@sentry/vite-plugin": "2.20.1",
     "@technifit/eslint-config": "workspace:*",
     "@technifit/tailwind-config": "workspace:*",
