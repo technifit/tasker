@@ -129,13 +129,13 @@ export const Otp = () => {
                         <>
                           <InputOTPGroup>
                             {slots.slice(0, 3).map((slot, index) => (
-                              <InputOTPSlot key={index} {...slot} />
+                              <InputOTPSlot className='size-14' key={index} {...slot} />
                             ))}{' '}
                           </InputOTPGroup>
                           <InputOTPSeparator />
                           <InputOTPGroup>
                             {slots.slice(3).map((slot, index) => (
-                              <InputOTPSlot key={index + 3} {...slot} />
+                              <InputOTPSlot className='size-14' key={index + 3} {...slot} />
                             ))}
                           </InputOTPGroup>
                         </>
