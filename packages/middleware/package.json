@@ -33,7 +33,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@remix-run/node": "2.9.2",
+    "@remix-run/node": "2.10.0",
     "@technifit/id": "workspace:*",
     "remix-create-express-app": "0.4.4",
     "zod": "3.23.8"
