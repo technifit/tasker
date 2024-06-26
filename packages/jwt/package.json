@@ -21,7 +21,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "effect": "3.4.3",
+    "effect": "3.4.4",
     "jwt-decode": "4.0.0"
   },
   "devDependencies": {

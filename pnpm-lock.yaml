@@ -218,8 +218,8 @@ importers:
   packages/jwt:
     dependencies:
       effect:
-        specifier: 3.4.3
-        version: 3.4.3
+        specifier: 3.4.4
+        version: 3.4.4
       jwt-decode:
         specifier: 4.0.0
         version: 4.0.0
@@ -3777,8 +3777,8 @@ packages:
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
 
-  effect@3.4.3:
-    resolution: {integrity: sha512-9fYhTSZfEpyZthJl2yngoKVxyUeirteutGT5EJIRahhKLaePRIv5Bv6mcb/tiJTHMGMeYNIgIXmC8/xRKDLI4Q==}
+  effect@3.4.4:
+    resolution: {integrity: sha512-7TcS6dUQX608RhZvLLQg0s+X34vv+UuW6+lC8oUdTFeQ4rRF10d8ZKCwTc7kB5+EpjiYr6bbLcU7i2bnCutVBQ==}
 
   ejs@3.1.10:
     resolution: {integrity: sha512-UeJmFfOrAQS8OJWPZ4qtgHyWExa088/MtK5UEyoJGFH67cDEXkZSviOiKRCZ4Xij0zxI3JECgYs3oKx+AizQBA==}
@@ -10517,7 +10517,7 @@ snapshots:
 
   ee-first@1.1.1: {}
 
-  effect@3.4.3: {}
+  effect@3.4.4: {}
 
   ejs@3.1.10:
     dependencies:
