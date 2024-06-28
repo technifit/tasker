@@ -382,8 +382,8 @@ importers:
         specifier: 1.11.4
         version: 1.11.4
       lucide-react:
-        specifier: 0.397.0
-        version: 0.397.0(react@18.3.1)
+        specifier: 0.398.0
+        version: 0.398.0(react@18.3.1)
       react-circle-flags:
         specifier: 0.0.20
         version: 0.0.20(react@18.3.1)
@@ -4875,8 +4875,8 @@ packages:
     resolution: {integrity: sha512-jumlc0BIUrS3qJGgIkWZsyfAM7NCWiBcCDhnd+3NNM5KbBmLTgHVfWBcg6W+rLUsIpzpERPsvwUP7CckAQSOoA==}
     engines: {node: '>=12'}
 
-  lucide-react@0.397.0:
-    resolution: {integrity: sha512-rUcbRY5jFP/4za/OJvaRUUmdPsPb940Tw9zE1ehrRZmr9JnkDcW8OV3POR3XfEAAMDkssiTc5IWBFv8Y//pkDQ==}
+  lucide-react@0.398.0:
+    resolution: {integrity: sha512-qwTvyiWP1iBIbq4qr5yA7fdjB9fxCy/HKDNM3og5oGZ3NRAMCMDzak7/w+yJJ39AJI3+1yPlAigdpRyF3h7gzw==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
@@ -11873,7 +11873,7 @@ snapshots:
 
   lru-cache@7.18.3: {}
 
-  lucide-react@0.397.0(react@18.3.1):
+  lucide-react@0.398.0(react@18.3.1):
     dependencies:
       react: 18.3.1
 
