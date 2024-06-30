@@ -65,7 +65,6 @@ export const action = async ({ request, context }: ActionFunctionArgs) => {
 
   const { otp } = data;
   try {
-    // TODO: extract to authentication package -- https://linear.app/technifit/issue/TASK-105/add-auth-package-to-wrap-workos-calls
     const response = await authenticateWithMagicAuth({
       code: otp,
       ipAddress: getClientIPAddress(request) ?? undefined,
@@ -78,8 +77,7 @@ export const action = async ({ request, context }: ActionFunctionArgs) => {
     sessionContext.set('access_token', response.accessToken);
     sessionContext.set('refresh_token', response.refreshToken);
 
-    // TODO: set cookie here to say user is logged in - https://linear.app/technifit/issue/TASK-106/set-cookie-when-logged-inotp-verified
-    return redirect($path('/work-os'));
+    return redirect($path('/'));
   } catch (error) {
     console.error(error);
   }

@@ -1,5 +1,3 @@
-import { ClerkApp } from '@clerk/remix';
-import { rootAuthLoader } from '@clerk/remix/ssr.server';
 import { createCookieSessionStorage } from '@remix-run/node';
 import type { LinksFunction, LoaderFunctionArgs } from '@remix-run/node';
 import {
@@ -52,18 +50,9 @@ export const links: LinksFunction = () => [
 ];
 
 export const loader = (args: LoaderFunctionArgs) => {
-  return rootAuthLoader(
-    args,
-    () => {
-      return {
-        publicKeys: publicEnvSchema.parse(args.context.env),
-      };
-    },
-    {
-      publishableKey: args.context.env.CLERK_PUBLISHABLE_KEY,
-      secretKey: args.context.env.CLERK_SECRET_KEY,
-    },
-  );
+  return {
+    publicKeys: publicEnvSchema.parse(args.context.env),
+  };
 };
 
 function App() {
@@ -86,7 +75,7 @@ function App() {
   );
 }
 
-export default withSentry(ClerkApp(App, { clerkJSVariant: 'headless' }), {
+export default withSentry(App, {
   errorBoundaryOptions: {
     fallback: <ErrorBoundary />,
   },

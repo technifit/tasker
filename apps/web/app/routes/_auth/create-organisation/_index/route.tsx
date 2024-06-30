@@ -1,8 +1,6 @@
-import { useClerk, useOrganizationList } from '@clerk/remix';
 import { zodResolver } from '@hookform/resolvers/zod';
-import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
+import type { MetaFunction } from '@remix-run/node';
 import { useNavigate } from '@remix-run/react';
-import slugify from 'typescript-slugify';
 import { z } from 'zod';
 
 import { Balancer } from '@technifit/ui/balancer';
@@ -14,7 +12,6 @@ import { Input } from '@technifit/ui/input';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@technifit/ui/tooltip';
 import { Typography } from '@technifit/ui/typography';
 
-import { requireAuthenticatedUser } from '~/lib/guards/auth-guard.server';
 import { getStep } from '../config';
 
 export const createTeamFormSchema = z.object({
@@ -25,9 +22,7 @@ export type CreateTeamFormData = z.infer<typeof createTeamFormSchema>;
 
 export const resolver = zodResolver(createTeamFormSchema);
 
-export const loader = async (args: LoaderFunctionArgs) => {
-  await requireAuthenticatedUser(args);
-
+export const loader = () => {
   return null;
 };
 
@@ -35,23 +30,22 @@ export const meta: MetaFunction = () => {
   return [{ title: 'Tasker | Create Team' }, { name: 'description', content: 'Create Team' }];
 };
 export const CreateOrganization = () => {
-  const { createOrganization } = useClerk();
-  const { setActive } = useOrganizationList();
   const navigate = useNavigate();
 
   const form = useForm<CreateTeamFormData>({
     resolver,
     submitHandlers: {
-      onValid: async ({ teamName }) => {
-        const { id, slug } = await createOrganization({ name: teamName, slug: slugify(teamName) });
+      onValid: () => {
+        // TODO: Create org and set user to active -- https://linear.app/technifit/issue/TASK-116/create-org-and-set-user-orgid
+        //const { id, slug } = await createOrganization({ name: teamName, slug: slugify(teamName) });
 
-        if (!setActive) {
-          throw new Error('Organization not set');
-        }
+        // if (!setActive) {
+        //   throw new Error('Organization not set');
+        // }
 
-        await setActive({ organization: id });
+        // await setActive({ organization: id });
 
-        navigate(getStep({ direction: 'next', url: window.location.href, params: { organisationSlug: slug! } }));
+        navigate(getStep({ direction: 'next', url: window.location.href, params: { organisationSlug: 'sluuuug' } }));
       },
     },
   });

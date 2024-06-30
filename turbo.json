@@ -3,8 +3,6 @@
   "globalDependencies": ["**/.env"],
   "globalEnv": [
     "CI",
-    "CLERK_PUBLISHABLE_KEY",
-    "CLERK_SECRET_KEY",
     "CODECOV_TOKEN",
     "NODE_ENV",
     "SENTRY_AUTH_TOKEN",
