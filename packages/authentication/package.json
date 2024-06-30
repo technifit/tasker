@@ -23,6 +23,10 @@
     "./get-jwks-url": {
       "types": "./src/get-jwks-url.d.ts",
       "default": "./src/get-jwks-url.js"
+    },
+    "./get-user": {
+      "types": "./src/get-user.d.ts",
+      "default": "./src/get-user.js"
     }
   },
   "scripts": {

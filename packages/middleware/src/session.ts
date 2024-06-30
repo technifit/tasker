@@ -7,6 +7,18 @@ import { z } from 'zod';
 const sessionSchema = z.object({
   access_token: z.string().optional(),
   refresh_token: z.string().optional(),
+  user: z
+    .object({
+      id: z.string(),
+      email: z.string(),
+      emailVerified: z.boolean(),
+      profilePictureUrl: z.string().url().nullable(),
+      firstName: z.string().nullable(),
+      lastName: z.string().nullable(),
+      createdAt: z.string(),
+      updatedAt: z.string(),
+    })
+    .optional(),
 });
 
 type SessionData = z.infer<typeof sessionSchema>;
