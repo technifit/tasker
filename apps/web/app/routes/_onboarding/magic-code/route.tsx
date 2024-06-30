@@ -76,6 +76,7 @@ export const action = async ({ request, context }: ActionFunctionArgs) => {
     const sessionContext = context.get(SessionContext);
     sessionContext.set('access_token', response.accessToken);
     sessionContext.set('refresh_token', response.refreshToken);
+    sessionContext.set('user', { ...response.user });
 
     return redirect($path('/'));
   } catch (error) {
