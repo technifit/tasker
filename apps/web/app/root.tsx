@@ -13,9 +13,9 @@ import {
   useRouteError,
 } from '@remix-run/react';
 import { captureRemixErrorBoundaryError, withSentry } from '@sentry/remix';
-import { publicEnvSchema } from 'server/env';
 import { serverOnly$ } from 'vite-env-only/macros';
 
+import { publicEnvSchema } from '@technifit/environment/schema';
 import { idempotency } from '@technifit/middleware/idempotency';
 import { createSessionMiddleware } from '@technifit/middleware/session';
 import type { SessionData, SessionFlashData } from '@technifit/middleware/session';

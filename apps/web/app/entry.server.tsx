@@ -7,7 +7,8 @@ import { sentryHandleError } from '@sentry/remix';
 import { isbot } from 'isbot';
 import { renderToPipeableStream } from 'react-dom/server';
 import { createExpressApp } from 'remix-create-express-app';
-import { envSchema } from 'server/env';
+
+import { envSchema } from '@technifit/environment/schema';
 
 Sentry.init({
   dsn: process.env.SENTRY_DSN,
