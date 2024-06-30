@@ -1,12 +1,12 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import type { ActionFunctionArgs, LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
 import { Link, redirect, useLoaderData } from '@remix-run/react';
-import { WorkOS } from '@workos-inc/node';
 import { getSearchParams } from 'remix-params-helper';
 import { $path } from 'remix-routes';
 import { getClientIPAddress } from 'remix-utils/get-client-ip-address';
 import { z } from 'zod';
 
+import { authenticateWithMagicAuth } from '@technifit/authentication/authenticate-with-magic-auth';
 import { SessionContext } from '@technifit/middleware/session';
 import { Button } from '@technifit/ui/button';
 import {
@@ -52,9 +52,6 @@ export const loader = ({ request }: LoaderFunctionArgs) => {
 };
 
 export const action = async ({ request, context }: ActionFunctionArgs) => {
-  const {
-    env: { WORKOS_API_KEY, WORKOS_CLIENT_ID },
-  } = context;
   const result = getSearchParams(request, searchParamsSchema);
 
   if (!result.success) {
@@ -66,14 +63,11 @@ export const action = async ({ request, context }: ActionFunctionArgs) => {
     return { errors, defaultValues };
   }
 
-  const workos = new WorkOS(WORKOS_API_KEY);
-
   const { otp } = data;
   try {
     // TODO: extract to authentication package -- https://linear.app/technifit/issue/TASK-105/add-auth-package-to-wrap-workos-calls
-    const response = await workos.userManagement.authenticateWithMagicAuth({
+    const response = await authenticateWithMagicAuth({
       code: otp,
-      clientId: WORKOS_CLIENT_ID,
       ipAddress: getClientIPAddress(request) ?? undefined,
       userAgent: request.headers.get('user-agent') ?? undefined,
       email: result.data.email,

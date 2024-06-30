@@ -53,6 +53,9 @@ importers:
       '@sentry/remix':
         specifier: 8.13.0
         version: 8.13.0(@opentelemetry/api@1.9.0)(@opentelemetry/core@1.25.1(@opentelemetry/api@1.9.0))(@opentelemetry/instrumentation@0.52.1(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@1.25.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.25.1)(@remix-run/node@2.10.0(typescript@5.5.2))(@remix-run/react@2.10.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.2))(react@18.3.1)
+      '@technifit/authentication':
+        specifier: workspace:*
+        version: link:../../packages/authentication
       '@technifit/id':
         specifier: workspace:*
         version: link:../../packages/id
@@ -62,9 +65,6 @@ importers:
       '@technifit/ui':
         specifier: workspace:*
         version: link:../../packages/ui
-      '@workos-inc/node':
-        specifier: 7.11.3
-        version: 7.11.3
       dotenv:
         specifier: 16.4.5
         version: 16.4.5
@@ -190,6 +190,31 @@ importers:
         specifier: 1.6.0
         version: 1.6.0(@types/node@20.14.9)
 
+  packages/authentication:
+    dependencies:
+      '@workos-inc/node':
+        specifier: 7.11.3
+        version: 7.11.3
+    devDependencies:
+      '@technifit/eslint-config':
+        specifier: workspace:*
+        version: link:../../tooling/eslint-config
+      '@technifit/tsconfig':
+        specifier: workspace:*
+        version: link:../../tooling/typescript-config
+      '@vitest/coverage-v8':
+        specifier: 1.6.0
+        version: 1.6.0(vitest@1.6.0(@types/node@20.14.9))
+      eslint:
+        specifier: 8.57.0
+        version: 8.57.0
+      typescript:
+        specifier: 5.5.2
+        version: 5.5.2
+      vitest:
+        specifier: 1.6.0
+        version: 1.6.0(@types/node@20.14.9)
+
   packages/id:
     dependencies:
       nanoid:
@@ -245,18 +270,24 @@ importers:
       '@remix-run/node':
         specifier: 2.10.0
         version: 2.10.0(typescript@5.5.2)
+      '@technifit/authentication':
+        specifier: workspace:*
+        version: link:../authentication
       '@technifit/id':
         specifier: workspace:*
         version: link:../id
       '@technifit/jwt':
         specifier: workspace:*
         version: link:../jwt
-      '@workos-inc/node':
-        specifier: 7.11.3
-        version: 7.11.3
+      is-ip:
+        specifier: 5.0.1
+        version: 5.0.1
       remix-create-express-app:
         specifier: 0.4.4
         version: 0.4.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.2)
+      remix-utils:
+        specifier: 7.6.0
+        version: 7.6.0(@remix-run/node@2.10.0(typescript@5.5.2))(@remix-run/react@2.10.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.2))(@remix-run/router@1.17.0)(is-ip@5.0.1)(react@18.3.1)(zod@3.23.8)
       zod:
         specifier: 3.23.8
         version: 3.23.8
