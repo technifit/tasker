@@ -1,4 +1,4 @@
-import type { PublicEnv } from 'server/env';
+import type { PublicEnv } from '@technifit/environment/types';
 
 declare global {
   interface Window {

@@ -1,24 +1,16 @@
 {
-  "name": "@technifit/middleware",
+  "name": "@technifit/environment",
   "version": "1.0.0",
   "sideEffects": false,
   "type": "module",
   "exports": {
-    "./access-token": {
-      "types": "./src/access-token.d.ts",
-      "default": "./src/access-token.js"
+    "./schema": {
+      "types": "./src/schema.d.ts",
+      "default": "./src/schema.js"
     },
-    "./authenticated": {
-      "types": "./src/authenticated.d.ts",
-      "default": "./src/authenticated.js"
-    },
-    "./idempotency": {
-      "types": "./src/idempotency.d.ts",
-      "default": "./src/idempotency.js"
-    },
-    "./session": {
-      "types": "./src/session.d.ts",
-      "default": "./src/session.js"
+    "./types": {
+      "types": "./src/types.d.ts",
+      "default": "./src/types.js"
     }
   },
   "scripts": {
@@ -34,13 +26,7 @@
   },
   "dependencies": {
     "@remix-run/node": "2.10.0",
-    "@technifit/authentication": "workspace:*",
-    "@technifit/environment": "workspace:*",
-    "@technifit/id": "workspace:*",
-    "@technifit/jwt": "workspace:*",
-    "is-ip": "5.0.1",
     "remix-create-express-app": "0.4.4",
-    "remix-utils": "7.6.0",
     "zod": "3.23.8"
   },
   "devDependencies": {
