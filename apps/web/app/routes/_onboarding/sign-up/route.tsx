@@ -1,10 +1,11 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import type { ActionFunctionArgs, MetaFunction } from '@remix-run/node';
 import { Link, redirect } from '@remix-run/react';
-import { WorkOS } from '@workos-inc/node';
 import { $path } from 'remix-routes';
 import { z } from 'zod';
 
+import { createMagicAuth } from '@technifit/authentication/create-magic-auth';
+import { createUser } from '@technifit/authentication/create-user';
 import { Button } from '@technifit/ui/button';
 import {
   Form,
@@ -29,28 +30,21 @@ type SignUpFormData = z.infer<typeof signUpFormSchema>;
 
 const resolver = zodResolver(signUpFormSchema);
 
-export const action = async ({
-  context: {
-    env: { WORKOS_API_KEY },
-  },
-  request,
-}: ActionFunctionArgs) => {
+export const action = async ({ request }: ActionFunctionArgs) => {
   const { errors, data, receivedValues: defaultValues } = await getValidatedFormData<SignUpFormData>(request, resolver);
   if (errors) {
     return { errors, defaultValues };
   }
 
-  const workos = new WorkOS(WORKOS_API_KEY);
-
   const { email, firstName, lastName } = data;
   try {
-    await workos.userManagement.createUser({
+    await createUser({
       email,
       firstName,
       lastName,
     });
 
-    await workos.userManagement.createMagicAuth({ email });
+    await createMagicAuth({ email });
 
     return redirect($path('/magic-code', { email }));
   } catch (error) {

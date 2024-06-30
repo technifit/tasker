@@ -1,32 +1,14 @@
 import { redirect } from '@remix-run/node';
 import type { AppLoadContext } from '@remix-run/node';
-import { WorkOS } from '@workos-inc/node';
 import type { ServerContext } from 'remix-create-express-app/context';
 import type { MiddlewareFunctionArgs } from 'remix-create-express-app/middleware';
+import { getClientIPAddress } from 'remix-utils/get-client-ip-address';
 
+import { authenticateWithRefreshToken } from '@technifit/authentication/authenticate-with-refresh-token';
+import { getJWKSURL } from '@technifit/authentication/get-jwks-url';
 import { verifyAccessToken } from '@technifit/jwt/verify-access-token';
 
 import { SessionContext } from './session';
-
-// TODO: extract to authentication package -- https://linear.app/technifit/issue/TASK-105/add-auth-package-to-wrap-workos-calls
-const authenticateWithRefreshToken = async (oldRefreshToken: string) => {
-  const workos = new WorkOS(process.env.WORKOS_API_KEY);
-
-  const { accessToken, refreshToken } = await workos.userManagement.authenticateWithRefreshToken({
-    clientId: process.env.WORKOS_CLIENT_ID!,
-    refreshToken: oldRefreshToken,
-  });
-
-  return { accessToken, refreshToken };
-};
-
-const getJWKSURL = () => {
-  const workos = new WorkOS(process.env.WORKOS_API_KEY);
-
-  const jwksURl = workos.userManagement.getJwksUrl(process.env.WORKOS_CLIENT_ID!);
-
-  return jwksURl;
-};
 
 /**
  * Clears the access_token and refresh_token from the session context and flashes an error message.
@@ -57,7 +39,7 @@ const setErrorSessionAndThrow = (context: AppLoadContext & ServerContext) => {
  * Middleware function that adds idempotency key to the session.
  * The idempotency key is used to ensure that a request with the same key is processed only once.
  */
-async function withAuthentication({ context, next }: MiddlewareFunctionArgs) {
+async function withAuthentication({ context, next, request }: MiddlewareFunctionArgs) {
   const sessionContext = context.get(SessionContext);
 
   // If no session, set error and redirect to login
@@ -83,8 +65,11 @@ async function withAuthentication({ context, next }: MiddlewareFunctionArgs) {
   try {
     console.log('Attempting to re-authenticate with refresh token');
     // Update the session with the refresh token
-    // TODO: replace with call to authentication service -- https://linear.app/technifit/issue/TASK-105/add-auth-package-to-wrap-workos-calls
-    const { accessToken, refreshToken } = await authenticateWithRefreshToken(sessionContext.get('refresh_token')!);
+    const { accessToken, refreshToken } = await authenticateWithRefreshToken({
+      refreshToken: sessionContext.get('refresh_token')!,
+      userAgent: request.headers.get('user-agent')!,
+      ipAddress: getClientIPAddress(request) ?? undefined,
+    });
 
     console.log('Re-authenticated with refresh token');
     sessionContext.set('access_token', accessToken);
