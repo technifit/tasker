@@ -1,11 +1,7 @@
-import type { LoaderFunctionArgs } from '@remix-run/node';
 import { Outlet } from '@remix-run/react';
 
-import { requireUnauthenticatedUser } from '~/lib/guards/auth-guard.server';
-
-export const loader = async (args: LoaderFunctionArgs) => {
-  await requireUnauthenticatedUser(args);
-
+// TODO implement middleware to only allow unauthenticated users to access this route -- https://linear.app/technifit/issue/TASK-97/create-middleware-to-only-allow-unauthorised-users
+export const loader = () => {
   return null;
 };
 
