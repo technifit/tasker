@@ -8,9 +8,9 @@
       "types": "./src/access-token.d.ts",
       "default": "./src/access-token.js"
     },
-    "./cache": {
-      "types": "./src/cache.d.ts",
-      "default": "./src/cache.js"
+    "./authenticated": {
+      "types": "./src/authenticated.d.ts",
+      "default": "./src/authenticated.js"
     },
     "./idempotency": {
       "types": "./src/idempotency.d.ts",
@@ -35,6 +35,8 @@
   "dependencies": {
     "@remix-run/node": "2.10.0",
     "@technifit/id": "workspace:*",
+    "@technifit/jwt": "workspace:*",
+    "@workos-inc/node": "7.11.3",
     "remix-create-express-app": "0.4.4",
     "zod": "3.23.8"
   },
