@@ -70,6 +70,7 @@ export const action = async ({ request, context }: ActionFunctionArgs) => {
 
   const { otp } = data;
   try {
+    // TODO: extract to authentication package -- https://linear.app/technifit/issue/TASK-105/add-auth-package-to-wrap-workos-calls
     const response = await workos.userManagement.authenticateWithMagicAuth({
       code: otp,
       clientId: WORKOS_CLIENT_ID,
@@ -78,12 +79,13 @@ export const action = async ({ request, context }: ActionFunctionArgs) => {
       email: result.data.email,
     });
 
+    // TODO: extract to a contined function
     const sessionContext = context.get(SessionContext);
     sessionContext.set('access_token', response.accessToken);
     sessionContext.set('refresh_token', response.refreshToken);
 
     // TODO: set cookie here to say user is logged in - https://linear.app/technifit/issue/TASK-106/set-cookie-when-logged-inotp-verified
-    return redirect($path('/'));
+    return redirect($path('/work-os'));
   } catch (error) {
     console.error(error);
   }

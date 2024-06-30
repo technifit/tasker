@@ -5,18 +5,15 @@ import type { MiddlewareFunctionArgs } from 'remix-create-express-app/middleware
 import { z } from 'zod';
 
 const sessionSchema = z.object({
-  idempotency_key: z.string().optional(),
   access_token: z.string().optional(),
   refresh_token: z.string().optional(),
 });
 
 type SessionData = z.infer<typeof sessionSchema>;
 
-const sessionFlashSchema = z
-  .object({
-    error: z.string(),
-  })
-  .nullable();
+const sessionFlashSchema = z.object({
+  error: z.string(),
+});
 
 type SessionFlashData = z.infer<typeof sessionFlashSchema>;
 
