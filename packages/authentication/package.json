@@ -1,24 +1,28 @@
 {
-  "name": "@technifit/middleware",
+  "name": "@technifit/authentication",
   "version": "1.0.0",
   "sideEffects": false,
   "type": "module",
   "exports": {
-    "./access-token": {
-      "types": "./src/access-token.d.ts",
-      "default": "./src/access-token.js"
+    "./authenticate-with-magic-auth": {
+      "types": "./src/authenticate-with-magic-auth.d.ts",
+      "default": "./src/authenticate-with-magic-auth.js"
     },
-    "./authenticated": {
-      "types": "./src/authenticated.d.ts",
-      "default": "./src/authenticated.js"
+    "./authenticate-with-refresh-token": {
+      "types": "./src/authenticate-with-refresh-token.d.ts",
+      "default": "./src/authenticate-with-refresh-token.js"
     },
-    "./idempotency": {
-      "types": "./src/idempotency.d.ts",
-      "default": "./src/idempotency.js"
+    "./create-magic-auth": {
+      "types": "./src/create-magic-auth.d.ts",
+      "default": "./src/create-magic-auth.js"
     },
-    "./session": {
-      "types": "./src/session.d.ts",
-      "default": "./src/session.js"
+    "./create-user": {
+      "types": "./src/create-user.d.ts",
+      "default": "./src/create-user.js"
+    },
+    "./get-jwks-url": {
+      "types": "./src/get-jwks-url.d.ts",
+      "default": "./src/get-jwks-url.js"
     }
   },
   "scripts": {
@@ -33,14 +37,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@remix-run/node": "2.10.0",
-    "@technifit/authentication": "workspace:*",
-    "@technifit/id": "workspace:*",
-    "@technifit/jwt": "workspace:*",
-    "is-ip": "5.0.1",
-    "remix-create-express-app": "0.4.4",
-    "remix-utils": "7.6.0",
-    "zod": "3.23.8"
+    "@workos-inc/node": "7.11.3"
   },
   "devDependencies": {
     "@technifit/eslint-config": "workspace:*",
