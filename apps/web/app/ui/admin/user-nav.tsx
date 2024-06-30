@@ -16,8 +16,11 @@ import {
 } from '@technifit/ui/dropdown-menu';
 import { Boxes, LogOut, Settings, Sun } from '@technifit/ui/icons';
 
+import { useUser } from '~/routes/_auth/hooks/use-user';
+
 export function UserNav() {
   const navigate = useNavigate();
+  const user = useUser();
   //const [theme, setTheme] = useTheme();
 
   //TODO implement logout -- https://linear.app/technifit/issue/TASK-108/implement-correct-logout-functionality
@@ -33,22 +36,12 @@ export function UserNav() {
     //setTheme((prev) => (prev === Theme.DARK ? Theme.LIGHT : Theme.DARK));
   };
 
-  // TODO: fetch user from root auth loader -- https://linear.app/technifit/issue/TASK-115/return-user-from-the-root-auth-loader-and-maybe-organisation
-  const user = {
-    fullName: 'John Doe',
-    primaryEmailAddress: {
-      emailAddress: 'barroncillian@gmail.com',
-    },
-    imageUrl: 'https://randomuser.me',
-    organizationMemberships: [],
-  };
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant='ghost' className='relative h-8 w-8 rounded-full'>
           <Avatar className='h-9 w-9'>
-            <AvatarImage src={user.imageUrl} alt={user.fullName ?? 'User Image'} />
+            <AvatarImage src={user.profilePictureUrl ?? undefined} alt={user.fullName ?? 'User Image'} />
             <AvatarFallback>
               {user?.fullName
                 ?.match(/(\b\S)?/g)
@@ -62,9 +55,7 @@ export function UserNav() {
         <DropdownMenuLabel className='font-normal'>
           <div className='flex flex-col space-y-1'>
             <p className='truncate text-sm font-medium leading-none'>{user?.fullName}</p>
-            <p className='truncate text-xs leading-none text-muted-foreground'>
-              {user?.primaryEmailAddress?.emailAddress}
-            </p>
+            <p className='truncate text-xs leading-none text-muted-foreground'>{user.email}</p>
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
@@ -79,18 +70,12 @@ export function UserNav() {
               Settings
             </Link>
           </DropdownMenuItem>
-          {user.organizationMemberships.length === 0 ? (
-            <DropdownMenuItem>
-              <Link
-                className='inline-flex grow items-center gap-3'
-                prefetch='intent'
-                to={$path('/create-organisation')}
-              >
-                <Boxes className='size-4' />
-                New Team
-              </Link>
-            </DropdownMenuItem>
-          ) : null}
+          <DropdownMenuItem>
+            <Link className='inline-flex grow items-center gap-3' prefetch='intent' to={$path('/create-organisation')}>
+              <Boxes className='size-4' />
+              New Team
+            </Link>
+          </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem className='inline-flex w-full items-center gap-3' onClick={handleChangeThemeClick}>
