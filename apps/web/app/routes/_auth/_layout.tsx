@@ -1,5 +1,4 @@
 import type { LoaderFunctionArgs } from '@remix-run/node';
-
 import { Outlet } from '@remix-run/react';
 import { serverOnly$ } from 'vite-env-only/macros';
 
