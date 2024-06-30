@@ -1,4 +1,3 @@
-import { useClerk, useUser } from '@clerk/remix';
 import { Link, useNavigate } from '@remix-run/react';
 import { $path } from 'remix-routes';
 
@@ -16,18 +15,16 @@ import {
   DropdownMenuTrigger,
 } from '@technifit/ui/dropdown-menu';
 import { Boxes, LogOut, Settings, Sun } from '@technifit/ui/icons';
-import { Skeleton } from '@technifit/ui/skeleton';
 
 export function UserNav() {
-  const { signOut } = useClerk();
-  const { user, isLoaded } = useUser();
   const navigate = useNavigate();
   //const [theme, setTheme] = useTheme();
 
-  const handleSignOutClick = async (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  //TODO implement logout -- https://linear.app/technifit/issue/TASK-108/implement-correct-logout-functionality
+  const handleSignOutClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
 
-    await signOut();
+    // TODO implement fetcher
     navigate($path('/log-in'));
   };
 
@@ -36,9 +33,15 @@ export function UserNav() {
     //setTheme((prev) => (prev === Theme.DARK ? Theme.LIGHT : Theme.DARK));
   };
 
-  if (!isLoaded || !user) {
-    return <Skeleton className='relative h-8 w-8 rounded-full' />;
-  }
+  // TODO: fetch user from root auth loader -- https://linear.app/technifit/issue/TASK-115/return-user-from-the-root-auth-loader-and-maybe-organisation
+  const user = {
+    fullName: 'John Doe',
+    primaryEmailAddress: {
+      emailAddress: 'barroncillian@gmail.com',
+    },
+    imageUrl: 'https://randomuser.me',
+    organizationMemberships: [],
+  };
 
   return (
     <DropdownMenu>

@@ -5,11 +5,9 @@ import { $params } from 'remix-routes';
 import { Button } from '@technifit/ui/button';
 import { CardFooter, CardHeader, CardTitle } from '@technifit/ui/card';
 
-import { requireAuthenticatedUser } from '~/lib/guards/auth-guard.server';
 import { getStep } from '../../config';
 
-export const loader = async (args: LoaderFunctionArgs) => {
-  await requireAuthenticatedUser(args);
+export const loader = (args: LoaderFunctionArgs) => {
   const { organisationSlug } = $params('/create-organisation/:organisationSlug/select-plan', args.params);
 
   return { organisationSlug, url: args.request.url };

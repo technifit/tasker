@@ -1,4 +1,3 @@
-import { useOrganization } from '@clerk/remix';
 import { useLocation } from '@remix-run/react';
 import { $path } from 'remix-routes';
 
@@ -15,7 +14,6 @@ interface Menu {
   href: string;
   label: string;
   active: boolean;
-  loading?: boolean;
   hidden?: boolean;
   icon: LucideIcon;
   submenus: Submenu[];
@@ -28,16 +26,18 @@ interface Group {
 }
 
 const useGetMenuList = (): {
-  isLoading: boolean;
   menuList: Group[];
 } => {
   const { pathname } = useLocation();
-  const { isLoaded, organization, membership } = useOrganization();
 
-  const isAdmin = membership?.role === 'admin';
+  // TODO: fetch org from root auth loader -- https://linear.app/technifit/issue/TASK-115/return-user-from-the-root-auth-loader-and-maybe-organisation
+  const organization = {
+    slug: 'technifit',
+  };
+
+  const isAdmin = true;
 
   return {
-    isLoading: !isLoaded,
     menuList: [
       {
         groupLabel: '',
