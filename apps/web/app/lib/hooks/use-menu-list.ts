@@ -30,7 +30,7 @@ const useGetMenuList = (): {
 } => {
   const { pathname } = useLocation();
 
-  // TODO: fetch org from root auth loader -- https://linear.app/technifit/issue/TASK-115/return-user-from-the-root-auth-loader-and-maybe-organisation
+  // TODO: fetch org from root auth loader -- https://linear.app/technifit/issue/TASK-117/return-org-org-from-root-loader
   const organization = {
     slug: 'technifit',
   };
