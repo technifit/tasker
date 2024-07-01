@@ -5,7 +5,7 @@
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["build/**"],
-      "env": ["SESSION_SECRET", "CODECOV_TOKEN", "WORKOS_API_KEY", "WORKOS_CLIENT_ID"]
+      "env": ["CLOUDFLARE_ANALYTICS_TOKEN", "CODECOV_TOKEN", "SESSION_SECRET", "WORKOS_API_KEY", "WORKOS_CLIENT_ID"]
     }
   }
 }

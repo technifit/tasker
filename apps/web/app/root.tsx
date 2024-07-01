@@ -11,6 +11,7 @@ import {
   useRouteError,
 } from '@remix-run/react';
 import { captureRemixErrorBoundaryError, withSentry } from '@sentry/remix';
+import { ExternalScripts } from 'remix-utils/external-scripts';
 import { serverOnly$ } from 'vite-env-only/macros';
 
 import { publicEnvSchema } from '@technifit/environment/schema';
@@ -50,6 +51,22 @@ export const links: LinksFunction = () => [
   ...fonts.map((font) => ({ rel: 'preload', href: `public/fonts/${font}` })),
 ];
 
+// export const handle: ExternalScriptsHandle<SerializeFrom<typeof loader>> = {
+//   scripts({
+//     data: {
+//       publicKeys: { CLOUDFLARE_ANALYTICS_TOKEN },
+//     },
+//   }) {
+//     return [
+//       {
+//         src: 'https://static.cloudflareinsights.com/beacon.min.js',
+//         'data-cf-beacon': `{"token": "${CLOUDFLARE_ANALYTICS_TOKEN}"}`,
+//         defer: true,
+//       },
+//     ];
+//   },
+// };
+
 export const loader = (args: LoaderFunctionArgs) => {
   return {
     publicKeys: publicEnvSchema.parse(args.context.env),
@@ -70,7 +87,15 @@ function App() {
       <body className={cn('flex min-h-dvh flex-col bg-background font-sans text-foreground antialiased')}>
         <Outlet />
         <ScrollRestoration />
+        <ExternalScripts />
         <Scripts />
+        {publicKeys.NODE_ENV === 'production' && publicKeys.CLOUDFLARE_ANALYTICS_TOKEN ? (
+          <script
+            src='https://static.cloudflareinsights.com/beacon.min.js'
+            data-cf-beacon={`{"token": "${publicKeys.CLOUDFLARE_ANALYTICS_TOKEN}"}`}
+            defer
+          />
+        ) : null}
       </body>
     </html>
   );
