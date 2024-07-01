@@ -3,6 +3,7 @@
   "globalDependencies": ["**/.env"],
   "globalEnv": [
     "CI",
+    "CLOUDFLARE_ANALYTICS_TOKEN",
     "CODECOV_TOKEN",
     "NODE_ENV",
     "SENTRY_AUTH_TOKEN",
