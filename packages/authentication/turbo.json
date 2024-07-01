@@ -4,6 +4,7 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
+      "env": ["WORKOS_API_KEY", "WORKOS_CLIENT_ID"],
       "outputs": ["dist/**"]
     }
   }
