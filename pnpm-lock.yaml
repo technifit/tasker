@@ -108,8 +108,8 @@ importers:
         specifier: 1.0.1
         version: 1.0.1
       vite-env-only:
-        specifier: 3.0.2
-        version: 3.0.2(vite@5.3.2(@types/node@20.14.9))
+        specifier: 3.0.3
+        version: 3.0.3(vite@5.3.2(@types/node@20.14.9))
       zod:
         specifier: 3.23.8
         version: 3.23.8
@@ -3272,8 +3272,8 @@ packages:
   axobject-query@3.1.1:
     resolution: {integrity: sha512-goKlv8DZrK9hUh975fnHzhNIO4jUnFCfv/dszV5VwUGDFjI6vQ2VwoyjYjYNEbBE8AH87TduWP5uyDR1D+Iteg==}
 
-  babel-dead-code-elimination@1.0.5:
-    resolution: {integrity: sha512-YU83EN8SngaePQAJ+Y1AUIRFOr+2o/L5ez6JQzcCd9r19GtYqa9vm4se33t4wVcSbOqATUfdOJilp403DT61ow==}
+  babel-dead-code-elimination@1.0.6:
+    resolution: {integrity: sha512-JxFi9qyRJpN0LjEbbjbN8g0ux71Qppn9R8Qe3k6QzHg2CaKsbUQtbn307LQGiDLGjV6JCtEFqfxzVig9MyDCHQ==}
 
   babel-plugin-macros@3.1.0:
     resolution: {integrity: sha512-Cg7TFGpIr01vOQNODXOOaGz2NpCU5gl8x1qJFbb6hbZxR7XrcE2vtbAsTAbJ7/xwJtUuJEw8K8Zr/AE0LHlesg==}
@@ -6728,8 +6728,8 @@ packages:
   vfile@5.3.7:
     resolution: {integrity: sha512-r7qlzkgErKjobAmyNIkkSpizsFPYiUPuJb5pNW1RB4JcYVZhs4lIbVqk8XPk033CV/1z8ss5pkax8SuhGpcG8g==}
 
-  vite-env-only@3.0.2:
-    resolution: {integrity: sha512-5wFT3eckAZtfYPD/5bxusM3mQpS4rLstK0qkZyEiPMVqdvNsVcGYo75ZOmDM/SEoJVFqwpROKYF9yRCgbDYf6Q==}
+  vite-env-only@3.0.3:
+    resolution: {integrity: sha512-iAb7cTXRrvFShaF1n+G8f6Yqq7sRJcxipNYNQQu0DN5N9P55vJMmLG5lNU5moYGpd+ZH1WhBHdkWi5WjrfImHg==}
     peerDependencies:
       vite: '*'
 
@@ -9896,7 +9896,7 @@ snapshots:
     dependencies:
       deep-equal: 2.2.3
 
-  babel-dead-code-elimination@1.0.5:
+  babel-dead-code-elimination@1.0.6:
     dependencies:
       '@babel/core': 7.24.4
       '@babel/parser': 7.24.4
@@ -13886,14 +13886,14 @@ snapshots:
       unist-util-stringify-position: 3.0.3
       vfile-message: 3.1.4
 
-  vite-env-only@3.0.2(vite@5.3.2(@types/node@20.14.9)):
+  vite-env-only@3.0.3(vite@5.3.2(@types/node@20.14.9)):
     dependencies:
       '@babel/core': 7.24.4
       '@babel/generator': 7.24.4
       '@babel/parser': 7.24.4
       '@babel/traverse': 7.24.1
       '@babel/types': 7.24.0
-      babel-dead-code-elimination: 1.0.5
+      babel-dead-code-elimination: 1.0.6
       micromatch: 4.0.5
       vite: 5.3.2(@types/node@20.14.9)
     transitivePeerDependencies:
