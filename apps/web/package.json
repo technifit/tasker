@@ -48,7 +48,7 @@
     "remix-routes": "1.7.6",
     "remix-utils": "7.6.0",
     "typescript-slugify": "1.0.1",
-    "vite-env-only": "3.0.2",
+    "vite-env-only": "3.0.3",
     "zod": "3.23.8"
   },
   "devDependencies": {
