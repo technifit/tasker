@@ -1,4 +1,4 @@
-import { Link, useNavigate } from '@remix-run/react';
+import { Link } from '@remix-run/react';
 import { $path } from 'remix-routes';
 
 //import { Theme, useTheme } from 'remix-themes';
@@ -18,20 +18,13 @@ import { Boxes, LogOut, Settings, Sun } from '@technifit/ui/icons';
 
 import { useOrganisation } from '~/routes/_auth/hooks/use-org';
 import { useUser } from '~/routes/_auth/hooks/use-user';
+import { useLogout } from '~/routes/resources/logout/route';
 
 export function UserNav() {
-  const navigate = useNavigate();
   const user = useUser();
   const organisation = useOrganisation();
+  const { logOut } = useLogout();
   //const [theme, setTheme] = useTheme();
-
-  //TODO implement logout -- https://linear.app/technifit/issue/TASK-108/implement-correct-logout-functionality
-  const handleSignOutClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    e.preventDefault();
-
-    // TODO implement fetcher
-    navigate($path('/log-in'));
-  };
 
   const handleChangeThemeClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
@@ -91,7 +84,7 @@ export function UserNav() {
           Switch Theme
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem className='inline-flex w-full items-center gap-3' onClick={handleSignOutClick}>
+        <DropdownMenuItem className='inline-flex w-full items-center gap-3' onClick={logOut}>
           <LogOut className='size-4' />
           Log out
         </DropdownMenuItem>

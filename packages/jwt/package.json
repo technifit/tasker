@@ -7,6 +7,10 @@
     "./verify-access-token": {
       "types": "./src/verify-access-token.d.ts",
       "default": "./src/verify-access-token.js"
+    },
+    "./decode-access-token": {
+      "types": "./src/decode-access-token.d.ts",
+      "default": "./src/decode-access-token.js"
     }
   },
   "scripts": {
