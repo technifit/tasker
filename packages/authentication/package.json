@@ -27,6 +27,10 @@
     "./get-user": {
       "types": "./src/get-user.d.ts",
       "default": "./src/get-user.js"
+    },
+    "./organisation": {
+      "types": "./src/organisation.d.ts",
+      "default": "./src/organisation.js"
     }
   },
   "scripts": {

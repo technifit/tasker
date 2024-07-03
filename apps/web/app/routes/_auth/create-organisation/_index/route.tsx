@@ -1,12 +1,23 @@
 import { zodResolver } from '@hookform/resolvers/zod';
-import type { MetaFunction } from '@remix-run/node';
-import { useNavigate } from '@remix-run/react';
+import type { ActionFunctionArgs, MetaFunction } from '@remix-run/node';
+import { redirect } from '@remix-run/react';
 import { z } from 'zod';
 
+import { createOrganisation, createOrgnisationMembership } from '@technifit/authentication/organisation';
+import { SessionContext } from '@technifit/middleware/session';
 import { Balancer } from '@technifit/ui/balancer';
 import { Button } from '@technifit/ui/button';
 import { CardContent, CardFooter, CardHeader, CardTitle } from '@technifit/ui/card';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage, useForm } from '@technifit/ui/form';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+  getValidatedFormData,
+  useForm,
+} from '@technifit/ui/form';
 import { CircleHelp } from '@technifit/ui/icons';
 import { Input } from '@technifit/ui/input';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@technifit/ui/tooltip';
@@ -26,33 +37,46 @@ export const loader = () => {
   return null;
 };
 
+export const action = async ({ request, context }: ActionFunctionArgs) => {
+  const {
+    errors,
+    data,
+    receivedValues: defaultValues,
+  } = await getValidatedFormData<CreateTeamFormData>(request, resolver);
+
+  if (errors) {
+    return { errors, defaultValues };
+  }
+  const sessionContext = context.get(SessionContext);
+  const user = sessionContext.get('user');
+
+  const createOrganisationResponse = await createOrganisation({ name: data.teamName });
+  const organisationMembership = await createOrgnisationMembership({
+    organizationId: createOrganisationResponse.id,
+    userId: user!.id,
+    roleSlug: 'admin',
+  });
+
+  return redirect(
+    getStep({
+      direction: 'next',
+      url: window.location.href,
+      params: { organisationSlug: organisationMembership.organizationId },
+    }),
+  );
+};
+
 export const meta: MetaFunction = () => {
   return [{ title: 'Tasker | Create Team' }, { name: 'description', content: 'Create Team' }];
 };
 export const CreateOrganization = () => {
-  const navigate = useNavigate();
-
   const form = useForm<CreateTeamFormData>({
     resolver,
-    submitHandlers: {
-      onValid: () => {
-        // TODO: Create org and set user to active -- https://linear.app/technifit/issue/TASK-116/create-org-and-set-user-orgid
-        //const { id, slug } = await createOrganization({ name: teamName, slug: slugify(teamName) });
-
-        // if (!setActive) {
-        //   throw new Error('Organization not set');
-        // }
-
-        // await setActive({ organization: id });
-
-        navigate(getStep({ direction: 'next', url: window.location.href, params: { organisationSlug: 'sluuuug' } }));
-      },
-    },
   });
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit}>
+      <form method='POST' onSubmit={form.handleSubmit}>
         <CardHeader>
           <CardTitle>Create Team</CardTitle>
         </CardHeader>
