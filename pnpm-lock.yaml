@@ -193,8 +193,8 @@ importers:
   packages/authentication:
     dependencies:
       '@workos-inc/node':
-        specifier: 7.11.3
-        version: 7.11.3
+        specifier: 7.11.4
+        version: 7.11.4
     devDependencies:
       '@technifit/eslint-config':
         specifier: workspace:*
@@ -3101,8 +3101,8 @@ packages:
   '@web3-storage/multipart-parser@1.0.0':
     resolution: {integrity: sha512-BEO6al7BYqcnfX15W2cnGR+Q566ACXAT9UQykORCWW80lmkpWsnEob6zJS1ZVBKsSJC8+7vJkHwlp+lXG1UCdw==}
 
-  '@workos-inc/node@7.11.3':
-    resolution: {integrity: sha512-f/lK2oQwt6W0pT9BRGSjvCChTYe7zt9X6BzL/YrArzob1A+n4maBRgL365YZwImOg449FlPpHSWXBxtQbrqTIw==}
+  '@workos-inc/node@7.11.4':
+    resolution: {integrity: sha512-upcQWP1eV+OaXO5v9NiPRQuYugoVQlacZcyjLgOWG9Epx8nY1rG6civGN5M9BpQEHvWkPQ5HBnaMskmD3xjHKw==}
     engines: {node: '>=16'}
 
   '@zxing/text-encoding@0.9.0':
@@ -9709,7 +9709,7 @@ snapshots:
 
   '@web3-storage/multipart-parser@1.0.0': {}
 
-  '@workos-inc/node@7.11.3':
+  '@workos-inc/node@7.11.4':
     dependencies:
       pluralize: 8.0.0
 

@@ -45,7 +45,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@workos-inc/node": "7.11.3"
+    "@workos-inc/node": "7.11.4"
   },
   "devDependencies": {
     "@technifit/eslint-config": "workspace:*",
