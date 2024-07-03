@@ -32,6 +32,7 @@
     "@technifit/authentication": "workspace:*",
     "@technifit/environment": "workspace:*",
     "@technifit/id": "workspace:*",
+    "@technifit/jwt": "workspace:*",
     "@technifit/middleware": "workspace:*",
     "@technifit/ui": "workspace:*",
     "dotenv": "16.4.5",
