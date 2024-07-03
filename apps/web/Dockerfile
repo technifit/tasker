@@ -9,7 +9,6 @@ FROM node:20.15.0-bookworm-slim as node
 ENV SHELL=/bin/bash
 
 # install dependencies using npm or pnpm
-# TODO: remove pinned version when pnpm > 9 stops breaking turborepo in docker -- feature/task-81-remove-pinned-pnpm-version-in-dockerfile
 RUN npm install -g pnpm
 RUN pnpm setup
 RUN pnpm config set global-bin-dir /usr/local/bin

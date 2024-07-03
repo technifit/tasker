@@ -1,4 +1,8 @@
-import type { CreateOrganizationMembershipOptions, CreateOrganizationOptions } from '@workos-inc/node';
+import type {
+  CreateOrganizationMembershipOptions,
+  CreateOrganizationOptions,
+  ListOrganizationMembershipsOptions,
+} from '@workos-inc/node';
 
 import { authentication } from './authentication-provider';
 
@@ -12,6 +16,11 @@ const createOrgnisationMembership = async ({ organizationId, userId, roleSlug }:
     roleSlug,
   });
 
+const listOrgnisationMemberships = async ({ userId }: Pick<ListOrganizationMembershipsOptions, 'userId'>) =>
+  authentication.userManagement.listOrganizationMemberships({
+    userId,
+  });
+
 const getOrganisation = async (organisationId: string) => authentication.organizations.getOrganization(organisationId);
 
-export { createOrganisation, createOrgnisationMembership, getOrganisation };
+export { createOrganisation, createOrgnisationMembership, getOrganisation, listOrgnisationMemberships };
