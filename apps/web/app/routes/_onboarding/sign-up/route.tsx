@@ -32,6 +32,7 @@ const resolver = zodResolver(signUpFormSchema);
 
 export const action = async ({ request }: ActionFunctionArgs) => {
   const { errors, data, receivedValues: defaultValues } = await getValidatedFormData<SignUpFormData>(request, resolver);
+
   if (errors) {
     return { errors, defaultValues };
   }

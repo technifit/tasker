@@ -16,11 +16,13 @@ import {
 } from '@technifit/ui/dropdown-menu';
 import { Boxes, LogOut, Settings, Sun } from '@technifit/ui/icons';
 
+import { useOrganisation } from '~/routes/_auth/hooks/use-org';
 import { useUser } from '~/routes/_auth/hooks/use-user';
 
 export function UserNav() {
   const navigate = useNavigate();
   const user = useUser();
+  const organisation = useOrganisation();
   //const [theme, setTheme] = useTheme();
 
   //TODO implement logout -- https://linear.app/technifit/issue/TASK-108/implement-correct-logout-functionality
@@ -70,12 +72,18 @@ export function UserNav() {
               Settings
             </Link>
           </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Link className='inline-flex grow items-center gap-3' prefetch='intent' to={$path('/create-organisation')}>
-              <Boxes className='size-4' />
-              New Team
-            </Link>
-          </DropdownMenuItem>
+          {organisation ? null : (
+            <DropdownMenuItem>
+              <Link
+                className='inline-flex grow items-center gap-3'
+                prefetch='intent'
+                to={$path('/create-organisation')}
+              >
+                <Boxes className='size-4' />
+                New Team
+              </Link>
+            </DropdownMenuItem>
+          )}
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem className='inline-flex w-full items-center gap-3' onClick={handleChangeThemeClick}>

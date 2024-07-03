@@ -9,13 +9,14 @@ const sessionSchema = z.object({
   refresh_token: z.string().optional(),
   user: z
     .object({
-      id: z.string(),
+      createdAt: z.string(),
       email: z.string(),
       emailVerified: z.boolean(),
-      profilePictureUrl: z.string().url().nullable(),
       firstName: z.string().nullable(),
+      id: z.string(),
       lastName: z.string().nullable(),
-      createdAt: z.string(),
+      organizationId: z.string().optional(),
+      profilePictureUrl: z.string().url().nullable(),
       updatedAt: z.string(),
     })
     .optional(),
