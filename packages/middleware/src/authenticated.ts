@@ -48,7 +48,7 @@ async function withAuthentication({ context, next, request }: MiddlewareFunction
     setErrorSessionAndThrow(context);
   }
 
-  // TODO: redactor to make the app load contect types available to middleware
+  // TODO: redactor to make the app load context types available to middleware
   const hasValidSession = await verifyAccessToken({
     accessToken: sessionContext.get('access_token')!,
     jkwsUrl: new URL(getJWKSURL()),

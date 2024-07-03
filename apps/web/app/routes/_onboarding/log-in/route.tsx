@@ -29,6 +29,7 @@ const resolver = zodResolver(logInFormSchema);
 
 export const action = async ({ request }: ActionFunctionArgs) => {
   const { errors, data, receivedValues: defaultValues } = await getValidatedFormData<LogInFormData>(request, resolver);
+
   if (errors) {
     return { errors, defaultValues };
   }

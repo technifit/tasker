@@ -4,6 +4,9 @@ import { $path } from 'remix-routes';
 import { Boxes, LayoutGrid, LayoutList, ListTodo, Settings, Users } from '@technifit/ui/icons';
 import type { LucideIcon } from '@technifit/ui/icons';
 
+import { useOrganisation } from '~/routes/_auth/hooks/use-org';
+import { useRole } from '~/routes/_auth/hooks/use-role';
+
 interface Submenu {
   href: string;
   label: string;
@@ -29,13 +32,10 @@ const useGetMenuList = (): {
   menuList: Group[];
 } => {
   const { pathname } = useLocation();
+  const organisation = useOrganisation();
+  const admin = useRole();
 
-  // TODO: fetch org from root auth loader -- https://linear.app/technifit/issue/TASK-117/return-org-org-from-root-loader
-  const organization = {
-    slug: 'technifit',
-  };
-
-  const isAdmin = true;
+  const isAdmin = admin === 'admin';
 
   return {
     menuList: [
@@ -55,11 +55,9 @@ const useGetMenuList = (): {
         groupLabel: 'Personal',
         menus: [
           {
-            href: organization?.slug
-              ? $path('/:organisationSlug/my-tasks', { organisationSlug: organization.slug })
-              : '',
+            href: organisation ? $path('/:organisationSlug/my-tasks', { organisationSlug: organisation.id }) : '',
             label: 'My Tasks',
-            hidden: !organization,
+            hidden: !organisation,
             active: pathname.includes('/my-tasks'),
             icon: ListTodo,
             submenus: [],
@@ -109,20 +107,18 @@ const useGetMenuList = (): {
 
         menus: [
           {
-            href: organization?.slug
-              ? $path('/:organisationSlug/members', { organisationSlug: organization.slug })
-              : '',
+            href: organisation ? $path('/:organisationSlug/members', { organisationSlug: organisation.id }) : '',
             label: 'Members',
             active: pathname.includes('/users'),
-            hidden: !organization,
+            hidden: !organisation,
             icon: Users,
             submenus: [],
           },
           {
-            href: organization?.slug ? $path('/:organisationSlug/tasks', { organisationSlug: organization.slug }) : '',
+            href: organisation ? $path('/:organisationSlug/tasks', { organisationSlug: organisation.id }) : '',
             label: 'Tasks',
             active: pathname.includes('/tasks'),
-            hidden: !organization,
+            hidden: !organisation,
             icon: LayoutList,
             submenus: [],
           },
@@ -135,7 +131,7 @@ const useGetMenuList = (): {
             href: $path('/settings/organisation'),
             label: 'Organisation Settings',
             active: pathname.includes('/settings/organisation'),
-            hidden: !organization || !isAdmin,
+            hidden: !organisation || !isAdmin,
             icon: Boxes,
             submenus: [],
           },
