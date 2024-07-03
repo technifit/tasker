@@ -24,6 +24,10 @@
       "types": "./src/get-jwks-url.d.ts",
       "default": "./src/get-jwks-url.js"
     },
+    "./get-log-out-url": {
+      "types": "./src/get-log-out-url.d.ts",
+      "default": "./src/get-log-out-url.js"
+    },
     "./get-user": {
       "types": "./src/get-user.d.ts",
       "default": "./src/get-user.js"
