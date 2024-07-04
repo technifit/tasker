@@ -1,6 +1,9 @@
 ARG APP_GROUP=apps
 ARG APP_NAME=web
 ARG APP_PKG_NAME=@technifit/$APP_NAME
+ARG SENTRY_AUTH_TOKEN
+ARG SENTRY_ORG
+ARG SENTRY_PROJECT
 
 # base node image
 FROM node:20.15.0-bookworm-slim as node
@@ -26,21 +29,21 @@ RUN turbo prune $APP_PKG_NAME --docker
 FROM node as base
 WORKDIR /app
 COPY --from=pruner /app/out/json/ .
+RUN echo "Base stage, NODE_ENV: $NODE_ENV"
 
 FROM base AS dev-deps
 WORKDIR /app
 RUN pnpm install
+RUN echo "Dev-deps stage, NODE_ENV: $NODE_ENV"
 
 FROM base AS production-deps
 WORKDIR /app
 ENV NODE_ENV production
 RUN pnpm install --production
+RUN echo "Production-deps stage, NODE_ENV: $NODE_ENV"
 
 FROM base AS builder
 ARG APP_PKG_NAME
-ARG SENTRY_AUTH_TOKEN
-ARG SENTRY_ORG
-ARG SENTRY_PROJECT
 ENV SENTRY_AUTH_TOKEN=$SENTRY_AUTH_TOKEN
 ENV SENTRY_ORG=$SENTRY_ORG
 ENV SENTRY_PROJECT=$SENTRY_PROJECT
@@ -50,6 +53,7 @@ COPY --from=pruner /app/out/full/ .
 COPY --from=dev-deps /app/ .
 COPY turbo.json turbo.json
 RUN turbo build --filter=$APP_PKG_NAME...
+RUN echo "Builder stage, NODE_ENV: $NODE_ENV, SENTRY_AUTH_TOKEN: $SENTRY_AUTH_TOKEN, SENTRY_ORG: $SENTRY_ORG, SENTRY_PROJECT: $SENTRY_PROJECT"
 
 # Final image
 FROM base AS runner
@@ -65,6 +69,7 @@ COPY --from=builder /app/$APP_GROUP/$APP_NAME/package.json ./$APP_GROUP/$APP_NAM
 COPY --from=builder /app/$APP_GROUP/$APP_NAME/build ./$APP_GROUP/$APP_NAME/build
 
 WORKDIR /app/$APP_GROUP/$APP_NAME
+RUN echo "Runner stage, NODE_ENV: $NODE_ENV, PORT: $PORT, TZ: $TZ"
 
 # It is the app package.json
 CMD [ "pnpm", "start" ]
