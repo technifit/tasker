@@ -1,9 +1,6 @@
 ARG APP_GROUP=apps
 ARG APP_NAME=web
 ARG APP_PKG_NAME=@technifit/$APP_NAME
-ARG SENTRY_AUTH_TOKEN
-ARG SENTRY_ORG
-ARG SENTRY_PROJECT
 
 # base node image
 FROM node:20.15.0-bookworm-slim as node
