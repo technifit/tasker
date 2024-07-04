@@ -25,7 +25,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@remix-run/node": "2.10.1",
+    "@remix-run/node": "2.10.2",
     "remix-create-express-app": "0.4.4",
     "zod": "3.23.8"
   },
