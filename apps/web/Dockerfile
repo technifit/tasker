@@ -15,7 +15,7 @@ RUN pnpm config set global-bin-dir /usr/local/bin
 RUN pnpm add turbo --global
 
 # pruner
-FROM node as pruner
+FROM node AS pruner
 ARG APP_PKG_NAME
 WORKDIR /app
 COPY . .
@@ -33,7 +33,7 @@ RUN pnpm install
 
 FROM base AS production-deps
 WORKDIR /app
-ENV NODE_ENV production
+ENV NODE_ENV=production
 RUN pnpm install --production
 
 FROM base AS builder
@@ -46,7 +46,7 @@ ARG SENTRY_AUTH_TOKEN
 ARG SENTRY_ORG
 ARG SENTRY_PROJECT
 WORKDIR /app
-ENV NODE_ENV production
+ENV NODE_ENV=production
 COPY --from=pruner /app/out/full/ .
 COPY --from=dev-deps /app/ .
 COPY turbo.json turbo.json
@@ -57,8 +57,8 @@ RUN echo "Builder stage, NODE_ENV: $NODE_ENV, SENTRY_AUTH_TOKEN: $SENTRY_AUTH_TO
 FROM base AS runner
 ARG APP_GROUP
 ARG APP_NAME
-ENV PORT 8080
-ENV NODE_ENV production
+ENV PORT=8080
+ENV NODE_ENV=production
 WORKDIR /app
 
 COPY --from=production-deps /app .
