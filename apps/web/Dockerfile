@@ -37,10 +37,6 @@ ENV NODE_ENV=production
 RUN pnpm install --production
 
 FROM base AS builder
-# Specify the variable you need
-ARG RAILWAY_SERVICE_NAME
-# Use the varible
-RUN echo $RAILWAY_SERVICE_NAME
 ARG APP_PKG_NAME
 ARG SENTRY_AUTH_TOKEN
 ARG SENTRY_ORG
