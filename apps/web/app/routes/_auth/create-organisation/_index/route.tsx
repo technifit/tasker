@@ -60,7 +60,7 @@ export const action = async ({ request, context }: ActionFunctionArgs) => {
   return redirect(
     getStep({
       direction: 'next',
-      url: window.location.href,
+      url: request.url,
       params: { organisationSlug: organisationMembership.organizationId },
     }),
   );
