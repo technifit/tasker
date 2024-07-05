@@ -33,6 +33,7 @@ const session = createSessionMiddleware(
     cookie: {
       name: '__ts_session',
       path: '/',
+      maxAge: 60 * 60 * 24 * 30,
       sameSite: process.env.NODE_ENV === 'production' ? 'strict' : 'lax',
       httpOnly: process.env.NODE_ENV === 'production',
       secure: process.env.NODE_ENV === 'production',
