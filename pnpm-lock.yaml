@@ -36,8 +36,8 @@ importers:
   apps/web:
     dependencies:
       '@hookform/resolvers':
-        specifier: 3.8.0
-        version: 3.8.0(react-hook-form@7.52.1(react@18.3.1))
+        specifier: 3.9.0
+        version: 3.9.0(react-hook-form@7.52.1(react@18.3.1))
       '@remix-run/express':
         specifier: 2.10.2
         version: 2.10.2(express@4.19.2)(typescript@5.5.3)
@@ -351,8 +351,8 @@ importers:
   packages/ui:
     dependencies:
       '@hookform/resolvers':
-        specifier: 3.8.0
-        version: 3.8.0(react-hook-form@7.52.1(react@18.3.1))
+        specifier: 3.9.0
+        version: 3.9.0(react-hook-form@7.52.1(react@18.3.1))
       '@radix-ui/react-accordion':
         specifier: 1.2.0
         version: 1.2.0(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1291,8 +1291,8 @@ packages:
   '@floating-ui/utils@0.2.1':
     resolution: {integrity: sha512-9TANp6GPoMtYzQdt54kfAyMmz1+osLlXdg2ENroU7zzrtflTLrrC/lgrIfaSe+Wu0b89GKccT7vxXA0MoAIO+Q==}
 
-  '@hookform/resolvers@3.8.0':
-    resolution: {integrity: sha512-8BY7nM+QhMlGgYOb5Mxa6ZuHRYRvAZJ5LQ7+SxMv1CFGrqvNZajoa1ipEvdnIPllEcQ9R90oBNiRUUi8rj6KPQ==}
+  '@hookform/resolvers@3.9.0':
+    resolution: {integrity: sha512-bU0Gr4EepJ/EQsH/IwEzYLsT/PEj5C0ynLQ4m+GSHS+xKH4TfSelhluTgOaoc4kA5s7eCsQbM4wvZLzELmWzUg==}
     peerDependencies:
       react-hook-form: ^7.0.0
 
@@ -7498,7 +7498,7 @@ snapshots:
 
   '@floating-ui/utils@0.2.1': {}
 
-  '@hookform/resolvers@3.8.0(react-hook-form@7.52.1(react@18.3.1))':
+  '@hookform/resolvers@3.9.0(react-hook-form@7.52.1(react@18.3.1))':
     dependencies:
       react-hook-form: 7.52.1(react@18.3.1)
 
