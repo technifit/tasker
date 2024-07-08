@@ -8,6 +8,7 @@ import { getPublicEnv } from './lib/environment/public-env';
 Sentry.init({
   dsn: getPublicEnv('SENTRY_DSN'),
   debug: getPublicEnv('NODE_ENV') === 'development',
+  environment: getPublicEnv('NODE_ENV'),
   integrations: [
     Sentry.browserTracingIntegration({
       useEffect,

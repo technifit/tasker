@@ -5,7 +5,6 @@ import { $path } from 'remix-routes';
 
 import { SessionContext } from '@technifit/middleware/session';
 
-// TODO: fix type errors here
 export const action = ({ context }: ActionFunctionArgs) => {
   const sessionContext = context.get(SessionContext);
 
@@ -13,6 +12,7 @@ export const action = ({ context }: ActionFunctionArgs) => {
     sessionContext.unset('access_token');
     sessionContext.unset('refresh_token');
     sessionContext.unset('user');
+
     throw redirect($path('/log-in'));
   }
 

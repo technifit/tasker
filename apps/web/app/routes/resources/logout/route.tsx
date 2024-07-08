@@ -13,20 +13,10 @@ import { useWipeSession } from '../wipe-session/route';
 export const action = ({ context }: ActionFunctionArgs) => {
   const sessionContext = context.get(SessionContext);
 
-  if (!sessionContext.has('access_token')) {
-    sessionContext.unset('access_token');
-    sessionContext.unset('refresh_token');
-    sessionContext.unset('user');
-    throw redirect($path('/log-in'));
-  }
-
   const token = decodeAccessToken({ accessToken: sessionContext.get('access_token')! });
 
   if (!token) {
-    sessionContext.unset('access_token');
-    sessionContext.unset('refresh_token');
-    sessionContext.unset('user');
-    throw redirect($path('/log-in'));
+    return null;
   }
 
   const logOutUrl = getLogOutUrl({ sessionId: token.sid });
@@ -43,13 +33,13 @@ const useLogout = () => {
 
   useEffect(() => {
     if (url) {
-      wipeSession();
       window.location.href = url;
     }
-  }, [url, wipeSession]);
+  }, [url]);
 
   const logOut = () => {
     fetcher.submit({}, { method: 'POST', action: $path('/resources/logout') });
+    wipeSession();
   };
 
   return { logOut };
