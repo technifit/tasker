@@ -14,6 +14,7 @@ Sentry.init({
   dsn: process.env.SENTRY_DSN,
   autoInstrumentRemix: true,
   debug: process.env.NODE_ENV === 'development',
+  environment: process.env.NODE_ENV,
   // Set tracesSampleRate to 1.0 to capture 100%
   // of transactions for performance monitoring.
   // We recommend adjusting this value in production
