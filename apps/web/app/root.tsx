@@ -96,7 +96,7 @@ function App() {
   const { publicKeys, theme } = useLoaderData<typeof loader>();
 
   return (
-    <ThemeProvider specifiedTheme={theme} themeAction={$path('/set-theme')}>
+    <ThemeProvider specifiedTheme={theme} themeAction={$path('/resources/set-theme')}>
       <html lang='en' data-theme={theme ?? ''}>
         <head>
           <meta charSet='utf-8' />
