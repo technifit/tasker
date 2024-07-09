@@ -12,6 +12,10 @@
       "types": "./src/authenticated.d.ts",
       "default": "./src/authenticated.js"
     },
+    "./unauthenticated": {
+      "types": "./src/unauthenticated.d.ts",
+      "default": "./src/unauthenticated.js"
+    },
     "./idempotency": {
       "types": "./src/idempotency.d.ts",
       "default": "./src/idempotency.js"

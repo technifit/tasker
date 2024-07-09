@@ -1,6 +1,10 @@
 import { Outlet } from '@remix-run/react';
+import { serverOnly$ } from 'vite-env-only/macros';
 
-// TODO implement middleware to only allow unauthenticated users to access this route -- https://linear.app/technifit/issue/TASK-97/create-middleware-to-only-allow-unauthorised-users
+import { withoutAuthentication } from '@technifit/middleware/unauthenticated';
+
+export const middleware = serverOnly$([withoutAuthentication]);
+
 export const loader = () => {
   return null;
 };
