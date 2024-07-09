@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { redirect } from '@remix-run/node';
 import type { ActionFunctionArgs } from '@remix-run/node';
 import { useFetcher } from '@remix-run/react';
 import { $path } from 'remix-routes';
