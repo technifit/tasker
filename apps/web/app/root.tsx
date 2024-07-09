@@ -12,12 +12,14 @@ import {
 } from '@remix-run/react';
 import { captureRemixErrorBoundaryError, withSentry } from '@sentry/remix';
 import type { SentryMetaArgs } from '@sentry/remix';
+import { $path } from 'remix-routes';
 import { ExternalScripts } from 'remix-utils/external-scripts';
 import { serverOnly$ } from 'vite-env-only/macros';
 
 import { publicEnvSchema } from '@technifit/environment/schema';
 import { createSessionMiddleware } from '@technifit/middleware/session';
 import type { SessionData, SessionFlashData } from '@technifit/middleware/session';
+import { PreventFlashOnWrongTheme, ThemeProvider, themeSessionResolver } from '@technifit/theme/theme-switcher';
 import { cn } from '@technifit/ui/utils';
 
 import { PublicEnvironment } from './lib/environment/public-env';
@@ -31,13 +33,13 @@ const fonts = [...interWoff, ...interWoff2];
 const session = createSessionMiddleware(
   createCookieSessionStorage<SessionData, SessionFlashData>({
     cookie: {
-      name: '__ts_session',
+      name: '__session',
       path: '/',
       maxAge: 60 * 60 * 24 * 30,
       sameSite: process.env.NODE_ENV === 'production' ? 'strict' : 'lax',
       httpOnly: process.env.NODE_ENV === 'production',
       secure: process.env.NODE_ENV === 'production',
-      secrets: [process.env.SESSION_SECRET ?? '6b063bce-33b8-454f-84ba-baf1aa28e4cd'],
+      secrets: [process.env.SESSION_SECRET!],
     },
   }),
 );
@@ -81,37 +83,44 @@ export const meta = ({ data }: SentryMetaArgs<MetaFunction<typeof loader>>) => {
 //   },
 // };
 
-export const loader = (args: LoaderFunctionArgs) => {
+export const loader = async ({ request, context: { env } }: LoaderFunctionArgs) => {
+  const { getTheme } = await themeSessionResolver(request);
+
   return {
-    publicKeys: publicEnvSchema.parse(args.context.env),
+    theme: getTheme(),
+    publicKeys: publicEnvSchema.parse(env),
   };
 };
 
 function App() {
-  const { publicKeys } = useLoaderData<typeof loader>();
+  const { publicKeys, theme } = useLoaderData<typeof loader>();
+
   return (
-    <html lang='en'>
-      <head>
-        <meta charSet='utf-8' />
-        <meta name='viewport' content='width=device-width,initial-scale=1.0,maximum-scale=1.0,viewport-fit=cover' />
-        <Meta />
-        <Links />
-        <PublicEnvironment publicEnvs={publicKeys} />
-      </head>
-      <body className={cn('flex min-h-dvh flex-col bg-background font-sans text-foreground antialiased')}>
-        <Outlet />
-        <ScrollRestoration />
-        <ExternalScripts />
-        <Scripts />
-        {publicKeys.NODE_ENV === 'production' && publicKeys.CLOUDFLARE_ANALYTICS_TOKEN ? (
-          <script
-            src='https://static.cloudflareinsights.com/beacon.min.js'
-            data-cf-beacon={`{"token": "${publicKeys.CLOUDFLARE_ANALYTICS_TOKEN}"}`}
-            defer
-          />
-        ) : null}
-      </body>
-    </html>
+    <ThemeProvider specifiedTheme={theme} themeAction={$path('/set-theme')}>
+      <html lang='en'>
+        <head>
+          <meta charSet='utf-8' />
+          <meta name='viewport' content='width=device-width,initial-scale=1.0,maximum-scale=1.0,viewport-fit=cover' />
+          <Meta />
+          <PreventFlashOnWrongTheme ssrTheme={Boolean(theme)} />
+          <Links />
+          <PublicEnvironment publicEnvs={publicKeys} />
+        </head>
+        <body className={cn('flex min-h-dvh flex-col bg-background font-sans text-foreground antialiased')}>
+          <Outlet />
+          <ScrollRestoration />
+          <ExternalScripts />
+          <Scripts />
+          {publicKeys.NODE_ENV === 'production' && publicKeys.CLOUDFLARE_ANALYTICS_TOKEN ? (
+            <script
+              src='https://static.cloudflareinsights.com/beacon.min.js'
+              data-cf-beacon={`{"token": "${publicKeys.CLOUDFLARE_ANALYTICS_TOKEN}"}`}
+              defer
+            />
+          ) : null}
+        </body>
+      </html>
+    </ThemeProvider>
   );
 }
 
