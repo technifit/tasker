@@ -97,7 +97,7 @@ function App() {
 
   return (
     <ThemeProvider specifiedTheme={theme} themeAction={$path('/resources/set-theme')}>
-      <html lang='en' data-theme={theme ?? ''}>
+      <html lang='en' className={cn(theme)}>
         <head>
           <meta charSet='utf-8' />
           <meta name='viewport' content='width=device-width,initial-scale=1.0,maximum-scale=1.0,viewport-fit=cover' />
