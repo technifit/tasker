@@ -16,10 +16,6 @@
       "types": "./src/unauthenticated.d.ts",
       "default": "./src/unauthenticated.js"
     },
-    "./idempotency": {
-      "types": "./src/idempotency.d.ts",
-      "default": "./src/idempotency.js"
-    },
     "./session": {
       "types": "./src/session.d.ts",
       "default": "./src/session.js"

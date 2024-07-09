@@ -16,7 +16,6 @@ import { ExternalScripts } from 'remix-utils/external-scripts';
 import { serverOnly$ } from 'vite-env-only/macros';
 
 import { publicEnvSchema } from '@technifit/environment/schema';
-import { idempotency } from '@technifit/middleware/idempotency';
 import { createSessionMiddleware } from '@technifit/middleware/session';
 import type { SessionData, SessionFlashData } from '@technifit/middleware/session';
 import { cn } from '@technifit/ui/utils';
@@ -46,7 +45,7 @@ const session = createSessionMiddleware(
 // export your middleware as array of functions that Remix will call
 // wrap middleware in serverOnly$ to prevent it from being bundled in the browser
 // since remix doesn't know about middleware yet
-export const middleware = serverOnly$([session, idempotency]);
+export const middleware = serverOnly$([session]);
 
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: styles },

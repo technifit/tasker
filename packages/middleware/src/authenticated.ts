@@ -36,8 +36,12 @@ const setErrorSessionAndThrow = (context: AppLoadContext & ServerContext) => {
 };
 
 /**
- * Middleware function that adds idempotency key to the session.
- * The idempotency key is used to ensure that a request with the same key is processed only once.
+ * Middleware function that checks if the user is authenticated.
+ * If the user is authenticated, it calls the `next` function.
+ * If the user is not authenticated, it sets an error and redirects to the login page.
+ *
+ * @param {MiddlewareFunctionArgs} args - The arguments for the middleware function.
+ * @returns {Promise<void>} - A promise that resolves when the middleware is done.
  */
 async function withAuthentication({ context, next, request }: MiddlewareFunctionArgs) {
   const sessionContext = context.get(SessionContext);
