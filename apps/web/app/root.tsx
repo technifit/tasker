@@ -19,7 +19,12 @@ import { serverOnly$ } from 'vite-env-only/macros';
 import { publicEnvSchema } from '@technifit/environment/schema';
 import { createSessionMiddleware } from '@technifit/middleware/session';
 import type { SessionData, SessionFlashData } from '@technifit/middleware/session';
-import { PreventFlashOnWrongTheme, ThemeProvider, themeSessionResolver } from '@technifit/theme/theme-switcher';
+import {
+  PreventFlashOnWrongTheme,
+  ThemeProvider,
+  themeSessionResolver,
+  useTheme,
+} from '@technifit/theme/theme-switcher';
 import { cn } from '@technifit/ui/utils';
 
 import { PublicEnvironment } from './lib/environment/public-env';
@@ -93,38 +98,47 @@ export const loader = async ({ request, context: { env } }: LoaderFunctionArgs) 
 };
 
 function App() {
-  const { publicKeys, theme } = useLoaderData<typeof loader>();
+  const { publicKeys } = useLoaderData<typeof loader>();
+  const [theme] = useTheme();
+
+  return (
+    <html lang='en' className={cn(theme)}>
+      <head>
+        <meta charSet='utf-8' />
+        <meta name='viewport' content='width=device-width,initial-scale=1.0,maximum-scale=1.0,viewport-fit=cover' />
+        <Meta />
+        <PreventFlashOnWrongTheme ssrTheme={Boolean(theme)} />
+        <Links />
+        <PublicEnvironment publicEnvs={publicKeys} />
+      </head>
+      <body className={cn('flex min-h-dvh flex-col bg-background font-sans text-foreground antialiased')}>
+        <Outlet />
+        <ScrollRestoration />
+        <ExternalScripts />
+        <Scripts />
+        {publicKeys.NODE_ENV === 'production' && publicKeys.CLOUDFLARE_ANALYTICS_TOKEN ? (
+          <script
+            src='https://static.cloudflareinsights.com/beacon.min.js'
+            data-cf-beacon={`{"token": "${publicKeys.CLOUDFLARE_ANALYTICS_TOKEN}"}`}
+            defer
+          />
+        ) : null}
+      </body>
+    </html>
+  );
+}
+
+function AppWithProviders() {
+  const { theme } = useLoaderData<typeof loader>();
 
   return (
     <ThemeProvider specifiedTheme={theme} themeAction={$path('/resources/set-theme')}>
-      <html lang='en' className={cn(theme)}>
-        <head>
-          <meta charSet='utf-8' />
-          <meta name='viewport' content='width=device-width,initial-scale=1.0,maximum-scale=1.0,viewport-fit=cover' />
-          <Meta />
-          <PreventFlashOnWrongTheme ssrTheme={Boolean(theme)} />
-          <Links />
-          <PublicEnvironment publicEnvs={publicKeys} />
-        </head>
-        <body className={cn('flex min-h-dvh flex-col bg-background font-sans text-foreground antialiased')}>
-          <Outlet />
-          <ScrollRestoration />
-          <ExternalScripts />
-          <Scripts />
-          {publicKeys.NODE_ENV === 'production' && publicKeys.CLOUDFLARE_ANALYTICS_TOKEN ? (
-            <script
-              src='https://static.cloudflareinsights.com/beacon.min.js'
-              data-cf-beacon={`{"token": "${publicKeys.CLOUDFLARE_ANALYTICS_TOKEN}"}`}
-              defer
-            />
-          ) : null}
-        </body>
-      </html>
+      <App />
     </ThemeProvider>
   );
 }
 
-export default withSentry(App, {
+export default withSentry(AppWithProviders, {
   errorBoundaryOptions: {
     fallback: <ErrorBoundary />,
   },
