@@ -1,8 +1,7 @@
 import { Link } from '@remix-run/react';
 import { $path } from 'remix-routes';
 
-//import { Theme, useTheme } from 'remix-themes';
-
+import { Theme, useTheme } from '@technifit/theme/theme-switcher';
 import { Avatar, AvatarFallback, AvatarImage } from '@technifit/ui/avatar';
 import { Button } from '@technifit/ui/button';
 import {
@@ -14,7 +13,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@technifit/ui/dropdown-menu';
-import { Boxes, LogOut, Settings, Sun } from '@technifit/ui/icons';
+import { Boxes, LogOut, Moon, Settings, Sun } from '@technifit/ui/icons';
 
 import { useOrganisation } from '~/routes/_auth/hooks/use-org';
 import { useUser } from '~/routes/_auth/hooks/use-user';
@@ -24,11 +23,11 @@ export function UserNav() {
   const user = useUser();
   const organisation = useOrganisation();
   const { logOut } = useLogout();
-  //const [theme, setTheme] = useTheme();
+  const [theme, setTheme] = useTheme();
 
   const handleChangeThemeClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
-    //setTheme((prev) => (prev === Theme.DARK ? Theme.LIGHT : Theme.DARK));
+    setTheme((prev) => (prev === Theme.DARK ? Theme.LIGHT : Theme.DARK));
   };
 
   return (
@@ -80,7 +79,7 @@ export function UserNav() {
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem className='inline-flex w-full items-center gap-3' onClick={handleChangeThemeClick}>
-          <Sun className='size-4' />
+          {theme === Theme.LIGHT ? <Sun className='size-4' /> : <Moon className='size-4' />}
           Switch Theme
         </DropdownMenuItem>
         <DropdownMenuSeparator />
