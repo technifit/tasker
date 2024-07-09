@@ -19,7 +19,12 @@ import { serverOnly$ } from 'vite-env-only/macros';
 import { publicEnvSchema } from '@technifit/environment/schema';
 import { createSessionMiddleware } from '@technifit/middleware/session';
 import type { SessionData, SessionFlashData } from '@technifit/middleware/session';
-import { PreventFlashOnWrongTheme, ThemeProvider, themeSessionResolver } from '@technifit/theme/theme-switcher';
+import {
+  PreventFlashOnWrongTheme,
+  ThemeProvider,
+  themeSessionResolver,
+  useTheme,
+} from '@technifit/theme/theme-switcher';
 import { cn } from '@technifit/ui/utils';
 
 import { PublicEnvironment } from './lib/environment/public-env';
@@ -93,10 +98,11 @@ export const loader = async ({ request, context: { env } }: LoaderFunctionArgs) 
 };
 
 function App() {
-  const { publicKeys, theme } = useLoaderData<typeof loader>();
+  const { publicKeys, theme: serverTheme } = useLoaderData<typeof loader>();
+  const [theme] = useTheme();
 
   return (
-    <ThemeProvider specifiedTheme={theme} themeAction={$path('/set-theme')}>
+    <ThemeProvider specifiedTheme={serverTheme} themeAction={$path('/set-theme')}>
       <html lang='en' data-theme={theme ?? ''}>
         <head>
           <meta charSet='utf-8' />
