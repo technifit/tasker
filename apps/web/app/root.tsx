@@ -1,5 +1,5 @@
 import { createCookieSessionStorage } from '@remix-run/node';
-import type { LinksFunction, LoaderFunctionArgs } from '@remix-run/node';
+import type { LinksFunction, LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
 import {
   isRouteErrorResponse,
   Links,
@@ -11,6 +11,7 @@ import {
   useRouteError,
 } from '@remix-run/react';
 import { captureRemixErrorBoundaryError, withSentry } from '@sentry/remix';
+import type { SentryMetaArgs } from '@sentry/remix';
 import { ExternalScripts } from 'remix-utils/external-scripts';
 import { serverOnly$ } from 'vite-env-only/macros';
 
@@ -51,6 +52,19 @@ export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: styles },
   ...fonts.map((font) => ({ rel: 'preload', href: `public/fonts/${font}` })),
 ];
+
+export const meta = ({ data }: SentryMetaArgs<MetaFunction<typeof loader>>) => {
+  return [
+    {
+      name: 'sentry-trace',
+      content: data.sentryTrace,
+    },
+    {
+      name: 'baggage',
+      content: data.sentryBaggage,
+    },
+  ];
+};
 
 // export const handle: ExternalScriptsHandle<SerializeFrom<typeof loader>> = {
 //   scripts({

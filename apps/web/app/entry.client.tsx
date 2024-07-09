@@ -32,7 +32,7 @@ Sentry.init({
   profilesSampleRate: 1.0,
 
   // Set `tracePropagationTargets` to control for which URLs distributed tracing should be enabled
-  tracePropagationTargets: ['localhost', /^https:\/\/webapp-production-0576\.up\.railway\.app/],
+  tracePropagationTargets: ['localhost', 'https://technifit.dev', 'https://www.technifit.dev'],
 
   // Capture Replay for 10% of all sessions,
   // plus for 100% of sessions with an error
