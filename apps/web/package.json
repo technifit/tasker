@@ -28,7 +28,7 @@
     "@remix-run/express": "2.10.2",
     "@remix-run/node": "2.10.2",
     "@remix-run/react": "2.10.2",
-    "@sentry/remix": "8.15.0",
+    "@sentry/remix": "8.16.0",
     "@technifit/authentication": "workspace:*",
     "@technifit/environment": "workspace:*",
     "@technifit/id": "workspace:*",
