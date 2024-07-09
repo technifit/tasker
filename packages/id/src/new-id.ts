@@ -8,7 +8,6 @@ export const nanoid = customAlphabet('123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghi
 
 const prefixes = {
   session: 'ses',
-  idempotency: 'idem',
 } as const;
 
 /**
