@@ -1,5 +1,12 @@
+import { Button } from '@technifit/ui/button';
+
 export const Index = () => {
-  return <div>Dashboard</div>;
+  return (
+    <div>
+      Dashboard
+      <Button>Click me</Button>
+    </div>
+  );
 };
 
 export default Index;
