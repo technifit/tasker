@@ -27,6 +27,7 @@ export const Eye = Lucide.Eye;
 export const EyeOff = Lucide.EyeOff;
 export const Help = Lucide.HelpCircle;
 export const Key = Lucide.Key;
+export const LaptopMinimal = Lucide.LaptopMinimal;
 export const LayoutGrid = Lucide.LayoutGrid;
 export const LayoutList = Lucide.LayoutList;
 export const ListTodo = Lucide.ListTodo;
