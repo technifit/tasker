@@ -1,14 +1,5 @@
-// sessions.server.tsx
-
 import { createCookieSessionStorage } from '@remix-run/node';
-import {
-  createThemeAction,
-  createThemeSessionResolver,
-  PreventFlashOnWrongTheme,
-  Theme,
-  ThemeProvider,
-  useTheme,
-} from 'remix-themes';
+import { createThemeSessionResolver } from 'remix-themes';
 
 const sessionStorage = createCookieSessionStorage({
   cookie: {
@@ -22,6 +13,4 @@ const sessionStorage = createCookieSessionStorage({
   },
 });
 
-const themeSessionResolver = createThemeSessionResolver(sessionStorage);
-
-export { themeSessionResolver, ThemeProvider, useTheme, PreventFlashOnWrongTheme, createThemeAction, Theme };
+export const themeSessionResolver = createThemeSessionResolver(sessionStorage);

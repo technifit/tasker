@@ -8,7 +8,7 @@ import { authenticateWithRefreshToken } from '@technifit/authentication/authenti
 import { getJWKSURL } from '@technifit/authentication/get-jwks-url';
 import { verifyAccessToken } from '@technifit/jwt/verify-access-token';
 
-import { SessionContext } from './session';
+import { SessionContext } from './session.server';
 
 /**
  * Clears the access_token and refresh_token from the session context and flashes an error message.

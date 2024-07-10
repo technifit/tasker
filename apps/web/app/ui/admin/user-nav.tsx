@@ -1,7 +1,7 @@
 import { Link } from '@remix-run/react';
 import { $path } from 'remix-routes';
+import { Theme, useTheme } from 'remix-themes';
 
-import { Theme, useTheme } from '@technifit/theme/theme-switcher';
 import { Avatar, AvatarFallback, AvatarImage } from '@technifit/ui/avatar';
 import { Button } from '@technifit/ui/button';
 import {

@@ -1,9 +1,0 @@
-{
-  "extends": "@technifit/tsconfig/react-library.json",
-  "compilerOptions": {
-    "outDir": "dist",
-    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
-  },
-  "include": ["src", "*.ts", "*.cjs"],
-  "exclude": ["node_modules", "dist"]
-}

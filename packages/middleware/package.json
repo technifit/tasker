@@ -4,21 +4,17 @@
   "sideEffects": false,
   "type": "module",
   "exports": {
-    "./access-token": {
-      "types": "./src/access-token.d.ts",
-      "default": "./src/access-token.js"
-    },
     "./authenticated": {
-      "types": "./src/authenticated.d.ts",
-      "default": "./src/authenticated.js"
+      "types": "./src/authenticated.server.d.ts",
+      "default": "./src/authenticated.server.js"
     },
     "./unauthenticated": {
-      "types": "./src/unauthenticated.d.ts",
-      "default": "./src/unauthenticated.js"
+      "types": "./src/unauthenticated.server.d.ts",
+      "default": "./src/unauthenticated.server.js"
     },
     "./session": {
-      "types": "./src/session.d.ts",
-      "default": "./src/session.js"
+      "types": "./src/session.server.d.ts",
+      "default": "./src/session.server.js"
     }
   },
   "scripts": {

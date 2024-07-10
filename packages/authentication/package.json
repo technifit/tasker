@@ -5,36 +5,36 @@
   "type": "module",
   "exports": {
     "./authenticate-with-magic-auth": {
-      "types": "./src/authenticate-with-magic-auth.d.ts",
-      "default": "./src/authenticate-with-magic-auth.js"
+      "types": "./src/authenticate-with-magic-auth.server.d.ts",
+      "default": "./src/authenticate-with-magic-auth.server.js"
     },
     "./authenticate-with-refresh-token": {
-      "types": "./src/authenticate-with-refresh-token.d.ts",
-      "default": "./src/authenticate-with-refresh-token.js"
+      "types": "./src/authenticate-with-refresh-token.server.d.ts",
+      "default": "./src/authenticate-with-refresh-token.server.js"
     },
     "./create-magic-auth": {
-      "types": "./src/create-magic-auth.d.ts",
-      "default": "./src/create-magic-auth.js"
+      "types": "./src/create-magic-auth.server.d.ts",
+      "default": "./src/create-magic-auth.server.js"
     },
     "./create-user": {
-      "types": "./src/create-user.d.ts",
-      "default": "./src/create-user.js"
+      "types": "./src/create-user.server.d.ts",
+      "default": "./src/create-user.server.js"
     },
     "./get-jwks-url": {
-      "types": "./src/get-jwks-url.d.ts",
-      "default": "./src/get-jwks-url.js"
+      "types": "./src/get-jwks-url.server.d.ts",
+      "default": "./src/get-jwks-url.server.js"
     },
     "./get-log-out-url": {
-      "types": "./src/get-log-out-url.d.ts",
-      "default": "./src/get-log-out-url.js"
+      "types": "./src/get-log-out-url.server.d.ts",
+      "default": "./src/get-log-out-url.server.js"
     },
     "./get-user": {
-      "types": "./src/get-user.d.ts",
-      "default": "./src/get-user.js"
+      "types": "./src/get-user.server.d.ts",
+      "default": "./src/get-user.server.js"
     },
     "./organisation": {
-      "types": "./src/organisation.d.ts",
-      "default": "./src/organisation.js"
+      "types": "./src/organisation.server.d.ts",
+      "default": "./src/organisation.server.js"
     }
   },
   "scripts": {

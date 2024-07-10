@@ -5,12 +5,12 @@
   "type": "module",
   "exports": {
     "./verify-access-token": {
-      "types": "./src/verify-access-token.d.ts",
-      "default": "./src/verify-access-token.js"
+      "types": "./src/verify-access-token.server.d.ts",
+      "default": "./src/verify-access-token.server.js"
     },
     "./decode-access-token": {
-      "types": "./src/decode-access-token.d.ts",
-      "default": "./src/decode-access-token.js"
+      "types": "./src/decode-access-token.server.d.ts",
+      "default": "./src/decode-access-token.server.js"
     }
   },
   "scripts": {

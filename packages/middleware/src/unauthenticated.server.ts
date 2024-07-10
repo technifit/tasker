@@ -1,7 +1,7 @@
 import { redirect } from '@remix-run/node';
 import type { MiddlewareFunctionArgs } from 'remix-create-express-app/middleware';
 
-import { SessionContext } from './session';
+import { SessionContext } from './session.server';
 
 /**
  * Middleware function that checks if the user is unauthenticated.

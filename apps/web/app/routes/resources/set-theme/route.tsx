@@ -1,5 +1,4 @@
 import { createThemeAction } from 'remix-themes';
-
-import { themeSessionResolver } from '@technifit/theme/theme-switcher';
+import { themeSessionResolver } from 'server/theme.server';
 
 export const action = createThemeAction(themeSessionResolver);

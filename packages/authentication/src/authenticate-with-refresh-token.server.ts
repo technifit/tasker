@@ -1,6 +1,6 @@
 import type { AuthenticateWithRefreshTokenOptions } from '@workos-inc/node';
 
-import { authentication } from './authentication-provider';
+import { authentication } from './authentication-provider.server';
 
 const authenticateWithRefreshToken = async ({
   refreshToken,
