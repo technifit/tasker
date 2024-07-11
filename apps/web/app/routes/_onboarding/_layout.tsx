@@ -11,11 +11,11 @@ export const loader = () => {
 
 const Layout = () => {
   return (
-    <main className='container flex grow flex-col'>
-      <div className='mx-auto flex w-full items-start md:w-1/3 md:items-center'></div>
+    <main className='container flex grow flex-row'>
       <div className='flex grow justify-center md:w-2/3 md:border-r'>
         <Outlet />
       </div>
+      <div className='invisible overflow-hidden md:visible md:w-1/3'></div>
     </main>
   );
 };
