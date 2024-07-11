@@ -9,32 +9,16 @@ import { cn } from '@technifit/ui/utils';
 import { Menu } from './menu';
 
 const Sidebar = () => {
-  //const sidebar = useStore(useSidebarToggle, (state) => state);
-
-  //if(!sidebar) return null;
-
-  // TODO: Implement sidebar state
-  const sidebar = {
-    isOpen: true,
-    setIsOpen: () => {
-      console.log('setIsOpen');
-    },
-  };
-
   return (
     <aside
       className={cn(
-        'fixed left-0 top-0 z-20 grow -translate-x-full transition-[width] duration-300 ease-in-out lg:translate-x-0',
-        sidebar?.isOpen === false ? 'w-[90px]' : 'w-72',
+        'fixed left-0 top-0 z-20 w-72 grow -translate-x-full transition-[width] duration-300 ease-in-out lg:translate-x-0',
       )}
     >
       {/* <SidebarToggle isOpen={sidebar?.isOpen} setIsOpen={sidebar?.setIsOpen} /> */}
       <div className='relative flex flex-col overflow-y-auto px-3 py-4 shadow-md dark:shadow-zinc-800'>
         <Button
-          className={cn(
-            'mb-1 transition-transform duration-300 ease-in-out',
-            sidebar?.isOpen === false ? 'translate-x-1' : 'translate-x-0',
-          )}
+          className={cn('mb-1 translate-x-0 transition-transform duration-300 ease-in-out')}
           variant='link'
           asChild
         >
@@ -43,15 +27,14 @@ const Sidebar = () => {
             <Typography
               variant={'h4'}
               className={cn(
-                'whitespace-nowrap transition-[transform,opacity,display] duration-300 ease-in-out',
-                sidebar?.isOpen === false ? 'hidden -translate-x-96 opacity-0' : 'translate-x-0 opacity-100',
+                'translate-x-0 whitespace-nowrap opacity-100 transition-[transform,opacity,display] duration-300 ease-in-out',
               )}
             >
               Tasker
             </Typography>
           </Link>
         </Button>
-        <Menu isOpen={sidebar.isOpen} />
+        <Menu />
       </div>
     </aside>
   );

@@ -3,19 +3,14 @@
 import { Link } from '@remix-run/react';
 
 import { Button } from '@technifit/ui/button';
-import { Ellipsis } from '@technifit/ui/icons';
 import { ScrollArea } from '@technifit/ui/scroll-area';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@technifit/ui/tooltip';
+import { Tooltip, TooltipProvider, TooltipTrigger } from '@technifit/ui/tooltip';
 import { cn } from '@technifit/ui/utils';
 
 import { useGetMenuList } from '~/lib/hooks/use-menu-list';
 import { CollapseMenuButton } from './collapse-menu-button';
 
-interface MenuProps {
-  isOpen: boolean | undefined;
-}
-
-const Menu = ({ isOpen }: MenuProps) => {
+const Menu = () => {
   const { menuList } = useGetMenuList();
 
   return (
@@ -26,23 +21,10 @@ const Menu = ({ isOpen }: MenuProps) => {
             <>
               {!hidden ? (
                 <li className={cn('w-full', groupLabel ? 'pt-5' : '')} key={index}>
-                  {(isOpen && groupLabel) ?? isOpen === undefined ? (
+                  {groupLabel ? (
                     <p className='max-w-[248px] truncate px-4 pb-2 text-sm font-medium text-muted-foreground'>
                       {groupLabel}
                     </p>
-                  ) : !isOpen && isOpen !== undefined && groupLabel ? (
-                    <TooltipProvider key={index}>
-                      <Tooltip delayDuration={100}>
-                        <TooltipTrigger className='w-full'>
-                          <div className='flex w-full items-center justify-center'>
-                            <Ellipsis className='h-5 w-5' />
-                          </div>
-                        </TooltipTrigger>
-                        <TooltipContent side='right'>
-                          <p>{groupLabel}</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
                   ) : (
                     <p className='pb-2'></p>
                   )}
@@ -60,21 +42,13 @@ const Menu = ({ isOpen }: MenuProps) => {
                                     asChild
                                   >
                                     <Link prefetch='intent' to={href}>
-                                      <span className={cn(isOpen === false ? '' : 'mr-4')}>
+                                      <span className={cn('mr-4')}>
                                         <Icon size={18} />
                                       </span>
-                                      <p
-                                        className={cn(
-                                          'max-w-[200px] truncate',
-                                          isOpen === false ? '-translate-x-96 opacity-0' : 'translate-x-0 opacity-100',
-                                        )}
-                                      >
-                                        {label}
-                                      </p>
+                                      <p className={cn('max-w-[200px] translate-x-0 truncate opacity-100')}>{label}</p>
                                     </Link>
                                   </Button>
                                 </TooltipTrigger>
-                                {isOpen === false && <TooltipContent side='right'>{label}</TooltipContent>}
                               </Tooltip>
                             </TooltipProvider>
                           </div>
@@ -82,13 +56,7 @@ const Menu = ({ isOpen }: MenuProps) => {
                       </>
                     ) : (
                       <div className='w-full' key={index}>
-                        <CollapseMenuButton
-                          icon={Icon}
-                          label={label}
-                          active={active}
-                          submenus={submenus}
-                          isOpen={isOpen}
-                        />
+                        <CollapseMenuButton icon={Icon} label={label} active={active} submenus={submenus} />
                       </div>
                     ),
                   )}
