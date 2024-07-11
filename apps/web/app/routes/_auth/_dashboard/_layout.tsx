@@ -16,12 +16,12 @@ const AuthLayout = () => {
       <Sidebar />
       <main
         className={cn(
-          'grow bg-zinc-50 transition-[margin-left] duration-300 ease-in-out dark:bg-zinc-900',
+          'flex grow flex-col bg-zinc-50 transition-[margin-left] duration-300 ease-in-out dark:bg-zinc-900',
           sidebar?.isOpen === false ? 'lg:ml-[90px]' : 'lg:ml-72',
         )}
       >
         <Navbar />
-        <div className='container'>
+        <div className='container flex grow py-4'>
           <Outlet />
         </div>
       </main>

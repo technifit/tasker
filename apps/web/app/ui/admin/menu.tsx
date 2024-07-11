@@ -31,7 +31,7 @@ const Menu = ({ isOpen }: MenuProps) => {
                       {groupLabel}
                     </p>
                   ) : !isOpen && isOpen !== undefined && groupLabel ? (
-                    <TooltipProvider>
+                    <TooltipProvider key={index}>
                       <Tooltip delayDuration={100}>
                         <TooltipTrigger className='w-full'>
                           <div className='flex w-full items-center justify-center'>

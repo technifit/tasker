@@ -11,10 +11,10 @@ export const CreateTeamLayout = () => {
   const { activeStep, totalSteps } = useGetStepProgress();
 
   return (
-    <main className={cn('grow bg-zinc-50 dark:bg-zinc-900')}>
+    <main className={cn('flex grow flex-col bg-zinc-50 dark:bg-zinc-900')}>
       <Navbar />
-      <div className='container'>
-        <div className='flex w-full flex-col items-center gap-6 align-middle'>
+      <div className='container flex grow items-center py-4'>
+        <div className='flex grow flex-col items-center gap-6 align-middle'>
           <Card className='w-full sm:w-1/2 md:max-w-xl lg:w-1/3'>
             <Outlet />
           </Card>
