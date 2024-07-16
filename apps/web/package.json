@@ -25,9 +25,9 @@
   },
   "dependencies": {
     "@hookform/resolvers": "3.9.0",
-    "@remix-run/express": "2.10.2",
-    "@remix-run/node": "2.10.2",
-    "@remix-run/react": "2.10.2",
+    "@remix-run/express": "2.10.3",
+    "@remix-run/node": "2.10.3",
+    "@remix-run/react": "2.10.3",
     "@sentry/remix": "8.18.0",
     "@technifit/authentication": "workspace:*",
     "@technifit/environment": "workspace:*",
@@ -56,7 +56,7 @@
   "devDependencies": {
     "@codecov/vite-plugin": "0.0.1-beta.10",
     "@playwright/test": "1.45.2",
-    "@remix-run/dev": "2.10.2",
+    "@remix-run/dev": "2.10.3",
     "@sentry/vite-plugin": "2.21.1",
     "@technifit/eslint-config": "workspace:*",
     "@technifit/tailwind-config": "workspace:*",
