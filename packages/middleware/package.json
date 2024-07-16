@@ -29,7 +29,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@remix-run/node": "2.10.2",
+    "@remix-run/node": "2.10.3",
     "@technifit/authentication": "workspace:*",
     "@technifit/environment": "workspace:*",
     "@technifit/id": "workspace:*",
