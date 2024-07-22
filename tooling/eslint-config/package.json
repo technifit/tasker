@@ -16,7 +16,7 @@
   "dependencies": {
     "@remix-run/eslint-config": "2.10.3",
     "@technifit/tsconfig": "workspace:*",
-    "@types/eslint": "8.56.10",
+    "@types/eslint": "8.56.11",
     "@typescript-eslint/eslint-plugin": "7.16.1",
     "@typescript-eslint/parser": "7.16.1",
     "eslint": "8.57.0",
