@@ -42,7 +42,7 @@
     "pretty-cache-header": "1.0.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-hook-form": "7.52.1",
+    "react-hook-form": "7.52.2",
     "remix-create-express-app": "0.4.5",
     "remix-hook-form": "5.0.4",
     "remix-params-helper": "0.5.1",
