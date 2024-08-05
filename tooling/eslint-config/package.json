@@ -14,7 +14,7 @@
     "lint:fix": "eslint . --fix --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0"
   },
   "dependencies": {
-    "@remix-run/eslint-config": "2.11.0",
+    "@remix-run/eslint-config": "2.11.1",
     "@technifit/tsconfig": "workspace:*",
     "@types/eslint": "9.6.0",
     "@typescript-eslint/eslint-plugin": "7.18.0",
