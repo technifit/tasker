@@ -199,8 +199,8 @@ importers:
   packages/authentication:
     dependencies:
       '@workos-inc/node':
-        specifier: 7.20.0
-        version: 7.20.0(express@4.19.2)
+        specifier: 7.21.0
+        version: 7.21.0(express@4.19.2)
     devDependencies:
       '@technifit/eslint-config':
         specifier: workspace:*
@@ -3158,8 +3158,8 @@ packages:
   '@web3-storage/multipart-parser@1.0.0':
     resolution: {integrity: sha512-BEO6al7BYqcnfX15W2cnGR+Q566ACXAT9UQykORCWW80lmkpWsnEob6zJS1ZVBKsSJC8+7vJkHwlp+lXG1UCdw==}
 
-  '@workos-inc/node@7.20.0':
-    resolution: {integrity: sha512-mGIjDtarQmr0EUT94/v+Kpz+yZ7XJsPl3e8j5IVVoggBv/8wZp6/Q3Kw6m5IzbiNpGZtAdObY5C179+NtWtr8A==}
+  '@workos-inc/node@7.21.0':
+    resolution: {integrity: sha512-f3HsMEajeY81LU9YMsbWAO/GYPfTlgtaN0GtwmQj9Dp0T2jB+AFx8I/QxP6Aaxrr1yko0kXb1Q4gef8ziP/BEQ==}
     engines: {node: '>=16'}
 
   '@zxing/text-encoding@0.9.0':
@@ -9877,7 +9877,7 @@ snapshots:
 
   '@web3-storage/multipart-parser@1.0.0': {}
 
-  '@workos-inc/node@7.20.0(express@4.19.2)':
+  '@workos-inc/node@7.21.0(express@4.19.2)':
     dependencies:
       iron-session: 6.3.1(express@4.19.2)
       jose: 5.6.3
