@@ -25,7 +25,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "jose": "5.6.3"
+    "jose": "5.7.0"
   },
   "devDependencies": {
     "@technifit/eslint-config": "workspace:*",
