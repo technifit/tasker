@@ -1,7 +1,7 @@
 import { Link } from '@remix-run/react';
 import { $path } from 'remix-routes';
+import { Theme, useTheme } from 'remix-themes';
 
-import { Theme, useTheme } from '@technifit/theme/theme-switcher';
 import { Avatar, AvatarFallback, AvatarImage } from '@technifit/ui/avatar';
 import { Button } from '@technifit/ui/button';
 import {
@@ -11,30 +11,55 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from '@technifit/ui/dropdown-menu';
-import { Boxes, LogOut, Moon, Settings, Sun } from '@technifit/ui/icons';
+import { Boxes, LaptopMinimal, LogOut, Moon, Settings, Sun } from '@technifit/ui/icons';
+import { Typography } from '@technifit/ui/typography';
 
 import { useOrganisation } from '~/routes/_auth/hooks/use-org';
 import { useUser } from '~/routes/_auth/hooks/use-user';
 import { useLogout } from '~/routes/resources/logout/route';
 
+function ThemeSelectionDropdown() {
+  const [_, setTheme] = useTheme();
+
+  return (
+    <DropdownMenuSub>
+      <DropdownMenuSubTrigger className='inline-flex w-full items-center gap-3'>
+        <Sun className='size-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0' />
+        <Moon className='absolute size-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100' />
+        Switch Theme
+      </DropdownMenuSubTrigger>
+      <DropdownMenuSubContent>
+        <DropdownMenuItem className='inline-flex w-full items-center gap-3' onClick={() => setTheme(Theme.LIGHT)}>
+          <Sun className='size-4' /> Light
+        </DropdownMenuItem>
+        <DropdownMenuItem className='inline-flex w-full items-center gap-3' onClick={() => setTheme(Theme.DARK)}>
+          <Moon className='size-4' />
+          Dark
+        </DropdownMenuItem>
+        <DropdownMenuItem className='inline-flex w-full items-center gap-3' onClick={() => setTheme(null)}>
+          <LaptopMinimal className='size-4' />
+          System
+        </DropdownMenuItem>
+      </DropdownMenuSubContent>
+    </DropdownMenuSub>
+  );
+}
+
 export function UserNav() {
   const user = useUser();
   const organisation = useOrganisation();
   const { logOut } = useLogout();
-  const [theme, setTheme] = useTheme();
-
-  const handleChangeThemeClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    e.preventDefault();
-    setTheme((prev) => (prev === Theme.DARK ? Theme.LIGHT : Theme.DARK));
-  };
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant='ghost' className='relative h-8 w-8 rounded-full'>
-          <Avatar className='h-9 w-9'>
+        <Button variant='ghost' className='relative size-8 rounded-full'>
+          <Avatar className='size-9'>
             <AvatarImage src={user.profilePictureUrl ?? undefined} alt={user.fullName ?? 'User Image'} />
             <AvatarFallback>
               {user?.fullName
@@ -47,9 +72,11 @@ export function UserNav() {
       </DropdownMenuTrigger>
       <DropdownMenuContent className='w-56' align='end' forceMount>
         <DropdownMenuLabel className='font-normal'>
-          <div className='flex flex-col space-y-1'>
-            <p className='truncate text-sm font-medium leading-none'>{user?.fullName}</p>
-            <p className='truncate text-xs leading-none text-muted-foreground'>{user.email}</p>
+          <div className='flex flex-col gap-2'>
+            <Typography className='truncate font-medium leading-none'>{user?.fullName}</Typography>
+            <Typography variant={'extraSmallText'} className='truncate text-muted-foreground'>
+              {user.email}
+            </Typography>
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
@@ -78,10 +105,7 @@ export function UserNav() {
           )}
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem className='inline-flex w-full items-center gap-3' onClick={handleChangeThemeClick}>
-          {theme === Theme.LIGHT ? <Sun className='size-4' /> : <Moon className='size-4' />}
-          Switch Theme
-        </DropdownMenuItem>
+        <ThemeSelectionDropdown />
         <DropdownMenuSeparator />
         <DropdownMenuItem className='inline-flex w-full items-center gap-3' onClick={logOut}>
           <LogOut className='size-4' />

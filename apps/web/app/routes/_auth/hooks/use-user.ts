@@ -12,7 +12,7 @@ const useUser = () => {
 
   return {
     ...data.user,
-    fullName: `${data.user.firstName} ${data.user.lastName}`,
+    fullName: `${data.user.firstName ?? ''} ${data.user.lastName ?? ''}`,
   };
 };
 

@@ -1,4 +1,3 @@
-import { createCookieSessionStorage } from '@remix-run/node';
 import type { LinksFunction, LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
 import {
   isRouteErrorResponse,
@@ -13,18 +12,13 @@ import {
 import { captureRemixErrorBoundaryError, withSentry } from '@sentry/remix';
 import type { SentryMetaArgs } from '@sentry/remix';
 import { $path } from 'remix-routes';
+import { PreventFlashOnWrongTheme, ThemeProvider, useTheme } from 'remix-themes';
 import { ExternalScripts } from 'remix-utils/external-scripts';
+import { session } from 'server/session.server';
+import { themeSessionResolver } from 'server/theme.server';
 import { serverOnly$ } from 'vite-env-only/macros';
 
 import { publicEnvSchema } from '@technifit/environment/schema';
-import { createSessionMiddleware } from '@technifit/middleware/session';
-import type { SessionData, SessionFlashData } from '@technifit/middleware/session';
-import {
-  PreventFlashOnWrongTheme,
-  ThemeProvider,
-  themeSessionResolver,
-  useTheme,
-} from '@technifit/theme/theme-switcher';
 import { cn } from '@technifit/ui/utils';
 
 import { PublicEnvironment } from './lib/environment/public-env';
@@ -34,20 +28,6 @@ const interWoff = Array.from({ length: 9 }, (_, i) => `inter/inter-latin-ext-${i
 const interWoff2 = Array.from({ length: 9 }, (_, i) => `inter/inter-latin-ext-${i * 100 + 100}-normal.woff2`);
 
 const fonts = [...interWoff, ...interWoff2];
-
-const session = createSessionMiddleware(
-  createCookieSessionStorage<SessionData, SessionFlashData>({
-    cookie: {
-      name: '__session',
-      path: '/',
-      maxAge: 60 * 60 * 24 * 30,
-      sameSite: process.env.NODE_ENV === 'production' ? 'strict' : 'lax',
-      httpOnly: process.env.NODE_ENV === 'production',
-      secure: process.env.NODE_ENV === 'production',
-      secrets: [process.env.SESSION_SECRET!],
-    },
-  }),
-);
 
 // export your middleware as array of functions that Remix will call
 // wrap middleware in serverOnly$ to prevent it from being bundled in the browser

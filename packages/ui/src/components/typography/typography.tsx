@@ -21,6 +21,7 @@ const typographyVariants = cva('', {
       lead: 'text-xl text-muted-foreground',
       largeText: 'text-lg font-semibold',
       smallText: 'text-sm font-medium leading-none',
+      extraSmallText: 'text-xs leading-none',
       mutedText: 'text-base text-muted-foreground',
       link: 'underline underline-offset-4 hover:text-primary',
     },
@@ -44,6 +45,7 @@ const variantElementMap: Record<NonNullable<VariantPropType['variant']>, string>
   inlineCode: 'code',
   largeText: 'div',
   smallText: 'small',
+  extraSmallText: 'extrasmall',
   lead: 'p',
   mutedText: 'p',
   ul: 'ul',
@@ -57,7 +59,7 @@ interface TypographyProps extends React.HTMLAttributes<HTMLElement>, VariantProp
 
 const Typography = React.forwardRef<HTMLElement, TypographyProps>(
   ({ className, variant, as, asChild, ...props }, ref) => {
-    const Comp = asChild ? Slot : as ?? (variant ? variantElementMap[variant] : undefined) ?? 'div';
+    const Comp = asChild ? Slot : (as ?? (variant ? variantElementMap[variant] : undefined) ?? 'div');
     return <Comp className={cn(typographyVariants({ variant, className }))} ref={ref} {...props} />;
   },
 );

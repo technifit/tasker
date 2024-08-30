@@ -14,18 +14,18 @@
     "lint:fix": "eslint . --fix --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0"
   },
   "dependencies": {
-    "@remix-run/eslint-config": "2.10.2",
+    "@remix-run/eslint-config": "2.11.2",
     "@technifit/tsconfig": "workspace:*",
-    "@types/eslint": "8.56.10",
-    "@typescript-eslint/eslint-plugin": "7.16.0",
-    "@typescript-eslint/parser": "7.16.0",
+    "@types/eslint": "9.6.1",
+    "@typescript-eslint/eslint-plugin": "7.18.0",
+    "@typescript-eslint/parser": "7.18.0",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
-    "eslint-config-turbo": "2.0.6",
+    "eslint-config-turbo": "2.1.0",
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-jsx-a11y": "6.9.0",
-    "eslint-plugin-react": "7.34.3",
+    "eslint-plugin-react": "7.35.0",
     "eslint-plugin-react-hooks": "4.6.2",
-    "typescript": "5.5.3"
+    "typescript": "5.5.4"
   }
 }

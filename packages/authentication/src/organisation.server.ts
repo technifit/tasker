@@ -4,7 +4,7 @@ import type {
   ListOrganizationMembershipsOptions,
 } from '@workos-inc/node';
 
-import { authentication } from './authentication-provider';
+import { authentication } from './authentication-provider.server';
 
 const createOrganisation = async ({ name, domainData }: CreateOrganizationOptions) =>
   authentication.organizations.createOrganization({ name, domainData });

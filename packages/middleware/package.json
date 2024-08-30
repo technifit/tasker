@@ -4,21 +4,17 @@
   "sideEffects": false,
   "type": "module",
   "exports": {
-    "./access-token": {
-      "types": "./src/access-token.d.ts",
-      "default": "./src/access-token.js"
-    },
     "./authenticated": {
-      "types": "./src/authenticated.d.ts",
-      "default": "./src/authenticated.js"
+      "types": "./src/authenticated.server.d.ts",
+      "default": "./src/authenticated.server.js"
     },
     "./unauthenticated": {
-      "types": "./src/unauthenticated.d.ts",
-      "default": "./src/unauthenticated.js"
+      "types": "./src/unauthenticated.server.d.ts",
+      "default": "./src/unauthenticated.server.js"
     },
     "./session": {
-      "types": "./src/session.d.ts",
-      "default": "./src/session.js"
+      "types": "./src/session.server.d.ts",
+      "default": "./src/session.server.js"
     }
   },
   "scripts": {
@@ -33,22 +29,22 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@remix-run/node": "2.10.2",
+    "@remix-run/node": "2.11.2",
     "@technifit/authentication": "workspace:*",
     "@technifit/environment": "workspace:*",
     "@technifit/id": "workspace:*",
     "@technifit/jwt": "workspace:*",
     "is-ip": "5.0.1",
-    "remix-create-express-app": "0.4.4",
+    "remix-create-express-app": "0.4.5",
     "remix-utils": "7.6.0",
     "zod": "3.23.8"
   },
   "devDependencies": {
     "@technifit/eslint-config": "workspace:*",
     "@technifit/tsconfig": "workspace:*",
-    "@vitest/coverage-v8": "2.0.2",
+    "@vitest/coverage-v8": "2.0.5",
     "eslint": "8.57.0",
-    "typescript": "5.5.3",
-    "vitest": "2.0.2"
+    "typescript": "5.5.4",
+    "vitest": "2.0.5"
   }
 }
