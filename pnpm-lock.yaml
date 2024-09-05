@@ -121,8 +121,8 @@ importers:
         version: 3.23.8
     devDependencies:
       '@codecov/vite-plugin':
-        specifier: 0.0.1-beta.10
-        version: 0.0.1-beta.10(vite@5.4.3(@types/node@20.16.5))
+        specifier: 0.0.1-beta.12
+        version: 0.0.1-beta.12(vite@5.4.3(@types/node@20.16.5))
       '@playwright/test':
         specifier: 1.46.1
         version: 1.46.1
@@ -813,12 +813,12 @@ packages:
   '@bcoe/v8-coverage@0.2.3':
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
 
-  '@codecov/bundler-plugin-core@0.0.1-beta.10':
-    resolution: {integrity: sha512-fOgy02gc0Z0ipKVe8QqN7mcmzQYjHb2UzT6RtHR+tqyYwpe1r1Kg5E/pbIOXKLaJGXK+AaOX23qtgp6kvUn+iA==}
+  '@codecov/bundler-plugin-core@0.0.1-beta.12':
+    resolution: {integrity: sha512-QZOVp90ZtSCj6p5AO8rnSzee7E4T6PeA5XXd8/miggK5Mi9OtcuB0N1zTPDp3ry5lLLbeWTcdxNVGGnqMHfz8w==}
     engines: {node: '>=18.0.0'}
 
-  '@codecov/vite-plugin@0.0.1-beta.10':
-    resolution: {integrity: sha512-ZoNKEGTMUIwQbwjxu/YUMaGlBUw24c2rZG0E0Lsa2SjZ+DBL+yTe2Kz+7vB6rzW+2Y/EpxxqVWCVjjK03Z7l1w==}
+  '@codecov/vite-plugin@0.0.1-beta.12':
+    resolution: {integrity: sha512-pV7sljJE7rz8Vg3nopXN47L5p5muJRFWmV6iBimW3tNB2OR+YwXl2OYCZopOlEAYurNFjq+WAhyc3lWelso4pA==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       vite: 4.x || 5.x
@@ -7284,16 +7284,16 @@ snapshots:
 
   '@bcoe/v8-coverage@0.2.3': {}
 
-  '@codecov/bundler-plugin-core@0.0.1-beta.10':
+  '@codecov/bundler-plugin-core@0.0.1-beta.12':
     dependencies:
       chalk: 4.1.2
       semver: 7.6.0
       unplugin: 1.10.1
       zod: 3.23.8
 
-  '@codecov/vite-plugin@0.0.1-beta.10(vite@5.4.3(@types/node@20.16.5))':
+  '@codecov/vite-plugin@0.0.1-beta.12(vite@5.4.3(@types/node@20.16.5))':
     dependencies:
-      '@codecov/bundler-plugin-core': 0.0.1-beta.10
+      '@codecov/bundler-plugin-core': 0.0.1-beta.12
       unplugin: 1.10.1
       vite: 5.4.3(@types/node@20.16.5)
 
