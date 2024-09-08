@@ -105,8 +105,8 @@ importers:
         specifier: 1.7.5
         version: 1.7.5
       remix-themes:
-        specifier: 1.5.0
-        version: 1.5.0(@remix-run/react@2.11.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4))(@remix-run/server-runtime@2.11.2(typescript@5.5.4))
+        specifier: 1.5.1
+        version: 1.5.1(@remix-run/react@2.11.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4))(@remix-run/server-runtime@2.11.2(typescript@5.5.4))
       remix-utils:
         specifier: 7.6.0
         version: 7.6.0(@remix-run/node@2.11.2(typescript@5.5.4))(@remix-run/react@2.11.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4))(@remix-run/router@1.19.1)(is-ip@5.0.1)(react@18.3.1)(zod@3.23.8)
@@ -6075,8 +6075,8 @@ packages:
     resolution: {integrity: sha512-PP6J0Q7JKpo8YP4Fcg2TI0UtCXMlOP2ZXi38CBfdpTQ6CvlwEdPgF7H0nUCh/4kQDfzoW6EvtLJ8qM7skhS1rQ==}
     hasBin: true
 
-  remix-themes@1.5.0:
-    resolution: {integrity: sha512-U7uUCynxOGDYs2EFu6Ivlfm/hxG6EqfCoIE9wC/L6ozJv0NNOsPIsp7qtUqRGRxLwOWqZk2J77uPz9oraYIBfw==}
+  remix-themes@1.5.1:
+    resolution: {integrity: sha512-3/qo8pLjWdL5c6QORCzRp2KwT9izg294wCjL9grNPGhOaO/tkAkzf36imV7nkIhUc8U+7QGffiRl+Zg0prGfgA==}
     peerDependencies:
       '@remix-run/react': '>= 1'
       '@remix-run/server-runtime': '>= 1'
@@ -13248,7 +13248,7 @@ snapshots:
       slash: 3.0.0
       typescript-remix-routes-plugin: 1.0.1
 
-  remix-themes@1.5.0(@remix-run/react@2.11.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4))(@remix-run/server-runtime@2.11.2(typescript@5.5.4)):
+  remix-themes@1.5.1(@remix-run/react@2.11.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4))(@remix-run/server-runtime@2.11.2(typescript@5.5.4)):
     dependencies:
       '@remix-run/react': 2.11.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)
       '@remix-run/server-runtime': 2.11.2(typescript@5.5.4)
