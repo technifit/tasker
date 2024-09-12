@@ -30,9 +30,9 @@
   "devDependencies": {
     "@technifit/eslint-config": "workspace:*",
     "@technifit/tsconfig": "workspace:*",
-    "@vitest/coverage-v8": "2.0.5",
+    "@vitest/coverage-v8": "2.1.0",
     "eslint": "8.57.0",
     "typescript": "5.6.2",
-    "vitest": "2.0.5"
+    "vitest": "2.1.0"
   }
 }
