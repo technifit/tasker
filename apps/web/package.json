@@ -68,7 +68,7 @@
     "@vitest/coverage-v8": "2.1.1",
     "autoprefixer": "10.4.20",
     "dotenv-cli": "7.4.2",
-    "npm-run-all2": "6.2.2",
+    "npm-run-all2": "6.2.3",
     "postcss": "8.4.45",
     "remix-development-tools": "4.4.1",
     "remix-express-dev-server": "0.4.4",
