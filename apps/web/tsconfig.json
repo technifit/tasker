@@ -13,8 +13,7 @@
     ],
     // Vite takes care of building everything, not tsc.
     "noEmit": true,
-    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
-    "types": ["@remix-run/react/future/single-fetch.d.ts"]
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
   },
   "exclude": ["node_modules", "build"]
 }
