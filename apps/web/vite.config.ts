@@ -10,17 +10,18 @@ import { defineConfig } from 'vite';
 import { envOnlyMacros } from 'vite-env-only';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
+declare module '@remix-run/server-runtime' {
+  interface Future {
+    unstable_singleFetch: true; // 👈 enable _types_ for single-fetch
+  }
+}
+
 // Load environment variables from .env file at the root of your monorepo
 dotenv.config({ path: '../../.env' });
 
 export default defineConfig({
   server: {
     port: 3000,
-    // TODO: Uncomment the following lines to enable HTTPS once we figure out playwright https issue with self-signed certs on macOS
-    //https: {
-    //key: './server/dev/key.pem',
-    //cert: './server/dev/cert.pem',
-    //},
     // https://github.com/remix-run/remix/discussions/8917#discussioncomment-8640023
     warmup: {
       clientFiles: ['./app/entry.client.tsx', './app/root.tsx', './app/routes/**/*'],

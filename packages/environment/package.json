@@ -25,16 +25,16 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@remix-run/node": "2.11.2",
+    "@remix-run/node": "2.12.0",
     "remix-create-express-app": "0.4.5",
     "zod": "3.23.8"
   },
   "devDependencies": {
     "@technifit/eslint-config": "workspace:*",
     "@technifit/tsconfig": "workspace:*",
-    "@vitest/coverage-v8": "2.0.5",
+    "@vitest/coverage-v8": "2.1.1",
     "eslint": "8.57.0",
-    "typescript": "5.5.4",
-    "vitest": "2.0.5"
+    "typescript": "5.6.2",
+    "vitest": "2.1.1"
   }
 }
