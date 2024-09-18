@@ -514,8 +514,8 @@ importers:
         specifier: 18.3.1
         version: 18.3.1
       react-day-picker:
-        specifier: 9.0.9
-        version: 9.0.9(react@18.3.1)
+        specifier: 9.1.0
+        version: 9.1.0(react@18.3.1)
       react-dom:
         specifier: 18.3.1
         version: 18.3.1(react@18.3.1)
@@ -3829,9 +3829,6 @@ packages:
     resolution: {integrity: sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==}
     engines: {node: '>=0.11'}
 
-  date-fns@3.6.0:
-    resolution: {integrity: sha512-fRHTG8g/Gif+kSh50gaGEdToemgfj74aRX3swtiouboip5JDLAyDE9F11nHMIcvOaXeOC6D7SpNhi7uFyB7Uww==}
-
   date-fns@4.1.0:
     resolution: {integrity: sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==}
 
@@ -5965,8 +5962,8 @@ packages:
     peerDependencies:
       react: ^16.0.0 || ^17.0.0 || ^18.0.0
 
-  react-day-picker@9.0.9:
-    resolution: {integrity: sha512-Sj+1UuuUmdxSKPmJlQFb6h1wKw9N7gG0K4db9mQtHm/qzd94t6LT9X8cGwDHaW9Pdb9dua4/sLhUSW06A1Xqkg==}
+  react-day-picker@9.1.0:
+    resolution: {integrity: sha512-AU+kgdir7qCy9hx1zipQZacsENIwDnfY5fA1m6OGOzh+MNPPZm8oxpxR6/enlrvH4AckXOKc94RHDTKLGSq8Aw==}
     peerDependencies:
       react: '>=16.8.0'
 
@@ -10695,8 +10692,6 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.24.4
 
-  date-fns@3.6.0: {}
-
   date-fns@4.1.0: {}
 
   debug@2.6.9:
@@ -13200,9 +13195,9 @@ snapshots:
     dependencies:
       react: 18.3.1
 
-  react-day-picker@9.0.9(react@18.3.1):
+  react-day-picker@9.1.0(react@18.3.1):
     dependencies:
-      date-fns: 3.6.0
+      date-fns: 4.1.0
       react: 18.3.1
 
   react-diff-viewer-continued@3.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
