@@ -514,8 +514,8 @@ importers:
         specifier: 18.3.1
         version: 18.3.1
       react-day-picker:
-        specifier: 9.1.0
-        version: 9.1.0(react@18.3.1)
+        specifier: 9.1.1
+        version: 9.1.1(react@18.3.1)
       react-dom:
         specifier: 18.3.1
         version: 18.3.1(react@18.3.1)
@@ -831,6 +831,9 @@ packages:
     engines: {node: '>=18.0.0'}
     peerDependencies:
       vite: 4.x || 5.x
+
+  '@date-fns/tz@1.0.2':
+    resolution: {integrity: sha512-iKxj0kXMy7Qe6vjK+flz33cpy2j0dnTKT5i54p3fFlB411J47aSs6HBg7LOO5X9LjDi2iNlctD9rFn738ySOGQ==}
 
   '@emotion/babel-plugin@11.11.0':
     resolution: {integrity: sha512-m4HEDZleaaCH+XgDDsPF15Ht6wTLsgDTeR3WYj9Q/k76JtWhrJjcP4+/XlG8LGT/Rol9qUfOIztXeA84ATpqPQ==}
@@ -5962,8 +5965,8 @@ packages:
     peerDependencies:
       react: ^16.0.0 || ^17.0.0 || ^18.0.0
 
-  react-day-picker@9.1.0:
-    resolution: {integrity: sha512-AU+kgdir7qCy9hx1zipQZacsENIwDnfY5fA1m6OGOzh+MNPPZm8oxpxR6/enlrvH4AckXOKc94RHDTKLGSq8Aw==}
+  react-day-picker@9.1.1:
+    resolution: {integrity: sha512-z+xPpd5N42kIqt27XEIyawJgKEya2l5GJMTpZ9FIclqdu40BFfKR4rjQlnXz05h2Gxh0s2F72gL/JCYWuteCIg==}
     peerDependencies:
       react: '>=16.8.0'
 
@@ -7429,6 +7432,8 @@ snapshots:
       '@codecov/bundler-plugin-core': 1.1.0
       unplugin: 1.10.1
       vite: 5.4.6(@types/node@20.16.5)
+
+  '@date-fns/tz@1.0.2': {}
 
   '@emotion/babel-plugin@11.11.0':
     dependencies:
@@ -13195,8 +13200,9 @@ snapshots:
     dependencies:
       react: 18.3.1
 
-  react-day-picker@9.1.0(react@18.3.1):
+  react-day-picker@9.1.1(react@18.3.1):
     dependencies:
+      '@date-fns/tz': 1.0.2
       date-fns: 4.1.0
       react: 18.3.1
 
