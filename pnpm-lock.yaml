@@ -169,8 +169,8 @@ importers:
         specifier: 8.4.47
         version: 8.4.47
       remix-development-tools:
-        specifier: 4.5.2
-        version: 4.5.2(@remix-run/react@2.12.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/react-dom@18.3.0)(@types/react@18.3.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.4.6(@types/node@20.16.5))
+        specifier: 4.6.0
+        version: 4.6.0(@remix-run/react@2.12.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/react-dom@18.3.0)(@types/react@18.3.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.4.6(@types/node@20.16.5))
       remix-express-dev-server:
         specifier: 0.4.4
         version: 0.4.4(@remix-run/dev@2.12.0(@remix-run/react@2.12.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/node@20.16.5)(typescript@5.6.2)(vite@5.4.6(@types/node@20.16.5)))(esbuild@0.17.6)(vite@5.4.6(@types/node@20.16.5))
@@ -6136,8 +6136,8 @@ packages:
   remix-create-express-app@0.4.5:
     resolution: {integrity: sha512-dSpuzCM47RYMhGiVh+GIubjugaV3khB1iphcI0bHOYm70CV2+aA4JJznI8RC/IQ6leWdWqsSLbZinMHD2W4TgQ==}
 
-  remix-development-tools@4.5.2:
-    resolution: {integrity: sha512-d7OdN/EVaQX0oQJhknDisi+i1MWG3QKPkWIvRmMMdWZCNS6EUZYNXjLEluJjUcvsGuqL1/C0JKTw9hpD3sj3rw==}
+  remix-development-tools@4.6.0:
+    resolution: {integrity: sha512-xTXW//Hj40I9/OWX5lcXrU/1VxZCV5w6L5pHNFTQS9O7MSDIbMW2mRBmHOTUxEquXoCYqpxapgvNqdBMRU/vEg==}
     peerDependencies:
       '@remix-run/react': '>=1.15'
       react: '>=17'
@@ -13420,7 +13420,7 @@ snapshots:
       - supports-color
       - typescript
 
-  remix-development-tools@4.5.2(@remix-run/react@2.12.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/react-dom@18.3.0)(@types/react@18.3.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.4.6(@types/node@20.16.5)):
+  remix-development-tools@4.6.0(@remix-run/react@2.12.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/react-dom@18.3.0)(@types/react@18.3.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.4.6(@types/node@20.16.5)):
     dependencies:
       '@radix-ui/react-accordion': 1.2.0(@types/react-dom@18.3.0)(@types/react@18.3.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-select': 1.2.2(@types/react-dom@18.3.0)(@types/react@18.3.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
