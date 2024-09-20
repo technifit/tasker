@@ -36,7 +36,7 @@
     "@technifit/jwt": "workspace:*",
     "is-ip": "5.0.1",
     "remix-create-express-app": "0.4.5",
-    "remix-utils": "7.6.0",
+    "remix-utils": "7.7.0",
     "zod": "3.23.8"
   },
   "devDependencies": {
