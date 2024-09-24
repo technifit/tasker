@@ -369,7 +369,7 @@
     "@technifit/eslint-config": "workspace:*",
     "@technifit/tailwind-config": "workspace:*",
     "@technifit/tsconfig": "workspace:*",
-    "@types/react": "18.3.8",
+    "@types/react": "18.3.9",
     "@types/react-dom": "18.3.0",
     "date-fns": "4.1.0",
     "eslint": "8.57.1",
