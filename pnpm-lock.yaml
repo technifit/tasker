@@ -115,20 +115,20 @@ importers:
         version: 1.0.1
       vite-env-only:
         specifier: 3.0.3
-        version: 3.0.3(vite@5.4.8(@types/node@20.16.8))
+        version: 3.0.3(vite@5.4.8(@types/node@20.16.9))
       zod:
         specifier: 3.23.8
         version: 3.23.8
     devDependencies:
       '@codecov/vite-plugin':
         specifier: 1.2.0
-        version: 1.2.0(vite@5.4.8(@types/node@20.16.8))
+        version: 1.2.0(vite@5.4.8(@types/node@20.16.9))
       '@playwright/test':
         specifier: 1.47.2
         version: 1.47.2
       '@remix-run/dev':
         specifier: 2.12.1
-        version: 2.12.1(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/node@20.16.8)(typescript@5.6.2)(vite@5.4.8(@types/node@20.16.8))
+        version: 2.12.1(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/node@20.16.9)(typescript@5.6.2)(vite@5.4.8(@types/node@20.16.9))
       '@sentry/vite-plugin':
         specifier: 2.22.4
         version: 2.22.4
@@ -145,8 +145,8 @@ importers:
         specifier: 4.17.9
         version: 4.17.9
       '@types/node':
-        specifier: 20.16.8
-        version: 20.16.8
+        specifier: 20.16.9
+        version: 20.16.9
       '@types/react':
         specifier: 18.3.9
         version: 18.3.9
@@ -155,7 +155,7 @@ importers:
         version: 18.3.0
       '@vitest/coverage-v8':
         specifier: 2.1.1
-        version: 2.1.1(vitest@2.1.1(@types/node@20.16.8))
+        version: 2.1.1(vitest@2.1.1(@types/node@20.16.9))
       autoprefixer:
         specifier: 10.4.20
         version: 10.4.20(postcss@8.4.47)
@@ -170,13 +170,13 @@ importers:
         version: 8.4.47
       remix-development-tools:
         specifier: 4.6.0
-        version: 4.6.0(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/react-dom@18.3.0)(@types/react@18.3.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.4.8(@types/node@20.16.8))
+        version: 4.6.0(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/react-dom@18.3.0)(@types/react@18.3.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.4.8(@types/node@20.16.9))
       remix-express-dev-server:
         specifier: 0.4.4
-        version: 0.4.4(@remix-run/dev@2.12.1(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/node@20.16.8)(typescript@5.6.2)(vite@5.4.8(@types/node@20.16.8)))(esbuild@0.17.6)(vite@5.4.8(@types/node@20.16.8))
+        version: 0.4.4(@remix-run/dev@2.12.1(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/node@20.16.9)(typescript@5.6.2)(vite@5.4.8(@types/node@20.16.9)))(esbuild@0.17.6)(vite@5.4.8(@types/node@20.16.9))
       remix-flat-routes:
         specifier: 0.6.5
-        version: 0.6.5(@remix-run/dev@2.12.1(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/node@20.16.8)(typescript@5.6.2)(vite@5.4.8(@types/node@20.16.8)))
+        version: 0.6.5(@remix-run/dev@2.12.1(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/node@20.16.9)(typescript@5.6.2)(vite@5.4.8(@types/node@20.16.9)))
       tailwindcss:
         specifier: 3.4.13
         version: 3.4.13
@@ -188,13 +188,13 @@ importers:
         version: 1.0.1
       vite:
         specifier: 5.4.8
-        version: 5.4.8(@types/node@20.16.8)
+        version: 5.4.8(@types/node@20.16.9)
       vite-tsconfig-paths:
         specifier: 5.0.1
-        version: 5.0.1(typescript@5.6.2)(vite@5.4.8(@types/node@20.16.8))
+        version: 5.0.1(typescript@5.6.2)(vite@5.4.8(@types/node@20.16.9))
       vitest:
         specifier: 2.1.1
-        version: 2.1.1(@types/node@20.16.8)
+        version: 2.1.1(@types/node@20.16.9)
 
   packages/authentication:
     dependencies:
@@ -210,7 +210,7 @@ importers:
         version: link:../../tooling/typescript-config
       '@vitest/coverage-v8':
         specifier: 2.1.1
-        version: 2.1.1(vitest@2.1.1(@types/node@20.16.8))
+        version: 2.1.1(vitest@2.1.1(@types/node@20.16.9))
       eslint:
         specifier: 8.57.1
         version: 8.57.1
@@ -219,7 +219,7 @@ importers:
         version: 5.6.2
       vitest:
         specifier: 2.1.1
-        version: 2.1.1(@types/node@20.16.8)
+        version: 2.1.1(@types/node@20.16.9)
 
   packages/environment:
     dependencies:
@@ -241,7 +241,7 @@ importers:
         version: link:../../tooling/typescript-config
       '@vitest/coverage-v8':
         specifier: 2.1.1
-        version: 2.1.1(vitest@2.1.1(@types/node@20.16.8))
+        version: 2.1.1(vitest@2.1.1(@types/node@20.16.9))
       eslint:
         specifier: 8.57.1
         version: 8.57.1
@@ -250,7 +250,7 @@ importers:
         version: 5.6.2
       vitest:
         specifier: 2.1.1
-        version: 2.1.1(@types/node@20.16.8)
+        version: 2.1.1(@types/node@20.16.9)
 
   packages/id:
     dependencies:
@@ -266,7 +266,7 @@ importers:
         version: link:../../tooling/typescript-config
       '@vitest/coverage-v8':
         specifier: 2.1.1
-        version: 2.1.1(vitest@2.1.1(@types/node@20.16.8))
+        version: 2.1.1(vitest@2.1.1(@types/node@20.16.9))
       eslint:
         specifier: 8.57.1
         version: 8.57.1
@@ -275,7 +275,7 @@ importers:
         version: 5.6.2
       vitest:
         specifier: 2.1.1
-        version: 2.1.1(@types/node@20.16.8)
+        version: 2.1.1(@types/node@20.16.9)
 
   packages/jwt:
     dependencies:
@@ -291,7 +291,7 @@ importers:
         version: link:../../tooling/typescript-config
       '@vitest/coverage-v8':
         specifier: 2.1.1
-        version: 2.1.1(vitest@2.1.1(@types/node@20.16.8))
+        version: 2.1.1(vitest@2.1.1(@types/node@20.16.9))
       eslint:
         specifier: 8.57.1
         version: 8.57.1
@@ -300,7 +300,7 @@ importers:
         version: 5.6.2
       vitest:
         specifier: 2.1.1
-        version: 2.1.1(@types/node@20.16.8)
+        version: 2.1.1(@types/node@20.16.9)
 
   packages/middleware:
     dependencies:
@@ -340,7 +340,7 @@ importers:
         version: link:../../tooling/typescript-config
       '@vitest/coverage-v8':
         specifier: 2.1.1
-        version: 2.1.1(vitest@2.1.1(@types/node@20.16.8))
+        version: 2.1.1(vitest@2.1.1(@types/node@20.16.9))
       eslint:
         specifier: 8.57.1
         version: 8.57.1
@@ -349,7 +349,7 @@ importers:
         version: 5.6.2
       vitest:
         specifier: 2.1.1
-        version: 2.1.1(@types/node@20.16.8)
+        version: 2.1.1(@types/node@20.16.9)
 
   packages/ui:
     dependencies:
@@ -3066,8 +3066,8 @@ packages:
   '@types/node@17.0.45':
     resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
 
-  '@types/node@20.16.8':
-    resolution: {integrity: sha512-sbo5JmfbZNkyDv+2HCccr9Y9ZkKJBMTru7UdAsCojMGjKNjdaOV73bqEW242QrHEZL8R4LbHMrW+FHB5lZ5/bw==}
+  '@types/node@20.16.9':
+    resolution: {integrity: sha512-rkvIVJxsOfBejxK7I0FO5sa2WxFmJCzoDwcd88+fq/CUfynNywTo/1/T6hyFz22CyztsnLS9nVlHOnTI36RH5w==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -7432,11 +7432,11 @@ snapshots:
       unplugin: 1.10.1
       zod: 3.23.8
 
-  '@codecov/vite-plugin@1.2.0(vite@5.4.8(@types/node@20.16.8))':
+  '@codecov/vite-plugin@1.2.0(vite@5.4.8(@types/node@20.16.9))':
     dependencies:
       '@codecov/bundler-plugin-core': 1.2.0
       unplugin: 1.10.1
-      vite: 5.4.8(@types/node@20.16.8)
+      vite: 5.4.8(@types/node@20.16.9)
 
   '@date-fns/tz@1.1.0': {}
 
@@ -9205,7 +9205,7 @@ snapshots:
 
   '@radix-ui/rect@1.1.0': {}
 
-  '@remix-run/dev@2.12.1(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/node@20.16.8)(typescript@5.6.2)(vite@5.4.8(@types/node@20.16.8))':
+  '@remix-run/dev@2.12.1(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/node@20.16.9)(typescript@5.6.2)(vite@5.4.8(@types/node@20.16.9))':
     dependencies:
       '@babel/core': 7.24.4
       '@babel/generator': 7.24.4
@@ -9222,7 +9222,7 @@ snapshots:
       '@remix-run/router': 1.19.2
       '@remix-run/server-runtime': 2.12.1(typescript@5.6.2)
       '@types/mdx': 2.0.13
-      '@vanilla-extract/integration': 6.5.0(@types/node@20.16.8)
+      '@vanilla-extract/integration': 6.5.0(@types/node@20.16.9)
       arg: 5.0.2
       cacache: 17.1.4
       chalk: 4.1.2
@@ -9263,7 +9263,7 @@ snapshots:
       ws: 7.5.9
     optionalDependencies:
       typescript: 5.6.2
-      vite: 5.4.8(@types/node@20.16.8)
+      vite: 5.4.8(@types/node@20.16.9)
     transitivePeerDependencies:
       - '@types/node'
       - bluebird
@@ -9351,9 +9351,9 @@ snapshots:
     optionalDependencies:
       typescript: 5.6.2
 
-  '@remix-run/v1-route-convention@0.1.4(@remix-run/dev@2.12.1(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/node@20.16.8)(typescript@5.6.2)(vite@5.4.8(@types/node@20.16.8)))':
+  '@remix-run/v1-route-convention@0.1.4(@remix-run/dev@2.12.1(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/node@20.16.9)(typescript@5.6.2)(vite@5.4.8(@types/node@20.16.9)))':
     dependencies:
-      '@remix-run/dev': 2.12.1(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/node@20.16.8)(typescript@5.6.2)(vite@5.4.8(@types/node@20.16.8))
+      '@remix-run/dev': 2.12.1(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/node@20.16.9)(typescript@5.6.2)(vite@5.4.8(@types/node@20.16.9))
       minimatch: 7.4.6
 
   '@remix-run/web-blob@3.1.0':
@@ -9693,7 +9693,7 @@ snapshots:
 
   '@types/accepts@1.3.7':
     dependencies:
-      '@types/node': 20.16.8
+      '@types/node': 20.16.9
 
   '@types/acorn@4.0.6':
     dependencies:
@@ -9704,11 +9704,11 @@ snapshots:
   '@types/body-parser@1.19.5':
     dependencies:
       '@types/connect': 3.4.36
-      '@types/node': 20.16.8
+      '@types/node': 20.16.9
 
   '@types/connect@3.4.36':
     dependencies:
-      '@types/node': 20.16.8
+      '@types/node': 20.16.9
 
   '@types/content-disposition@0.5.8': {}
 
@@ -9721,7 +9721,7 @@ snapshots:
       '@types/connect': 3.4.36
       '@types/express': 4.17.21
       '@types/keygrip': 1.0.6
-      '@types/node': 20.16.8
+      '@types/node': 20.16.9
 
   '@types/debug@4.1.12':
     dependencies:
@@ -9740,7 +9740,7 @@ snapshots:
 
   '@types/express-serve-static-core@4.19.5':
     dependencies:
-      '@types/node': 20.16.8
+      '@types/node': 20.16.9
       '@types/qs': 6.9.15
       '@types/range-parser': 1.2.7
       '@types/send': 0.17.4
@@ -9779,7 +9779,7 @@ snapshots:
       '@types/http-errors': 2.0.4
       '@types/keygrip': 1.0.6
       '@types/koa-compose': 3.2.8
-      '@types/node': 20.16.8
+      '@types/node': 20.16.9
 
   '@types/lodash@4.17.9': {}
 
@@ -9797,11 +9797,11 @@ snapshots:
 
   '@types/mysql@2.15.26':
     dependencies:
-      '@types/node': 20.16.8
+      '@types/node': 20.16.9
 
   '@types/node@17.0.45': {}
 
-  '@types/node@20.16.8':
+  '@types/node@20.16.9':
     dependencies:
       undici-types: 6.19.6
 
@@ -9815,7 +9815,7 @@ snapshots:
 
   '@types/pg@8.6.1':
     dependencies:
-      '@types/node': 20.16.8
+      '@types/node': 20.16.9
       pg-protocol: 1.6.1
       pg-types: 2.2.0
 
@@ -9839,12 +9839,12 @@ snapshots:
   '@types/send@0.17.4':
     dependencies:
       '@types/mime': 1.3.5
-      '@types/node': 20.16.8
+      '@types/node': 20.16.9
 
   '@types/serve-static@1.15.7':
     dependencies:
       '@types/http-errors': 2.0.4
-      '@types/node': 20.16.8
+      '@types/node': 20.16.9
       '@types/send': 0.17.4
 
   '@types/shimmer@1.2.0': {}
@@ -10038,7 +10038,7 @@ snapshots:
       modern-ahocorasick: 1.0.1
       outdent: 0.8.0
 
-  '@vanilla-extract/integration@6.5.0(@types/node@20.16.8)':
+  '@vanilla-extract/integration@6.5.0(@types/node@20.16.9)':
     dependencies:
       '@babel/core': 7.24.4
       '@babel/plugin-syntax-typescript': 7.24.1(@babel/core@7.24.4)
@@ -10051,8 +10051,8 @@ snapshots:
       lodash: 4.17.21
       mlly: 1.6.1
       outdent: 0.8.0
-      vite: 5.4.8(@types/node@20.16.8)
-      vite-node: 1.6.0(@types/node@20.16.8)
+      vite: 5.4.8(@types/node@20.16.9)
+      vite-node: 1.6.0(@types/node@20.16.9)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -10066,7 +10066,7 @@ snapshots:
 
   '@vanilla-extract/private@1.0.4': {}
 
-  '@vitest/coverage-v8@2.1.1(vitest@2.1.1(@types/node@20.16.8))':
+  '@vitest/coverage-v8@2.1.1(vitest@2.1.1(@types/node@20.16.9))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 0.2.3
@@ -10080,7 +10080,7 @@ snapshots:
       std-env: 3.7.0
       test-exclude: 7.0.1
       tinyrainbow: 1.2.0
-      vitest: 2.1.1(@types/node@20.16.8)
+      vitest: 2.1.1(@types/node@20.16.9)
     transitivePeerDependencies:
       - supports-color
 
@@ -10091,13 +10091,13 @@ snapshots:
       chai: 5.1.1
       tinyrainbow: 1.2.0
 
-  '@vitest/mocker@2.1.1(@vitest/spy@2.1.1)(vite@5.4.8(@types/node@20.16.8))':
+  '@vitest/mocker@2.1.1(@vitest/spy@2.1.1)(vite@5.4.8(@types/node@20.16.9))':
     dependencies:
       '@vitest/spy': 2.1.1
       estree-walker: 3.0.3
       magic-string: 0.30.11
     optionalDependencies:
-      vite: 5.4.8(@types/node@20.16.8)
+      vite: 5.4.8(@types/node@20.16.9)
 
   '@vitest/pretty-format@2.1.1':
     dependencies:
@@ -11436,7 +11436,7 @@ snapshots:
 
   eval@0.1.8:
     dependencies:
-      '@types/node': 20.16.8
+      '@types/node': 20.16.9
       require-like: 0.1.2
 
   event-target-shim@5.0.1: {}
@@ -13441,7 +13441,7 @@ snapshots:
       - supports-color
       - typescript
 
-  remix-development-tools@4.6.0(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/react-dom@18.3.0)(@types/react@18.3.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.4.8(@types/node@20.16.8)):
+  remix-development-tools@4.6.0(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/react-dom@18.3.0)(@types/react@18.3.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.4.8(@types/node@20.16.9)):
     dependencies:
       '@radix-ui/react-accordion': 1.2.0(@types/react-dom@18.3.0)(@types/react@18.3.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-select': 1.2.2(@types/react-dom@18.3.0)(@types/react@18.3.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -13462,23 +13462,23 @@ snapshots:
       react-hotkeys-hook: 4.5.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       tailwind-merge: 1.14.0
       uuid: 9.0.1
-      vite: 5.4.8(@types/node@20.16.8)
+      vite: 5.4.8(@types/node@20.16.9)
       zod: 3.23.8
     transitivePeerDependencies:
       - '@types/react'
       - '@types/react-dom'
 
-  remix-express-dev-server@0.4.4(@remix-run/dev@2.12.1(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/node@20.16.8)(typescript@5.6.2)(vite@5.4.8(@types/node@20.16.8)))(esbuild@0.17.6)(vite@5.4.8(@types/node@20.16.8)):
+  remix-express-dev-server@0.4.4(@remix-run/dev@2.12.1(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/node@20.16.9)(typescript@5.6.2)(vite@5.4.8(@types/node@20.16.9)))(esbuild@0.17.6)(vite@5.4.8(@types/node@20.16.9)):
     dependencies:
-      '@remix-run/dev': 2.12.1(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/node@20.16.8)(typescript@5.6.2)(vite@5.4.8(@types/node@20.16.8))
+      '@remix-run/dev': 2.12.1(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/node@20.16.9)(typescript@5.6.2)(vite@5.4.8(@types/node@20.16.9))
       esbuild: 0.17.6
       minimatch: 9.0.4
-      vite: 5.4.8(@types/node@20.16.8)
+      vite: 5.4.8(@types/node@20.16.9)
 
-  remix-flat-routes@0.6.5(@remix-run/dev@2.12.1(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/node@20.16.8)(typescript@5.6.2)(vite@5.4.8(@types/node@20.16.8))):
+  remix-flat-routes@0.6.5(@remix-run/dev@2.12.1(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/node@20.16.9)(typescript@5.6.2)(vite@5.4.8(@types/node@20.16.9))):
     dependencies:
-      '@remix-run/dev': 2.12.1(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/node@20.16.8)(typescript@5.6.2)(vite@5.4.8(@types/node@20.16.8))
-      '@remix-run/v1-route-convention': 0.1.4(@remix-run/dev@2.12.1(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/node@20.16.8)(typescript@5.6.2)(vite@5.4.8(@types/node@20.16.8)))
+      '@remix-run/dev': 2.12.1(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/node@20.16.9)(typescript@5.6.2)(vite@5.4.8(@types/node@20.16.9))
+      '@remix-run/v1-route-convention': 0.1.4(@remix-run/dev@2.12.1(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2))(@types/node@20.16.9)(typescript@5.6.2)(vite@5.4.8(@types/node@20.16.9)))
       fs-extra: 11.2.0
       minimatch: 5.1.6
 
@@ -14304,7 +14304,7 @@ snapshots:
       unist-util-stringify-position: 3.0.3
       vfile-message: 3.1.4
 
-  vite-env-only@3.0.3(vite@5.4.8(@types/node@20.16.8)):
+  vite-env-only@3.0.3(vite@5.4.8(@types/node@20.16.9)):
     dependencies:
       '@babel/core': 7.24.4
       '@babel/generator': 7.24.4
@@ -14313,17 +14313,17 @@ snapshots:
       '@babel/types': 7.24.0
       babel-dead-code-elimination: 1.0.6
       micromatch: 4.0.5
-      vite: 5.4.8(@types/node@20.16.8)
+      vite: 5.4.8(@types/node@20.16.9)
     transitivePeerDependencies:
       - supports-color
 
-  vite-node@1.6.0(@types/node@20.16.8):
+  vite-node@1.6.0(@types/node@20.16.9):
     dependencies:
       cac: 6.7.14
       debug: 4.3.7
       pathe: 1.1.2
       picocolors: 1.1.0
-      vite: 5.4.8(@types/node@20.16.8)
+      vite: 5.4.8(@types/node@20.16.9)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -14335,12 +14335,12 @@ snapshots:
       - supports-color
       - terser
 
-  vite-node@2.1.1(@types/node@20.16.8):
+  vite-node@2.1.1(@types/node@20.16.9):
     dependencies:
       cac: 6.7.14
       debug: 4.3.7
       pathe: 1.1.2
-      vite: 5.4.8(@types/node@20.16.8)
+      vite: 5.4.8(@types/node@20.16.9)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -14352,30 +14352,30 @@ snapshots:
       - supports-color
       - terser
 
-  vite-tsconfig-paths@5.0.1(typescript@5.6.2)(vite@5.4.8(@types/node@20.16.8)):
+  vite-tsconfig-paths@5.0.1(typescript@5.6.2)(vite@5.4.8(@types/node@20.16.9)):
     dependencies:
       debug: 4.3.5
       globrex: 0.1.2
       tsconfck: 3.0.3(typescript@5.6.2)
     optionalDependencies:
-      vite: 5.4.8(@types/node@20.16.8)
+      vite: 5.4.8(@types/node@20.16.9)
     transitivePeerDependencies:
       - supports-color
       - typescript
 
-  vite@5.4.8(@types/node@20.16.8):
+  vite@5.4.8(@types/node@20.16.9):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.4.47
       rollup: 4.21.0
     optionalDependencies:
-      '@types/node': 20.16.8
+      '@types/node': 20.16.9
       fsevents: 2.3.3
 
-  vitest@2.1.1(@types/node@20.16.8):
+  vitest@2.1.1(@types/node@20.16.9):
     dependencies:
       '@vitest/expect': 2.1.1
-      '@vitest/mocker': 2.1.1(@vitest/spy@2.1.1)(vite@5.4.8(@types/node@20.16.8))
+      '@vitest/mocker': 2.1.1(@vitest/spy@2.1.1)(vite@5.4.8(@types/node@20.16.9))
       '@vitest/pretty-format': 2.1.1
       '@vitest/runner': 2.1.1
       '@vitest/snapshot': 2.1.1
@@ -14390,11 +14390,11 @@ snapshots:
       tinyexec: 0.3.0
       tinypool: 1.0.0
       tinyrainbow: 1.2.0
-      vite: 5.4.8(@types/node@20.16.8)
-      vite-node: 2.1.1(@types/node@20.16.8)
+      vite: 5.4.8(@types/node@20.16.9)
+      vite-node: 2.1.1(@types/node@20.16.9)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@types/node': 20.16.8
+      '@types/node': 20.16.9
     transitivePeerDependencies:
       - less
       - lightningcss
