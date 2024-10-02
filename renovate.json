@@ -1,9 +1,16 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "automerge": true,
-  "schedule": ["at any time"],
   "extends": ["config:base"],
+  "schedule": ["every weekend"]
+  "automerge": true,
+  "automergeSchedule": ["every weekend"],
   "packageRules": [
+    {
+      "matchPackagePatterns": ["*"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch"
+    },
     {
       "matchPackagePatterns": ["^@technifit/"],
       "enabled": false
