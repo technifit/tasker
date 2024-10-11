@@ -102,8 +102,8 @@ importers:
         specifier: 0.5.1
         version: 0.5.1(zod@3.23.8)
       remix-routes:
-        specifier: 1.7.7
-        version: 1.7.7
+        specifier: 1.7.5
+        version: 1.7.5
       remix-themes:
         specifier: 1.5.1
         version: 1.5.1(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(@remix-run/server-runtime@2.13.0(typescript@5.6.3))
@@ -3380,7 +3380,7 @@ packages:
     engines: {node: '>= 0.4'}
 
   array-flatten@1.1.1:
-    resolution: {integrity: sha512-PCVAQswWemu6UdxsDFFX/+gVeYqKAod3D3UVm91jHwynguOwAvYPhx8nNlM++NqRcK6CxxpUafjmhIdKiHibqg==}
+    resolution: {integrity: sha1-ml9pkFGx5wczKPKgCJaLZOopVdI=}
 
   array-includes@3.1.8:
     resolution: {integrity: sha512-itaWrbYbqpGXkGhZPGUulwnhVf5Hpy1xiCFsGqyIGglbBxmG5vSjxQen3/WGOjPpNEv1RtBLKxbmVXm8HpJStQ==}
@@ -3524,7 +3524,7 @@ packages:
     resolution: {integrity: sha512-SW9lzGTLvWTP1AY8xeAMZimqDrIaSdLQUcVr9DMef51niJ022Ri87SwRRKYm4A6iHfkPaiVUu/Duw2Wc4J7kKg==}
 
   bytes@3.0.0:
-    resolution: {integrity: sha512-pMhOfFDPiv9t5jjIXkHosWmkSyQbvsgEVNkz0ERHbuLh2T/7j4Mqqpz523Fe8MVY89KC6Sh/QfS2sM+SjgFDcw==}
+    resolution: {integrity: sha1-0ygVQE1olpn4Wk6k+odV3ROpYEg=}
     engines: {node: '>= 0.8'}
 
   bytes@3.1.2:
@@ -3695,7 +3695,7 @@ packages:
     engines: {node: '>= 0.8.0'}
 
   concat-map@0.0.1:
-    resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
+    resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
 
   concat-stream@1.6.2:
     resolution: {integrity: sha512-27HBghJxjiZtIk3Ycvn/4kbJk/1uZuJFfuPEns6LaEvpvG1f0hTea8lilrouyo9mVc2GWdcEZ8OLoGmSADlrCw==}
@@ -3992,7 +3992,7 @@ packages:
     hasBin: true
 
   ee-first@1.1.1:
-    resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
+    resolution: {integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=}
 
   ejs@3.1.10:
     resolution: {integrity: sha512-UeJmFfOrAQS8OJWPZ4qtgHyWExa088/MtK5UEyoJGFH67cDEXkZSviOiKRCZ4Xij0zxI3JECgYs3oKx+AizQBA==}
@@ -5185,7 +5185,7 @@ packages:
     resolution: {integrity: sha512-1N4qp+jE0pL5Xv4uEcwVUhIkwdUO3S/9gML90nqKA7v7FcOS5vUtatfzok9S9U1EJU8dHWlcv95WLnKmmxZI9w==}
 
   media-typer@0.3.0:
-    resolution: {integrity: sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==}
+    resolution: {integrity: sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=}
     engines: {node: '>= 0.6'}
 
   memoize-one@6.0.0:
@@ -6211,8 +6211,8 @@ packages:
     peerDependencies:
       zod: ^3.11.6
 
-  remix-routes@1.7.7:
-    resolution: {integrity: sha512-Cj6PhrLkNHu4Vb+eSCnoFslqKmEtcZcvZkBHhrB2zsyJH+uLKBjETp0o3dR5vj0q+iUgxwnHFdEE1ThmKbWBKw==}
+  remix-routes@1.7.5:
+    resolution: {integrity: sha512-PP6J0Q7JKpo8YP4Fcg2TI0UtCXMlOP2ZXi38CBfdpTQ6CvlwEdPgF7H0nUCh/4kQDfzoW6EvtLJ8qM7skhS1rQ==}
     hasBin: true
 
   remix-themes@1.5.1:
@@ -6925,7 +6925,7 @@ packages:
     resolution: {integrity: sha512-kZf/K6hEIrWHI6XqOFUiiMa+79wE/D8Q+NCNAWclkyg3b4d2k7s0QGepNjiABc+aR3N1PAyHL7p6UcLY6LmrnA==}
 
   utils-merge@1.0.1:
-    resolution: {integrity: sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==}
+    resolution: {integrity: sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=}
     engines: {node: '>= 0.4.0'}
 
   uuid@8.3.2:
@@ -13552,13 +13552,14 @@ snapshots:
     dependencies:
       zod: 3.23.8
 
-  remix-routes@1.7.7:
+  remix-routes@1.7.5:
     dependencies:
       chokidar: 3.6.0
       ejs: 3.1.10
       meow: 9.0.0
       mkdirp: 1.0.4
       slash: 3.0.0
+      typescript-remix-routes-plugin: 1.0.1
 
   remix-themes@1.5.1(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(@remix-run/server-runtime@2.13.0(typescript@5.6.3)):
     dependencies:
