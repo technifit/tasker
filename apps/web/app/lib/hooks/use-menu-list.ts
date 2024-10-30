@@ -1,7 +1,7 @@
 import { useLocation } from '@remix-run/react';
 import { $path } from 'remix-routes';
 
-import { Boxes, LayoutGrid, LayoutList, ListTodo, Settings, Users } from '@technifit/ui/icons';
+import { Boxes, LayoutList, ListTodo, Settings, Users } from '@technifit/ui/icons';
 import type { LucideIcon } from '@technifit/ui/icons';
 
 import { useOrganisation } from '~/routes/_auth/hooks/use-org';

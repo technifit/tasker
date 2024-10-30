@@ -1,6 +1,5 @@
 import { Link } from '@remix-run/react';
 
-import { Users } from '@technifit/ui/icons';
 import {
   Sidebar,
   SidebarContent,
