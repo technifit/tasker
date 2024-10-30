@@ -40,7 +40,7 @@ importers:
         version: 3.9.0(react-hook-form@7.53.1(react@18.3.1))
       '@remix-run/express':
         specifier: 2.13.1
-        version: 2.13.1(express@4.19.2)(typescript@5.6.3)
+        version: 2.13.1(express@4.21.1)(typescript@5.6.3)
       '@remix-run/node':
         specifier: 2.13.1
         version: 2.13.1(typescript@5.6.3)
@@ -9425,6 +9425,13 @@ snapshots:
     dependencies:
       '@remix-run/node': 2.13.1(typescript@5.6.3)
       express: 4.19.2
+    optionalDependencies:
+      typescript: 5.6.3
+
+  '@remix-run/express@2.13.1(express@4.21.1)(typescript@5.6.3)':
+    dependencies:
+      '@remix-run/node': 2.13.1(typescript@5.6.3)
+      express: 4.21.1
     optionalDependencies:
       typescript: 5.6.3
 

@@ -5,6 +5,7 @@ import { serverOnly$ } from 'vite-env-only/macros';
 import { getOrganisation, listOrgnisationMemberships } from '@technifit/authentication/organisation';
 import { withAuthentication } from '@technifit/middleware/authenticated';
 import { SessionContext } from '@technifit/middleware/session';
+import { SidebarProvider } from '@technifit/ui/sidebar';
 
 export const middleware = serverOnly$([withAuthentication]);
 
@@ -29,7 +30,9 @@ export const loader = async ({ context }: LoaderFunctionArgs) => {
 const AppLayout = () => {
   return (
     <>
-      <Outlet />
+      <SidebarProvider>
+        <Outlet />
+      </SidebarProvider>
     </>
   );
 };
