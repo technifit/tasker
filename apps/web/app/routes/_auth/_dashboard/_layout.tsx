@@ -1,29 +1,16 @@
 import { Outlet } from '@remix-run/react';
 
-import { cn } from '@technifit/ui/utils';
+import { SidebarTrigger } from '@technifit/ui/sidebar';
 
-import { Navbar } from '~/ui/admin/navbar';
-import { Sidebar } from '~/ui/admin/sidebar';
+import { AppSidebar } from '~/ui/dashboard/app-sidebar';
 
 const AuthLayout = () => {
-  // TODO: Replace with real data
-  const sidebar = {
-    isOpen: true,
-  };
-
   return (
     <>
-      <Sidebar />
-      <main
-        className={cn(
-          'flex grow flex-col bg-zinc-50 transition-[margin-left] duration-300 ease-in-out dark:bg-zinc-900',
-          sidebar?.isOpen === false ? 'lg:ml-[90px]' : 'lg:ml-72',
-        )}
-      >
-        <Navbar />
-        <div className='container flex grow py-4'>
-          <Outlet />
-        </div>
+      <AppSidebar />
+      <main className='container flex grow py-4'>
+        <SidebarTrigger />
+        <Outlet />
       </main>
     </>
   );
