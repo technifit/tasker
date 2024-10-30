@@ -250,6 +250,12 @@
         "default": "./src/components/ui/sheet.js"
       }
     },
+    "./sidebar": {
+      "import": {
+        "types": "./src/components/ui/sidebar.d.ts",
+        "default": "./src/components/ui/sidebar.js"
+      }
+    },
     "./skeleton": {
       "import": {
         "types": "./src/components/ui/skeleton.d.ts",
