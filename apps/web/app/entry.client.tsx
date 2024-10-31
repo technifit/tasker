@@ -3,7 +3,7 @@ import { RemixBrowser, useLocation, useMatches } from '@remix-run/react';
 import * as Sentry from '@sentry/remix';
 import { hydrateRoot } from 'react-dom/client';
 
-import { getPublicEnv } from './lib/environment/public-env';
+import { getPublicEnv } from './features/environment/public-env';
 
 Sentry.init({
   dsn: getPublicEnv('SENTRY_DSN'),

@@ -12,8 +12,8 @@ import {
   SidebarMenuItem,
 } from '@technifit/ui/sidebar';
 
-import { useGetMenuList } from '~/lib/hooks/use-menu-list';
-import { UserNav } from '../admin/user-nav';
+import { useGetMenuList } from '~/features/sidebar/hooks/use-menu-list';
+import { UserNav } from './user-nav';
 
 const AppSidebar = () => {
   const { menuList } = useGetMenuList();
