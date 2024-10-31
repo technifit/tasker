@@ -21,7 +21,7 @@ import { serverOnly$ } from 'vite-env-only/macros';
 import { publicEnvSchema } from '@technifit/environment/schema';
 import { cn } from '@technifit/ui/utils';
 
-import { PublicEnvironment } from './lib/environment/public-env';
+import { PublicEnvironment } from './features/environment/public-env';
 import styles from './styles/global.css?url';
 
 const interWoff = Array.from({ length: 9 }, (_, i) => `inter/inter-latin-ext-${i * 100 + 100}-normal.woff`);
