@@ -27,10 +27,6 @@ export default defineConfig({
       clientFiles: ['./app/entry.client.tsx', './app/root.tsx', './app/routes/**/*'],
     },
   },
-  // https://github.com/remix-run/remix/discussions/8917#discussioncomment-8640023
-  optimizeDeps: {
-    include: ['./app/routes/**/*'],
-  },
   build: {
     target: 'esnext',
     sourcemap: true,
@@ -52,10 +48,11 @@ export default defineConfig({
     remixDevTools(),
     remix({
       future: {
+        unstable_optimizeDeps: true,
         v3_fetcherPersist: true,
         v3_relativeSplatPath: true,
-        v3_throwAbortReason: true,
         v3_singleFetch: true,
+        v3_throwAbortReason: true,
       },
       routes: (defineRoutes) => {
         return flatRoutes('routes', defineRoutes, {
