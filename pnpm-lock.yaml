@@ -44,6 +44,9 @@ importers:
       '@remix-run/react':
         specifier: ^2.13.1
         version: 2.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3)
+      '@technifit/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       isbot:
         specifier: ^4.1.0
         version: 4.4.0
@@ -60,6 +63,9 @@ importers:
       '@remix-run/dev':
         specifier: ^2.13.1
         version: 2.13.1(@remix-run/react@2.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(@types/node@22.8.6)(terser@5.36.0)(typescript@5.6.3)(vite@5.4.10(@types/node@22.8.6)(terser@5.36.0))(wrangler@3.57.1(@cloudflare/workers-types@4.20241022.0))
+      '@technifit/tailwind-config':
+        specifier: workspace:*
+        version: link:../../tooling/tailwind-config
       '@types/react':
         specifier: ^18.2.20
         version: 18.3.12
@@ -252,7 +258,7 @@ importers:
         version: 4.7.3(@remix-run/react@2.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.4.10(@types/node@22.8.6)(terser@5.36.0))
       remix-express-dev-server:
         specifier: 0.4.4
-        version: 0.4.4(@remix-run/dev@2.13.1(@remix-run/react@2.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(@types/node@22.8.6)(terser@5.36.0)(typescript@5.6.3)(vite@5.4.10(@types/node@22.8.6)(terser@5.36.0))(wrangler@3.84.1(@cloudflare/workers-types@4.20241022.0)))(esbuild@0.17.6)(vite@5.4.10(@types/node@22.8.6)(terser@5.36.0))
+        version: 0.4.4(@remix-run/dev@2.13.1(@remix-run/react@2.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(@types/node@22.8.6)(terser@5.36.0)(typescript@5.6.3)(vite@5.4.10(@types/node@22.8.6)(terser@5.36.0))(wrangler@3.84.1(@cloudflare/workers-types@4.20241022.0)))(esbuild@0.21.5)(vite@5.4.10(@types/node@22.8.6)(terser@5.36.0))
       remix-flat-routes:
         specifier: 0.6.5
         version: 0.6.5(@remix-run/dev@2.13.1(@remix-run/react@2.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(@types/node@22.8.6)(terser@5.36.0)(typescript@5.6.3)(vite@5.4.10(@types/node@22.8.6)(terser@5.36.0))(wrangler@3.84.1(@cloudflare/workers-types@4.20241022.0)))
@@ -14918,10 +14924,10 @@ snapshots:
       - '@types/react'
       - '@types/react-dom'
 
-  remix-express-dev-server@0.4.4(@remix-run/dev@2.13.1(@remix-run/react@2.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(@types/node@22.8.6)(terser@5.36.0)(typescript@5.6.3)(vite@5.4.10(@types/node@22.8.6)(terser@5.36.0))(wrangler@3.84.1(@cloudflare/workers-types@4.20241022.0)))(esbuild@0.17.6)(vite@5.4.10(@types/node@22.8.6)(terser@5.36.0)):
+  remix-express-dev-server@0.4.4(@remix-run/dev@2.13.1(@remix-run/react@2.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(@types/node@22.8.6)(terser@5.36.0)(typescript@5.6.3)(vite@5.4.10(@types/node@22.8.6)(terser@5.36.0))(wrangler@3.84.1(@cloudflare/workers-types@4.20241022.0)))(esbuild@0.21.5)(vite@5.4.10(@types/node@22.8.6)(terser@5.36.0)):
     dependencies:
       '@remix-run/dev': 2.13.1(@remix-run/react@2.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(@types/node@22.8.6)(terser@5.36.0)(typescript@5.6.3)(vite@5.4.10(@types/node@22.8.6)(terser@5.36.0))(wrangler@3.84.1(@cloudflare/workers-types@4.20241022.0))
-      esbuild: 0.17.6
+      esbuild: 0.21.5
       minimatch: 9.0.4
       vite: 5.4.10(@types/node@22.8.6)(terser@5.36.0)
 
