@@ -46,7 +46,7 @@
     "remix-create-express-app": "0.4.5",
     "remix-hook-form": "5.1.1",
     "remix-params-helper": "0.5.1",
-    "remix-routes": "1.7.7",
+    "remix-routes": "1.7.5",
     "remix-themes": "1.5.1",
     "remix-utils": "7.7.0",
     "typescript-slugify": "1.0.1",
