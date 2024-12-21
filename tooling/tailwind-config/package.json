@@ -18,7 +18,7 @@
     "@technifit/eslint-config": "workspace:*",
     "@technifit/tsconfig": "workspace:*",
     "autoprefixer": "10.4.20",
-    "eslint": "8.57.1",
+    "eslint": "9.17.0",
     "postcss": "8.4.49",
     "tailwindcss": "3.4.16",
     "typescript": "5.7.2"
