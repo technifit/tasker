@@ -105,11 +105,11 @@ importers:
         specifier: 1.7.5
         version: 1.7.5
       remix-themes:
-        specifier: 1.5.1
-        version: 1.5.1(@remix-run/react@2.15.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.7.2))(@remix-run/server-runtime@2.15.0(typescript@5.7.2))
+        specifier: 2.0.1
+        version: 2.0.1(react-router@6.28.0(react@18.3.1))(react@18.3.1)
       remix-utils:
         specifier: 8.0.0
-        version: 8.0.0(is-ip@5.0.1)(react@18.3.1)(zod@3.23.8)
+        version: 8.0.0(is-ip@5.0.1)(react-router@6.28.0(react@18.3.1))(react@18.3.1)(zod@3.23.8)
       typescript-slugify:
         specifier: 1.0.1
         version: 1.0.1
@@ -327,7 +327,7 @@ importers:
         version: 0.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.7.2)
       remix-utils:
         specifier: 8.0.0
-        version: 8.0.0(is-ip@5.0.1)(react@18.3.1)(zod@3.23.8)
+        version: 8.0.0(is-ip@5.0.1)(react-router@6.28.0(react@18.3.1))(react@18.3.1)(zod@3.23.8)
       zod:
         specifier: 3.23.8
         version: 3.23.8
@@ -6816,11 +6816,11 @@ packages:
     resolution: {integrity: sha512-PP6J0Q7JKpo8YP4Fcg2TI0UtCXMlOP2ZXi38CBfdpTQ6CvlwEdPgF7H0nUCh/4kQDfzoW6EvtLJ8qM7skhS1rQ==}
     hasBin: true
 
-  remix-themes@1.5.1:
-    resolution: {integrity: sha512-3/qo8pLjWdL5c6QORCzRp2KwT9izg294wCjL9grNPGhOaO/tkAkzf36imV7nkIhUc8U+7QGffiRl+Zg0prGfgA==}
+  remix-themes@2.0.1:
+    resolution: {integrity: sha512-2SreS3ZjCFJDSrrN0GziqXZc+kQJl/YWAjJZHHk6tkYWxSkuEljlKGYcj4PxPfFlb7pbepEiFeuAjm9Ta9s3+Q==}
     peerDependencies:
-      '@remix-run/react': '>= 1'
-      '@remix-run/server-runtime': '>= 1'
+      react: '>=19'
+      react-router: '>=7.0.0'
 
   remix-utils@8.0.0:
     resolution: {integrity: sha512-vrs8Iytnuwi+KF+VYOPT3vzDX7cLbys897pwzLpMzLjOXJQ/S60dApHCmQ9cPWH3XHRgvaoJjZ6+sMGaax4fbg==}
@@ -14834,17 +14834,18 @@ snapshots:
       slash: 3.0.0
       typescript-remix-routes-plugin: 1.0.1
 
-  remix-themes@1.5.1(@remix-run/react@2.15.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.7.2))(@remix-run/server-runtime@2.15.0(typescript@5.7.2)):
+  remix-themes@2.0.1(react-router@6.28.0(react@18.3.1))(react@18.3.1):
     dependencies:
-      '@remix-run/react': 2.15.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.7.2)
-      '@remix-run/server-runtime': 2.15.0(typescript@5.7.2)
+      react: 18.3.1
+      react-router: 6.28.0(react@18.3.1)
 
-  remix-utils@8.0.0(is-ip@5.0.1)(react@18.3.1)(zod@3.23.8):
+  remix-utils@8.0.0(is-ip@5.0.1)(react-router@6.28.0(react@18.3.1))(react@18.3.1)(zod@3.23.8):
     dependencies:
       type-fest: 4.30.1
     optionalDependencies:
       is-ip: 5.0.1
       react: 18.3.1
+      react-router: 6.28.0(react@18.3.1)
       zod: 3.23.8
 
   require-directory@2.1.1: {}
