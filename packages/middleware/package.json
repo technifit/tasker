@@ -43,7 +43,7 @@
     "@technifit/eslint-config": "workspace:*",
     "@technifit/tsconfig": "workspace:*",
     "@vitest/coverage-v8": "2.1.8",
-    "eslint": "8.57.1",
+    "eslint": "9.17.0",
     "typescript": "5.7.2",
     "vitest": "2.1.8"
   }
