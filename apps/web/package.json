@@ -57,7 +57,7 @@
     "@codecov/vite-plugin": "1.5.1",
     "@playwright/test": "1.49.0",
     "@remix-run/dev": "2.15.0",
-    "@sentry/vite-plugin": "2.22.6",
+    "@sentry/vite-plugin": "3.0.0",
     "@technifit/eslint-config": "workspace:*",
     "@technifit/tailwind-config": "workspace:*",
     "@technifit/tsconfig": "workspace:*",
