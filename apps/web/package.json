@@ -24,7 +24,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@hookform/resolvers": "3.9.1",
+    "@hookform/resolvers": "4.0.0",
     "@remix-run/express": "2.15.0",
     "@remix-run/node": "2.15.0",
     "@remix-run/react": "2.15.0",
