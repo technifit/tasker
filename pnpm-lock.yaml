@@ -280,8 +280,8 @@ importers:
   packages/jwt:
     dependencies:
       jose:
-        specifier: 5.9.6
-        version: 5.9.6
+        specifier: 6.0.3
+        version: 6.0.3
     devDependencies:
       '@technifit/eslint-config':
         specifier: workspace:*
@@ -5422,8 +5422,8 @@ packages:
   jose@5.6.3:
     resolution: {integrity: sha512-1Jh//hEEwMhNYPDDLwXHa2ePWgWiFNNUadVmguAAw2IJ6sj9mNxV5tGXJNqlMkJAybF6Lgw1mISDxTePP/187g==}
 
-  jose@5.9.6:
-    resolution: {integrity: sha512-AMlnetc9+CV9asI19zHmrgS/WYsWUwCn2R7RzlbJWD7F9eWYUTGyBmU9o6PxngtLGOiDGPRu+Uc4fhKzbpteZQ==}
+  jose@6.0.3:
+    resolution: {integrity: sha512-7bOLhKorsp4NWBGpNJZPHy3CqN0JG5XKMKPtMN02EPMg3rcgbCEkJ27GCWHUOb3jHRqo1oJxfdMdAeQYX4cqSQ==}
 
   js-beautify@1.15.1:
     resolution: {integrity: sha512-ESjNzSlt/sWE8sciZH8kBF8BPlwXPwhR6pWKAw8bw4Bwj+iZcnKW6ONWUutJ7eObuBZQpiIb8S7OYspWrKt7rA==}
@@ -13244,7 +13244,7 @@ snapshots:
 
   jose@5.6.3: {}
 
-  jose@5.9.6: {}
+  jose@6.0.3: {}
 
   js-beautify@1.15.1:
     dependencies:
